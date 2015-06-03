@@ -1,5 +1,9 @@
 # commons-sandbox
-A workspace for developing reusable components for economic agent based models (ABMs).
+[![Build Status](https://travis-ci.org/inet-oxford/commons-sandbox.svg?branch=master)](https://travis-ci.org/inet-oxford/commons-sandbox)
+[![Coverage Status](https://coveralls.io/repos/inet-oxford/commons-sandbox/badge.svg)](https://coveralls.io/r/inet-oxford/commons-sandbox)
+[![GitHub license](https://img.shields.io/github/license/inet-oxford/commons-sandbox.svg)]()
+
+A workspace for developing reusable components for large-scale agent based models (ABMs) of social systems.
 
 ## Getting started
 The following instructions will help walk you through the process of downloading and installing the necessary software.
@@ -9,13 +13,12 @@ Download and install the Java Development Kit (JDK) 8 from [Oracle](http://www.o
 
 ### Install Activator
 
-Once your JDK has been installed, then you can download and install Play. Mac, Linux, and Windows users can [download](https://www.playframework.com/download) Play (and its dependencies) direct from the website.   
-Additionally, Mac users can install the Play framework (and dependencies) via Homebrew (assuming of course that you have installed [Homebrew](http://brew.sh/)) using the following command in a terminal:
+Once you have installed JDK 8, then you can download and install [Typesafe Activator](https://www.typesafe.com/community/core-tools/activator-and-sbt). Activator includes the sbt build tool, a quick-start GUI, and a catalog of template applications.  Mac users can install the Activator via Homebrew (assuming of course that you have installed [Homebrew](http://brew.sh/)) using the following command in a terminal to install Activator.
 
     $ brew install activator
 
 ## Code coverage
-The project uses the [sbt-scoverage](https://github.com/scoverage/sbt-scoverage) plugin to generate test coverage statistics. To run the tests with coverage enabled simply run the following command in a terminal from the project root directory:
+Out project uses the [sbt-scoverage](https://github.com/scoverage/sbt-scoverage) plugin to generate test coverage statistics. To run all tests with coverage enabled simply run the following command in a terminal from the project root directory.
 
     $ sbt clean coverage test
 
@@ -23,14 +26,16 @@ After the tests have finished you can then run
 
     $ sbt coverageReport
 
-to generate the reports. The generated code coverage reports can be found inside `target/scoverage-report`.
+to generate the reports. The generated code coverage reports can be found inside
+
+    commons-sandbox/target/scala-2.11/scoverage-report.
 
 ## API documentation
 
-The API documentation for the project is very much a work in progress. To generate the most current version of the documentation simply run the `sbt doc` command from the project root directory:
+The API documentation for the project is very much a work in progress. To generate the most current version of the documentation simply run the following command from the project root directory.
 
     $ sbt doc
     
-The above command generates the documentation and places it under the `target` directory. The root file for the documentation is located at `target/scala-2.11/api/index.html`. To view the documentation, simply open this file in your favorite browser. 
-
-## Contributing
+To view the documentation, simply open the following file in your favorite browser: 
+ 
+    commons-sandbox/target/scala-2.11/api/index.html.
