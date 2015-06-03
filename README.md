@@ -26,9 +26,9 @@ After the tests have finished you can then run
 
     $ sbt coverageReport
 
-to generate the reports. The generated code coverage reports can be found inside
+to generate the reports. The generated code coverage reports can be found inside the following folder.
 
-    commons-sandbox/target/scala-2.11/scoverage-report.
+    commons-sandbox/target/scala-2.11/scoverage-report
 
 ## API documentation
 
@@ -36,6 +36,6 @@ The API documentation for the project is very much a work in progress. To genera
 
     $ sbt doc
     
-To view the documentation, simply open the following file in your favorite browser: 
+To view the documentation, simply open the following file in your favorite browser. 
  
-    commons-sandbox/target/scala-2.11/api/index.html.
+    commons-sandbox/target/scala-2.11/api/index.html
