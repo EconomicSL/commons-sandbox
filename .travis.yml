@@ -1,0 +1,15 @@
+language: scala
+
+scala:
+   - 2.11.6
+
+notifications:
+  email: false
+
+branches:
+  only:
+    - master
+
+script: "sbt clean coverage test"
+
+after_success: "sbt coveralls"

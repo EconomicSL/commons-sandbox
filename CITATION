@@ -1,0 +1,8 @@
+@Manual{commonsINETSandbox,
+        title = {A workspace for developing reusable components for economic agent based models (ABMs)},
+        author = {David R. Pugh, Daniel F. Tang, J. Doyne Farmer},
+        organization = {Institute for New Economic Thinking (INET)},
+        year = {2015},
+        doi = ???,
+        url = {https://github.com/inet-oxford/commons-sandbox}
+        }
