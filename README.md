@@ -2,6 +2,7 @@
 [![Build Status](https://travis-ci.org/inet-oxford/commons-sandbox.svg?branch=master)](https://travis-ci.org/inet-oxford/commons-sandbox)
 [![Coverage Status](https://coveralls.io/repos/inet-oxford/commons-sandbox/badge.svg)](https://coveralls.io/r/inet-oxford/commons-sandbox)
 [![GitHub license](https://img.shields.io/github/license/inet-oxford/commons-sandbox.svg)]()
+[![Inline docs](http://inch-ci.org/github/inet-oxford/commons-sandbox.svg?branch=master)](http://inch-ci.org/github/inet-oxford/commons-sandbox)
 
 A workspace for developing reusable components for large-scale agent based models (ABMs) of social systems.
 
