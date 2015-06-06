@@ -3,8 +3,8 @@ package actor.government
 import actor.EconomicActor
 
 
-/** Trait representing a generic consumer. */
-trait GovernmentLike {
+/** Trait defining a fiscal authority. */
+trait FiscalAuthorityLike {
   this: EconomicActor =>
 
 }
