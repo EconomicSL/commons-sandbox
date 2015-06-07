@@ -19,7 +19,7 @@ import actor.EconomicActor
 
 
 /** Trait defining behavior for an [[actor.EconomicActor]] that trades
-  * [[plumbing.tradables.PromiseLike]] objects.
+  * [[plumbing.contracts.PromiseLike]] objects.
   *
   */
 trait PromiseMakerLike {
