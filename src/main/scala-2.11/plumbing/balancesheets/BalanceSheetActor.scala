@@ -13,15 +13,17 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package plumbing
+package plumbing.balancesheets
 
 import akka.actor.{Actor, ActorLogging}
-import environment.{TradableLike, GoodLike}
-import plumbing.tradables.PromiseLike
+import environment.tradables.{GoodLike, TradableLike}
+import plumbing.contracts.PromiseLike
+import plumbing.{DeleteTradable, PutTradable}
 
 import scala.collection.mutable
 
-/** Class representing a financial balance sheet.
+
+/** Class representing a balance sheet.
   *
   * @note A [[BalanceSheetActor]] should be a child of some [[actor.EconomicActor]].
   */
