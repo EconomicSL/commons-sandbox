@@ -4,7 +4,7 @@
 [![GitHub license](https://img.shields.io/github/license/inet-oxford/commons-sandbox.svg)]()
 [![Inline docs](http://inch-ci.org/github/inet-oxford/commons-sandbox.svg?branch=master)](http://inch-ci.org/github/inet-oxford/commons-sandbox)
 
-A workspace for developing reusable components for large-scale agent based models (ABMs) of social systems.
+A workspace for developing reusable components for scalable agent based models (ABMs) of social systems.
 
 ## Getting started
 The following instructions will help walk you through the process of downloading and installing the necessary software.
