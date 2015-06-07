@@ -19,7 +19,7 @@ import actor.EconomicActor
 
 
 /** Trait defining behavior for an [[actor.EconomicActor]] that trades
-  * [[environment.GoodLike]] objects.
+  * [[environment.tradables.GoodLike]] objects.
   */
 trait GoodsTraderLike {
   this: EconomicActor =>
