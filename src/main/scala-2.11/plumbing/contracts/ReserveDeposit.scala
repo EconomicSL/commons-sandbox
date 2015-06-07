@@ -13,13 +13,22 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package environment
+package plumbing.contracts
+
+import akka.actor.{ActorLogging, Actor, ActorRef}
+
+import scala.collection.immutable
 
 
-/** Trait defining a tradable object representing a physical good or commodity. */
-trait GoodLike extends TradableLike {
+/** Class defining a reserve deposit. */
+case class ReserveDeposit(faceValue: Double,
+                          promisee: immutable.Set[ActorRef],
+                          promisor: ActorRef) extends DepositLike
+  with Actor
+  with ActorLogging {
 
-  /** Quantity of the GoodLike. */
-  def quantity: Double
+  def receive: Receive = {
+    ???
+  }
 
 }
