@@ -13,16 +13,17 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package plumbing.contracts.primitives
+package plumbing.contracts.commitments
 
-import plumbing.observables.Observable
+import rx.lang.scala.Observable
 
 
-/** Scales a contract by a potentially time-varying value.
-  *
+/** Scales an underlying `Contract` by a potentially time-varying value.
+  * @param amount The scaling factor applied the the underlying `Contract`.
+  * @param contract The underlying `Contract`.
   * @note If you acquire `Scale(observable, contract)`, then you acquire `contract`
   *       at the same moment except that all rights and obligations of `contract`
   *       are multiplied by the value of the `observable` at the moment of
   *       acquisition.
   */
-case class Scale(scale: Observable[Double], contract: Contract) extends Contract
+class Scale[A](val amount: Observable[A], val contract: Contract) extends Contract
