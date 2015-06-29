@@ -16,5 +16,11 @@ limitations under the License.
 package plumbing.contracts.commitments
 
 
-/** The base trait for all contracts. */
+/** The base trait for all contracts.
+  *
+  * A `Contract` represents an agreement between two or more parties that
+  * specifies, for each party, obligations to undertake (or not) actions
+  * or make certain payments.
+  *
+  */
 trait Contract
