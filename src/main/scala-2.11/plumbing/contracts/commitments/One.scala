@@ -13,14 +13,13 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package plumbing.contracts.primitives
-
-import plumbing.Currency
+package plumbing.contracts.commitments
 
 
-/** A `Contract` that immediately pays the holder one unit of `Currency`.
+/** A `Contract` that immediately pays the holder one unit of some specified
+  * currency.
   *
   * @note This contract has an infinite horizon: there is no restriction on
   *       when this contract can be acquired.
   */
-case class One(currency: Currency) extends Contract
+class One(val currency: String) extends Contract
