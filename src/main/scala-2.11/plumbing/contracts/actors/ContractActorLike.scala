@@ -21,13 +21,17 @@ import plumbing.contracts.commitments.Contract
 import scala.collection.mutable
 
 
+/** Base trait for all ContractActors. */
 trait ContractActorLike extends Actor
   with ActorLogging {
 
+  /** Collection of commitments representing the terms of the contract. */
   def commitments: mutable.Map[ActorRef, Contract]
 
+  /** Actor for whom the underlying commitment represents a liability. */
   def issuer: ActorRef
 
+  /** Collection of actors for whom the underlying commitments represent assets. */
   def owners: mutable.Set[ActorRef]
 
 }
