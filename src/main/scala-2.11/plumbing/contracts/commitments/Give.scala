@@ -13,15 +13,15 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package plumbing.contracts.primitives
+package plumbing.contracts.commitments
 
 
-/** Reverses the rights and obligations of a contract.
-  *
+/** Reverses the rights and obligations of the underlying `Contract`.
+  * @param contract The underlying `Contract`.
   * @note Acquiring `Give(contract)` is the acquire all of `contract` rights
   *       and obligations (and vice versa). Note that for a bilateral contract
   *       between parties A and B, A acquiring `contract` implies that B must
   *       acquire `Give(contract)`.
   */
-case class Give(contract: Contract) extends Contract
+class Give(val contract: Contract) extends Contract
 
