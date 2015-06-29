@@ -13,22 +13,26 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package plumbing.contracts
+package plumbing.contracts.actors
 
-import akka.actor.{ActorLogging, Actor, ActorRef}
+import akka.actor.ActorRef
+import plumbing.contracts.commitments.Contract
 
-import scala.collection.immutable
+import scala.collection.mutable
 
 
-/** Class defining a commercial bank deposit. */
-case class BankDeposit(faceValue: Double,
-                       promisee: immutable.Set[ActorRef],
-                       promisor: ActorRef) extends DepositLike
-  with Actor
-  with ActorLogging {
+class CurrencyActor(amount: Double,
+                    code: String,
+                    val issuer: ActorRef,
+                    val owners: mutable.Set[ActorRef]) extends ContractActorLike {
+
+  def commitments: mutable.Map[ActorRef, Contract] = {
+    ???
+  }
 
   def receive: Receive = {
     ???
   }
 
 }
+
