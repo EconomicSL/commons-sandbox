@@ -6,6 +6,10 @@
 
 A workspace for developing reusable components for scalable agent based models (ABMs) of social systems.
 
+## Motivation
+
+## Requirements
+
 ## Getting started
 The following instructions will help walk you through the process of downloading and installing the necessary software.
 
