@@ -14,11 +14,11 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; th
   git clone --quiet --branch=gh-pages https://${GH_TOKEN}@github.com/inet-oxford/commons-sandbox gh-pages > /dev/null
 
   cd gh-pages
-  git rm -rf ./docs/api/latest/
-  git rm -rf ./coverage/scoverage-report/
+  git rm -rf ./docs/api/latest/*
+  git rm -rf ./coverage/scoverage-report/*
 
   cp -Rf ../target/scala-2.11/api/* ./docs/api/latest/
-  cp -Rf ../target/scala-2.11/scoverage-report ./coverage/
+  cp -Rf ../target/scala-2.11/scoverage-report/* ./coverage/scoverage-report/
 
   git add -f .
   git commit -m "Lastest doc and coverage report on successful travis build $TRAVIS_BUILD_NUMBER auto-pushed to gh-pages"
