@@ -1,6 +1,8 @@
 name := "commons-sandbox"
 
-version := "1.0"
+version := "0.1.0-alpha"
+
+organization  := "inet-oxford"
 
 scalaVersion := "2.11.6"
 
@@ -13,11 +15,3 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-testkit" % "2.3.11" % "test",
   "org.scalatest" % "scalatest_2.11" % "2.2.4" % "test"
 )
-
-// GitHub project website
-site.settings
-ghpages.settings
-git.remoteRepo := "git@github.com:inet-oxford/commons-sandbox.git"
-
-// include project API docs on project website
-site.includeScaladoc()
