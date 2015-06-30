@@ -4,8 +4,8 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; th
 
   echo -e "Generating scaladoc and coverage report.\n"
 
-  mvn scala:doc
-  mvn scoverage:report
+  sbt doc
+  sbt coverageReport
 
   echo -e "Publishing scaladoc and coverage report.\n"
 
