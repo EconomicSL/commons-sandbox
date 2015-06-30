@@ -13,4 +13,8 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-testkit" % "2.3.11" % "test",
   "org.scalatest" % "scalatest_2.11" % "2.2.4" % "test"
 )
-    
+
+// GitHub project website
+site.settings
+ghpages.settings
+git.remoteRepo := "git@github.com:inet-oxford/commons-sandbox.git"
