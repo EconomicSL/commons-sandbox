@@ -13,11 +13,13 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package plumbing.contracts.primitives
+package plumbing.contracts.commitments
 
 
 /** Choose which of two contracts to acquire.
   *
+  * @param first A `Contract` object.
+  * @param second Another `Contract` object.
   * @note If you acquire `Or(first, second)`, then you immediately acquire
   *       either the `first` contract (unless it has expired) or the `second`
   *       contract (unless it has expired). You can not acquire both `first`
