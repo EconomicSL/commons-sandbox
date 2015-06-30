@@ -13,11 +13,13 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package plumbing.contracts.primitives
+package plumbing.contracts.commitments
 
 
-/**
+/** Class for representing a conditional `Contract`.
   *
+  * @param first A `Contract` object.
+  * @param second Another `Contract` object.
   * @note If you acquire `Then(first, second)` and `first` contract has not
   *       expired, then you acquire the `first` contract. If the `first` contract
   *       has expired but the `second` contract has not, then you acquire the
