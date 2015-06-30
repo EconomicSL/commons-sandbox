@@ -9,14 +9,13 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; th
 
   echo -e "Publishing scaladoc and coverage report.\n"
 
-  pwd
   git config --global user.email "travis@travis-ci.org"
   git config --global user.name "travis-ci"
   git clone --quiet --branch=gh-pages https://${GH_TOKEN}@github.com/inet-oxford/commons-sandbox gh-pages > /dev/null
 
   cd gh-pages
-  git rm -rf ./docs
-  git rm -rf ./coverage
+  git rm -rf ./docs/api/latest/
+  git rm -rf ./coverage/scoverage-report/
 
   cp -Rf ../target/scala-2.11/api/* ./docs/api/latest/
   cp -Rf ../target/scala-2.11/scoverage-report ./coverage/
