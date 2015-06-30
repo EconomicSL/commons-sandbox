@@ -18,7 +18,7 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; th
   git rm -rf ./docs
   git rm -rf ./coverage
 
-  cp -Rf ../target/scala-2.11/api/* ./docs/api/latest
+  cp -Rf ../target/scala-2.11/api/* ./docs/api/latest/
   cp -Rf ../target/scala-2.11/scoverage-report ./coverage/
 
   git add -f .
