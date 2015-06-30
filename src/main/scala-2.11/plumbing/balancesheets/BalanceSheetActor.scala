@@ -15,46 +15,32 @@ limitations under the License.
 */
 package plumbing.balancesheets
 
-import akka.actor.{Actor, ActorLogging}
-import environment.tradables.{GoodLike, TradableLike}
-import plumbing.contracts.PromiseLike
-import plumbing.{DeleteTradable, PutTradable}
+import akka.actor.{ActorRef, Actor, ActorLogging}
 
 import scala.collection.mutable
 
 
 /** Class representing a balance sheet.
-  *
   * @note A [[BalanceSheetActor]] should be a child of some [[actor.EconomicActor]].
   */
 abstract class BalanceSheetActor extends Actor
   with ActorLogging {
 
-  /** Unordered collection of tradable objects. */
-  def tradables: mutable.Set[TradableLike]
+  /** Unordered collection of tradable objects that are assets. */
+  def assets: mutable.Set[ActorRef]
 
-  /** Unordered collection of tradable object that are assets. */
-  def assets: mutable.Set[TradableLike] = {
-    tradables.filter {
-      case tradable: GoodLike => true
-      case tradable: PromiseLike if tradable.promisee == context.parent => true
-      case _ => false
-    }
-  }
-
-  /** Unordered collection of tradable object that are liabilities. */
-  def liabilities: mutable.Set[TradableLike] = {
-    tradables.filter {
-      case tradable: PromiseLike if tradable.promisor == context.parent => true
-      case _ => false
-    }
-  }
+  /** Unordered collection of tradable objects that are liabilities. */
+  def liabilities: mutable.Set[ActorRef]
 
   def receive: Receive = {
-    case PutTradable(tradable) =>
-      tradables.add(tradable)
-    case DeleteTradable(tradable) =>
-      tradables.remove(tradable)
+    case AddAsset(asset) =>
+      assets.add(asset)
+    case RemoveAsset(asset) =>
+      assets.remove(asset)
+    case AddLiability(liability) =>
+      liabilities.add(liability)
+    case RemoveLiability(liability) =>
+      liabilities.remove(liability)
 
   }
 }
