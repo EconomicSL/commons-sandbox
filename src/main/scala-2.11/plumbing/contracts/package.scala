@@ -16,10 +16,58 @@ limitations under the License.
 package plumbing
 
 
-/** Provides classes defining tradable objects.
+/** Provides classes defining commercial contracts.
   *
   * ==Overview==
-  * 
+  * Instead of defining a fixed catalogue of contracts our approach is to follow...
+  *
+  *   - [[https://lexifi.com/files/resources/MLFiPaper.pdf Peyton-Jones et al (2000)]]
+  *   - [[http://www.itu.dk/~elsborg/sttt06.pdf Andersen et al (2006)]]
+  *
+  * ...and instead define a small set of atomic contracts, called
+  * [[plumbing.contracts.commitments]], that can be used as "building blocks"
+  * to construct ever more complex contracts.
+  *
+  * ===Composable Commercial Contracts===
+  * Following [[http://www.itu.dk/~elsborg/sttt06.pdf Andersen et al (2006)]]
+  * we focus on the following basic ''contract patterns'' for composing
+  * commercial contracts from sub-contracts:
+  *
+  *  - A ''commitment'' stipulates the transfer of a resource or a set of
+  *  resources between two parties; a commitment represents an ''atomic''
+  *  `Contract`.
+  *
+  *  - A `Contract` may require ''sequential'' execution of its sub-contracts.
+  *
+  *  - A `Contract` may require ''concurrent'' execution of its sub-contracts,
+  *  i.e., execution of all sub-contracts, where individual commitments are
+  *  inter-leavened in any order.
+  *
+  *  - A `Contract` may require execution of one of a number of ''alternative''
+  *  sub-contracts.
+  *
+  *  - A `Contract` may require ''repeated'' execution of a sub-contract.
+  *
+  * ==Overview==
+  * A contract is composed of the following...
+  *
+  *  - An issuer: the issuer is the economic actor for which the contract
+  *  represents a liability.
+  *
+  *  - A mutable collection of owners: the owners are economic actors for
+  *  which the contract represents an asset.
+  *
+  * ===Requirements===
+  * Current list of requirements for contracts is as follows...
+  *
+  *  1. Each contract has a collection of commitments.
+  *
+  *  2. Each contract must have both a face value (objective) and a present value (subjective).
+  *
+  *  3. Need a little language for modifying commitments.  Tentatively based
+  *  around the Sources and Uses terminology from lecture 4 of Perry Mehrling's
+  *  course on ''Money and Banking.''
+  *
   * ===Composable contracts===
   *
   * ==A language for Promises==
@@ -28,7 +76,14 @@ package plumbing
   * of Actors to complete the API we need to define a language (grammar?) for
   * building Sentences that describe valid Promises.
   *
-  * ===Examples===
+  * ==Observables==
+  * Every contract must have an Observable[T] which represents the stream of
+  * data (or events?) that parties to the contract have used to condition
+  * the specifics of the contract.
+  *
+  * Parties to the contract must subscribe as Observer[T] to the Observable.
+  *
+  * Examples
   * Need to build a catalogue of examples demonstrating how to build common
   * contracts using our language.
   */
