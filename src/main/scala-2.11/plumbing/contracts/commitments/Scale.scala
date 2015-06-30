@@ -15,7 +15,7 @@ limitations under the License.
 */
 package plumbing.contracts.commitments
 
-import rx.lang.scala.Observable
+import plumbing.contracts.observables.Observable
 
 
 /** Scales an underlying `Contract` by a potentially time-varying value.
