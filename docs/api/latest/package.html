@@ -1,0 +1,239 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>root - _root_</title>
+          <meta name="description" content="root - root " />
+          <meta name="keywords" content="root root " />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="lib/template.js"></script>
+      <script type="text/javascript" src="lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = 'index.html';
+            var hash = 'package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="lib/package_big.png" />
+        
+        <h1>root package</h1><span class="permalink">
+      <a href="index.html#package" title="Permalink" target="_top">
+        <img src="lib/permalink.png" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">root</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="_root_.actor" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="actor"></a>
+      <a id="actor:actor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="actor/package.html"><span class="name">actor</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="index.html#package@actor" title="Permalink" target="_top">
+        <img src="lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Provides classes for modeling economic actors.</p><div class="fullcomment"><div class="comment cmt"><p>Provides classes for modeling economic actors.</p><h4>Overview</h4></div></div>
+    </li><li name="_root_.environment" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="environment"></a>
+      <a id="environment:environment"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="environment/package.html"><span class="name">environment</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="index.html#package@environment" title="Permalink" target="_top">
+        <img src="lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Provides classes for modeling a physical environment.</p><div class="fullcomment"><div class="comment cmt"><p>Provides classes for modeling a physical environment.</p><h4>Overview</h4><p>???
+</p></div></div>
+    </li><li name="_root_.plumbing" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="plumbing"></a>
+      <a id="plumbing:plumbing"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="plumbing/package.html"><span class="name">plumbing</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="index.html#package@plumbing" title="Permalink" target="_top">
+        <img src="lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Provides classes for modeling a decentralized payments system.</p><div class="fullcomment"><div class="comment cmt"><p>Provides classes for modeling a decentralized payments system.</p><h4>Overview</h4><p>&quot;The logical origins of the money market can be traced, perhaps
+surprisingly, to the operations of a decentralized payments system.&quot;</p><p>The above quotation from Chapter 5 of Perry Mehrling's <i>The New Lombard
+Street</i> provides an underlying motivation for our plumbing API. Taking as
+given that money markets exist because of imperfections in a decentralized
+payment system, answering any of the important (and policy-relevant!)
+research questions surrounding the functioning of money markets requires an
+explicit model of the underlying payment system.</p><p>Of course, for some research questions, imperfections in the underlying
+payments system may not play an important role.  In such cases it makes
+sense to apply Occam's razor and consider some sort of idealized payments
+system.</p><h5>Balance Sheets</h5><p>Every economic actor has its own balance sheet. We think of the economy as
+a set of interlocking balance sheets in which the financial liabilities of
+one economic actor are the financial assets of some other economic actor.
+An economic actor's financial liabilities are composed of commitments to
+pay (usually commitments to make a recurring series of payments at certain
+points in the future).</p><p>Balance sheets communicate with one another via contracts.</p><h5>Contracts</h5><p>Contracts communicate with balance sheets.</p><h4>General API requirements</h4><p>Current list of generic requirements for the <code>plumbing</code> API</p><ul><li>A payment system should be able to process both real and financial
+transactions between economic actors.</li><li>A payment system should be able to settle a transactions between two
+ economic actors directly (i.e., without inter-mediation).</li><li>A payment system should be able to settle a transactions between two
+ economic actors indirectly (i.e., via inter-mediation by some other
+ economic actor).</li><li>The desired payment system for a particular model should be completely
+configurable from some kind of <code>application.conf</code> file.</li></ul><h4>Use cases</h4><p>I have taken the use cases more or less verbatim from <i>Lecture 5: The
+Central Bank as a Clearing House</i> of Perry Mehrling's course on
+<a href="https://www.coursera.org/course/money" target="_blank">Money and Banking</a>.</p><h5>One big bank</h5><p>An important use case for us to consider is an idealized payments system
+in which all economic agents have a deposit account and a line of credit at
+a single, large bank. In this world, all payments involve nothing more than
+book keeping operations for the bank.  This use case would serve as a
+natural benchmark and could be used for models where we wish to abstract
+from imperfections in the payment system (and money markets).</p><p>There are at least two important sub use cases for our idealized payment
+system:</p><ul><li>No overdrafts: Deposit account holders are required to hold non-negative
+ account balances. Obvious measure of the money supply in this case is
+ currency outstanding plus deposit balances. Note that this case represents
+ a pure money payment system (i.e., there is no credit).</li><li>Overdrafts: Deposit account holders can hold negative account balances
+ (up to some limit). A negative deposit account balance is effectively an
+ unsecured loan. Note that, with overdrafts, it is no longer obvious how
+ to measure the money supply! Sensible measure would be the sum of currency
+ outstanding, bank deposits, and overdrafts. Use of overdrafts as a method
+ of payment means that this payment system is at least party credit based.
+ The money supply can be expected to expand and contract over the business
+ cycle (depending on the patterns of payments).</li></ul><h6>Multiple banks</h6><p>Simplest use case for multiple banks is a payment system where all
+interbank payments are made using reserves (either Gold or some other
+reserve currency).</p><p>Another use case would be bilateral intra-day netting.  Under bilateral
+intra-day netting each bank nets payments to every other bank and pays only
+the net in reserves.</p><p>Third use case would be correspondent banking. With correspondent banking,
+banks have deposit accounts at other banks which they use to make interbank
+payments. Correspondent banking (with overdrafts) is basically another step
+away from a money payment system towards a credit based payment system.
+With correspondent banking the money supply is not constrained by the
+quantity of reserves, but only by the various bilateral credit limits.</p><h6>Clearing houses</h6><p>In any system of bilateral interbank payments, any particular bank may at
+the same time be making payments to one bank while receiving payments from
+some other bank. A bank would like to be able to net payments across all of
+its correspondents.</p><p>Simple way to accomplish this would be for all banks to maintain correspondent
+deposits at one bank and then use that bank's deposits to settle transactions.
+In order to maintain elasticity of the money supply, we need to allow for
+overdrafts.  However problems can arise if multiple banks require overdrafts at
+the same time.</p><p>Better system would be to have a group of banks form a clearing house. All member
+banks treat all payments due to (from) other member banks as due to (from) the
+clearing house. In this way member banks can accomplish multilateral netting
+between one another during the day: each bank makes only a single net payment
+at close of business. Settlement is done using clearing house certificates which
+amount to a private form of reserves.  In the event that a member bank(s) is
+unable to settle its account at the end of the day, then the member bank must
+borrow from the clearing house.  The clearing house meets this demand for
+reserves by creates additional reserves in the form of clearing house loan
+certificates out of thin air. Clearing house loan certificates are typically
+over collateralized (and pay interest).</p><p>Private clearing houses play important roles in several modern financial systems
+most notable in the U.S. (<a href="https://www.theclearinghouse.org/payments/chips" target="_blank">CHIPS</a>)
+and in the UK (<a href="http://www.chapsco.co.uk/" target="_blank">CHAPS</a>).</p><h6>Central banking</h6><p>One way to view central banking is as a natural extension of clearing house
+arrangements. A notable difference is that, with central banking, there is only
+central bank reserves: no longer any difference between clearing house
+certificates and clearing house loan certificates.</p></div></div>
+    </li><li name="_root_.tradables" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="tradables"></a>
+      <a id="tradables:tradables"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="tradables/package.html"><span class="name">tradables</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="index.html#package@tradables" title="Permalink" target="_top">
+        <img src="lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Classes for modeling physical objects that are tradable.</p><div class="fullcomment"><div class="comment cmt"><p>Classes for modeling physical objects that are tradable.</p><h4>Overview</h4><h5>Requirements</h5><p>Any Actor implementing the Tradable trait needs to be able to:</p><ol class="decimal"><li>Communicate with BalanceSheetActor: communication involves sending
+ messages to AddAsset (RemoveAsset) to a BalanceSheetActor.</li></ol><p> 2. Alter own state in response to messages from owner of the tradable.</p></div></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

@@ -1,0 +1,77 @@
+<scoverage 
+statement-count="16" statements-invoked="0" statement-rate="0.00" branch-rate="0.00" version="1.0" timestamp="1433365069827">
+    <packages>
+        <package name="plumbing" statement-count="16" statements-invoked="0" statement-rate="0.00">
+            <classes>
+                <class 
+                name="BalanceSheetActor" filename="plumbing/BalanceSheetActor.scala" statement-count="16" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
+                    <methods>
+                        <method 
+                        name="plumbing/BalanceSheetActor/receive" statement-count="5" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
+                            <statements>
+                                <statement 
+                                package="plumbing" class="BalanceSheetActor" class-type="Class" top-level-class="BalanceSheetActor" source="/Users/drpugh/Research/inet-oxford/commons-sandbox/src/main/scala-2.11/plumbing/BalanceSheetActor.scala" method="receive" start="1743" end="1769" line="55" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="plumbing" class="BalanceSheetActor" class-type="Class" top-level-class="BalanceSheetActor" source="/Users/drpugh/Research/inet-oxford/commons-sandbox/src/main/scala-2.11/plumbing/BalanceSheetActor.scala" method="receive" start="1689" end="1689" line="53" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="plumbing" class="BalanceSheetActor" class-type="Class" top-level-class="BalanceSheetActor" source="/Users/drpugh/Research/inet-oxford/commons-sandbox/src/main/scala-2.11/plumbing/BalanceSheetActor.scala" method="receive" start="1634" end="1634" line="51" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="plumbing" class="BalanceSheetActor" class-type="Class" top-level-class="BalanceSheetActor" source="/Users/drpugh/Research/inet-oxford/commons-sandbox/src/main/scala-2.11/plumbing/BalanceSheetActor.scala" method="receive" start="1676" end="1699" line="53" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="plumbing" class="BalanceSheetActor" class-type="Class" top-level-class="BalanceSheetActor" source="/Users/drpugh/Research/inet-oxford/commons-sandbox/src/main/scala-2.11/plumbing/BalanceSheetActor.scala" method="receive" start="1759" end="1759" line="55" branch="false" invocation-count="0" ignored="false">
+</statement>
+                            </statements>
+</method>
+                        <method 
+                        name="plumbing/BalanceSheetActor/assets" statement-count="6" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
+                            <statements>
+                                <statement 
+                                package="plumbing" class="BalanceSheetActor" class-type="Class" top-level-class="BalanceSheetActor" source="/Users/drpugh/Research/inet-oxford/commons-sandbox/src/main/scala-2.11/plumbing/BalanceSheetActor.scala" method="assets" start="1297" end="1311" line="38" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="plumbing" class="BalanceSheetActor" class-type="Class" top-level-class="BalanceSheetActor" source="/Users/drpugh/Research/inet-oxford/commons-sandbox/src/main/scala-2.11/plumbing/BalanceSheetActor.scala" method="assets" start="1336" end="1341" line="39" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="plumbing" class="BalanceSheetActor" class-type="Class" top-level-class="BalanceSheetActor" source="/Users/drpugh/Research/inet-oxford/commons-sandbox/src/main/scala-2.11/plumbing/BalanceSheetActor.scala" method="assets" start="1315" end="1319" line="38" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="plumbing" class="BalanceSheetActor" class-type="Class" top-level-class="BalanceSheetActor" source="/Users/drpugh/Research/inet-oxford/commons-sandbox/src/main/scala-2.11/plumbing/BalanceSheetActor.scala" method="assets" start="1235" end="1239" line="37" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="plumbing" class="BalanceSheetActor" class-type="Class" top-level-class="BalanceSheetActor" source="/Users/drpugh/Research/inet-oxford/commons-sandbox/src/main/scala-2.11/plumbing/BalanceSheetActor.scala" method="assets" start="1276" end="1311" line="38" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="plumbing" class="BalanceSheetActor" class-type="Class" top-level-class="BalanceSheetActor" source="/Users/drpugh/Research/inet-oxford/commons-sandbox/src/main/scala-2.11/plumbing/BalanceSheetActor.scala" method="assets" start="1183" end="1347" line="36" branch="false" invocation-count="0" ignored="false">
+</statement>
+                            </statements>
+</method>
+                        <method 
+                        name="plumbing/BalanceSheetActor/liabilities" statement-count="5" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
+                            <statements>
+                                <statement 
+                                package="plumbing" class="BalanceSheetActor" class-type="Class" top-level-class="BalanceSheetActor" source="/Users/drpugh/Research/inet-oxford/commons-sandbox/src/main/scala-2.11/plumbing/BalanceSheetActor.scala" method="liabilities" start="1532" end="1567" line="46" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="plumbing" class="BalanceSheetActor" class-type="Class" top-level-class="BalanceSheetActor" source="/Users/drpugh/Research/inet-oxford/commons-sandbox/src/main/scala-2.11/plumbing/BalanceSheetActor.scala" method="liabilities" start="1477" end="1603" line="45" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="plumbing" class="BalanceSheetActor" class-type="Class" top-level-class="BalanceSheetActor" source="/Users/drpugh/Research/inet-oxford/commons-sandbox/src/main/scala-2.11/plumbing/BalanceSheetActor.scala" method="liabilities" start="1553" end="1567" line="46" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="plumbing" class="BalanceSheetActor" class-type="Class" top-level-class="BalanceSheetActor" source="/Users/drpugh/Research/inet-oxford/commons-sandbox/src/main/scala-2.11/plumbing/BalanceSheetActor.scala" method="liabilities" start="1592" end="1597" line="47" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="plumbing" class="BalanceSheetActor" class-type="Class" top-level-class="BalanceSheetActor" source="/Users/drpugh/Research/inet-oxford/commons-sandbox/src/main/scala-2.11/plumbing/BalanceSheetActor.scala" method="liabilities" start="1571" end="1575" line="46" branch="false" invocation-count="0" ignored="false">
+</statement>
+                            </statements>
+</method>
+                    </methods>
+</class>
+            </classes>
+        </package>
+    </packages>
+</scoverage>

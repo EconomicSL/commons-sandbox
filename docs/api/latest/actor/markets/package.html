@@ -1,0 +1,281 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>markets - actor.markets</title>
+          <meta name="description" content="markets - actor.markets" />
+          <meta name="keywords" content="markets actor.markets" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../index.html';
+            var hash = 'actor.markets.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../../lib/package_big.png" />
+        <p id="owner"><a href="../package.html" class="extype" name="actor">actor</a></p>
+        <h1>markets</h1><span class="permalink">
+      <a href="../../index.html#actor.markets.package" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">markets</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Provides classes for modeling markets.</p><h4>Overview</h4><p>The Markets API explicitly defines various disequilbrium dynamic processes
+by which market prices and quantities are determined.</p><h5>Requirements</h5><p>The Markets API needs to be sufficiently flexible in order to handle markets
+for relatively homogeneous goods such as firm non-labor inputs, firm outputs,
+final consumption goods, standard financial products etc., as well as markets
+for relative heterogeneous goods such as labor, housing, non-standard
+financial products, etc.</p><p>Here is my (likely incomplete) list of requirements for the Markets API</p><ul><li>Receive buy and sell orders from other actors.</li><li>Accept (reject) only valid (invalid) buy and sell orders.</li><li>Handle queuing of accepted buy and sell orders as necessary.</li><li>Order execution including price formation and, if necessary, quantity
+ determination.</li><li>Processing and settlement of executed orders once those orders have been
+ filled.</li><li>Record keeping of orders received, orders executed, transactions
+ processed, etc.</li></ul><p> Implementation issue: too many requirements for a single market actor to satisfy.
+ Solution: model the market actor as a <i>collection</i> of actors. Specifically,
+ suppose that each <code>MarketLike</code> actor is composed of two additional actors:
+ a <code>ClearingMechanismLike</code> actor that models the clearing process of buy and
+ sell orders, and then a <code>SettlementMechanismLike</code> mechanism that processes
+ the resulting filled orders.</p><p>\subsection{\texttt{MarketLike} actor}
+The \texttt{MarketLike} actor should directly receive buy and sell orders for a particular \texttt{Tradable}, filter out any invalid orders, and then forward along all valid orders to a \texttt{ClearingMechanismLike} actor for further processing.</p><p>\section{Use cases for \texttt{MarketLike} actors}</p><p>\subsection{Specific use cases for \texttt{MarketLike} actors}
+In this section I sketch out some specific use cases for the Markets API.</p><p>\subsubsection{Retail goods market}
+\texttt{RetailMarketLike} behavior would extend \texttt{MarketLike} behavior with:
+\begin{itemize}
+    \item Clearing mechanism with \texttt{PostedOfferLike} matching engine,
+    \item \texttt{BilateralSettlement} settlement mechanism.
+\end{itemize}
+Retail goods markets are markets for final consumption goods (typically purchased by households).</p><p>\subsubsection{Wholesale goods market}
+\texttt{WholesaleMarketLike} behavior would extend \texttt{MarketLike} behavior with:
+\begin{itemize}
+    \item Clearing mechanism with \texttt{BilateralNegotiationLike} matching engine,
+    \item \texttt{BilateralSettlement} settlement mechanism.
+\end{itemize}
+Wholesale goods markets are markets for intermediate goods (typically purchased by firms and then used in the production of retail goods).</p><p>\subsubsection{Labor market}
+\texttt{LaborMarketLike} behavior would extend \texttt{MarketLike} behavior with:
+\begin{itemize}
+    \item Clearing mechanism with either \texttt{BilateralNegotiationLike} or \texttt{PostedOffer} matching engines,
+    \item \texttt{BilateralSettlement} settlement mechanism.
+\end{itemize}
+Labor markets are tricky.  If we use \texttt{BilateralNegotiationLike} clearing mechanism then we can link into the massive search and match literature.</p><p>\subsubsection{Housing market}
+\texttt{HousingMarketLike} behavior would extend \texttt{MarketLike} behavior with:
+\begin{itemize}
+    \item Clearing mechanism with \texttt{PostedOfferLike} matching engine,
+    \item \texttt{BilateralSettlement} settlement mechanism.
+\end{itemize}
+Note similarity of \texttt{HousingMarketLike} to \texttt{RetailMarketLike}</p><p>\subsubsection{Securities market}
+\texttt{SecuritiesMarketLike} behavior would extend \texttt{MarketLike} behavior with:
+\begin{itemize}
+    \item Clearing mechanism with \texttt{ContinuousDoubleAuctionLike} matching engine and \texttt{OrderBookLike} order queuing strategy,
+    \item \texttt{CentralCounterpartySettlement} settlement mechanism.
+\end{itemize}
+Securities markets would include markets for stocks, bonds, and currencies. Could even create a \texttt{SecuritiesExchange} actor which would route orders for various securities to the appropriate \texttt{SecuritiesMarketLike} actor.</p><p>\subsubsection{Unsecured interbank lending market}
+\texttt{InterbankMarketLike} behavior would extend \texttt{MarketLike} behavior with:
+\begin{itemize}
+    \item Clearing mechanism with \texttt{BilateralNegotiationLike} matching engine,
+    \item \texttt{BilateralSettlement} settlement mechanism.
+\end{itemize}
+See Perry Mehrling for more details on unsecured interbank lending markets.</p><p>\subsubsection{Secured interbank lending (repo) market}
+\texttt{RepoMarketLike} behavior would extend \texttt{MarketLike} behavior with:
+\begin{itemize}
+    \item Clearing mechanism with \texttt{BilateralNegotiationLike} matching engine,
+    \item \texttt{BilateralSettlement} settlement mechanism.
+\end{itemize}
+See Perry Mehrling for more details on secured interbank lending (repo) markets.</p></div><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="actor.markets"><span>markets</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+            <a href="http://docs.scala-lang.org/overviews/scaladoc/usage.html#members" target="_blank">Learn more about member selection</a>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="actor.markets.MarketLike" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="MarketLikeextendsAnyRef"></a>
+      <a id="MarketLike:MarketLike"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MarketLike.html"><span class="name">MarketLike</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#actor.markets.package@MarketLikeextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="actor.markets.clearing" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clearing"></a>
+      <a id="clearing:clearing"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="clearing/package.html"><span class="name">clearing</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#actor.markets.package@clearing" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Classes for modeling variou market clearing mechanisms.</p><div class="fullcomment"><div class="comment cmt"><p>Classes for modeling variou market clearing mechanisms.</p><p>A <code>ClearingMechanismLike</code> actor should handle order execution (including
+price formation and quantity determination as well as any necessary queuing
+of buy and sell orders), generate filled orders, and send the filled orders
+to some \texttt{SettlementMechanismLike} actor for further processing. Note
+that each \texttt{MarketLike} actor should have a unique clearing mechanism.</p><p>\subsubsection{Order execution}
+Order execution entails price formation and quantity determination. Market price formation requires clearing the market. It is important to be clear about the definition of the term <code><code>market clearing.<i> \cite{black2012dictionary} defines <code><code>market clearing<i> as follows:
+\begin{enumerate}
+  \item The process of moving to a position where the quantity supplied is equal to the quantity demanded.
+  \item The assumption that economic forces always ensure the equality of supply and demand.
+\end{enumerate}
+In most all mainstream macroeconomic models (i.e., RBC, DSGE, etc) it is assumed that economic forces instantaneously adjust to ensure the equality of supply and demand in all markets.\footnote{
+    I am sure that there are important examples in the mainstream economics literature where the process of market clearing is explicitly modeled and we should cite these.
+} In our API, however, a key component of a \texttt{ClearingMechanismLike} actor is a \texttt{MatchingEngineLike} behavioral trait which explicitly defines a dynamic process by which orders are executed, prices are formed, and quantities are determined.</i></code></code></i></code></code></p><p>Note that a \texttt{MatchingEngineLike} behavioral trait is similar to an auction mechanism in many respects. Friedman (2007) lists four major types of two-sided auction mechanisms commonly implemented in real world markets.\footnote{
+    TODO: similarly classify the various types of single-sided auction mechanisms commonly implemented in real world markets.
+}
+\begin{itemize}
+  \item Posted offer (PO): PO allows one side (say sellers) to commit to particular prices that are publicly posted and then allows the other side to choose quantities. PO is the dominant clearing mechanism used in the modern retail sector.
+  \item Bilateral negotiation (BLN): BLN requires each buyer to search for a seller (and vice versa); the pair then tries to negotiate a price and (if unsuccessful) resumes search. BLN clearing mechanisms were prevalent in pre-industrial retail trade, and continue to be widely used in modern business-to-business (B2B) contracting. Some retail Internet sites also use BLN clearing mechanisms.
+  \item Continuous double auction (CDA): CDA allows traders to make offers to buy and to sell and allows traders to accept offers at any time during a trading period. Variants of CDA markets prevail in modern financial exchanges such as the New York Stock Exchange (NYSE), NASDAQ, and the Chicago Board of Trade and are featured options on many B2B internet sites.
+  \item Call auction (CA): The CA requires participants to make simultaneous offers to buy or sell, and the offers are cleared once each trading period at a uniform price.
+\end{itemize}
+Each of these auction mechanisms would correspond to a particular implementation of an \texttt{MatchingEngineLike} behavior.</p><p>\subsubsection{Order queuing}
+Order queuing involves storing and possibly sorting received buy and sell orders according to some \texttt{OrderQueuingStrategy}. Different order queuing strategies will be distinguished from one another by...
+\begin{itemize}
+    \item type of mutable collection used for storing buy and sell orders,
+    \item the sorting algorithm applied to the mutable collections.
+\end{itemize}
+For example, some \texttt{OrderQueuingStrategy} behaviors might only require that unfilled buy and sell orders are stored in some mutable collection (the sorting of buy and sell orders within their respective collections being irrelevant). Other \texttt{OrderQueuingStrategy} behaviors might have complicated \texttt{OrderBookLike} rules for sorting the stored buy and sell orders.</p></div></div>
+    </li><li name="actor.markets.settlement" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="settlement"></a>
+      <a id="settlement:settlement"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="settlement/package.html"><span class="name">settlement</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#actor.markets.package@settlement" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Classes for modeling settlement mechanisms.</p><div class="fullcomment"><div class="comment cmt"><p>Classes for modeling settlement mechanisms.</p><p>\subsection{Settlement mechanisms}
+Fundamental objective of a \texttt{SettlementMechanismLike} actor is to convert filled orders into settled transactions. Rough sketch of a process by which filled orders are converted into settled transaction is as follows.
+\begin{itemize}
+    \item Receive filled orders from some \texttt{ClearingMechanismLike} actor(s).
+    \item Send request for the desired quantity of the specified \texttt{Tradable} to the seller.
+    \item Send request for some desired quantity of the specified means of payment (which will be some other \texttt{Tradable}) to the buyer.
+    \item Handle response from the seller (requires handling the case in which seller has insufficient quantity of the specified \texttt{Tradable}).
+    \item Handle response from the buyer (requires handling the case in which buyer has insufficient quantity of the specified means of payment).
+    \item Generate a settled transaction.
+\end{itemize}
+The following two types of settlement mechanisms should cover most all possible use cases.
+\begin{itemize}
+    \item Bilateral settlement: with bilateral settlement, buy and sell counterparties settle directly with one another.
+    \item Central counterparty (CCP) settlement: with CCP settlement, a central counterparty (CCP) actor inserts itself as a both a buy and sell counterparty to all filled orders that it receives from some clearing mechanism. After inserting itself as a counterparty, the CCP actor then settles the filled orders using bilaterally.
+\end{itemize}
+Unlike clearing mechanisms, which are unique to a particular market, settlement mechanisms could be shared across markets.</p></div></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
