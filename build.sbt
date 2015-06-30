@@ -18,3 +18,6 @@ libraryDependencies ++= Seq(
 site.settings
 ghpages.settings
 git.remoteRepo := "git@github.com:inet-oxford/commons-sandbox.git"
+
+// include project API docs on project website
+site.includeScaladoc()
