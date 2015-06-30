@@ -17,8 +17,10 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; th
   cd gh-pages
   git rm -rf ./docs
   git rm -rf ./coverage
-  cp -Rf ../target/scala-2.11/api ./docs/api/latest
-  cp -Rf ../target/scala-2.11/scoverage-report ./coverage/scoverage-report
+
+  cp -Rf ../target/scala-2.11/api/* ./docs/api/latest
+  cp -Rf ../target/scala-2.11/scoverage-report ./coverage/
+
   git add -f .
   git commit -m "Lastest doc and coverage report on successful travis build $TRAVIS_BUILD_NUMBER auto-pushed to gh-pages"
   git push -fq origin gh-pages > /dev/null
