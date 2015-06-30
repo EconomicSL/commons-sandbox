@@ -13,25 +13,12 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package plumbing.contracts
+package tradables
 
-import akka.actor.{Actor, ActorLogging, ActorRef}
-import environment.tradables.TradableLike
-
-import scala.collection.immutable
+import akka.actor.{ActorLogging, Actor}
 
 
-/** Trait defining a tradable object representing a promise. */
-trait PromiseLike extends TradableLike {
+trait Intangible extends Tradable {
   this: Actor with ActorLogging =>
-
-  /** Collection of actors for whom the promise represents an asset. */
-  def promisee: immutable.Set[ActorRef]
-
-  /** Actor for whom the promise is a liability. */
-  def promisor: ActorRef
-
-  /** Face value of the promise in units of ???. */
-  def faceValue: Double
 
 }

@@ -13,10 +13,21 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package environment
 
 
-/** Classes for modeling physical objects that are tradable. */
+/** Classes for modeling physical objects that are tradable.
+  *
+  * ==Overview==
+  *
+  * ===Requirements===
+  * Any Actor implementing the Tradable trait needs to be able to:
+  *
+  *  1. Communicate with BalanceSheetActor: communication involves sending
+  *  messages to AddAsset (RemoveAsset) to a BalanceSheetActor.
+  *
+  *  2. Alter own state in response to messages from owner of the tradable.
+  *
+  */
 package object tradables {
 
 }

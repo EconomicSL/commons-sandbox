@@ -13,13 +13,23 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package plumbing.contracts
+package tradables
 
-import akka.actor.{Actor, ActorLogging}
+import akka.actor.{Actor, ActorLogging, ActorRef}
+
+import scala.collection.mutable
 
 
-/** Trait defining a repurchase-agreement (repo) contract. */
-trait RepoContractLike extends PromiseLike {
+/** Trait describing a Tradable object. */
+trait Tradable {
   this: Actor with ActorLogging =>
 
-}
+  /** Collection of actors for whom the tradable is an asset.
+    * @note The possibility that a Tradable could have multiple owners is
+    *       necessary in order to model [[https://en.wikipedia.org/wiki/Rivalry_(economics) rivalry]]
+    *       (in the case of [[Tangible]] objects) and multi-lateral commitment (in the case of
+    *       [[plumbing.contracts.commitments.Contract]] objects.
+    */
+  def owners: mutable.Set[ActorRef]
+
+ }
