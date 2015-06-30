@@ -16,25 +16,25 @@ limitations under the License.
 package actor.behaviors
 
 import actor.EconomicActor
-import plumbing.contracts.PromiseLike
+import plumbing.contracts.commitments.Contract
 
 
 /** Trait defining behavior for an [[actor.EconomicActor]] that trades
-  * [[plumbing.contracts.PromiseLike]] objects.
+  * [[plumbing.contracts.commitments.Contract]] objects.
   *
   * == Overview ==
   *
   * ====Unilateral Actions involving Promises====
   * An [[PromiseMakerLike]] can unilaterally decide to perform any of the
-  * following actions with a [[plumbing.contracts.PromiseLike]] tradable.
+  * following actions with a [[plumbing.contracts.commitments.Contract]] tradable.
   *
-  *  - `create` a new `PromiseLike`: When an actor creates a new `PromiseLike`, the
-  * actor becomes its `promisor` and the new `PromiseLike` becomes a liability
+  *  - `create` a new `ContractLike`: When an actor creates a new `ContractLike`, the
+  * actor becomes its `promisor` and the new `ContractLike` becomes a liability
   * for that actor. Similarly, the new Promise becomes an asset for which ever
   * actor is the `promisee`.
   *
-  *  - `accept` a `PromiseLike`: If an actor ''k'' chooses to accept a `PromiseLike`
-  * from another actor, then the `PromiseLike` is added as an asset to the balance
+  *  - `accept` a `ContractLike`: If an actor ''k'' chooses to accept a `ContractLike`
+  * from another actor, then the `ContractLike` is added as an asset to the balance
   * sheet of actor ''k'' and as a liability to the balance sheet of Actor ''j''.
   *
   *  - `reject` a Promise: An Actor ''k'' can always choose to reject (i.e., not
@@ -157,14 +157,14 @@ import plumbing.contracts.PromiseLike
 trait PromiseMakerLike {
   this: EconomicActor =>
 
-  def create(): PromiseLike
+  def create(): Contract
 
-  def destroy(promise: PromiseLike): Unit
+  def destroy(promise: Contract): Unit
 
-  def fulfill(promise: PromiseLike): Unit
+  def fulfill(promise: Contract): Unit
 
-  def break(promise: PromiseLike): Unit
+  def break(promise: Contract): Unit
 
-  def redeem(promise: PromiseLike): Unit
+  def redeem(promise: Contract): Unit
 
 }
