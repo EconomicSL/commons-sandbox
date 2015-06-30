@@ -13,17 +13,18 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package plumbing.contracts.primitives
+package plumbing.contracts.commitments
 
-import java.time.LocalDate
+import plumbing.contracts.observables.Observable
 
 
-/**
- * @note The contract `Truncate(date, contract)` is exactly like `contract` except
- *       that it expires at the earlier of `date` and the horizon of the `contract`.
- *       `Truncate(date, contract)` only impacts the acquisition date of `contract`;
- *       it does not in any way impact the rights and obligations defined in
- *       `contract` as such rights and obligations might extend well beyond `date`.
- */
-case class Truncate(date: LocalDate, contract: Contract) extends Contract
+/** The contract `Truncate(obs, contract)` is exactly like `contract` except
+  * that it expires at the earlier of `date` and the horizon of the `contract`.
+  *
+  * @note `Truncate(date, contract)` only impacts the acquisition date of
+  *       `contract` it does not in any way impact the rights and obligations
+  *       defined in `contract` as such rights and obligations might extend
+  *       well beyond `date`.
+  */
+class Truncate[A](obs: Observable[A], contract: Contract) extends Contract
 
