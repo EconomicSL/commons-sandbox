@@ -13,10 +13,8 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package plumbing
+package actor.markets.clearing
 
 
-/** Classes for modeling observables. */
-package object observables {
-
-}
+/** Base trait for all clearing mechanisms. */
+trait ClearingMechanismLike
