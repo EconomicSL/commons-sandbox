@@ -24,4 +24,4 @@ import plumbing.contracts.observables.Constant
   * @param code A string identifying the currency.
   * @param amount The quantity of currency held.
   */
-class Currency(amount: Double, code: String) extends Scale(Constant(amount), new One(code))
+class Currency(amount: Double, code: String) extends Scale(new Constant(amount), new One(code))
