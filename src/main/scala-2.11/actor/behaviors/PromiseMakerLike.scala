@@ -15,11 +15,12 @@ limitations under the License.
 */
 package actor.behaviors
 
-import actor.EconomicActor
+import akka.actor.{Actor, ActorLogging}
+import coms.EconomicActorLike
 import plumbing.contracts.commitments.Contract
 
 
-/** Trait defining behavior for an [[actor.EconomicActor]] that trades
+/** Trait defining behavior for an [[EconomicActorLike]] that trades
   * [[plumbing.contracts.commitments.Contract]] objects.
   *
   * == Overview ==
@@ -154,8 +155,8 @@ import plumbing.contracts.commitments.Contract
   *
   *  4. Actor ''j'' accept Promise from Actor ''k''.
   */
-trait PromiseMakerLike {
-  this: EconomicActor =>
+trait PromiseMakerLike extends EconomicActorLike {
+  this: Actor with ActorLogging =>
 
   def create(): Contract
 

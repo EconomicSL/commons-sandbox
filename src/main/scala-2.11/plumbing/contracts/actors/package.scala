@@ -16,4 +16,30 @@ limitations under the License.
 package plumbing.contracts
 
 
+/** Classes for representing contracts as Akka Actors.
+  *
+  * ==Overview==
+  * A `ContractActor` serves as a channel of communication between multiple
+  * `BalanceSheetActors`.
+  *
+  * ===API Requirements===
+  * Any `Actor` that implements the `ContractActorLike` trait should...
+  *
+  *  - have a collection of `commitments` representing the terms of the
+  *  underlying `Contract`.
+  *
+  *  - have an `issuer` for whom the `Contract` represents a liability.
+  *
+  *  - have a collection of `owners` for whom the underlying `Contract`
+  *  represents an asset.
+  *
+  *  - be able to modify its `issuer` (necessary in order to model the
+  *  buying/selling of liabilities).
+  *
+  *  - be able to add (remove) members from its collection of `owners`.
+  *
+  *  - be able to communicate with a `BalanceSheetActor` in order to add
+  *  (remove) itself from the collection of assets or liabilities of the
+  *  `BalanceSheetActor`.
+  */
 package object actors

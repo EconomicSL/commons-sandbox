@@ -15,11 +15,12 @@ limitations under the License.
 */
 package actor.producers
 
-import actor.EconomicActor
+import akka.actor.{Actor, ActorLogging}
+import coms.EconomicActorLike
 
 
 /** Trait representing a generic producer. */
-trait ProducerLike {
-  this: EconomicActor =>
+trait ProducerLike extends EconomicActorLike {
+  this: Actor with ActorLogging =>
 
 }

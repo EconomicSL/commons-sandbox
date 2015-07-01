@@ -15,11 +15,12 @@ limitations under the License.
 */
 package actor.consumers
 
-import actor.EconomicActor
+import akka.actor.{ActorLogging, Actor}
+import coms.EconomicActorLike
 
 
 /** Trait representing a generic consumer. */
-trait ConsumerLike {
-  this: EconomicActor =>
+trait ConsumerLike extends EconomicActorLike {
+  this: Actor with ActorLogging =>
 
 }

@@ -15,11 +15,12 @@ limitations under the License.
 */
 package actor.financiers
 
-import actor.EconomicActor
+import akka.actor.{ActorLogging, Actor}
+import coms.EconomicActorLike
 
 
 /** Trait representing a generic financier. */
-trait FinancierLike {
-  this: EconomicActor =>
+trait FinancierLike extends EconomicActorLike {
+  this: Actor with ActorLogging =>
 
 }

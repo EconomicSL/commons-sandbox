@@ -15,10 +15,11 @@ limitations under the License.
 */
 package actor.markets
 
-import actor.EconomicActor
+import akka.actor.{ActorLogging, Actor}
+import coms.EconomicActorLike
 
 
-trait MarketLike {
-  this: EconomicActor =>
+trait MarketLike extends EconomicActorLike{
+  this: Actor with ActorLogging =>
 
 }

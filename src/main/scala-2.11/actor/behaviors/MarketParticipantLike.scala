@@ -15,11 +15,12 @@ limitations under the License.
 */
 package actor.behaviors
 
-import actor.EconomicActor
+import akka.actor.{ActorLogging, Actor}
+import coms.EconomicActorLike
 
 
 /** Trait for describing behavior of an economic agent that trades via markets. */
-trait MarketParticipantLike {
-  this: EconomicActor =>
+trait MarketParticipantLike extends EconomicActorLike {
+  this: Actor with ActorLogging =>
 
 }
