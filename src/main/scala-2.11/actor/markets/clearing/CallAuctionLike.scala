@@ -17,6 +17,4 @@ package actor.markets.clearing
 
 
 /** Trait defining a Call Auction mechanism. */
-trait CallAuctionLike {
-
-}
+trait CallAuctionLike

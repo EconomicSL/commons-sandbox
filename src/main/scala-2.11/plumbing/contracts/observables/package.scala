@@ -16,6 +16,4 @@ limitations under the License.
 package plumbing.contracts
 
 
-package object observables {
-
-}
+package object observables

@@ -20,6 +20,4 @@ The following two types of settlement mechanisms should cover most all possible 
 Unlike clearing mechanisms, which are unique to a particular market, settlement mechanisms could be shared across markets.
 
   */
-package object settlement {
-
-}
+package object settlement

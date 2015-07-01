@@ -28,6 +28,4 @@ limitations under the License.
   *  2. Alter own state in response to messages from owner of the tradable.
   *
   */
-package object tradables {
-
-}
+package object tradables

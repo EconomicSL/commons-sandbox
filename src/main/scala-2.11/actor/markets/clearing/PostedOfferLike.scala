@@ -17,6 +17,4 @@ package actor.markets.clearing
 
 
 /** Trait defining a posted offer clearing mechanism. */
-trait PostedOfferLike {
-
-}
+trait PostedOfferLike

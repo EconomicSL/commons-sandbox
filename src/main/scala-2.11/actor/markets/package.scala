@@ -117,6 +117,4 @@ See Perry Mehrling for more details on unsecured interbank lending markets.
 See Perry Mehrling for more details on secured interbank lending (repo) markets.
 
   */
-package object markets {
-
-}
+package object markets

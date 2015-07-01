@@ -143,6 +143,4 @@ limitations under the License.
   * certificates and clearing house loan certificates.
   *
   */
-package object plumbing {
-
-}
+package object plumbing

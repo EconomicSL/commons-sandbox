@@ -16,6 +16,4 @@ limitations under the License.
 package actor
 
 /** Classes for modeling financial actors. */
-package object financiers {
-
-}
+package object financiers

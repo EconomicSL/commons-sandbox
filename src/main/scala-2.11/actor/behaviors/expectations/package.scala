@@ -17,6 +17,4 @@ package actor.behaviors
 
 
 /** Classes for modeling expectations of an [[actor.EconomicActor]]. */
-package object expectations {
-
-}
+package object expectations

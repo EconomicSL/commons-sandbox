@@ -17,6 +17,4 @@ package actor
 
 
 /** Classes for modeling a government. */
-package object government {
-
-}
+package object government

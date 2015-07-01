@@ -16,6 +16,4 @@ limitations under the License.
 package actor
 
 /** Classes for modeling consumers. */
-package object consumers {
-
-}
+package object consumers

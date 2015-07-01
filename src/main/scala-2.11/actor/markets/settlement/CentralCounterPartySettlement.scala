@@ -17,6 +17,4 @@ package actor.markets.settlement
 
 
 /** Class defining Central counterparty settlement mechanism. */
-class CentralCounterPartySettlement {
-
-}
+class CentralCounterPartySettlement

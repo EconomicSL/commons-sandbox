@@ -17,6 +17,4 @@ package actor.markets.settlement
 
 
 /** Base trait for all settlement mechanisms. */
-trait SettlementMechanismLike {
-
-}
+trait SettlementMechanismLike

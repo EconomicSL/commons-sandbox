@@ -53,6 +53,4 @@ Order queuing involves storing and possibly sorting received buy and sell orders
 \end{itemize}
 For example, some \texttt{OrderQueuingStrategy} behaviors might only require that unfilled buy and sell orders are stored in some mutable collection (the sorting of buy and sell orders within their respective collections being irrelevant). Other \texttt{OrderQueuingStrategy} behaviors might have complicated \texttt{OrderBookLike} rules for sorting the stored buy and sell orders.
 */
-package object clearing {
-
-}
+package object clearing

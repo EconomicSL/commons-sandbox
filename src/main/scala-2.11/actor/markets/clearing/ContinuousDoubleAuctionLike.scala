@@ -17,6 +17,4 @@ package actor.markets.clearing
 
 
 /** Trait defining a Continuous Double Auction mechanism. */
-trait ContinuousDoubleAuctionLike {
-
-}
+trait ContinuousDoubleAuctionLike

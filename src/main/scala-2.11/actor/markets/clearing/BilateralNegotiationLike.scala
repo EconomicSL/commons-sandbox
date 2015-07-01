@@ -17,6 +17,4 @@ package actor.markets.clearing
 
 
 /** Trait defining a bilateral negotiation clearing mechanism. */
-trait BilateralNegotiationLike {
-
-}
+trait BilateralNegotiationLike

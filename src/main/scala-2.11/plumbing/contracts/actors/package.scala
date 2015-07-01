@@ -16,6 +16,4 @@ limitations under the License.
 package plumbing.contracts
 
 
-package object actors {
-
-}
+package object actors

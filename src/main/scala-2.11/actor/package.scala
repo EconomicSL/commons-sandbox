@@ -2,6 +2,4 @@
   *
   * ==Overview==
   */
-package object actor {
-
-}
+package object actor

@@ -17,6 +17,4 @@ package actor
 
 
 /** Classes for modeling producers. */
-package object producers {
-
-}
+package object producers

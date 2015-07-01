@@ -3,6 +3,4 @@
   * ==Overview==
   * ???
   */
-package object environment {
-
-}
+package object environment
