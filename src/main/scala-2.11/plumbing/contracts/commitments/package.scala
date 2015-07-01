@@ -56,6 +56,4 @@ import rx.lang.scala.Observable
   * extension of retail deposits).
   *
   */
-package object commitments {
-
-}
+package object commitments

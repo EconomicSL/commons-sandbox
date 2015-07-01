@@ -87,7 +87,5 @@ package plumbing
   * Need to build a catalogue of examples demonstrating how to build common
   * contracts using our language.
   */
-package object contracts {
-
-}
+package object contracts
 
