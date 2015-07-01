@@ -15,20 +15,15 @@ limitations under the License.
 */
 package coms
 
-import java.util.UUID
-
 import akka.actor.{Actor, ActorLogging, ActorRef}
 import plumbing.contracts.commitments.Contract
 
 import scala.collection.immutable
 
 
-/** Trait representing a generic economic actor. */
+/** Base trait for all economic actors. */
 trait EconomicActorLike {
   this: Actor with ActorLogging =>
-
-  /** A unique identifier. */
-  def id: UUID
 
   /** Balance sheet. */
   def balanceSheet: ActorRef
@@ -56,7 +51,9 @@ trait EconomicActorLike {
     *       an existing proposal (possibly during a negotiation process) by
     *       proposing to perform certain actions defined by the contract.
     */
-  def propose(receiver: immutable.Set[ActorRef], contract: Contract): Unit
+  def propose(receiver: immutable.Set[ActorRef], contract: Contract): Unit = {
+    receiver.foreach(r => r ! Proposal(self, receiver, contract))
+  }
 
   /** The action of rejecting a previously submitted proposal to perform actions
     * specified in some contract.
