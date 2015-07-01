@@ -80,7 +80,7 @@
 </span>56 <span style=''>    *       an existing proposal (possibly during a negotiation process) by
 </span>57 <span style=''>    *       proposing to perform certain actions defined by the contract.
 </span>58 <span style=''>    */
-</span>59 <span style=''>  def propose(receiver: immutable.Seq[ActorRef], contract: Contract): Unit
+</span>59 <span style=''>  def propose(receiver: immutable.Set[ActorRef], contract: Contract): Unit
 </span>60 <span style=''>
 </span>61 <span style=''>  /** The action of rejecting a previously submitted proposal to perform actions
 </span>62 <span style=''>    * specified in some contract.
