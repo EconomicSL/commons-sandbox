@@ -39,63 +39,60 @@
 </span>15 <span style=''>*/
 </span>16 <span style=''>package coms
 </span>17 <span style=''>
-</span>18 <span style=''>import java.util.UUID
-</span>19 <span style=''>
-</span>20 <span style=''>import akka.actor.{Actor, ActorLogging, ActorRef}
-</span>21 <span style=''>import plumbing.contracts.commitments.Contract
+</span>18 <span style=''>import akka.actor.{Actor, ActorLogging, ActorRef}
+</span>19 <span style=''>import plumbing.contracts.commitments.Contract
+</span>20 <span style=''>
+</span>21 <span style=''>import scala.collection.immutable
 </span>22 <span style=''>
-</span>23 <span style=''>import scala.collection.immutable
-</span>24 <span style=''>
-</span>25 <span style=''>
-</span>26 <span style=''>/** Trait representing a generic economic actor. */
-</span>27 <span style=''>trait EconomicActorLike {
-</span>28 <span style=''>  this: Actor with ActorLogging =>
-</span>29 <span style=''>
-</span>30 <span style=''>  /** A unique identifier. */
-</span>31 <span style=''>  def id: UUID
-</span>32 <span style=''>
-</span>33 <span style=''>  /** Balance sheet. */
-</span>34 <span style=''>  def balanceSheet: ActorRef
-</span>35 <span style=''>
-</span>36 <span style=''>  /** The action of accepting a previously submitted proposal to perform actions
-</span>37 <span style=''>    * specified in some contract.
-</span>38 <span style=''>    * @param proposal a proposal containing a contract specifying certain
-</span>39 <span style=''>    *                 actions that the actor is to perform.
-</span>40 <span style=''>    * @note `acceptProposal` is a general-purpose acceptance of a proposal that
-</span>41 <span style=''>    *       was previously submitted (typically via a propose act). The agent
-</span>42 <span style=''>    *       sending `ProposalAccepted` is informing the receiver that it intends
-</span>43 <span style=''>    *       to perform the actions as specified in the proposal's contract.
-</span>44 <span style=''>    */
-</span>45 <span style=''>  def acceptProposal(proposal: Proposal): Unit = {
-</span>46 <span style=''>    </span><span style='background: #F0ADAD'>proposal.sender ! ProposalAccepted(self, proposal.receiver, proposal)</span><span style=''>
-</span>47 <span style=''>  }
-</span>48 <span style=''>
-</span>49 <span style=''>  /** The action of submitting a proposal made by the actor to a collection of
-</span>50 <span style=''>    * other actors to perform actions specified in the contract.
-</span>51 <span style=''>    * @param receiver a collection of actors who are receiving the proposal and
-</span>52 <span style=''>    *                 therefore are counter party to the contract.
-</span>53 <span style=''>    * @param contract a contract specifying certain actions that the various
-</span>54 <span style=''>    *                 parties should perform.
-</span>55 <span style=''>    * @note propose is a general-purpose act to make a proposal or respond to
-</span>56 <span style=''>    *       an existing proposal (possibly during a negotiation process) by
-</span>57 <span style=''>    *       proposing to perform certain actions defined by the contract.
-</span>58 <span style=''>    */
-</span>59 <span style=''>  def propose(receiver: immutable.Set[ActorRef], contract: Contract): Unit
-</span>60 <span style=''>
-</span>61 <span style=''>  /** The action of rejecting a previously submitted proposal to perform actions
-</span>62 <span style=''>    * specified in some contract.
-</span>63 <span style=''>    * @param proposal a proposal containing a contract specifying certain
-</span>64 <span style=''>    *                 actions that the actor is to perform.
-</span>65 <span style=''>    * @note `rejectProposal` is a general-purpose rejection to a proposal that
-</span>66 <span style=''>    *       was previously submitted (typically via a propose act). The agent
-</span>67 <span style=''>    *       sending `ProposalRejected` is informing the receiver that it has no
-</span>68 <span style=''>    *       intention to perform the actions as specified in the proposal's
-</span>69 <span style=''>    *       contract.
-</span>70 <span style=''>    */
-</span>71 <span style=''>  def rejectProposal(proposal: Proposal): Unit = {
-</span>72 <span style=''>    </span><span style='background: #F0ADAD'>proposal.sender ! ProposalRejected(self, proposal.receiver, proposal)</span><span style=''>
-</span>73 <span style=''>  }
-</span>74 <span style=''>}
+</span>23 <span style=''>
+</span>24 <span style=''>/** Base trait for all economic actors. */
+</span>25 <span style=''>trait EconomicActorLike {
+</span>26 <span style=''>  this: Actor with ActorLogging =>
+</span>27 <span style=''>
+</span>28 <span style=''>  /** Balance sheet. */
+</span>29 <span style=''>  def balanceSheet: ActorRef
+</span>30 <span style=''>
+</span>31 <span style=''>  /** The action of accepting a previously submitted proposal to perform actions
+</span>32 <span style=''>    * specified in some contract.
+</span>33 <span style=''>    * @param proposal a proposal containing a contract specifying certain
+</span>34 <span style=''>    *                 actions that the actor is to perform.
+</span>35 <span style=''>    * @note `acceptProposal` is a general-purpose acceptance of a proposal that
+</span>36 <span style=''>    *       was previously submitted (typically via a propose act). The agent
+</span>37 <span style=''>    *       sending `ProposalAccepted` is informing the receiver that it intends
+</span>38 <span style=''>    *       to perform the actions as specified in the proposal's contract.
+</span>39 <span style=''>    */
+</span>40 <span style=''>  def acceptProposal(proposal: Proposal): Unit = {
+</span>41 <span style=''>    </span><span style='background: #F0ADAD'>proposal.sender ! ProposalAccepted(self, proposal.receiver, proposal)</span><span style=''>
+</span>42 <span style=''>  }
+</span>43 <span style=''>
+</span>44 <span style=''>  /** The action of submitting a proposal made by the actor to a collection of
+</span>45 <span style=''>    * other actors to perform actions specified in the contract.
+</span>46 <span style=''>    * @param receiver a collection of actors who are receiving the proposal and
+</span>47 <span style=''>    *                 therefore are counter party to the contract.
+</span>48 <span style=''>    * @param contract a contract specifying certain actions that the various
+</span>49 <span style=''>    *                 parties should perform.
+</span>50 <span style=''>    * @note propose is a general-purpose act to make a proposal or respond to
+</span>51 <span style=''>    *       an existing proposal (possibly during a negotiation process) by
+</span>52 <span style=''>    *       proposing to perform certain actions defined by the contract.
+</span>53 <span style=''>    */
+</span>54 <span style=''>  def propose(receiver: immutable.Set[ActorRef], contract: Contract): Unit = {
+</span>55 <span style=''>    </span><span style='background: #F0ADAD'>receiver.foreach(r => r ! Proposal(self, receiver, contract))</span><span style=''>
+</span>56 <span style=''>  }
+</span>57 <span style=''>
+</span>58 <span style=''>  /** The action of rejecting a previously submitted proposal to perform actions
+</span>59 <span style=''>    * specified in some contract.
+</span>60 <span style=''>    * @param proposal a proposal containing a contract specifying certain
+</span>61 <span style=''>    *                 actions that the actor is to perform.
+</span>62 <span style=''>    * @note `rejectProposal` is a general-purpose rejection to a proposal that
+</span>63 <span style=''>    *       was previously submitted (typically via a propose act). The agent
+</span>64 <span style=''>    *       sending `ProposalRejected` is informing the receiver that it has no
+</span>65 <span style=''>    *       intention to perform the actions as specified in the proposal's
+</span>66 <span style=''>    *       contract.
+</span>67 <span style=''>    */
+</span>68 <span style=''>  def rejectProposal(proposal: Proposal): Unit = {
+</span>69 <span style=''>    </span><span style='background: #F0ADAD'>proposal.sender ! ProposalRejected(self, proposal.receiver, proposal)</span><span style=''>
+</span>70 <span style=''>  }
+</span>71 <span style=''>}
 </span></pre>
           </div>
           <div class="tab-pane" id="statementlist">
@@ -109,15 +106,15 @@
         <th>Code</th>
       </tr><tr>
         <td>
-          46
+          41
         </td>
         <td>
           2
         </td>
         <td>
-          1632
+          1554
           -
-          1636
+          1558
         </td>
         <td>
           Select
@@ -130,15 +127,15 @@
         </td>
       </tr><tr>
         <td>
-          46
+          41
         </td>
         <td>
           5
         </td>
         <td>
-          1613
+          1535
           -
-          1613
+          1535
         </td>
         <td>
           Select
@@ -151,15 +148,15 @@
         </td>
       </tr><tr>
         <td>
-          46
+          41
         </td>
         <td>
           4
         </td>
         <td>
-          1615
+          1537
           -
-          1666
+          1588
         </td>
         <td>
           Apply
@@ -172,15 +169,15 @@
         </td>
       </tr><tr>
         <td>
-          46
+          41
         </td>
         <td>
           1
         </td>
         <td>
-          1597
+          1519
           -
-          1612
+          1534
         </td>
         <td>
           Select
@@ -193,15 +190,15 @@
         </td>
       </tr><tr>
         <td>
-          46
+          41
         </td>
         <td>
           3
         </td>
         <td>
-          1638
+          1560
           -
-          1655
+          1577
         </td>
         <td>
           Select
@@ -214,15 +211,15 @@
         </td>
       </tr><tr>
         <td>
-          46
+          41
         </td>
         <td>
           6
         </td>
         <td>
-          1597
+          1519
           -
-          1666
+          1588
         </td>
         <td>
           ApplyToImplicitArgs
@@ -235,99 +232,141 @@
         </td>
       </tr><tr>
         <td>
-          72
+          55
         </td>
         <td>
           8
         </td>
         <td>
-          3078
+          2352
           -
-          3082
-        </td>
-        <td>
-          Select
-        </td>
-        <td>
-          akka.actor.Actor.self
-        </td>
-        <td style="background: #F0ADAD">
-          EconomicActorLike.this.self
-        </td>
-      </tr><tr>
-        <td>
-          72
-        </td>
-        <td>
-          11
-        </td>
-        <td>
-          3059
-          -
-          3059
-        </td>
-        <td>
-          Select
-        </td>
-        <td>
-          akka.actor.Actor.self
-        </td>
-        <td style="background: #F0ADAD">
-          EconomicActorLike.this.self
-        </td>
-      </tr><tr>
-        <td>
-          72
-        </td>
-        <td>
-          7
-        </td>
-        <td>
-          3043
-          -
-          3058
-        </td>
-        <td>
-          Select
-        </td>
-        <td>
-          coms.Proposal.sender
-        </td>
-        <td style="background: #F0ADAD">
-          proposal.sender
-        </td>
-      </tr><tr>
-        <td>
-          72
-        </td>
-        <td>
-          10
-        </td>
-        <td>
-          3061
-          -
-          3112
+          2386
         </td>
         <td>
           Apply
         </td>
         <td>
-          coms.ProposalRejected.apply
+          coms.Proposal.apply
         </td>
         <td style="background: #F0ADAD">
-          coms.this.`package`.ProposalRejected.apply(EconomicActorLike.this.self, proposal.receiver, proposal)
+          coms.this.`package`.Proposal.apply(EconomicActorLike.this.self, receiver, contract)
         </td>
       </tr><tr>
         <td>
-          72
+          55
+        </td>
+        <td>
+          11
+        </td>
+        <td>
+          2326
+          -
+          2387
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.collection.IterableLike.foreach
+        </td>
+        <td style="background: #F0ADAD">
+          receiver.foreach[Unit](((r: akka.actor.ActorRef) =&gt; akka.this.actor.`package`.actorRef2Scala(r).!(coms.this.`package`.Proposal.apply(EconomicActorLike.this.self, receiver, contract))(EconomicActorLike.this.self)))
+        </td>
+      </tr><tr>
+        <td>
+          55
+        </td>
+        <td>
+          7
+        </td>
+        <td>
+          2361
+          -
+          2365
+        </td>
+        <td>
+          Select
+        </td>
+        <td>
+          akka.actor.Actor.self
+        </td>
+        <td style="background: #F0ADAD">
+          EconomicActorLike.this.self
+        </td>
+      </tr><tr>
+        <td>
+          55
+        </td>
+        <td>
+          10
+        </td>
+        <td>
+          2348
+          -
+          2386
+        </td>
+        <td>
+          ApplyToImplicitArgs
+        </td>
+        <td>
+          akka.actor.ScalaActorRef.!
+        </td>
+        <td style="background: #F0ADAD">
+          akka.this.actor.`package`.actorRef2Scala(r).!(coms.this.`package`.Proposal.apply(EconomicActorLike.this.self, receiver, contract))(EconomicActorLike.this.self)
+        </td>
+      </tr><tr>
+        <td>
+          55
         </td>
         <td>
           9
         </td>
         <td>
-          3084
+          2350
           -
-          3101
+          2350
+        </td>
+        <td>
+          Select
+        </td>
+        <td>
+          akka.actor.Actor.self
+        </td>
+        <td style="background: #F0ADAD">
+          EconomicActorLike.this.self
+        </td>
+      </tr><tr>
+        <td>
+          69
+        </td>
+        <td>
+          17
+        </td>
+        <td>
+          3039
+          -
+          3108
+        </td>
+        <td>
+          ApplyToImplicitArgs
+        </td>
+        <td>
+          akka.actor.ScalaActorRef.!
+        </td>
+        <td style="background: #F0ADAD">
+          akka.this.actor.`package`.actorRef2Scala(proposal.sender).!(coms.this.`package`.ProposalRejected.apply(EconomicActorLike.this.self, proposal.receiver, proposal))(EconomicActorLike.this.self)
+        </td>
+      </tr><tr>
+        <td>
+          69
+        </td>
+        <td>
+          14
+        </td>
+        <td>
+          3080
+          -
+          3097
         </td>
         <td>
           Select
@@ -340,24 +379,87 @@
         </td>
       </tr><tr>
         <td>
-          72
+          69
+        </td>
+        <td>
+          13
+        </td>
+        <td>
+          3074
+          -
+          3078
+        </td>
+        <td>
+          Select
+        </td>
+        <td>
+          akka.actor.Actor.self
+        </td>
+        <td style="background: #F0ADAD">
+          EconomicActorLike.this.self
+        </td>
+      </tr><tr>
+        <td>
+          69
+        </td>
+        <td>
+          16
+        </td>
+        <td>
+          3055
+          -
+          3055
+        </td>
+        <td>
+          Select
+        </td>
+        <td>
+          akka.actor.Actor.self
+        </td>
+        <td style="background: #F0ADAD">
+          EconomicActorLike.this.self
+        </td>
+      </tr><tr>
+        <td>
+          69
         </td>
         <td>
           12
         </td>
         <td>
-          3043
+          3039
           -
-          3112
+          3054
         </td>
         <td>
-          ApplyToImplicitArgs
+          Select
         </td>
         <td>
-          akka.actor.ScalaActorRef.!
+          coms.Proposal.sender
         </td>
         <td style="background: #F0ADAD">
-          akka.this.actor.`package`.actorRef2Scala(proposal.sender).!(coms.this.`package`.ProposalRejected.apply(EconomicActorLike.this.self, proposal.receiver, proposal))(EconomicActorLike.this.self)
+          proposal.sender
+        </td>
+      </tr><tr>
+        <td>
+          69
+        </td>
+        <td>
+          15
+        </td>
+        <td>
+          3057
+          -
+          3108
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          coms.ProposalRejected.apply
+        </td>
+        <td style="background: #F0ADAD">
+          coms.this.`package`.ProposalRejected.apply(EconomicActorLike.this.self, proposal.receiver, proposal)
         </td>
       </tr>
     </table>

@@ -1,31 +1,31 @@
 <scoverage 
-statement-count="27" statements-invoked="0" statement-rate="0.00" branch-rate="0.00" version="1.0" timestamp="1435787323849">
+statement-count="32" statements-invoked="0" statement-rate="0.00" branch-rate="0.00" version="1.0" timestamp="1435787871309">
     <packages>
-        <package name="coms" statement-count="12" statements-invoked="0" statement-rate="0.00">
+        <package name="coms" statement-count="17" statements-invoked="0" statement-rate="0.00">
             <classes>
                 <class 
-                name="EconomicActorLike" filename="coms/EconomicActorLike.scala" statement-count="12" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
+                name="EconomicActorLike" filename="coms/EconomicActorLike.scala" statement-count="17" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
                     <methods>
                         <method 
                         name="coms/EconomicActorLike/acceptProposal" statement-count="6" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
                             <statements>
                                 <statement 
-                                package="coms" class="EconomicActorLike" class-type="Trait" top-level-class="EconomicActorLike" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/coms/EconomicActorLike.scala" method="acceptProposal" start="1632" end="1636" line="46" branch="false" invocation-count="0" ignored="false">
+                                package="coms" class="EconomicActorLike" class-type="Trait" top-level-class="EconomicActorLike" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/coms/EconomicActorLike.scala" method="acceptProposal" start="1554" end="1558" line="41" branch="false" invocation-count="0" ignored="false">
 </statement>
                                 <statement 
-                                package="coms" class="EconomicActorLike" class-type="Trait" top-level-class="EconomicActorLike" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/coms/EconomicActorLike.scala" method="acceptProposal" start="1613" end="1613" line="46" branch="false" invocation-count="0" ignored="false">
+                                package="coms" class="EconomicActorLike" class-type="Trait" top-level-class="EconomicActorLike" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/coms/EconomicActorLike.scala" method="acceptProposal" start="1535" end="1535" line="41" branch="false" invocation-count="0" ignored="false">
 </statement>
                                 <statement 
-                                package="coms" class="EconomicActorLike" class-type="Trait" top-level-class="EconomicActorLike" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/coms/EconomicActorLike.scala" method="acceptProposal" start="1615" end="1666" line="46" branch="false" invocation-count="0" ignored="false">
+                                package="coms" class="EconomicActorLike" class-type="Trait" top-level-class="EconomicActorLike" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/coms/EconomicActorLike.scala" method="acceptProposal" start="1537" end="1588" line="41" branch="false" invocation-count="0" ignored="false">
 </statement>
                                 <statement 
-                                package="coms" class="EconomicActorLike" class-type="Trait" top-level-class="EconomicActorLike" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/coms/EconomicActorLike.scala" method="acceptProposal" start="1597" end="1612" line="46" branch="false" invocation-count="0" ignored="false">
+                                package="coms" class="EconomicActorLike" class-type="Trait" top-level-class="EconomicActorLike" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/coms/EconomicActorLike.scala" method="acceptProposal" start="1519" end="1534" line="41" branch="false" invocation-count="0" ignored="false">
 </statement>
                                 <statement 
-                                package="coms" class="EconomicActorLike" class-type="Trait" top-level-class="EconomicActorLike" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/coms/EconomicActorLike.scala" method="acceptProposal" start="1638" end="1655" line="46" branch="false" invocation-count="0" ignored="false">
+                                package="coms" class="EconomicActorLike" class-type="Trait" top-level-class="EconomicActorLike" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/coms/EconomicActorLike.scala" method="acceptProposal" start="1560" end="1577" line="41" branch="false" invocation-count="0" ignored="false">
 </statement>
                                 <statement 
-                                package="coms" class="EconomicActorLike" class-type="Trait" top-level-class="EconomicActorLike" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/coms/EconomicActorLike.scala" method="acceptProposal" start="1597" end="1666" line="46" branch="false" invocation-count="0" ignored="false">
+                                package="coms" class="EconomicActorLike" class-type="Trait" top-level-class="EconomicActorLike" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/coms/EconomicActorLike.scala" method="acceptProposal" start="1519" end="1588" line="41" branch="false" invocation-count="0" ignored="false">
 </statement>
                             </statements>
 </method>
@@ -33,22 +33,42 @@ statement-count="27" statements-invoked="0" statement-rate="0.00" branch-rate="0
                         name="coms/EconomicActorLike/rejectProposal" statement-count="6" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
                             <statements>
                                 <statement 
-                                package="coms" class="EconomicActorLike" class-type="Trait" top-level-class="EconomicActorLike" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/coms/EconomicActorLike.scala" method="rejectProposal" start="3078" end="3082" line="72" branch="false" invocation-count="0" ignored="false">
+                                package="coms" class="EconomicActorLike" class-type="Trait" top-level-class="EconomicActorLike" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/coms/EconomicActorLike.scala" method="rejectProposal" start="3039" end="3108" line="69" branch="false" invocation-count="0" ignored="false">
 </statement>
                                 <statement 
-                                package="coms" class="EconomicActorLike" class-type="Trait" top-level-class="EconomicActorLike" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/coms/EconomicActorLike.scala" method="rejectProposal" start="3059" end="3059" line="72" branch="false" invocation-count="0" ignored="false">
+                                package="coms" class="EconomicActorLike" class-type="Trait" top-level-class="EconomicActorLike" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/coms/EconomicActorLike.scala" method="rejectProposal" start="3080" end="3097" line="69" branch="false" invocation-count="0" ignored="false">
 </statement>
                                 <statement 
-                                package="coms" class="EconomicActorLike" class-type="Trait" top-level-class="EconomicActorLike" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/coms/EconomicActorLike.scala" method="rejectProposal" start="3043" end="3058" line="72" branch="false" invocation-count="0" ignored="false">
+                                package="coms" class="EconomicActorLike" class-type="Trait" top-level-class="EconomicActorLike" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/coms/EconomicActorLike.scala" method="rejectProposal" start="3074" end="3078" line="69" branch="false" invocation-count="0" ignored="false">
 </statement>
                                 <statement 
-                                package="coms" class="EconomicActorLike" class-type="Trait" top-level-class="EconomicActorLike" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/coms/EconomicActorLike.scala" method="rejectProposal" start="3061" end="3112" line="72" branch="false" invocation-count="0" ignored="false">
+                                package="coms" class="EconomicActorLike" class-type="Trait" top-level-class="EconomicActorLike" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/coms/EconomicActorLike.scala" method="rejectProposal" start="3055" end="3055" line="69" branch="false" invocation-count="0" ignored="false">
 </statement>
                                 <statement 
-                                package="coms" class="EconomicActorLike" class-type="Trait" top-level-class="EconomicActorLike" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/coms/EconomicActorLike.scala" method="rejectProposal" start="3084" end="3101" line="72" branch="false" invocation-count="0" ignored="false">
+                                package="coms" class="EconomicActorLike" class-type="Trait" top-level-class="EconomicActorLike" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/coms/EconomicActorLike.scala" method="rejectProposal" start="3039" end="3054" line="69" branch="false" invocation-count="0" ignored="false">
 </statement>
                                 <statement 
-                                package="coms" class="EconomicActorLike" class-type="Trait" top-level-class="EconomicActorLike" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/coms/EconomicActorLike.scala" method="rejectProposal" start="3043" end="3112" line="72" branch="false" invocation-count="0" ignored="false">
+                                package="coms" class="EconomicActorLike" class-type="Trait" top-level-class="EconomicActorLike" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/coms/EconomicActorLike.scala" method="rejectProposal" start="3057" end="3108" line="69" branch="false" invocation-count="0" ignored="false">
+</statement>
+                            </statements>
+</method>
+                        <method 
+                        name="coms/EconomicActorLike/propose" statement-count="5" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
+                            <statements>
+                                <statement 
+                                package="coms" class="EconomicActorLike" class-type="Trait" top-level-class="EconomicActorLike" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/coms/EconomicActorLike.scala" method="propose" start="2352" end="2386" line="55" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="coms" class="EconomicActorLike" class-type="Trait" top-level-class="EconomicActorLike" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/coms/EconomicActorLike.scala" method="propose" start="2326" end="2387" line="55" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="coms" class="EconomicActorLike" class-type="Trait" top-level-class="EconomicActorLike" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/coms/EconomicActorLike.scala" method="propose" start="2361" end="2365" line="55" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="coms" class="EconomicActorLike" class-type="Trait" top-level-class="EconomicActorLike" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/coms/EconomicActorLike.scala" method="propose" start="2348" end="2386" line="55" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="coms" class="EconomicActorLike" class-type="Trait" top-level-class="EconomicActorLike" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/coms/EconomicActorLike.scala" method="propose" start="2350" end="2350" line="55" branch="false" invocation-count="0" ignored="false">
 </statement>
                             </statements>
 </method>
@@ -64,6 +84,15 @@ statement-count="27" statements-invoked="0" statement-rate="0.00" branch-rate="0
                         <method 
                         name="plumbing.balancesheets/BalanceSheetActor/receive" statement-count="9" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
                             <statements>
+                                <statement 
+                                package="plumbing.balancesheets" class="BalanceSheetActor" class-type="Class" top-level-class="BalanceSheetActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/plumbing/balancesheets/BalanceSheetActor.scala" method="receive" start="1349" end="1349" line="42" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="plumbing.balancesheets" class="BalanceSheetActor" class-type="Class" top-level-class="BalanceSheetActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/plumbing/balancesheets/BalanceSheetActor.scala" method="receive" start="1180" end="1180" line="36" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="plumbing.balancesheets" class="BalanceSheetActor" class-type="Class" top-level-class="BalanceSheetActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/plumbing/balancesheets/BalanceSheetActor.scala" method="receive" start="1271" end="1291" line="40" branch="false" invocation-count="0" ignored="false">
+</statement>
                                 <statement 
                                 package="plumbing.balancesheets" class="BalanceSheetActor" class-type="Class" top-level-class="BalanceSheetActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/plumbing/balancesheets/BalanceSheetActor.scala" method="receive" start="1334" end="1360" line="42" branch="false" invocation-count="0" ignored="false">
 </statement>
@@ -81,15 +110,6 @@ statement-count="27" statements-invoked="0" statement-rate="0.00" branch-rate="0
 </statement>
                                 <statement 
                                 package="plumbing.balancesheets" class="BalanceSheetActor" class-type="Class" top-level-class="BalanceSheetActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/plumbing/balancesheets/BalanceSheetActor.scala" method="receive" start="1406" end="1435" line="44" branch="false" invocation-count="0" ignored="false">
-</statement>
-                                <statement 
-                                package="plumbing.balancesheets" class="BalanceSheetActor" class-type="Class" top-level-class="BalanceSheetActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/plumbing/balancesheets/BalanceSheetActor.scala" method="receive" start="1349" end="1349" line="42" branch="false" invocation-count="0" ignored="false">
-</statement>
-                                <statement 
-                                package="plumbing.balancesheets" class="BalanceSheetActor" class-type="Class" top-level-class="BalanceSheetActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/plumbing/balancesheets/BalanceSheetActor.scala" method="receive" start="1180" end="1180" line="36" branch="false" invocation-count="0" ignored="false">
-</statement>
-                                <statement 
-                                package="plumbing.balancesheets" class="BalanceSheetActor" class-type="Class" top-level-class="BalanceSheetActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/plumbing/balancesheets/BalanceSheetActor.scala" method="receive" start="1271" end="1291" line="40" branch="false" invocation-count="0" ignored="false">
 </statement>
                             </statements>
 </method>
