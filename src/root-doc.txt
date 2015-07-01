@@ -1,0 +1,28 @@
+==Overview==
+Our API consists of several different layers each of which is represented by
+its own package.
+
+===`coms` package===
+An `Actor` in our API that is `EconomicActorLike` communicates with other
+`EconomicActorLike` actors by proposing contracts which are either accepted or
+rejected. The `coms` package defines the `EconomicActorLike` trait as well as
+the high-level `EconomicActor` communication language.
+
+Our high-level `EconomicActor` communication language is influences by, but
+not slave to, the [[http://www.fipa.org/ Foundation for Intelligent Physical Agents (FIPA)]]
+compliant [[http://www.fipa.org/specs/fipa00037/SC00037J.pdf Agent Communication Language (ACL)]].
+
+===`contracts` package===
+The `contract` package defines the low-level domain specific language (DSL)
+that we use for constructing commercial contracts.
+
+Instead of defining a fixed catalogue of contracts our approach is to follow...
+
+ - [[https://lexifi.com/files/resources/MLFiPaper.pdf Peyton-Jones et al (2000)]]
+ - [[http://www.itu.dk/~elsborg/sttt06.pdf Andersen et al (2006)]]
+
+...and instead define a small set of atomic contracts, called
+[[plumbing.contracts.commitments `commitments`]], that can be used as "building blocks" to
+construct ever more complex contracts.
+
+===`actors` package===
