@@ -56,7 +56,7 @@ trait EconomicActorLike {
     *       an existing proposal (possibly during a negotiation process) by
     *       proposing to perform certain actions defined by the contract.
     */
-  def propose(receiver: immutable.Seq[ActorRef], contract: Contract): Unit
+  def propose(receiver: immutable.Set[ActorRef], contract: Contract): Unit
 
   /** The action of rejecting a previously submitted proposal to perform actions
     * specified in some contract.

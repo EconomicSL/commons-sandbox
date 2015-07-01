@@ -20,17 +20,18 @@ import plumbing.contracts.commitments.Contract
 import scala.collection.immutable
 
 
-/** Classes for facilitating communication between economic actors.
+/** Provides classes for facilitating communication between economic actors.
   *
   * ==Overview==
   * An `Actor` in our API that is `EconomicActorLike` communicates with other
-  * `EconomicActorLike` actors by proposing contracts which are either accepted
-  * or rejected. The `coms` package defines the `EconomicActorLike` trait as
-  * well as the high-level `EconomicActorLike` communication language.
-  *
-  * @note Our high-level `EconomicActorLike` communication language is influences
-  *       by, but not slave to, the [[http://www.fipa.org/ Foundation for Intelligent Physical Agents (FIPA)]]
-  *       compliant [[http://www.fipa.org/specs/fipa00037/SC00037J.pdf Agent Communication Language (ACL)]].
+  * `EconomicActorLike` actors by proposing contracts which are then either
+  * accepted or rejected by the receiving actors. The `coms` package defines
+  * the `EconomicActorLike` trait as well as the high-level `EconomicActorLike`
+  * communication language. Our high-level `EconomicActorLike` communication
+  * language is influenced by, but not slave to, the [[http://www.fipa.org/
+  * Foundation for Intelligent Physical Agents (FIPA)]] compliant
+  * [[http://www.fipa.org/specs/fipa00037/SC00037J.pdf
+  * Agent Communication Language (ACL)]].
   */
 package object coms {
 
