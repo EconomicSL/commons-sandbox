@@ -7,6 +7,7 @@ organization  := "inet-oxford"
 scalaVersion := "2.11.6"
 
 autoAPIMappings := true
+scalacOptions in (Compile, doc) ++= Seq("-doc-root-content", baseDirectory.value + "/src/root-doc.txt")
 
 libraryDependencies ++= Seq(
   "io.reactivex" % "rxscala_2.11" % "0.25.0",
