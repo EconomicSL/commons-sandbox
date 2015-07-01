@@ -47,7 +47,14 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Classes for representing contracts as Akka Actors.</p><h4>Overview</h4><p>A <code>ContractActor</code> serves as a channel of communication between multiple
+<code>BalanceSheetActors</code>.</p><h5>API Requirements</h5><p>Any <code>Actor</code> that implements the <code>ContractActorLike</code> trait should...</p><ul><li>have a collection of <code>commitments</code> representing the terms of the
+ underlying <code>Contract</code>.</li><li>have an <code>issuer</code> for whom the <code>Contract</code> represents a liability.</li><li>have a collection of <code>owners</code> for whom the underlying <code>Contract</code>
+ represents an asset.</li><li>be able to modify its <code>issuer</code> (necessary in order to model the
+ buying/selling of liabilities).</li><li>be able to add (remove) members from its collection of <code>owners</code>.</li><li>be able to communicate with a <code>BalanceSheetActor</code> in order to add
+ (remove) itself from the collection of assets or liabilities of the
+ <code>BalanceSheetActor</code>.
+</li></ul></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>

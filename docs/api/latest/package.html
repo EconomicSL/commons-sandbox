@@ -47,7 +47,16 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"></div>
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><h4>Overview</h4><p>Our API consists of several different layers each of which is represented by
+its own package.</p><h5><code>coms</code> package</h5><p>An <code>Actor</code> in our API that is <code>EconomicActorLike</code> communicates with other
+<code>EconomicActorLike</code> actors by proposing contracts which are either accepted or
+rejected. The <code>coms</code> package defines the <code>EconomicActorLike</code> trait as well as
+the high-level <code>EconomicActor</code> communication language.</p><p>Our high-level <code>EconomicActor</code> communication language is influences by, but
+not slave to, the <a href="http://www.fipa.org/" target="_blank">Foundation for Intelligent Physical Agents (FIPA)</a>
+compliant <a href="http://www.fipa.org/specs/fipa00037/SC00037J.pdf" target="_blank">Agent Communication Language (ACL)</a>.</p><h5><code>contracts</code> package</h5><p>The <code>contract</code> package defines the low-level domain specific language (DSL)
+that we use for constructing commercial contracts.</p><p>Instead of defining a fixed catalogue of contracts our approach is to follow...</p><ul><li><a href="https://lexifi.com/files/resources/MLFiPaper.pdf" target="_blank">Peyton-Jones et al (2000)</a></li><li><a href="http://www.itu.dk/~elsborg/sttt06.pdf" target="_blank">Andersen et al (2006)</a></li></ul><p>...and instead define a small set of atomic contracts, called
+<a href="plumbing/contracts/commitments/package.html" class="extype" name="plumbing.contracts.commitments"><code>commitments</code></a>, that can be used as &quot;building blocks&quot; to
+construct ever more complex contracts.</p><h5><code>actors</code> package</h5></div></div>
         
 
       <div id="mbrsel">
@@ -87,6 +96,30 @@
       </a>
     </span>
       <p class="shortcomment cmt">Provides classes for modeling economic actors.</p><div class="fullcomment"><div class="comment cmt"><p>Provides classes for modeling economic actors.</p><h4>Overview</h4></div></div>
+    </li><li name="_root_.coms" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="coms"></a>
+      <a id="coms:coms"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="coms/package.html"><span class="name">coms</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="index.html#package@coms" title="Permalink" target="_top">
+        <img src="lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Classes for facilitating communication between economic actors.</p><div class="fullcomment"><div class="comment cmt"><p>Classes for facilitating communication between economic actors.</p><h4>Overview</h4><p>An <code>Actor</code> in our API that is <code>EconomicActorLike</code> communicates with other
+<code>EconomicActorLike</code> actors by proposing contracts which are either accepted
+or rejected. The <code>coms</code> package defines the <code>EconomicActorLike</code> trait as
+well as the high-level <code>EconomicActorLike</code> communication language.
+</p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>Our high-level <code>EconomicActorLike</code> communication language is influences
+      by, but not slave to, the <a href="http://www.fipa.org/" target="_blank">Foundation for Intelligent Physical Agents (FIPA)</a>
+      compliant <a href="http://www.fipa.org/specs/fipa00037/SC00037J.pdf" target="_blank">Agent Communication Language (ACL)</a>.
+</p></span></dd></dl></div>
     </li><li name="_root_.environment" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="environment"></a>
       <a id="environment:environment"></a>

@@ -45,13 +45,13 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <span class="name">MonetaryAuthorityLike</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <span class="name">MonetaryAuthorityLike</span><span class="result"> extends <a href="../../coms/EconomicActorLike.html" class="extype" name="coms.EconomicActorLike">EconomicActorLike</a></span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Trait defining a monetary authority.</p></div><dl class="attributes block"> <dt>Self Type</dt><dd><a href="" class="extype" name="actor.government.MonetaryAuthorityLike">MonetaryAuthorityLike</a> with <a href="../EconomicActor.html" class="extype" name="actor.EconomicActor">EconomicActor</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Trait defining a monetary authority.</p></div><dl class="attributes block"> <dt>Self Type</dt><dd><a href="" class="extype" name="actor.government.MonetaryAuthorityLike">MonetaryAuthorityLike</a> with <span class="extype" name="akka.actor.Actor">Actor</span> with <span class="extype" name="akka.actor.ActorLogging">ActorLogging</span></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="../../coms/EconomicActorLike.html" class="extype" name="coms.EconomicActorLike">EconomicActorLike</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -69,7 +69,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="actor.government.MonetaryAuthorityLike"><span>MonetaryAuthorityLike</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="actor.government.MonetaryAuthorityLike"><span>MonetaryAuthorityLike</span></li><li class="in" name="coms.EconomicActorLike"><span>EconomicActorLike</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -91,10 +91,71 @@
 
         
 
-        
+        <div id="values" class="values members">
+              <h3>Abstract Value Members</h3>
+              <ol><li name="coms.EconomicActorLike#balanceSheet" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="balanceSheet:akka.actor.ActorRef"></a>
+      <a id="balanceSheet:ActorRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">balanceSheet</span><span class="result">: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#actor.government.MonetaryAuthorityLike@balanceSheet:akka.actor.ActorRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Balance sheet.</p><div class="fullcomment"><div class="comment cmt"><p>Balance sheet.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../coms/EconomicActorLike.html" class="extype" name="coms.EconomicActorLike">EconomicActorLike</a></dd></dl></div>
+    </li><li name="coms.EconomicActorLike#id" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="id:java.util.UUID"></a>
+      <a id="id:UUID"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">id</span><span class="result">: <span class="extype" name="java.util.UUID">UUID</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#actor.government.MonetaryAuthorityLike@id:java.util.UUID" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A unique identifier.</p><div class="fullcomment"><div class="comment cmt"><p>A unique identifier.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../coms/EconomicActorLike.html" class="extype" name="coms.EconomicActorLike">EconomicActorLike</a></dd></dl></div>
+    </li><li name="coms.EconomicActorLike#propose" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="propose(receiver:scala.collection.immutable.Seq[akka.actor.ActorRef],contract:plumbing.contracts.commitments.Contract):Unit"></a>
+      <a id="propose(Seq[ActorRef],Contract):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">propose</span><span class="params">(<span name="receiver">receiver: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Seq" class="extype" target="_top">Seq</a>[<span class="extype" name="akka.actor.ActorRef">ActorRef</span>]</span>, <span name="contract">contract: <a href="../../plumbing/contracts/commitments/Contract.html" class="extype" name="plumbing.contracts.commitments.Contract">Contract</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#actor.government.MonetaryAuthorityLike@propose(receiver:scala.collection.immutable.Seq[akka.actor.ActorRef],contract:plumbing.contracts.commitments.Contract):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The action of submitting a proposal made by the actor to a collection of
+other actors to perform actions specified in the contract.</p><div class="fullcomment"><div class="comment cmt"><p>The action of submitting a proposal made by the actor to a collection of
+other actors to perform actions specified in the contract.</p></div><dl class="paramcmts block"><dt class="param">receiver</dt><dd class="cmt"><p>a collection of actors who are receiving the proposal and
+                therefore are counter party to the contract.</p></dd><dt class="param">contract</dt><dd class="cmt"><p>a contract specifying certain actions that the various
+                parties should perform.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../coms/EconomicActorLike.html" class="extype" name="coms.EconomicActorLike">EconomicActorLike</a></dd><dt>Note</dt><dd><span class="cmt"><p>propose is a general-purpose act to make a proposal or respond to
+      an existing proposal (possibly during a negotiation process) by
+      proposing to perform certain actions defined by the contract.
+</p></span></dd></dl></div>
+    </li></ol>
+            </div>
 
         <div id="values" class="values members">
-              <h3>Value Members</h3>
+              <h3>Concrete Value Members</h3>
               <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(x$1:Any):Boolean"></a>
       <a id="!=(Any):Boolean"></a>
@@ -146,6 +207,30 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="coms.EconomicActorLike#acceptProposal" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="acceptProposal(proposal:coms.Proposal):Unit"></a>
+      <a id="acceptProposal(Proposal):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">acceptProposal</span><span class="params">(<span name="proposal">proposal: <a href="../../coms/package$$Proposal.html" class="extype" name="coms.Proposal">Proposal</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#actor.government.MonetaryAuthorityLike@acceptProposal(proposal:coms.Proposal):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The action of accepting a previously submitted proposal to perform actions
+specified in some contract.</p><div class="fullcomment"><div class="comment cmt"><p>The action of accepting a previously submitted proposal to perform actions
+specified in some contract.</p></div><dl class="paramcmts block"><dt class="param">proposal</dt><dd class="cmt"><p>a proposal containing a contract specifying certain
+                actions that the actor is to perform.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../coms/EconomicActorLike.html" class="extype" name="coms.EconomicActorLike">EconomicActorLike</a></dd><dt>Note</dt><dd><span class="cmt"><p><code>acceptProposal</code> is a general-purpose acceptance of a proposal that
+      was previously submitted (typically via a propose act). The agent
+      sending <code>ProposalAccepted</code> is informing the receiver that it intends
+      to perform the actions as specified in the proposal's contract.
+</p></span></dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -345,6 +430,31 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="coms.EconomicActorLike#rejectProposal" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="rejectProposal(proposal:coms.Proposal):Unit"></a>
+      <a id="rejectProposal(Proposal):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">rejectProposal</span><span class="params">(<span name="proposal">proposal: <a href="../../coms/package$$Proposal.html" class="extype" name="coms.Proposal">Proposal</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#actor.government.MonetaryAuthorityLike@rejectProposal(proposal:coms.Proposal):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The action of rejecting a previously submitted proposal to perform actions
+specified in some contract.</p><div class="fullcomment"><div class="comment cmt"><p>The action of rejecting a previously submitted proposal to perform actions
+specified in some contract.</p></div><dl class="paramcmts block"><dt class="param">proposal</dt><dd class="cmt"><p>a proposal containing a contract specifying certain
+                actions that the actor is to perform.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../coms/EconomicActorLike.html" class="extype" name="coms.EconomicActorLike">EconomicActorLike</a></dd><dt>Note</dt><dd><span class="cmt"><p><code>rejectProposal</code> is a general-purpose rejection to a proposal that
+      was previously submitted (typically via a propose act). The agent
+      sending <code>ProposalRejected</code> is informing the receiver that it has no
+      intention to perform the actions as specified in the proposal's
+      contract.
+</p></span></dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
@@ -457,7 +567,9 @@
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="scala.AnyRef">
+        <div class="parent" name="coms.EconomicActorLike">
+              <h3>Inherited from <a href="../../coms/EconomicActorLike.html" class="extype" name="coms.EconomicActorLike">EconomicActorLike</a></h3>
+            </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">
               <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
