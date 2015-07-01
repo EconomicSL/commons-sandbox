@@ -1,6 +1,7 @@
 # commons-sandbox
 [![Build Status](https://travis-ci.org/inet-oxford/commons-sandbox.svg?branch=master)](https://travis-ci.org/inet-oxford/commons-sandbox)
 [![Coverage Status](https://coveralls.io/repos/inet-oxford/commons-sandbox/badge.svg)](https://coveralls.io/r/inet-oxford/commons-sandbox)
+[![Codacy Badge](https://www.codacy.com/project/badge/010943975d84466b85975ff788fe76cb)](https://www.codacy.com/app/drobert-pugh/commons-sandbox)
 [![GitHub license](https://img.shields.io/github/license/inet-oxford/commons-sandbox.svg)]()
 [![Inline docs](http://inch-ci.org/github/inet-oxford/commons-sandbox.svg?branch=master)](http://inch-ci.org/github/inet-oxford/commons-sandbox)
 
