@@ -1,21 +1,26 @@
-language: scala
+language:
+- scala
 
 scala:
-   - 2.11.6
+- 2.11.6
 
 jdk:
-  - oraclejdk8
+- oraclejdk8
 
 notifications:
   email: false
 
 branches:
   only:
-    - master
+  - master
 
-script: "sbt clean coverage test"
+script:
+- sbt clean coverage test
 
 after_success:
-  - "sbt coveralls"
-  - .travis/publish_docs.sh
+- sbt coveralls
+- .travis/publish_docs.sh
 
+env:
+  global:
+  - secure: H9kTamv8xD4Zr8369o/LRN8wB0ZHNBLvvrEs2swA5C/Pz/SYefOJIiCy3izsqZNpI/NB5l79PP+pnaCVSCj220bjTcwSNsk1cPu3B/S8H0ls8ttqVJFkChYbdmtjhtiyNDzD54Qf3bi7S5vaFL+r18jnxdxMAB/5N9Vlt2Cm7drKWineeYHBcmFxDK85PhMLHlVYJCLxXCjvV6XKWMWMLOtfwvpaocI/pTqIZZvJ+kCflX4QxNwDW9lzsspE69EoFVDD+gs4hrld0P/a280VFPlDnKkj56wf39fzygrA1zOjbzWTI916q7K+sKqZY4mqgL1DolKx965susq1big1waBONGNqX8f789RCnYwO+yOag4IA41u4R9eq0Rvbll6Q9nQ1xbfZaXCkqj6fXqHctevPRbOvHjVqhg/HF+JUSfgN1Viszkv6rg/v6y3ztEcyLTj4ehvcrOMMB6b3JnvRP2FAqNHbPcxBlHwmGzCQqEQPrkSh0kHaL89JjygNfPGJ4fmGx9cxj5DPcqRXv7IdyMsL390Zeb5hcQ+JDxrqS7SCVfVpqT6GdTX8NU3WsaHGs3OHfVrU2auQmDyUw9xJ1sMidKy9Gz8a3jQZnZiai0/j5vHhUxYTj/Q8T/RXLwzKwhJX9kbPImMMgJDicbjUmchrsECg26Xh/mQscBju8qw=
