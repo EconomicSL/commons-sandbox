@@ -1,0 +1,384 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>commitments - edsl.commitments</title>
+          <meta name="description" content="commitments - edsl.commitments" />
+          <meta name="keywords" content="commitments edsl.commitments" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../index.html';
+            var hash = 'edsl.commitments.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../../lib/package_big.png" />
+        <p id="owner"><a href="../package.html" class="extype" name="edsl">edsl</a></p>
+        <h1>commitments</h1><span class="permalink">
+      <a href="../../index.html#edsl.commitments.package" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">commitments</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Provides classes for defining commitments.</p><h4>Overview</h4><p>A <i>commitment</i> stipulates the transfer of a resource or a set of
+resources between two parties; a commitment represents an <i>atomic</i>
+<a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><p>We envision that:</p><ol class="decimal"><li>model builders will use commitments, as well as the higher-level
+  contacts in our library, to construct commonly encountered contracts
+  for their specific use cases.</li></ol><p>  2. <a href="../../acl/PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> actors within a model can use
+  commitments, as well as the higher-level contracts in our library, to
+  innovate previously unknown contracts.</p><h5>Requirements</h5><h5>Use cases</h5><h6>Payment systems</h6><p>To model a &quot;one big bank&quot; payment system, we need...</p><p>- a representation of retail deposits</p><p>- a representation of currency</p><p>- a representation of an un-collateralized overdraft</p><p>We can model both the base &quot;multiple banks&quot; payment system as well as a payment
+payment system with bilateral intra-day netting by adding...</p><ul><li>a representation of reserve deposits</li></ul><p>To model a payment system with correspondent banking we need...</p><p>- a representation of correspondent deposits (which can probably be a simple
+extension of retail deposits).</p></div><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="edsl.commitments"><span>commitments</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+            <a href="http://docs.scala-lang.org/overviews/scaladoc/usage.html#members" target="_blank">Learn more about member selection</a>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="edsl.commitments.And" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="AndextendsContract"></a>
+      <a id="And:And"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="And.html"><span class="name">And</span></a><span class="result"> extends <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#edsl.commitments.package@AndextendsContract" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Combines two <code>Contract</code> objects to create a new <code>Contract</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Combines two <code>Contract</code> objects to create a new <code>Contract</code>.
+</p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>If you acquire <code>And(first, second)</code>, then you immediately acquire
+      both the <code>first</code> contract (unless it has expired) and the <code>second</code>
+      contract (unless it has expired). The contract <code>And(first, second)</code>
+      expires only after both <code>first</code> and <code>second</code> edsl have expired.
+</p></span></dd></dl></div>
+    </li><li name="edsl.commitments.Anytime" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="AnytimeextendsContract"></a>
+      <a id="Anytime:Anytime"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Anytime.html"><span class="name">Anytime</span></a><span class="result"> extends <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#edsl.commitments.package@AnytimeextendsContract" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A contract that creates an obligation to acquire an underlying contract
+at some point between the acquisition of the contract and the expiration
+of the underlying contract.</p><div class="fullcomment"><div class="comment cmt"><p>A contract that creates an obligation to acquire an underlying contract
+at some point between the acquisition of the contract and the expiration
+of the underlying contract.</p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>If an economic actor acquires <code>Anytime(contract)</code>, then it must
+      acquire <code>contract</code>, but is free to do so at any point between the
+      acquisition of <code>Anytime(contract)</code> and the expiration of <code>contract.</code>
+      The contract <code>Anytime(contract)</code> expires when <code>contract</code> expires.
+</p></span></dd></dl></div>
+    </li><li name="edsl.commitments.Contract" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ContractextendsAnyRef"></a>
+      <a id="Contract:Contract"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Contract.html"><span class="name">Contract</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#edsl.commitments.package@ContractextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The base trait for all edsl.</p><div class="fullcomment"><div class="comment cmt"><p>The base trait for all edsl.</p><p>A <code>Contract</code> represents an agreement between two or more parties that
+specifies, for each party, obligations to undertake (or not) actions
+or make certain payments.</p></div></div>
+    </li><li name="edsl.commitments.Get" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="GetextendsContract"></a>
+      <a id="Get:Get"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Get.html"><span class="name">Get</span></a><span class="result"> extends <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#edsl.commitments.package@GetextendsContract" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A <code>Contract</code> that, when acquired, acquires the underlying <code>contract</code> at
+the <code>contract</code> horizon (i.e., at the last possible moment) regardless of
+when the composite contract <code>Get(contract)</code> was acquired.</p><div class="fullcomment"><div class="comment cmt"><p>A <code>Contract</code> that, when acquired, acquires the underlying <code>contract</code> at
+the <code>contract</code> horizon (i.e., at the last possible moment) regardless of
+when the composite contract <code>Get(contract)</code> was acquired.
+</p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>If you acquire <code>Get(contract)</code>, then you must acquire <code>contract</code>
+      at the <code>contract</code> expiry date. The composite contract <code>Get(contract)</code>
+      expires at the same moment that <code>contract</code> expires.
+</p></span></dd></dl></div>
+    </li><li name="edsl.commitments.Give" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="GiveextendsContract"></a>
+      <a id="Give:Give"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Give.html"><span class="name">Give</span></a><span class="result"> extends <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#edsl.commitments.package@GiveextendsContract" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Reverses the rights and obligations of the underlying <code>Contract</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Reverses the rights and obligations of the underlying <code>Contract</code>.</p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>Acquiring <code>Give(contract)</code> is the acquire all of <code>contract</code> rights
+      and obligations (and vice versa). Note that for a bilateral contract
+      between parties A and B, A acquiring <code>contract</code> implies that B must
+      acquire <code>Give(contract)</code>.
+</p></span></dd></dl></div>
+    </li><li name="edsl.commitments.One" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="OneextendsContract"></a>
+      <a id="One:One"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="One.html"><span class="name">One</span></a><span class="result"> extends <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#edsl.commitments.package@OneextendsContract" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A <code>Contract</code> that immediately pays the holder one unit of some specified
+currency.</p><div class="fullcomment"><div class="comment cmt"><p>A <code>Contract</code> that immediately pays the holder one unit of some specified
+currency.
+</p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>This contract has an infinite horizon: there is no restriction on
+      when this contract can be acquired.
+</p></span></dd></dl></div>
+    </li><li name="edsl.commitments.Or" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="OrextendsContractwithProductwithSerializable"></a>
+      <a id="Or:Or"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Or.html"><span class="name">Or</span></a><span class="params">(<span name="first">first: <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>, <span name="second">second: <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>)</span><span class="result"> extends <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#edsl.commitments.package@OrextendsContractwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Choose which of two edsl to acquire.</p><div class="fullcomment"><div class="comment cmt"><p>Choose which of two edsl to acquire.
+</p></div><dl class="paramcmts block"><dt class="param">first</dt><dd class="cmt"><p>A <code>Contract</code> object.</p></dd><dt class="param">second</dt><dd class="cmt"><p>Another <code>Contract</code> object.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>If you acquire <code>Or(first, second)</code>, then you immediately acquire
+      either the <code>first</code> contract (unless it has expired) or the <code>second</code>
+      contract (unless it has expired). You can not acquire both <code>first</code>
+      and <code>second</code> edsl. The contract <code>Or(first, second)</code> expires
+      only after both <code>first</code> and <code>second</code> edsl have expired.
+</p></span></dd></dl></div>
+    </li><li name="edsl.commitments.Scale" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Scale[A]extendsContract"></a>
+      <a id="Scale[A]:Scale[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Scale.html"><span class="name">Scale</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="result"> extends <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#edsl.commitments.package@Scale[A]extendsContract" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Scales an underlying <code>Contract</code> by a potentially time-varying value.</p><div class="fullcomment"><div class="comment cmt"><p>Scales an underlying <code>Contract</code> by a potentially time-varying value.</p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>If you acquire <code>Scale(observable, contract)</code>, then you acquire <code>contract</code>
+      at the same moment except that all rights and obligations of <code>contract</code>
+      are multiplied by the value of the <code>observable</code> at the moment of
+      acquisition.
+</p></span></dd></dl></div>
+    </li><li name="edsl.commitments.Then" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ThenextendsContractwithProductwithSerializable"></a>
+      <a id="Then:Then"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Then.html"><span class="name">Then</span></a><span class="params">(<span name="first">first: <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>, <span name="second">second: <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>)</span><span class="result"> extends <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#edsl.commitments.package@ThenextendsContractwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Class for representing a conditional <code>Contract</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Class for representing a conditional <code>Contract</code>.
+</p></div><dl class="paramcmts block"><dt class="param">first</dt><dd class="cmt"><p>A <code>Contract</code> object.</p></dd><dt class="param">second</dt><dd class="cmt"><p>Another <code>Contract</code> object.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>If you acquire <code>Then(first, second)</code> and <code>first</code> contract has not
+      expired, then you acquire the <code>first</code> contract. If the <code>first</code> contract
+      has expired but the <code>second</code> contract has not, then you acquire the
+      <code>second</code> contract.  The contract <code>Then(first, second)</code> expires only
+      after both <code>first</code> and <code>second</code> edsl have expired.
+</p></span></dd></dl></div>
+    </li><li name="edsl.commitments.Truncate" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Truncate[A]extendsContract"></a>
+      <a id="Truncate[A]:Truncate[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Truncate.html"><span class="name">Truncate</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="result"> extends <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#edsl.commitments.package@Truncate[A]extendsContract" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The contract <code>Truncate(obs, contract)</code> is exactly like <code>contract</code> except
+that it expires at the earlier of <code>date</code> and the horizon of the <code>contract</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The contract <code>Truncate(obs, contract)</code> is exactly like <code>contract</code> except
+that it expires at the earlier of <code>date</code> and the horizon of the <code>contract</code>.
+</p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p><code>Truncate(date, contract)</code> only impacts the acquisition date of
+      <code>contract</code> it does not in any way impact the rights and obligations
+      defined in <code>contract</code> as such rights and obligations might extend
+      well beyond <code>date</code>.
+</p></span></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="edsl.commitments.Zero" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Zero"></a>
+      <a id="Zero:Zero"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Zero$.html"><span class="name">Zero</span></a><span class="result"> extends <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#edsl.commitments.package@Zero" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> that has no rights or obligations.</p><div class="fullcomment"><div class="comment cmt"><p>A <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> that has no rights or obligations.
+</p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>This contract has an infinite horizon: there is no restriction on
+      when this contract can be acquired.
+</p></span></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

@@ -48,15 +48,15 @@
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><h4>Overview</h4><p>Our API consists of several different layers each of which is represented by
-its own package.</p><h5><code>coms</code> package</h5><p>An <code>Actor</code> in our API that is <code>EconomicActorLike</code> communicates with other
-<code>EconomicActorLike</code> actors by proposing contracts which are either accepted or
-rejected. The <code>coms</code> package defines the <code>EconomicActorLike</code> trait as well as
-the high-level <code>EconomicActor</code> communication language.</p><p>Our high-level <code>EconomicActor</code> communication language is influences by, but
+its own package.</p><h5><code>acl</code> package</h5><p>A <a href="acl/PromiseMaker.html" class="extype" name="acl.PromiseMaker">acl.PromiseMaker</a> communicates with other <a href="acl/PromiseMaker.html" class="extype" name="acl.PromiseMaker">acl.PromiseMaker</a> actors by making
+promises which are then either accepted or rejected by the receiving
+<a href="acl/PromiseMaker.html" class="extype" name="acl.PromiseMaker">acl.PromiseMaker</a> actor. The <a href="acl/package.html" class="extype" name="acl">acl</a> package defines the <a href="acl/PromiseMaker.html" class="extype" name="acl.PromiseMaker">acl.PromiseMaker</a> trait
+as well as the high-level <a href="acl/PromiseMaker.html" class="extype" name="acl.PromiseMaker">acl.PromiseMaker</a> communication language.</p><p>Our high-level <a href="acl/PromiseMaker.html" class="extype" name="acl.PromiseMaker">acl.PromiseMaker</a> acl language is influenced by, but
 not slave to, the <a href="http://www.fipa.org/" target="_blank">Foundation for Intelligent Physical Agents (FIPA)</a>
-compliant <a href="http://www.fipa.org/specs/fipa00037/SC00037J.pdf" target="_blank">Agent Communication Language (ACL)</a>.</p><h5><code>contracts</code> package</h5><p>The <code>contract</code> package defines the low-level domain specific language (DSL)
-that we use for constructing commercial contracts. Instead of defining a fixed
+compliant <a href="http://www.fipa.org/specs/fipa00037/SC00037J.pdf" target="_blank">Agent Communication Language (ACL)</a>.</p><h5><code>edsl</code> package</h5><p>The <a href="edsl/package.html" class="extype" name="edsl">edsl</a> package defines the low-level embedded domain specific language (DSL)
+that we use for constructing composable commercial contracts. Instead of defining a fixed
 catalogue of contracts our approach is to follow...</p><ul><li><a href="https://lexifi.com/files/resources/MLFiPaper.pdf" target="_blank">Peyton-Jones et al (2000)</a></li><li><a href="http://www.itu.dk/~elsborg/sttt06.pdf" target="_blank">Andersen et al (2006)</a></li></ul><p>...and instead define a small set of atomic contracts, called
-<a href="contracts/commitments/package.html" class="extype" name="contracts.commitments"><code>commitments</code></a>, that can be used as &quot;building blocks&quot;
+<a href="edsl/commitments/package.html" class="extype" name="edsl.commitments"><code>commitments</code></a>, that can be used as &quot;building blocks&quot;
 to construct ever more complex contracts.</p><h5><code>actor</code> package</h5></div></div>
         
 
@@ -80,85 +80,79 @@ to construct ever more complex contracts.</p><h5><code>actor</code> package</h5>
 
         <div id="values" class="values members">
               <h3>Value Members</h3>
-              <ol><li name="_root_.actor" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="actor"></a>
-      <a id="actor:actor"></a>
+              <ol><li name="_root_.acl" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="acl"></a>
+      <a id="acl:acl"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a href="actor/package.html"><span class="name">actor</span></a>
+        <a href="acl/package.html"><span class="name">acl</span></a>
       </span>
       </h4><span class="permalink">
-      <a href="index.html#package@actor" title="Permalink" target="_top">
+      <a href="index.html#package@acl" title="Permalink" target="_top">
+        <img src="lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Provides classes defining a high-level actor communication language (ACL).</p><div class="fullcomment"><div class="comment cmt"><p>Provides classes defining a high-level actor communication language (ACL).</p><h4>Overview</h4><p>The <code>acl</code> package defines the <a href="acl/PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> trait as well as the
+high-level <a href="acl/PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> communication language.</p><p>Our high-level <a href="acl/PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> acl language is influenced by, but not slave
+to, the <a href="http://www.fipa.org/" target="_blank">Foundation for Intelligent Physical Agents (FIPA)</a>
+compliant <a href="http://www.fipa.org/specs/fipa00037/SC00037J.pdf" target="_blank">Agent Communication Language (ACL)</a>.</p><h5><code>PromiseMaker</code></h5><p>A <a href="acl/PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> communicates with other <a href="acl/PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> actors by making
+<a href="acl/package$$Promise.html" class="extype" name="acl.Promise">promises</a> which are then either <a href="acl/package$$PromiseAccepted.html" class="extype" name="acl.PromiseAccepted">accepted</a>
+or <a href="acl/package$$PromiseRejected.html" class="extype" name="acl.PromiseRejected">rejected</a> by the receiving <a href="acl/PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> actors.</p><h5><code>Counterparty</code></h5><p>Once a <a href="acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a> has been accepted by all relevant <a href="acl/PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> actors
+the <a href="acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a> can be used to construct a <a href="acl/ContractLike.html" class="extype" name="acl.ContractLike">ContractLike</a> actor that
+serves as a &quot;channel&quot; of communication between the various
+<a href="acl/Counterparty.html" class="extype" name="acl.Counterparty">CounterParty</a> actors for the duration of the underlying
+<a href="edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><p>A <a href="acl/Counterparty.html" class="extype" name="acl.Counterparty">Counterparty</a> actor should...</p><ul><li>be able to communicate directly with a <a href="acl/ContractLike.html" class="extype" name="acl.ContractLike">ContractLike</a> actor.</li><li>be able to communicate with any relevant <a href="acl/Counterparty.html" class="extype" name="acl.Counterparty">Counterparty</a>
+ actor indirectly using the <a href="acl/ContractLike.html" class="extype" name="acl.ContractLike">ContractLike</a> actor as channel.</li></ul><h5><code>ContractLike</code></h5><p>A <a href="acl/ContractLike.html" class="extype" name="acl.ContractLike">ContractLike</a> actor should have...</p><ul><li>an issuer: the issuer is the <a href="acl/Counterparty.html" class="extype" name="acl.Counterparty">Counterparty</a> actor for
+ which the <a href="edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> represents a liability.</li><li>an immutable collection of owners: the owners are for
+ which the contract represents an asset.
+</li></ul></div></div>
+    </li><li name="_root_.actors" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="actors"></a>
+      <a id="actors:actors"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="actors/package.html"><span class="name">actors</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="index.html#package@actors" title="Permalink" target="_top">
         <img src="lib/permalink.png" />
       </a>
     </span>
       <p class="shortcomment cmt">Provides classes for modeling economic actors.</p><div class="fullcomment"><div class="comment cmt"><p>Provides classes for modeling economic actors.</p><h4>Overview</h4></div></div>
-    </li><li name="_root_.coms" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="coms"></a>
-      <a id="coms:coms"></a>
+    </li><li name="_root_.edsl" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="edsl"></a>
+      <a id="edsl:edsl"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a href="coms/package.html"><span class="name">coms</span></a>
+        <a href="edsl/package.html"><span class="name">edsl</span></a>
       </span>
       </h4><span class="permalink">
-      <a href="index.html#package@coms" title="Permalink" target="_top">
+      <a href="index.html#package@edsl" title="Permalink" target="_top">
         <img src="lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Provides classes for facilitating communication between economic actors.</p><div class="fullcomment"><div class="comment cmt"><p>Provides classes for facilitating communication between economic actors.</p><h4>Overview</h4><p>An <code>Actor</code> in our API that is <code>EconomicActorLike</code> communicates with other
-<code>EconomicActorLike</code> actors by proposing contracts which are then either
-accepted or rejected by the receiving actors. The <code>coms</code> package defines
-the <code>EconomicActorLike</code> trait as well as the high-level <code>EconomicActorLike</code>
-communication language. Our high-level <code>EconomicActorLike</code> communication
-language is influenced by, but not slave to, the <a href="http://www.fipa.org/" target="_blank">Foundation for Intelligent Physical Agents (FIPA)</a> compliant
-<a href="http://www.fipa.org/specs/fipa00037/SC00037J.pdf" target="_blank">Agent Communication Language (ACL)</a>.
-</p></div></div>
-    </li><li name="_root_.contracts" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="contracts"></a>
-      <a id="contracts:contracts"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">package</span>
-      </span>
-      <span class="symbol">
-        <a href="contracts/package.html"><span class="name">contracts</span></a>
-      </span>
-      </h4><span class="permalink">
-      <a href="index.html#package@contracts" title="Permalink" target="_top">
-        <img src="lib/permalink.png" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Provides classes defining commercial contracts.</p><div class="fullcomment"><div class="comment cmt"><p>Provides classes defining commercial contracts.</p><h4>Overview</h4><p>Instead of defining a fixed catalogue of contracts our approach is to follow...</p><ul><li><a href="https://lexifi.com/files/resources/MLFiPaper.pdf" target="_blank">Peyton-Jones et al (2000)</a></li><li><a href="http://www.itu.dk/~elsborg/sttt06.pdf" target="_blank">Andersen et al (2006)</a></li></ul><p>...and instead define a small set of atomic contracts, called
-<a href="contracts/commitments/package.html" class="extype" name="contracts.commitments"><code>commitments</code></a>, that can be used as &quot;building blocks&quot;
-to construct ever more complex contracts.</p><h5>Composable Commercial Contracts</h5><p>Following <a href="http://www.itu.dk/~elsborg/sttt06.pdf" target="_blank">Andersen et al (2006)</a>
+      <p class="shortcomment cmt">Provides classes for modeling commercial contracts.</p><div class="fullcomment"><div class="comment cmt"><p>Provides classes for modeling commercial contracts.</p><h4>Overview</h4><p>Instead of defining a fixed catalogue of contracts our approach is to follow...</p><ul><li><a href="https://lexifi.com/files/resources/MLFiPaper.pdf" target="_blank">Peyton-Jones et al (2000)</a></li><li><a href="http://www.itu.dk/~elsborg/sttt06.pdf" target="_blank">Andersen et al (2006)</a></li></ul><p>...and instead define an <a href="https://en.wikipedia.org/wiki/Domain-specific_language" target="_blank">embedded domain specific language (EDSL)</a>. Our EDSL consists of a small set of
+atomic contracts, called <a href="edsl/commitments/package.html" class="extype" name="edsl.commitments">commitments</a>, that we use as
+&quot;building blocks&quot; to construct ever more complex contracts.</p><h5>Composable Commercial Contracts</h5><p>Following <a href="http://www.itu.dk/~elsborg/sttt06.pdf" target="_blank">Andersen et al (2006)</a>
 we focus on the following basic <i>contract patterns</i> for composing
 commercial contracts from sub-contracts:</p><ul><li>A <i>commitment</i> stipulates the transfer of a resource or a set of
  resources between two parties; a commitment represents an <i>atomic</i>
  <code>Contract</code>.</li><li>A <code>Contract</code> may require <i>sequential</i> execution of its sub-contracts.</li><li>A <code>Contract</code> may require <i>concurrent</i> execution of its sub-contracts,
  i.e., execution of all sub-contracts, where individual commitments are
  inter-leavened in any order.</li><li>A <code>Contract</code> may require execution of one of a number of <i>alternative</i>
- sub-contracts.</li><li>A <code>Contract</code> may require <i>repeated</i> execution of a sub-contract.</li></ul><h4>Overview</h4><p>A contract is composed of the following...</p><ul><li>An issuer: the issuer is the economic actor for which the contract
- represents a liability.</li><li>A mutable collection of owners: the owners are economic actors for
- which the contract represents an asset.</li></ul><h5>Requirements</h5><p>Current list of requirements for contracts is as follows...</p><ol class="decimal"><li>Each contract has a collection of commitments.</li></ol><p> 2. Each contract must have both a face value (objective) and a present value (subjective).</p><p> 3. Need a little language for modifying commitments.  Tentatively based
- around the Sources and Uses terminology from lecture 4 of Perry Mehrling's
- course on <i>Money and Banking.</i></p><h5>Composable contracts</h5><h4>A language for Promises</h4><p>Having defined the concepts of a Good and a Promise as well as sets of
-actions over Goods and Promises that can be performed by an Actor or groups
-of Actors to complete the API we need to define a language (grammar?) for
-building Sentences that describe valid Promises.</p><h4>Observables</h4><p>Every contract must have an Observable[T] which represents the stream of
-data (or events?) that parties to the contract have used to condition
-the specifics of the contract.</p><p>Parties to the contract must subscribe as Observer[T] to the Observable.</p><p>Examples
-Need to build a catalogue of examples demonstrating how to build common
-contracts using our language.
-</p></div></div>
+ sub-contracts.</li><li>A <code>Contract</code> may require <i>repeated</i> execution of a sub-contract.</li></ul><h4>Overview</h4><h5>Requirements</h5><p>Current list of requirements for edsl is as follows...</p><ol class="decimal"><li>Each contract has a collection of commitments.</li></ol><p> 2. Each contract must have both a face value (objective) and a present value (subjective).</p><h5>Composable Commercial Contracts</h5></div></div>
     </li><li name="_root_.environment" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="environment"></a>
       <a id="environment:environment"></a>
@@ -278,7 +272,7 @@ certificates and clearing house loan certificates.</p></div></div>
         <img src="lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Classes for modeling physical objects that are tradable.</p><div class="fullcomment"><div class="comment cmt"><p>Classes for modeling physical objects that are tradable.</p><h4>Overview</h4><h5>Requirements</h5><p>Any Actor implementing the Tradable trait needs to be able to:</p><ol class="decimal"><li>Communicate with BalanceSheetActor: communication involves sending
+      <p class="shortcomment cmt">Classes for modeling physical objects that are tradable.</p><div class="fullcomment"><div class="comment cmt"><p>Classes for modeling physical objects that are tradable.</p><h4>Overview</h4><h5>Requirements</h5><p>Any Actor implementing the Tradable trait needs to be able to:</p><ol class="decimal"><li>Communicate with BalanceSheetActor: acl involves sending
  messages to AddAsset (RemoveAsset) to a BalanceSheetActor.</li></ol><p> 2. Alter own state in response to messages from owner of the tradable.</p></div></div>
     </li></ol>
             </div>

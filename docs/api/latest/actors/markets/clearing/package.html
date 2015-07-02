@@ -1,0 +1,240 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>clearing - actors.markets.clearing</title>
+          <meta name="description" content="clearing - actors.markets.clearing" />
+          <meta name="keywords" content="clearing actors.markets.clearing" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'actors.markets.clearing.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../../../lib/package_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="actors">actors</a>.<a href="../package.html" class="extype" name="actors.markets">markets</a></p>
+        <h1>clearing</h1><span class="permalink">
+      <a href="../../../index.html#actors.markets.clearing.package" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clearing</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Classes for modeling variou market clearing mechanisms.</p><p>A <code>ClearingMechanismLike</code> actor should handle order execution (including
+price formation and quantity determination as well as any necessary queuing
+of buy and sell orders), generate filled orders, and send the filled orders
+to some \texttt{SettlementMechanismLike} actor for further processing. Note
+that each \texttt{MarketLike} actor should have a unique clearing mechanism.</p><p>\subsubsection{Order execution}
+Order execution entails price formation and quantity determination. Market price formation requires clearing the market. It is important to be clear about the definition of the term <code><code>market clearing.<i> \cite{black2012dictionary} defines <code><code>market clearing<i> as follows:
+\begin{enumerate}
+  \item The process of moving to a position where the quantity supplied is equal to the quantity demanded.
+  \item The assumption that economic forces always ensure the equality of supply and demand.
+\end{enumerate}
+In most all mainstream macroeconomic models (i.e., RBC, DSGE, etc) it is assumed that economic forces instantaneously adjust to ensure the equality of supply and demand in all markets.\footnote{
+    I am sure that there are important examples in the mainstream economics literature where the process of market clearing is explicitly modeled and we should cite these.
+} In our API, however, a key component of a \texttt{ClearingMechanismLike} actor is a \texttt{MatchingEngineLike} behavioral trait which explicitly defines a dynamic process by which orders are executed, prices are formed, and quantities are determined.</i></code></code></i></code></code></p><p>Note that a \texttt{MatchingEngineLike} behavioral trait is similar to an auction mechanism in many respects. Friedman (2007) lists four major types of two-sided auction mechanisms commonly implemented in real world markets.\footnote{
+    TODO: similarly classify the various types of single-sided auction mechanisms commonly implemented in real world markets.
+}
+\begin{itemize}
+  \item Posted offer (PO): PO allows one side (say sellers) to commit to particular prices that are publicly posted and then allows the other side to choose quantities. PO is the dominant clearing mechanism used in the modern retail sector.
+  \item Bilateral negotiation (BLN): BLN requires each buyer to search for a seller (and vice versa); the pair then tries to negotiate a price and (if unsuccessful) resumes search. BLN clearing mechanisms were prevalent in pre-industrial retail trade, and continue to be widely used in modern business-to-business (B2B) contracting. Some retail Internet sites also use BLN clearing mechanisms.
+  \item Continuous double auction (CDA): CDA allows traders to make offers to buy and to sell and allows traders to accept offers at any time during a trading period. Variants of CDA markets prevail in modern financial exchanges such as the New York Stock Exchange (NYSE), NASDAQ, and the Chicago Board of Trade and are featured options on many B2B internet sites.
+  \item Call auction (CA): The CA requires participants to make simultaneous offers to buy or sell, and the offers are cleared once each trading period at a uniform price.
+\end{itemize}
+Each of these auction mechanisms would correspond to a particular implementation of an \texttt{MatchingEngineLike} behavior.</p><p>\subsubsection{Order queuing}
+Order queuing involves storing and possibly sorting received buy and sell orders according to some \texttt{OrderQueuingStrategy}. Different order queuing strategies will be distinguished from one another by...
+\begin{itemize}
+    \item type of mutable collection used for storing buy and sell orders,
+    \item the sorting algorithm applied to the mutable collections.
+\end{itemize}
+For example, some \texttt{OrderQueuingStrategy} behaviors might only require that unfilled buy and sell orders are stored in some mutable collection (the sorting of buy and sell orders within their respective collections being irrelevant). Other \texttt{OrderQueuingStrategy} behaviors might have complicated \texttt{OrderBookLike} rules for sorting the stored buy and sell orders.</p></div><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="actors.markets.clearing"><span>clearing</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+            <a href="http://docs.scala-lang.org/overviews/scaladoc/usage.html#members" target="_blank">Learn more about member selection</a>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="actors.markets.clearing.BilateralNegotiationLike" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BilateralNegotiationLikeextendsAnyRef"></a>
+      <a id="BilateralNegotiationLike:BilateralNegotiationLike"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="BilateralNegotiationLike.html"><span class="name">BilateralNegotiationLike</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#actors.markets.clearing.package@BilateralNegotiationLikeextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Trait defining a bilateral negotiation clearing mechanism.</p>
+    </li><li name="actors.markets.clearing.CallAuctionLike" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="CallAuctionLikeextendsAnyRef"></a>
+      <a id="CallAuctionLike:CallAuctionLike"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="CallAuctionLike.html"><span class="name">CallAuctionLike</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#actors.markets.clearing.package@CallAuctionLikeextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Trait defining a Call Auction mechanism.</p>
+    </li><li name="actors.markets.clearing.ClearingMechanismLike" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ClearingMechanismLikeextendsAnyRef"></a>
+      <a id="ClearingMechanismLike:ClearingMechanismLike"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ClearingMechanismLike.html"><span class="name">ClearingMechanismLike</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#actors.markets.clearing.package@ClearingMechanismLikeextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Base trait for all clearing mechanisms.</p>
+    </li><li name="actors.markets.clearing.ContinuousDoubleAuctionLike" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ContinuousDoubleAuctionLikeextendsAnyRef"></a>
+      <a id="ContinuousDoubleAuctionLike:ContinuousDoubleAuctionLike"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ContinuousDoubleAuctionLike.html"><span class="name">ContinuousDoubleAuctionLike</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#actors.markets.clearing.package@ContinuousDoubleAuctionLikeextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Trait defining a Continuous Double Auction mechanism.</p>
+    </li><li name="actors.markets.clearing.PostedOfferLike" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="PostedOfferLikeextendsAnyRef"></a>
+      <a id="PostedOfferLike:PostedOfferLike"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="PostedOfferLike.html"><span class="name">PostedOfferLike</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#actors.markets.clearing.package@PostedOfferLikeextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Trait defining a posted offer clearing mechanism.</p>
+    </li></ol>
+            </div>
+
+        
+
+        
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
