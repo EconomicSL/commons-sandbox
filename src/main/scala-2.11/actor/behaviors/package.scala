@@ -16,5 +16,5 @@ limitations under the License.
 package actor
 
 
-/** Classes for modeling behavior of an [[coms.EconomicActorLike]]. */
+/** Classes for modeling behavior of an [[acl.PromiseMaker]]. */
 package object behaviors
