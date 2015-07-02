@@ -14,8 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-/** Provides classes defining an embedded domain specific language (EDSL) that
-  * is used to create composable commercial contracts.
+/** Provides classes for modeling commercial contracts.
   *
   * ==Overview==
   * Instead of defining a fixed catalogue of contracts our approach is to follow...
@@ -23,9 +22,10 @@ limitations under the License.
   *   - [[https://lexifi.com/files/resources/MLFiPaper.pdf Peyton-Jones et al (2000)]]
   *   - [[http://www.itu.dk/~elsborg/sttt06.pdf Andersen et al (2006)]]
   *
-  * ...and instead define a small set of atomic contracts, called
-  * [[edsl.commitments commitments]], that can be used as "building blocks"
-  * to construct ever more complex contracts.
+  * ...and instead define an [[https://en.wikipedia.org/wiki/Domain-specific_language
+  * embedded domain specific language (EDSL)]]. Our EDSL consists of a small set of
+  * atomic contracts, called [[edsl.commitments commitments]], that we use as
+  * "building blocks" to construct ever more complex contracts.
   *
   * ===Composable Commercial Contracts===
   * Following [[http://www.itu.dk/~elsborg/sttt06.pdf Andersen et al (2006)]]
@@ -56,28 +56,7 @@ limitations under the License.
   *
   *  2. Each contract must have both a face value (objective) and a present value (subjective).
   *
-  *  3. Need a little language for modifying commitments.  Tentatively based
-  *  around the Sources and Uses terminology from lecture 4 of Perry Mehrling's
-  *  course on ''Money and Banking.''
-  *
   * ===Composable Commercial Contracts===
-  *
-  * ==A language for Promises==
-  * Having defined the concepts of a Good and a Promise as well as sets of
-  * actions over Goods and Promises that can be performed by an Actor or groups
-  * of Actors to complete the API we need to define a language (grammar?) for
-  * building Sentences that describe valid Promises.
-  *
-  * ==Observables==
-  * Every contract must have an Observable[T] which represents the stream of
-  * data (or events?) that parties to the contract have used to condition
-  * the specifics of the contract.
-  *
-  * Parties to the contract must subscribe as Observer[T] to the Observable.
-  *
-  * Examples
-  * Need to build a catalogue of examples demonstrating how to build common
-  * edsl using our language.
   */
 package object edsl
 

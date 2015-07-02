@@ -15,28 +15,29 @@ limitations under the License.
 */
 package edsl
 
-import rx.lang.scala.Observable
 
 /** Provides classes for defining commitments.
   *
   * ==Overview==
   * A ''commitment'' stipulates the transfer of a resource or a set of
   * resources between two parties; a commitment represents an ''atomic''
-  * `Contract`.
+  * [[edsl.commitments.Contract Contract]].
   *
   * We envision that:
   *
   *   1. model builders will use commitments, as well as the higher-level
-  *   edsl in our library, to construct commonly encountered edsl
+  *   contacts in our library, to construct commonly encountered contracts
   *   for their specific use cases.
   *
-  *   2. edsl within a model can use commitments, as well as the
-  *   higher-level edsl in our library, to innovate previously unknown
-  *   edsl.
+  *   2. [[acl.PromiseMaker PromiseMaker]] actors within a model can use
+  *   commitments, as well as the higher-level contracts in our library, to
+  *   innovate previously unknown contracts.
   *
   * ===Requirements===
   *
-  * ====Payments systems====
+  * ===Use cases===
+  *
+  * ====Payment systems====
   * To model a "one big bank" payment system, we need...
   *
   * - a representation of retail deposits
