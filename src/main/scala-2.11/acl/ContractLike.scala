@@ -18,19 +18,26 @@ package acl
 import akka.actor.{Actor, ActorLogging, ActorRef}
 import edsl.commitments.Contract
 
-import scala.collection.mutable
+import scala.collection.immutable
 
-/** Base trait for all ContractActors. */
+
+/** Trait defining the behavior for a generic contract actor. */
 trait ContractLike extends Actor
   with ActorLogging {
 
-  /** Collection of commitments representing the terms of the contract. */
-  def commitments: mutable.Map[ActorRef, Contract]
+  /** Mapping of a [[Counterparty]] actor to a [[edsl.commitments.Contract Contract]]
+    * representing that [[Counterparty]] actors obligations.
+    */
+  def commitments: immutable.Map[ActorRef, Contract]
 
-  /** Actor for whom the underlying commitment represents a liability. */
+  /** [[Counterparty]] actor for whom the underlying
+    * [[edsl.commitments.Contract Contract]] represents a liability.
+    */
   def issuer: ActorRef
 
-  /** Collection of edsl for whom the underlying commitments represent assets. */
-  def owners: mutable.Set[ActorRef]
+  /** Collection of [[Counterparty]] actors for whom the underlying
+    * [[edsl.commitments.Contract Contract]] represents an asset.
+    */
+  def owners: immutable.Set[ActorRef]
 
 }

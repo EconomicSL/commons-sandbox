@@ -16,7 +16,6 @@ limitations under the License.
 package acl
 
 import akka.actor.{Actor, ActorLogging, ActorRef}
-import edsl.ContractBroken
 
 /** Trait defining behavior for an actor that is party to some
   * [[edsl.commitments.Contract Contract]].

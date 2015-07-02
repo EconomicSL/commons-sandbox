@@ -23,11 +23,12 @@ import scala.collection.immutable
 /** Provides classes defining a high-level actor communication language (ACL).
   *
   * ==Overview==
-  * A [[PromiseMaker]] communicates with other [[PromiseMaker]] edsl by promising
-  * edsl which are then either accepted or rejected by the receiving
-  * [[PromiseMaker]] edsl. The `acl` acl defines the [[PromiseMaker]] trait
-  * as well as the high-level [[PromiseMaker]] acl language. Our
-  * high-level [[PromiseMaker]] acl language is influenced by, but
+  * A [[PromiseMaker]] communicates with other [[PromiseMaker]] actors by making
+  * promises which are then either accepted or rejected by the receiving
+  * [[PromiseMaker]] actor. The `acl` package defines the [[PromiseMaker]] trait
+  * as well as the high-level [[PromiseMaker]] communication language.
+  *
+  * Our high-level [[PromiseMaker]] acl language is influenced by, but
   * not slave to, the [[http://www.fipa.org/ Foundation for Intelligent Physical Agents (FIPA)]]
   * compliant [[http://www.fipa.org/specs/fipa00037/SC00037J.pdf Agent Communication Language (ACL)]].
   */
