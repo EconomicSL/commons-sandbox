@@ -1,11 +1,11 @@
 package actor.government
 
 import akka.actor.{ActorLogging, Actor}
-import coms.EconomicActorLike
+import acl.PromiseMaker
 
 
 /** Trait defining a monetary authority. */
-trait MonetaryAuthorityLike extends EconomicActorLike {
+trait MonetaryAuthorityLike extends PromiseMaker {
   this: Actor with ActorLogging =>
 
 }

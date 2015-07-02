@@ -16,11 +16,11 @@ limitations under the License.
 package actor.government
 
 import akka.actor.{ActorLogging, Actor}
-import coms.EconomicActorLike
+import acl.PromiseMaker
 
 
 /** Trait defining a fiscal authority. */
-trait FiscalAuthorityLike extends EconomicActorLike {
+trait FiscalAuthorityLike extends PromiseMaker {
   this: Actor with ActorLogging =>
 
 }

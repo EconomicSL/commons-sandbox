@@ -16,11 +16,11 @@ limitations under the License.
 package actor.financiers
 
 import akka.actor.{ActorLogging, Actor}
-import coms.EconomicActorLike
+import acl.PromiseMaker
 
 
 /** Trait representing a generic financier. */
-trait FinancierLike extends EconomicActorLike {
+trait FinancierLike extends PromiseMaker {
   this: Actor with ActorLogging =>
 
 }

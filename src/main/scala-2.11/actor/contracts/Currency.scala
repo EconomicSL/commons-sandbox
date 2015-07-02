@@ -15,8 +15,8 @@ limitations under the License.
 */
 package actor.contracts
 
+import acl.ContractLike
 import akka.actor.ActorRef
-import edsl.ContractLike
 import edsl.commitments.Contract
 
 import scala.collection.mutable
