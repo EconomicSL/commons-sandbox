@@ -16,7 +16,7 @@ limitations under the License.
 package coms
 
 import akka.actor.{Actor, ActorLogging, ActorRef}
-import plumbing.contracts.commitments.Contract
+import contracts.commitments.Contract
 
 import scala.collection.immutable
 

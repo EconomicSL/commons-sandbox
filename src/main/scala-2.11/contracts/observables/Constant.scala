@@ -13,15 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package plumbing.contracts
-
-import plumbing.contracts.commitments.{One, Scale}
-import plumbing.contracts.observables.Constant
+package contracts.observables
 
 
-/** A `Contract` that immediately pays the holder a particular amount of the
-  * specified currency.
-  * @param code A string identifying the currency.
-  * @param amount The quantity of currency held.
-  */
-class Currency(amount: Double, code: String) extends Scale(new Constant(amount), new One(code))
+class Constant[A](val value: A) extends Observable[A]

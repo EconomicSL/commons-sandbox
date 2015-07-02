@@ -13,8 +13,16 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package plumbing.contracts.actors
+package contracts.commitments
 
 
-/** Trait defining a deposit actor. */
-trait DepositActorLike extends ContractActorLike
+/** Combines two `Contract` objects to create a new `Contract`.
+  *
+  * @param first A `Contract` object.
+  * @param second Another `Contract` object.
+  * @note If you acquire `And(first, second)`, then you immediately acquire
+  *       both the `first` contract (unless it has expired) and the `second`
+  *       contract (unless it has expired). The contract `And(first, second)`
+  *       expires only after both `first` and `second` contracts have expired.
+  */
+class And(val first: Contract, val second: Contract) extends Contract

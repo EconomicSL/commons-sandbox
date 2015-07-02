@@ -13,15 +13,15 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package plumbing.contracts.commitments
+package contracts
+
+import contracts.commitments.{One, Scale}
+import contracts.observables.Constant
 
 
-/** Reverses the rights and obligations of the underlying `Contract`.
-  * @param contract The underlying `Contract`.
-  * @note Acquiring `Give(contract)` is the acquire all of `contract` rights
-  *       and obligations (and vice versa). Note that for a bilateral contract
-  *       between parties A and B, A acquiring `contract` implies that B must
-  *       acquire `Give(contract)`.
+/** A `Contract` that immediately pays the holder a particular amount of the
+  * specified currency.
+  * @param code A string identifying the currency.
+  * @param amount The quantity of currency held.
   */
-class Give(val contract: Contract) extends Contract
-
+class Currency(amount: Double, code: String) extends Scale(new Constant(amount), new One(code))

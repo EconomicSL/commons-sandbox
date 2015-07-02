@@ -19,8 +19,8 @@ import akka.actor.{Actor, ActorLogging}
 import coms.EconomicActorLike
 
 
-/** Trait defining behavior for an [[EconomicActorLike]] that trades
-  * [[environment.tradables.GoodLike]] objects.
+/** Trait defining behavior for an [[coms.EconomicActorLike]] that trades
+  * [[tradables.Tangible]] objects.
   */
 trait GoodsTraderLike extends EconomicActorLike {
   this: Actor with ActorLogging =>

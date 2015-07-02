@@ -13,25 +13,26 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package plumbing.contracts.actors
+package contracts.actors
 
 import akka.actor.ActorRef
-import plumbing.contracts.commitments._
+import contracts.commitments.Contract
 
 import scala.collection.mutable
 
 
-/** Class defining a commercial bank deposit.
+/** Class defining a reserve deposit.
   *
   * @param balance Amount of the underlying deposit contract.
   * @param code String identifying the underlying currency.
   * @param issuer Actor for whom the underlying deposit contract is a liability.
   * @param owners Actor(s) for whom the underlying deposit contract is an asset.
+
   */
-case class RetailDepositActor(var balance: Double,
-                              code: String,
-                              issuer: ActorRef,
-                              owners: mutable.Set[ActorRef]) extends DepositActorLike {
+case class ReserveDepositActor(balance: Double,
+                               code: String,
+                               issuer: ActorRef,
+                               owners: mutable.Set[ActorRef]) extends DepositActorLike {
 
   def commitments: mutable.Map[ActorRef, Contract] = {
     ???

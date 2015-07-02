@@ -16,13 +16,12 @@ limitations under the License.
 package plumbing.balancesheets
 
 import akka.actor.{ActorRef, Actor, ActorLogging}
-import coms.EconomicActorLike
 
 import scala.collection.mutable
 
 
 /** Class representing a balance sheet.
-  * @note A [[BalanceSheetActor]] should be a child of some [[EconomicActorLike]] actor.
+  * @note A [[BalanceSheetActor]] should be a child of some [[coms.EconomicActorLike]] actor.
   */
 abstract class BalanceSheetActor extends Actor
   with ActorLogging {

@@ -13,12 +13,14 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package plumbing.contracts.commitments
+package contracts.commitments
 
 
-/** A [[Contract]] that has no rights or obligations.
+/** The base trait for all contracts.
   *
-  * @note This contract has an infinite horizon: there is no restriction on
-  *       when this contract can be acquired.
+  * A `Contract` represents an agreement between two or more parties that
+  * specifies, for each party, obligations to undertake (or not) actions
+  * or make certain payments.
+  *
   */
-case object Zero extends Contract
+trait Contract

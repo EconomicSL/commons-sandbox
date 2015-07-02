@@ -13,18 +13,12 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package plumbing.contracts.commitments
-
-import plumbing.contracts.observables.Observable
+package contracts.commitments
 
 
-/** The contract `Truncate(obs, contract)` is exactly like `contract` except
-  * that it expires at the earlier of `date` and the horizon of the `contract`.
+/** A [[Contract]] that has no rights or obligations.
   *
-  * @note `Truncate(date, contract)` only impacts the acquisition date of
-  *       `contract` it does not in any way impact the rights and obligations
-  *       defined in `contract` as such rights and obligations might extend
-  *       well beyond `date`.
+  * @note This contract has an infinite horizon: there is no restriction on
+  *       when this contract can be acquired.
   */
-class Truncate[A](obs: Observable[A], contract: Contract) extends Contract
-
+case object Zero extends Contract

@@ -13,17 +13,13 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package plumbing.contracts.commitments
+package contracts.commitments
 
 
-/** A `Contract` that, when acquired, acquires the underlying `contract` at
-  * the `contract` horizon (i.e., at the last possible moment) regardless of
-  * when the composite contract `Get(contract)` was acquired.
+/** A `Contract` that immediately pays the holder one unit of some specified
+  * currency.
   *
-  * @param contract The underlying `Contract`.
-  * @note If you acquire `Get(contract)`, then you must acquire `contract`
-  *       at the `contract` expiry date. The composite contract `Get(contract)`
-  *       expires at the same moment that `contract` expires.
+  * @note This contract has an infinite horizon: there is no restriction on
+  *       when this contract can be acquired.
   */
-class Get(val contract: Contract) extends Contract
-
+class One(val currency: String) extends Contract

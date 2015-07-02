@@ -13,7 +13,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package plumbing
 
 
 /** Provides classes defining commercial contracts.
@@ -25,7 +24,7 @@ package plumbing
   *   - [[http://www.itu.dk/~elsborg/sttt06.pdf Andersen et al (2006)]]
   *
   * ...and instead define a small set of atomic contracts, called
-  * [[plumbing.contracts.commitments]], that can be used as "building blocks"
+  * [[contracts.commitments `commitments`]], that can be used as "building blocks"
   * to construct ever more complex contracts.
   *
   * ===Composable Commercial Contracts===

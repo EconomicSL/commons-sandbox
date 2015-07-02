@@ -17,17 +17,17 @@ package actor.behaviors
 
 import akka.actor.{Actor, ActorLogging}
 import coms.EconomicActorLike
-import plumbing.contracts.commitments.Contract
+import contracts.commitments.Contract
 
 
-/** Trait defining behavior for an [[EconomicActorLike]] that trades
-  * [[plumbing.contracts.commitments.Contract]] objects.
+/** Trait defining behavior for an [[coms.EconomicActorLike]] actor that
+  * trades [[contracts.commitments.Contract]] objects.
   *
   * == Overview ==
   *
   * ====Unilateral Actions involving Promises====
   * An [[PromiseMakerLike]] can unilaterally decide to perform any of the
-  * following actions with a [[plumbing.contracts.commitments.Contract]] tradable.
+  * following actions with a [[contracts.commitments.Contract]] tradable.
   *
   *  - `create` a new `ContractLike`: When an actor creates a new `ContractLike`, the
   * actor becomes its `promisor` and the new `ContractLike` becomes a liability

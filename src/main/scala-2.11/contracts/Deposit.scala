@@ -13,13 +13,13 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package plumbing.contracts.commitments
+package contracts
+
+import contracts.commitments.Anytime
 
 
-/** A `Contract` that immediately pays the holder one unit of some specified
-  * currency.
-  *
-  * @note This contract has an infinite horizon: there is no restriction on
-  *       when this contract can be acquired.
+/** A `Contract` representing a demand deposit for the specified currency.
+  * @param code A string identifying the currency.
+  * @param amount The quantity of deposits held.
   */
-class One(val currency: String) extends Contract
+class Deposit(amount: Double, code: String) extends Anytime(new Currency(amount, code))

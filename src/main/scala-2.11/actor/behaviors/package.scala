@@ -15,8 +15,6 @@ limitations under the License.
 */
 package actor
 
-import coms.EconomicActorLike
 
-
-/** Classes for modeling behavior of an [[EconomicActorLike]]. */
+/** Classes for modeling behavior of an [[coms.EconomicActorLike]]. */
 package object behaviors

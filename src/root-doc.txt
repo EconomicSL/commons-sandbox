@@ -14,15 +14,14 @@ compliant [[http://www.fipa.org/specs/fipa00037/SC00037J.pdf Agent Communication
 
 ===`contracts` package===
 The `contract` package defines the low-level domain specific language (DSL)
-that we use for constructing commercial contracts.
-
-Instead of defining a fixed catalogue of contracts our approach is to follow...
+that we use for constructing commercial contracts. Instead of defining a fixed
+catalogue of contracts our approach is to follow...
 
  - [[https://lexifi.com/files/resources/MLFiPaper.pdf Peyton-Jones et al (2000)]]
  - [[http://www.itu.dk/~elsborg/sttt06.pdf Andersen et al (2006)]]
 
 ...and instead define a small set of atomic contracts, called
-[[plumbing.contracts.commitments `commitments`]], that can be used as "building blocks" to
-construct ever more complex contracts.
+[[contracts.commitments `commitments`]], that can be used as "building blocks"
+to construct ever more complex contracts.
 
-===`actors` package===
+===`actor` package===
