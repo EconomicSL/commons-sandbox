@@ -1,0 +1,287 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>acl - acl</title>
+          <meta name="description" content="acl - acl" />
+          <meta name="keywords" content="acl acl" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../lib/template.js"></script>
+      <script type="text/javascript" src="../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../index.html';
+            var hash = 'acl.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../lib/package_big.png" />
+        
+        <h1>acl</h1><span class="permalink">
+      <a href="../index.html#acl.package" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">acl</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Provides classes defining a high-level actor communication language (ACL).</p><h4>Overview</h4><p>The <code>acl</code> package defines the <a href="PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> trait as well as the
+high-level <a href="PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> communication language.</p><p>Our high-level <a href="PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> acl language is influenced by, but not slave
+to, the <a href="http://www.fipa.org/" target="_blank">Foundation for Intelligent Physical Agents (FIPA)</a>
+compliant <a href="http://www.fipa.org/specs/fipa00037/SC00037J.pdf" target="_blank">Agent Communication Language (ACL)</a>.</p><h5><code>PromiseMaker</code></h5><p>A <a href="PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> communicates with other <a href="PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> actors by making
+<a href="package$$Promise.html" class="extype" name="acl.Promise">promises</a> which are then either <a href="package$$PromiseAccepted.html" class="extype" name="acl.PromiseAccepted">accepted</a>
+or <a href="package$$PromiseRejected.html" class="extype" name="acl.PromiseRejected">rejected</a> by the receiving <a href="PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> actors.</p><h5><code>Counterparty</code></h5><p>Once a <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> has been accepted by all relevant <a href="PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> actors
+the <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> can be used to construct a <a href="ContractLike.html" class="extype" name="acl.ContractLike">ContractLike</a> actor that
+serves as a &quot;channel&quot; of communication between the various
+<a href="Counterparty.html" class="extype" name="acl.Counterparty">CounterParty</a> actors for the duration of the underlying
+<a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><p>A <a href="Counterparty.html" class="extype" name="acl.Counterparty">Counterparty</a> actor should...</p><ul><li>be able to communicate directly with a <a href="ContractLike.html" class="extype" name="acl.ContractLike">ContractLike</a> actor.</li><li>be able to communicate with any relevant <a href="Counterparty.html" class="extype" name="acl.Counterparty">Counterparty</a>
+ actor indirectly using the <a href="ContractLike.html" class="extype" name="acl.ContractLike">ContractLike</a> actor as channel.</li></ul><h5><code>ContractLike</code></h5><p>A <a href="ContractLike.html" class="extype" name="acl.ContractLike">ContractLike</a> actor should have...</p><ul><li>an issuer: the issuer is the <a href="Counterparty.html" class="extype" name="acl.Counterparty">Counterparty</a> actor for
+ which the <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> represents a liability.</li><li>an immutable collection of owners: the owners are for
+ which the contract represents an asset.
+</li></ul></div><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="acl"><span>acl</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+            <a href="http://docs.scala-lang.org/overviews/scaladoc/usage.html#members" target="_blank">Learn more about member selection</a>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="acl.ContractBroken" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ContractBrokenextendsProductwithSerializable"></a>
+      <a id="ContractBroken:ContractBroken"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="package$$ContractBroken.html"><span class="name">ContractBroken</span></a><span class="params">(<span name="sender">sender: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#acl.package@ContractBrokenextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A message indicating that a <a href="Counterparty.html" class="extype" name="acl.Counterparty">Counterparty</a> actor has broken an
+existing <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><div class="fullcomment"><div class="comment cmt"><p>A message indicating that a <a href="Counterparty.html" class="extype" name="acl.Counterparty">Counterparty</a> actor has broken an
+existing <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.
+</p></div><dl class="paramcmts block"><dt class="param">sender</dt><dd class="cmt"><p>the <a href="Counterparty.html" class="extype" name="acl.Counterparty">Counterparty</a> actor breaking the existing
+              <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>the <a href="ContractLike.html" class="extype" name="acl.ContractLike">ContractLike</a> actor representing the existing
+                <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> who's terms
+                are being breached.
+</p></dd></dl></div>
+    </li><li name="acl.ContractLike" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ContractLikeextendsActorwithActorLogging"></a>
+      <a id="ContractLike:ContractLike"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ContractLike.html"><span class="name">ContractLike</span></a><span class="result"> extends <span class="extype" name="akka.actor.Actor">Actor</span> with <span class="extype" name="akka.actor.ActorLogging">ActorLogging</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#acl.package@ContractLikeextendsActorwithActorLogging" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Trait defining the behavior for a generic contract actor.</p>
+    </li><li name="acl.Counterparty" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="CounterpartyextendsAnyRef"></a>
+      <a id="Counterparty:Counterparty"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Counterparty.html"><span class="name">Counterparty</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#acl.package@CounterpartyextendsAnyRef" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Trait defining behavior for an actor that is party to some
+<a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Trait defining behavior for an actor that is party to some
+<a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><p><code>Counterparty</code> actors communicate with other <code>Counterparty</code> actors using
+<a href="ContractLike.html" class="extype" name="acl.ContractLike">ContractLike</a> actors as &quot;channels.&quot;
+</p></div></div>
+    </li><li name="acl.Promise" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="PromiseextendsProductwithSerializable"></a>
+      <a id="Promise:Promise"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="package$$Promise.html"><span class="name">Promise</span></a><span class="params">(<span name="sender">sender: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="receiver">receiver: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="akka.actor.ActorRef">ActorRef</span>]</span>, <span name="contract">contract: <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#acl.package@PromiseextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A promise made by some <a href="PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> to a collection of other
+<a href="PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> edsl to perform actions specified in the
+<a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><div class="fullcomment"><div class="comment cmt"><p>A promise made by some <a href="PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> to a collection of other
+<a href="PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> edsl to perform actions specified in the
+<a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.
+</p></div><dl class="paramcmts block"><dt class="param">sender</dt><dd class="cmt"><p>the <a href="PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> making the proposal.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>a collection of <a href="PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> edsl who are receiving the
+                <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> and therefore are potential counter parties to
+                the <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p></dd><dt class="param">contract</dt><dd class="cmt"><p>a <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> specifying
+                certain actions that the sender and receiver should perform.
+</p></dd></dl></div>
+    </li><li name="acl.PromiseAccepted" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="PromiseAcceptedextendsProductwithSerializable"></a>
+      <a id="PromiseAccepted:PromiseAccepted"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="package$$PromiseAccepted.html"><span class="name">PromiseAccepted</span></a><span class="params">(<span name="sender">sender: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="receiver">receiver: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="akka.actor.ActorRef">ActorRef</span>]</span>, <span name="promise">promise: <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#acl.package@PromiseAcceptedextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A message indicated that a previously submitted <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> has been accepted.</p><div class="fullcomment"><div class="comment cmt"><p>A message indicated that a previously submitted <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> has been accepted.
+</p></div><dl class="paramcmts block"><dt class="param">sender</dt><dd class="cmt"><p>the <a href="PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> accepting the previously received <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a>.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>a collection of <a href="PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> edsl who are receiving the
+                <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> and therefore are potential counter parties to
+                the <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p></dd><dt class="param">promise</dt><dd class="cmt"><p>the previously received <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> that is being accepted.</p></dd></dl></div>
+    </li><li name="acl.PromiseMaker" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="PromiseMakerextendsAnyRef"></a>
+      <a id="PromiseMaker:PromiseMaker"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="PromiseMaker.html"><span class="name">PromiseMaker</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#acl.package@PromiseMakerextendsAnyRef" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Trait defining behavior for an actor that trades <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> objects.</p>
+    </li><li name="acl.PromiseRejected" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="PromiseRejectedextendsProductwithSerializable"></a>
+      <a id="PromiseRejected:PromiseRejected"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="package$$PromiseRejected.html"><span class="name">PromiseRejected</span></a><span class="params">(<span name="sender">sender: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="receiver">receiver: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="akka.actor.ActorRef">ActorRef</span>]</span>, <span name="promise">promise: <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#acl.package@PromiseRejectedextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A message indicating that a previously submitted <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> has been rejected.</p><div class="fullcomment"><div class="comment cmt"><p>A message indicating that a previously submitted <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> has been rejected.
+</p></div><dl class="paramcmts block"><dt class="param">sender</dt><dd class="cmt"><p>the <a href="PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> rejecting the previously received <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a>.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>a collection of <a href="PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> edsl who are receiving the
+                <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> and therefore are potential counter parties to
+                the <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p></dd><dt class="param">promise</dt><dd class="cmt"><p>the previously received <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> that is being rejected.
+</p></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
