@@ -49,9 +49,9 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Trait defining behavior for an <span class="extype" name="EconomicActorLike">EconomicActorLike</span> that trades
-<a href="../../plumbing/contracts/commitments/Contract.html" class="extype" name="plumbing.contracts.commitments.Contract">plumbing.contracts.commitments.Contract</a> objects.</p><h4> Overview </h4><h6>Unilateral Actions involving Promises</h6><p>An <a href="" class="extype" name="actor.behaviors.PromiseMakerLike">PromiseMakerLike</a> can unilaterally decide to perform any of the
-following actions with a <a href="../../plumbing/contracts/commitments/Contract.html" class="extype" name="plumbing.contracts.commitments.Contract">plumbing.contracts.commitments.Contract</a> tradable.</p><ul><li><code>create</code> a new <code>ContractLike</code>: When an actor creates a new <code>ContractLike</code>, the
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Trait defining behavior for an <a href="../../coms/EconomicActorLike.html" class="extype" name="coms.EconomicActorLike">coms.EconomicActorLike</a> actor that
+trades <a href="../../contracts/commitments/Contract.html" class="extype" name="contracts.commitments.Contract">contracts.commitments.Contract</a> objects.</p><h4> Overview </h4><h6>Unilateral Actions involving Promises</h6><p>An <a href="" class="extype" name="actor.behaviors.PromiseMakerLike">PromiseMakerLike</a> can unilaterally decide to perform any of the
+following actions with a <a href="../../contracts/commitments/Contract.html" class="extype" name="contracts.commitments.Contract">contracts.commitments.Contract</a> tradable.</p><ul><li><code>create</code> a new <code>ContractLike</code>: When an actor creates a new <code>ContractLike</code>, the
 actor becomes its <code>promisor</code> and the new <code>ContractLike</code> becomes a liability
 for that actor. Similarly, the new Promise becomes an asset for which ever
 actor is the <code>promisee</code>.</li><li><code>accept</code> a <code>ContractLike</code>: If an actor <i>k</i> chooses to accept a <code>ContractLike</code>
@@ -167,7 +167,7 @@ Actor <i>j</i> with permission from the promisee of that Promise, Actor <i>k</i>
     </span>
       <p class="shortcomment cmt">Balance sheet.</p><div class="fullcomment"><div class="comment cmt"><p>Balance sheet.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../coms/EconomicActorLike.html" class="extype" name="coms.EconomicActorLike">EconomicActorLike</a></dd></dl></div>
     </li><li name="actor.behaviors.PromiseMakerLike#break" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="break(promise:plumbing.contracts.commitments.Contract):Unit"></a>
+      <a id="break(promise:contracts.commitments.Contract):Unit"></a>
       <a id="break(Contract):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -175,16 +175,16 @@ Actor <i>j</i> with permission from the promisee of that Promise, Actor <i>k</i>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">break</span><span class="params">(<span name="promise">promise: <a href="../../plumbing/contracts/commitments/Contract.html" class="extype" name="plumbing.contracts.commitments.Contract">Contract</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">break</span><span class="params">(<span name="promise">promise: <a href="../../contracts/commitments/Contract.html" class="extype" name="contracts.commitments.Contract">Contract</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#actor.behaviors.PromiseMakerLike@break(promise:plumbing.contracts.commitments.Contract):Unit" title="Permalink" target="_top">
+      <a href="../../index.html#actor.behaviors.PromiseMakerLike@break(promise:contracts.commitments.Contract):Unit" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
       
     </li><li name="actor.behaviors.PromiseMakerLike#create" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="create():plumbing.contracts.commitments.Contract"></a>
+      <a id="create():contracts.commitments.Contract"></a>
       <a id="create():Contract"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -192,16 +192,16 @@ Actor <i>j</i> with permission from the promisee of that Promise, Actor <i>k</i>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">create</span><span class="params">()</span><span class="result">: <a href="../../plumbing/contracts/commitments/Contract.html" class="extype" name="plumbing.contracts.commitments.Contract">Contract</a></span>
+        <span class="name">create</span><span class="params">()</span><span class="result">: <a href="../../contracts/commitments/Contract.html" class="extype" name="contracts.commitments.Contract">Contract</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#actor.behaviors.PromiseMakerLike@create():plumbing.contracts.commitments.Contract" title="Permalink" target="_top">
+      <a href="../../index.html#actor.behaviors.PromiseMakerLike@create():contracts.commitments.Contract" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
       
     </li><li name="actor.behaviors.PromiseMakerLike#destroy" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="destroy(promise:plumbing.contracts.commitments.Contract):Unit"></a>
+      <a id="destroy(promise:contracts.commitments.Contract):Unit"></a>
       <a id="destroy(Contract):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -209,16 +209,16 @@ Actor <i>j</i> with permission from the promisee of that Promise, Actor <i>k</i>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">destroy</span><span class="params">(<span name="promise">promise: <a href="../../plumbing/contracts/commitments/Contract.html" class="extype" name="plumbing.contracts.commitments.Contract">Contract</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">destroy</span><span class="params">(<span name="promise">promise: <a href="../../contracts/commitments/Contract.html" class="extype" name="contracts.commitments.Contract">Contract</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#actor.behaviors.PromiseMakerLike@destroy(promise:plumbing.contracts.commitments.Contract):Unit" title="Permalink" target="_top">
+      <a href="../../index.html#actor.behaviors.PromiseMakerLike@destroy(promise:contracts.commitments.Contract):Unit" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
       
     </li><li name="actor.behaviors.PromiseMakerLike#fulfill" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="fulfill(promise:plumbing.contracts.commitments.Contract):Unit"></a>
+      <a id="fulfill(promise:contracts.commitments.Contract):Unit"></a>
       <a id="fulfill(Contract):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -226,16 +226,16 @@ Actor <i>j</i> with permission from the promisee of that Promise, Actor <i>k</i>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">fulfill</span><span class="params">(<span name="promise">promise: <a href="../../plumbing/contracts/commitments/Contract.html" class="extype" name="plumbing.contracts.commitments.Contract">Contract</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">fulfill</span><span class="params">(<span name="promise">promise: <a href="../../contracts/commitments/Contract.html" class="extype" name="contracts.commitments.Contract">Contract</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#actor.behaviors.PromiseMakerLike@fulfill(promise:plumbing.contracts.commitments.Contract):Unit" title="Permalink" target="_top">
+      <a href="../../index.html#actor.behaviors.PromiseMakerLike@fulfill(promise:contracts.commitments.Contract):Unit" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
       
     </li><li name="actor.behaviors.PromiseMakerLike#redeem" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="redeem(promise:plumbing.contracts.commitments.Contract):Unit"></a>
+      <a id="redeem(promise:contracts.commitments.Contract):Unit"></a>
       <a id="redeem(Contract):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -243,10 +243,10 @@ Actor <i>j</i> with permission from the promisee of that Promise, Actor <i>k</i>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">redeem</span><span class="params">(<span name="promise">promise: <a href="../../plumbing/contracts/commitments/Contract.html" class="extype" name="plumbing.contracts.commitments.Contract">Contract</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">redeem</span><span class="params">(<span name="promise">promise: <a href="../../contracts/commitments/Contract.html" class="extype" name="contracts.commitments.Contract">Contract</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#actor.behaviors.PromiseMakerLike@redeem(promise:plumbing.contracts.commitments.Contract):Unit" title="Permalink" target="_top">
+      <a href="../../index.html#actor.behaviors.PromiseMakerLike@redeem(promise:contracts.commitments.Contract):Unit" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
@@ -531,7 +531,7 @@ specified in some contract.</p></div><dl class="paramcmts block"><dt class="para
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="coms.EconomicActorLike#propose" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="propose(receiver:scala.collection.immutable.Set[akka.actor.ActorRef],contract:plumbing.contracts.commitments.Contract):Unit"></a>
+      <a id="propose(receiver:scala.collection.immutable.Set[akka.actor.ActorRef],contract:contracts.commitments.Contract):Unit"></a>
       <a id="propose(Set[ActorRef],Contract):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -539,10 +539,10 @@ specified in some contract.</p></div><dl class="paramcmts block"><dt class="para
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">propose</span><span class="params">(<span name="receiver">receiver: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="akka.actor.ActorRef">ActorRef</span>]</span>, <span name="contract">contract: <a href="../../plumbing/contracts/commitments/Contract.html" class="extype" name="plumbing.contracts.commitments.Contract">Contract</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">propose</span><span class="params">(<span name="receiver">receiver: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="akka.actor.ActorRef">ActorRef</span>]</span>, <span name="contract">contract: <a href="../../contracts/commitments/Contract.html" class="extype" name="contracts.commitments.Contract">Contract</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#actor.behaviors.PromiseMakerLike@propose(receiver:scala.collection.immutable.Set[akka.actor.ActorRef],contract:plumbing.contracts.commitments.Contract):Unit" title="Permalink" target="_top">
+      <a href="../../index.html#actor.behaviors.PromiseMakerLike@propose(receiver:scala.collection.immutable.Set[akka.actor.ActorRef],contract:contracts.commitments.Contract):Unit" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>

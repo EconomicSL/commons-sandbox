@@ -47,7 +47,7 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Classes for modeling behavior of an <span class="extype" name="EconomicActorLike">EconomicActorLike</span>.</p></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Classes for modeling behavior of an <a href="../../coms/EconomicActorLike.html" class="extype" name="coms.EconomicActorLike">coms.EconomicActorLike</a>.</p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
@@ -105,8 +105,8 @@
         <img src="../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Trait defining behavior for an <span class="extype" name="EconomicActorLike">EconomicActorLike</span> that trades
-<span class="extype" name="environment.tradables.GoodLike">environment.tradables.GoodLike</span> objects.</p>
+      <p class="shortcomment cmt">Trait defining behavior for an <a href="../../coms/EconomicActorLike.html" class="extype" name="coms.EconomicActorLike">coms.EconomicActorLike</a> that trades
+<a href="../../tradables/Tangible.html" class="extype" name="tradables.Tangible">tradables.Tangible</a> objects.</p>
     </li><li name="actor.behaviors.MarketParticipantLike" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="MarketParticipantLikeextendsEconomicActorLike"></a>
       <a id="MarketParticipantLike:MarketParticipantLike"></a>
@@ -140,10 +140,10 @@
         <img src="../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Trait defining behavior for an <span class="extype" name="EconomicActorLike">EconomicActorLike</span> that trades
-<a href="../../plumbing/contracts/commitments/Contract.html" class="extype" name="plumbing.contracts.commitments.Contract">plumbing.contracts.commitments.Contract</a> objects.</p><div class="fullcomment"><div class="comment cmt"><p>Trait defining behavior for an <span class="extype" name="EconomicActorLike">EconomicActorLike</span> that trades
-<a href="../../plumbing/contracts/commitments/Contract.html" class="extype" name="plumbing.contracts.commitments.Contract">plumbing.contracts.commitments.Contract</a> objects.</p><h4> Overview </h4><h6>Unilateral Actions involving Promises</h6><p>An <a href="PromiseMakerLike.html" class="extype" name="actor.behaviors.PromiseMakerLike">PromiseMakerLike</a> can unilaterally decide to perform any of the
-following actions with a <a href="../../plumbing/contracts/commitments/Contract.html" class="extype" name="plumbing.contracts.commitments.Contract">plumbing.contracts.commitments.Contract</a> tradable.</p><ul><li><code>create</code> a new <code>ContractLike</code>: When an actor creates a new <code>ContractLike</code>, the
+      <p class="shortcomment cmt">Trait defining behavior for an <a href="../../coms/EconomicActorLike.html" class="extype" name="coms.EconomicActorLike">coms.EconomicActorLike</a> actor that
+trades <a href="../../contracts/commitments/Contract.html" class="extype" name="contracts.commitments.Contract">contracts.commitments.Contract</a> objects.</p><div class="fullcomment"><div class="comment cmt"><p>Trait defining behavior for an <a href="../../coms/EconomicActorLike.html" class="extype" name="coms.EconomicActorLike">coms.EconomicActorLike</a> actor that
+trades <a href="../../contracts/commitments/Contract.html" class="extype" name="contracts.commitments.Contract">contracts.commitments.Contract</a> objects.</p><h4> Overview </h4><h6>Unilateral Actions involving Promises</h6><p>An <a href="PromiseMakerLike.html" class="extype" name="actor.behaviors.PromiseMakerLike">PromiseMakerLike</a> can unilaterally decide to perform any of the
+following actions with a <a href="../../contracts/commitments/Contract.html" class="extype" name="contracts.commitments.Contract">contracts.commitments.Contract</a> tradable.</p><ul><li><code>create</code> a new <code>ContractLike</code>: When an actor creates a new <code>ContractLike</code>, the
 actor becomes its <code>promisor</code> and the new <code>ContractLike</code> becomes a liability
 for that actor. Similarly, the new Promise becomes an asset for which ever
 actor is the <code>promisee</code>.</li><li><code>accept</code> a <code>ContractLike</code>: If an actor <i>k</i> chooses to accept a <code>ContractLike</code>

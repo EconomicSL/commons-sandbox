@@ -1,0 +1,246 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>contracts - contracts</title>
+          <meta name="description" content="contracts - contracts" />
+          <meta name="keywords" content="contracts contracts" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../lib/template.js"></script>
+      <script type="text/javascript" src="../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../index.html';
+            var hash = 'contracts.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../lib/package_big.png" />
+        
+        <h1>contracts</h1><span class="permalink">
+      <a href="../index.html#contracts.package" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">contracts</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Provides classes defining commercial contracts.</p><h4>Overview</h4><p>Instead of defining a fixed catalogue of contracts our approach is to follow...</p><ul><li><a href="https://lexifi.com/files/resources/MLFiPaper.pdf" target="_blank">Peyton-Jones et al (2000)</a></li><li><a href="http://www.itu.dk/~elsborg/sttt06.pdf" target="_blank">Andersen et al (2006)</a></li></ul><p>...and instead define a small set of atomic contracts, called
+<a href="commitments/package.html" class="extype" name="contracts.commitments"><code>commitments</code></a>, that can be used as &quot;building blocks&quot;
+to construct ever more complex contracts.</p><h5>Composable Commercial Contracts</h5><p>Following <a href="http://www.itu.dk/~elsborg/sttt06.pdf" target="_blank">Andersen et al (2006)</a>
+we focus on the following basic <i>contract patterns</i> for composing
+commercial contracts from sub-contracts:</p><ul><li>A <i>commitment</i> stipulates the transfer of a resource or a set of
+ resources between two parties; a commitment represents an <i>atomic</i>
+ <code>Contract</code>.</li><li>A <code>Contract</code> may require <i>sequential</i> execution of its sub-contracts.</li><li>A <code>Contract</code> may require <i>concurrent</i> execution of its sub-contracts,
+ i.e., execution of all sub-contracts, where individual commitments are
+ inter-leavened in any order.</li><li>A <code>Contract</code> may require execution of one of a number of <i>alternative</i>
+ sub-contracts.</li><li>A <code>Contract</code> may require <i>repeated</i> execution of a sub-contract.</li></ul><h4>Overview</h4><p>A contract is composed of the following...</p><ul><li>An issuer: the issuer is the economic actor for which the contract
+ represents a liability.</li><li>A mutable collection of owners: the owners are economic actors for
+ which the contract represents an asset.</li></ul><h5>Requirements</h5><p>Current list of requirements for contracts is as follows...</p><ol class="decimal"><li>Each contract has a collection of commitments.</li></ol><p> 2. Each contract must have both a face value (objective) and a present value (subjective).</p><p> 3. Need a little language for modifying commitments.  Tentatively based
+ around the Sources and Uses terminology from lecture 4 of Perry Mehrling's
+ course on <i>Money and Banking.</i></p><h5>Composable contracts</h5><h4>A language for Promises</h4><p>Having defined the concepts of a Good and a Promise as well as sets of
+actions over Goods and Promises that can be performed by an Actor or groups
+of Actors to complete the API we need to define a language (grammar?) for
+building Sentences that describe valid Promises.</p><h4>Observables</h4><p>Every contract must have an Observable[T] which represents the stream of
+data (or events?) that parties to the contract have used to condition
+the specifics of the contract.</p><p>Parties to the contract must subscribe as Observer[T] to the Observable.</p><p>Examples
+Need to build a catalogue of examples demonstrating how to build common
+contracts using our language.
+</p></div><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="contracts"><span>contracts</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+            <a href="http://docs.scala-lang.org/overviews/scaladoc/usage.html#members" target="_blank">Learn more about member selection</a>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="contracts.Currency" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CurrencyextendsScale[Double]"></a>
+      <a id="Currency:Currency"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Currency.html"><span class="name">Currency</span></a><span class="result"> extends <a href="commitments/Scale.html" class="extype" name="contracts.commitments.Scale">Scale</a>[<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Double" class="extype" target="_top">Double</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#contracts.package@CurrencyextendsScale[Double]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A <code>Contract</code> that immediately pays the holder a particular amount of the
+specified currency.</p>
+    </li><li name="contracts.Deposit" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DepositextendsAnytime"></a>
+      <a id="Deposit:Deposit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Deposit.html"><span class="name">Deposit</span></a><span class="result"> extends <a href="commitments/Anytime.html" class="extype" name="contracts.commitments.Anytime">Anytime</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#contracts.package@DepositextendsAnytime" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A <code>Contract</code> representing a demand deposit for the specified currency.</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="contracts.actors" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="actors"></a>
+      <a id="actors:actors"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="actors/package.html"><span class="name">actors</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#contracts.package@actors" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="contracts.commitments" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="commitments"></a>
+      <a id="commitments:commitments"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="commitments/package.html"><span class="name">commitments</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#contracts.package@commitments" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Provides classes for defining commitments.</p><div class="fullcomment"><div class="comment cmt"><p>Provides classes for defining commitments.</p><h4>Overview</h4><p>A <i>commitment</i> stipulates the transfer of a resource or a set of
+resources between two parties; a commitment represents an <i>atomic</i>
+<code>Contract</code>.</p><p>We envision that:</p><ol class="decimal"><li>model builders will use commitments, as well as the higher-level
+  contracts in our library, to construct commonly encountered contracts
+  for their specific use cases.</li></ol><p>  2. actors within a model can use commitments, as well as the
+  higher-level contracts in our library, to innovate previously unknown
+  contracts.</p><h5>Requirements</h5><h6>Payments systems</h6><p>To model a &quot;one big bank&quot; payment system, we need...</p><p>- a representation of retail deposits</p><p>- a representation of currency</p><p>- a representation of an un-collateralized overdraft</p><p>We can model both the base &quot;multiple banks&quot; payment system as well as a payment
+payment system with bilateral intra-day netting by adding...</p><ul><li>a representation of reserve deposits</li></ul><p>To model a payment system with correspondent banking we need...</p><p>- a representation of correspondent deposits (which can probably be a simple
+extension of retail deposits).</p></div></div>
+    </li><li name="contracts.observables" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="observables"></a>
+      <a id="observables:observables"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="observables/package.html"><span class="name">observables</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#contracts.package@observables" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
