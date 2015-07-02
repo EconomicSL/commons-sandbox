@@ -18,7 +18,7 @@ package actors.contracts
 import akka.actor.ActorRef
 import edsl.commitments.Contract
 
-import scala.collection.mutable
+import scala.collection.immutable
 
 
 /** Class defining a reserve deposit.
@@ -32,9 +32,9 @@ import scala.collection.mutable
 case class ReserveDeposit(balance: Double,
                                code: String,
                                issuer: ActorRef,
-                               owners: mutable.Set[ActorRef]) extends DepositLike {
+                               owners: immutable.Set[ActorRef]) extends DepositLike {
 
-  def commitments: mutable.Map[ActorRef, Contract] = {
+  def commitments: immutable.Map[ActorRef, Contract] = {
     ???
   }
 

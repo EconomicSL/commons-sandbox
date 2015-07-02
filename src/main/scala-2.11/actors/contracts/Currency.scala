@@ -19,15 +19,15 @@ import acl.ContractLike
 import akka.actor.ActorRef
 import edsl.commitments.Contract
 
-import scala.collection.mutable
+import scala.collection.immutable
 
 
 class Currency(amount: Double,
                     code: String,
                     val issuer: ActorRef,
-                    val owners: mutable.Set[ActorRef]) extends ContractLike {
+                    val owners: immutable.Set[ActorRef]) extends ContractLike {
 
-  def commitments: mutable.Map[ActorRef, Contract] = {
+  def commitments: immutable.Map[ActorRef, Contract] = {
     ???
   }
 
