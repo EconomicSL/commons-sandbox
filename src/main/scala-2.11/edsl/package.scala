@@ -14,8 +14,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+import akka.actor.ActorRef
 
-/** Provides classes defining commercial contracts.
+
+/** Provides classes defining an embedded domain specific language (EDSL) that
+  * can be used to create composable commercial contracts.
   *
   * ==Overview==
   * Instead of defining a fixed catalogue of contracts our approach is to follow...
@@ -24,13 +27,13 @@ limitations under the License.
   *   - [[http://www.itu.dk/~elsborg/sttt06.pdf Andersen et al (2006)]]
   *
   * ...and instead define a small set of atomic contracts, called
-  * [[contracts.commitments `commitments`]], that can be used as "building blocks"
+  * [[edsl.commitments commitments]], that can be used as "building blocks"
   * to construct ever more complex contracts.
   *
   * ===Composable Commercial Contracts===
   * Following [[http://www.itu.dk/~elsborg/sttt06.pdf Andersen et al (2006)]]
   * we focus on the following basic ''contract patterns'' for composing
-  * commercial contracts from sub-contracts:
+  * commercial edsl from sub-edsl:
   *
   *  - A ''commitment'' stipulates the transfer of a resource or a set of
   *  resources between two parties; a commitment represents an ''atomic''
@@ -38,12 +41,12 @@ limitations under the License.
   *
   *  - A `Contract` may require ''sequential'' execution of its sub-contracts.
   *
-  *  - A `Contract` may require ''concurrent'' execution of its sub-contracts,
-  *  i.e., execution of all sub-contracts, where individual commitments are
+  *  - A `Contract` may require ''concurrent'' execution of its sub-contracs,
+  *  i.e., execution of all sub-edsl, where individual commitments are
   *  inter-leavened in any order.
   *
   *  - A `Contract` may require execution of one of a number of ''alternative''
-  *  sub-contracts.
+  *  sub-edsl.
   *
   *  - A `Contract` may require ''repeated'' execution of a sub-contract.
   *
@@ -53,11 +56,11 @@ limitations under the License.
   *  - An issuer: the issuer is the economic actor for which the contract
   *  represents a liability.
   *
-  *  - A mutable collection of owners: the owners are economic actors for
+  *  - A mutable collection of owners: the owners are economic edsl for
   *  which the contract represents an asset.
   *
   * ===Requirements===
-  * Current list of requirements for contracts is as follows...
+  * Current list of requirements for edsl is as follows...
   *
   *  1. Each contract has a collection of commitments.
   *
@@ -67,7 +70,7 @@ limitations under the License.
   *  around the Sources and Uses terminology from lecture 4 of Perry Mehrling's
   *  course on ''Money and Banking.''
   *
-  * ===Composable contracts===
+  * ===Composable edsl===
   *
   * ==A language for Promises==
   * Having defined the concepts of a Good and a Promise as well as sets of
@@ -84,7 +87,20 @@ limitations under the License.
   *
   * Examples
   * Need to build a catalogue of examples demonstrating how to build common
-  * contracts using our language.
+  * edsl using our language.
   */
-package object contracts
+package object edsl {
+
+  /** A message indicating that a [[Counterparty]] actor has broken an
+    * existing [[edsl.commitments.Contract Contract]].
+    *
+    * @param sender the [[Counterparty]] actor breaking the existing
+    *               [[edsl.commitments.Contract Contract]].
+    * @param receiver the [[edsl.ContractLike]] actor representing the existing
+    *                 [[edsl.commitments.Contract Contract]] who's terms
+    *                 are being breached.
+    */
+  case class ContractBroken(sender: ActorRef, receiver: ActorRef)
+
+}
 

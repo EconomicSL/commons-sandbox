@@ -13,26 +13,15 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package contracts.actors
+package edsl
 
-import akka.actor.ActorRef
-import contracts.commitments.Contract
-
-import scala.collection.mutable
+import edsl.commitments.{One, Scale}
+import edsl.observables.Constant
 
 
-class CurrencyActor(amount: Double,
-                    code: String,
-                    val issuer: ActorRef,
-                    val owners: mutable.Set[ActorRef]) extends ContractActorLike {
-
-  def commitments: mutable.Map[ActorRef, Contract] = {
-    ???
-  }
-
-  def receive: Receive = {
-    ???
-  }
-
-}
-
+/** A `Contract` that immediately pays the holder a particular amount of the
+  * specified currency.
+  * @param code A string identifying the currency.
+  * @param amount The quantity of currency held.
+  */
+class Currency(amount: Double, code: String) extends Scale(new Constant(amount), new One(code))

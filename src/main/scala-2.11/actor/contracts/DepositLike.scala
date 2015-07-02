@@ -13,8 +13,9 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package contracts.observables
+package actor.contracts
 
+import edsl.ContractLike
 
-/** Base trait for all observables. */
-trait Observable[A]
+/** Trait defining a deposit actor. */
+trait DepositLike extends ContractLike

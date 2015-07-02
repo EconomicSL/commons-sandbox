@@ -13,17 +13,16 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package plumbing.contracts
+package actor
 
-
-/** Classes for representing contracts as Akka Actors.
+/** Classes for representing edsl as Akka Actors.
   *
   * ==Overview==
-  * A `ContractActor` serves as a channel of communication between multiple
+  * A `ContractActor` serves as a channel of acl between multiple
   * `BalanceSheetActors`.
   *
   * ===API Requirements===
-  * Any `Actor` that implements the `ContractActorLike` trait should...
+  * Any `Actor` that implements the `ContractLike` trait should...
   *
   *  - have a collection of `commitments` representing the terms of the
   *  underlying `Contract`.
@@ -42,4 +41,4 @@ package plumbing.contracts
   *  (remove) itself from the collection of assets or liabilities of the
   *  `BalanceSheetActor`.
   */
-package object actors
+package object contracts

@@ -13,13 +13,18 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package contracts
+package edsl.commitments
 
-import contracts.commitments.Anytime
+import edsl.observables.Observable
 
 
-/** A `Contract` representing a demand deposit for the specified currency.
-  * @param code A string identifying the currency.
-  * @param amount The quantity of deposits held.
+/** The contract `Truncate(obs, contract)` is exactly like `contract` except
+  * that it expires at the earlier of `date` and the horizon of the `contract`.
+  *
+  * @note `Truncate(date, contract)` only impacts the acquisition date of
+  *       `contract` it does not in any way impact the rights and obligations
+  *       defined in `contract` as such rights and obligations might extend
+  *       well beyond `date`.
   */
-class Deposit(amount: Double, code: String) extends Anytime(new Currency(amount, code))
+class Truncate[A](obs: Observable[A], contract: Contract) extends Contract
+

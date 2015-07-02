@@ -13,13 +13,16 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package contracts.commitments
+package edsl.commitments
 
 
-/** A `Contract` that immediately pays the holder one unit of some specified
-  * currency.
+/** Combines two `Contract` objects to create a new `Contract`.
   *
-  * @note This contract has an infinite horizon: there is no restriction on
-  *       when this contract can be acquired.
+  * @param first A `Contract` object.
+  * @param second Another `Contract` object.
+  * @note If you acquire `And(first, second)`, then you immediately acquire
+  *       both the `first` contract (unless it has expired) and the `second`
+  *       contract (unless it has expired). The contract `And(first, second)`
+  *       expires only after both `first` and `second` edsl have expired.
   */
-class One(val currency: String) extends Contract
+class And(val first: Contract, val second: Contract) extends Contract

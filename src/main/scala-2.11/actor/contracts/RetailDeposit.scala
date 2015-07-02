@@ -13,10 +13,10 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package contracts.actors
+package actor.contracts
 
 import akka.actor.ActorRef
-import contracts.commitments.Contract
+import edsl.commitments.Contract
 
 import scala.collection.mutable
 
@@ -28,10 +28,10 @@ import scala.collection.mutable
   * @param issuer Actor for whom the underlying deposit contract is a liability.
   * @param owners Actor(s) for whom the underlying deposit contract is an asset.
   */
-case class RetailDepositActor(var balance: Double,
+case class RetailDeposit(var balance: Double,
                               code: String,
                               issuer: ActorRef,
-                              owners: mutable.Set[ActorRef]) extends DepositActorLike {
+                              owners: mutable.Set[ActorRef]) extends DepositLike {
 
   def commitments: mutable.Map[ActorRef, Contract] = {
     ???

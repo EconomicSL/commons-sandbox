@@ -13,7 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package contracts
+package edsl
 
 import rx.lang.scala.Observable
 
@@ -27,12 +27,12 @@ import rx.lang.scala.Observable
   * We envision that:
   *
   *   1. model builders will use commitments, as well as the higher-level
-  *   contracts in our library, to construct commonly encountered contracts
+  *   edsl in our library, to construct commonly encountered edsl
   *   for their specific use cases.
   *
-  *   2. actors within a model can use commitments, as well as the
-  *   higher-level contracts in our library, to innovate previously unknown
-  *   contracts.
+  *   2. edsl within a model can use commitments, as well as the
+  *   higher-level edsl in our library, to innovate previously unknown
+  *   edsl.
   *
   * ===Requirements===
   *

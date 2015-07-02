@@ -13,15 +13,17 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package contracts.commitments
+package edsl.commitments
+
+import edsl.observables.Observable
 
 
-/** Reverses the rights and obligations of the underlying `Contract`.
+/** Scales an underlying `Contract` by a potentially time-varying value.
+  * @param amount The scaling factor applied the the underlying `Contract`.
   * @param contract The underlying `Contract`.
-  * @note Acquiring `Give(contract)` is the acquire all of `contract` rights
-  *       and obligations (and vice versa). Note that for a bilateral contract
-  *       between parties A and B, A acquiring `contract` implies that B must
-  *       acquire `Give(contract)`.
+  * @note If you acquire `Scale(observable, contract)`, then you acquire `contract`
+  *       at the same moment except that all rights and obligations of `contract`
+  *       are multiplied by the value of the `observable` at the moment of
+  *       acquisition.
   */
-class Give(val contract: Contract) extends Contract
-
+class Scale[A](val amount: Observable[A], val contract: Contract) extends Contract

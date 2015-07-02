@@ -13,18 +13,8 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package contracts.commitments
-
-import contracts.observables.Observable
+package edsl.observables
 
 
-/** The contract `Truncate(obs, contract)` is exactly like `contract` except
-  * that it expires at the earlier of `date` and the horizon of the `contract`.
-  *
-  * @note `Truncate(date, contract)` only impacts the acquisition date of
-  *       `contract` it does not in any way impact the rights and obligations
-  *       defined in `contract` as such rights and obligations might extend
-  *       well beyond `date`.
-  */
-class Truncate[A](obs: Observable[A], contract: Contract) extends Contract
-
+/** Base trait for all observables. */
+trait Observable[A]

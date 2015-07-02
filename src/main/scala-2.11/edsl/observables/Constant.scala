@@ -13,12 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package contracts.commitments
+package edsl.observables
 
 
-/** A [[Contract]] that has no rights or obligations.
-  *
-  * @note This contract has an infinite horizon: there is no restriction on
-  *       when this contract can be acquired.
-  */
-case object Zero extends Contract
+class Constant[A](val value: A) extends Observable[A]

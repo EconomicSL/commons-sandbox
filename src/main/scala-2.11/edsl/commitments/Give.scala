@@ -13,17 +13,15 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package contracts.commitments
+package edsl.commitments
 
 
-/** A `Contract` that, when acquired, acquires the underlying `contract` at
-  * the `contract` horizon (i.e., at the last possible moment) regardless of
-  * when the composite contract `Get(contract)` was acquired.
-  *
+/** Reverses the rights and obligations of the underlying `Contract`.
   * @param contract The underlying `Contract`.
-  * @note If you acquire `Get(contract)`, then you must acquire `contract`
-  *       at the `contract` expiry date. The composite contract `Get(contract)`
-  *       expires at the same moment that `contract` expires.
+  * @note Acquiring `Give(contract)` is the acquire all of `contract` rights
+  *       and obligations (and vice versa). Note that for a bilateral contract
+  *       between parties A and B, A acquiring `contract` implies that B must
+  *       acquire `Give(contract)`.
   */
-class Get(val contract: Contract) extends Contract
+class Give(val contract: Contract) extends Contract
 

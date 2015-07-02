@@ -13,14 +13,27 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package contracts.commitments
+package actor.contracts
+
+import akka.actor.ActorRef
+import edsl.ContractLike
+import edsl.commitments.Contract
+
+import scala.collection.mutable
 
 
-/** The base trait for all contracts.
-  *
-  * A `Contract` represents an agreement between two or more parties that
-  * specifies, for each party, obligations to undertake (or not) actions
-  * or make certain payments.
-  *
-  */
-trait Contract
+class Currency(amount: Double,
+                    code: String,
+                    val issuer: ActorRef,
+                    val owners: mutable.Set[ActorRef]) extends ContractLike {
+
+  def commitments: mutable.Map[ActorRef, Contract] = {
+    ???
+  }
+
+  def receive: Receive = {
+    ???
+  }
+
+}
+
