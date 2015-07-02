@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 import akka.actor.ActorRef
-import acl.PromiseMaker
+import acl.{Promise, PromiseMaker, ContractLike}
 import edsl.commitments.Contract
 
 import scala.collection.immutable
@@ -23,14 +23,40 @@ import scala.collection.immutable
 /** Provides classes defining a high-level actor communication language (ACL).
   *
   * ==Overview==
-  * A [[PromiseMaker]] communicates with other [[PromiseMaker]] actors by making
-  * promises which are then either accepted or rejected by the receiving
-  * [[PromiseMaker]] actor. The `acl` package defines the [[PromiseMaker]] trait
-  * as well as the high-level [[PromiseMaker]] communication language.
+  * The `acl` package defines the [[PromiseMaker]] trait as well as the
+  * high-level [[PromiseMaker]] communication language.
   *
-  * Our high-level [[PromiseMaker]] acl language is influenced by, but
-  * not slave to, the [[http://www.fipa.org/ Foundation for Intelligent Physical Agents (FIPA)]]
+  * Our high-level [[PromiseMaker]] acl language is influenced by, but not slave
+  * to, the [[http://www.fipa.org/ Foundation for Intelligent Physical Agents (FIPA)]]
   * compliant [[http://www.fipa.org/specs/fipa00037/SC00037J.pdf Agent Communication Language (ACL)]].
+  *
+  * ===`PromiseMaker`===
+  * A [[PromiseMaker]] communicates with other [[PromiseMaker]] actors by making
+  * [[acl.Promise promises]] which are then either [[acl.PromiseAccepted accepted]]
+  * or [[acl.PromiseRejected rejected]] by the receiving [[PromiseMaker]] actors.
+  *
+  * ===`Counterparty`===
+  * Once a [[Promise]] has been accepted by all relevant [[PromiseMaker]] actors
+  * the [[Promise]] can be used to construct a [[ContractLike]] actor that
+  * serves as a "channel" of communication between the various
+  * [[acl.Counterparty CounterParty]] actors for the duration of the underlying
+  * [[edsl.commitments.Contract Contract]].
+  *
+  * A [[acl.Counterparty Counterparty]] actor should...
+  *
+  *  - be able to communicate directly with a [[ContractLike]] actor.
+  *
+  *  - be able to communicate with any relevant [[acl.Counterparty Counterparty]]
+  *  actor indirectly using the [[ContractLike]] actor as channel.
+  *
+  * ===`ContractLike`===
+  * A [[ContractLike]] actor should have...
+  *
+  *  - an issuer: the issuer is the [[acl.Counterparty Counterparty]] actor for
+  *  which the [[edsl.commitments.Contract Contract]] represents a liability.
+  *
+  *  - an immutable collection of owners: the owners are for
+  *  which the contract represents an asset.
   */
 package object acl {
 

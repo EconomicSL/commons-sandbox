@@ -14,12 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import acl.{Counterparty, ContractLike}
-import akka.actor.ActorRef
-
-
 /** Provides classes defining an embedded domain specific language (EDSL) that
-  * can be used to create composable commercial contracts.
+  * is used to create composable commercial contracts.
   *
   * ==Overview==
   * Instead of defining a fixed catalogue of contracts our approach is to follow...
@@ -34,7 +30,7 @@ import akka.actor.ActorRef
   * ===Composable Commercial Contracts===
   * Following [[http://www.itu.dk/~elsborg/sttt06.pdf Andersen et al (2006)]]
   * we focus on the following basic ''contract patterns'' for composing
-  * commercial edsl from sub-edsl:
+  * commercial contracts from sub-contracts:
   *
   *  - A ''commitment'' stipulates the transfer of a resource or a set of
   *  resources between two parties; a commitment represents an ''atomic''
@@ -42,23 +38,16 @@ import akka.actor.ActorRef
   *
   *  - A `Contract` may require ''sequential'' execution of its sub-contracts.
   *
-  *  - A `Contract` may require ''concurrent'' execution of its sub-contracs,
-  *  i.e., execution of all sub-edsl, where individual commitments are
+  *  - A `Contract` may require ''concurrent'' execution of its sub-contracts,
+  *  i.e., execution of all sub-contracts, where individual commitments are
   *  inter-leavened in any order.
   *
   *  - A `Contract` may require execution of one of a number of ''alternative''
-  *  sub-edsl.
+  *  sub-contracts.
   *
   *  - A `Contract` may require ''repeated'' execution of a sub-contract.
   *
   * ==Overview==
-  * A contract is composed of the following...
-  *
-  *  - An issuer: the issuer is the economic actor for which the contract
-  *  represents a liability.
-  *
-  *  - A mutable collection of owners: the owners are economic edsl for
-  *  which the contract represents an asset.
   *
   * ===Requirements===
   * Current list of requirements for edsl is as follows...

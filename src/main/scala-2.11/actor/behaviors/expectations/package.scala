@@ -15,8 +15,8 @@ limitations under the License.
 */
 package actor.behaviors
 
-import coms.EconomicActorLike
+import acl.PromiseMaker
 
 
-/** Classes for modeling expectations of an [[EconomicActorLike]]. */
+/** Classes for modeling expectations of an [[PromiseMaker]]. */
 package object expectations

@@ -28,7 +28,7 @@ trait Tradable {
     * @note The possibility that a Tradable could have multiple owners is
     *       necessary in order to model [[https://en.wikipedia.org/wiki/Rivalry_(economics) rivalry]]
     *       (in the case of [[Tangible]] objects) and multi-lateral commitment (in the case of
-    *       [[contracts.commitments.Contract]] objects.
+    *       [[edsl.commitments.Contract]] objects.
     */
   def owners: mutable.Set[ActorRef]
 

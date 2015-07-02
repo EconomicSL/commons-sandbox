@@ -22,7 +22,7 @@ limitations under the License.
   * ===Requirements===
   * Any Actor implementing the Tradable trait needs to be able to:
   *
-  *  1. Communicate with BalanceSheetActor: communication involves sending
+  *  1. Communicate with BalanceSheetActor: acl involves sending
   *  messages to AddAsset (RemoveAsset) to a BalanceSheetActor.
   *
   *  2. Alter own state in response to messages from owner of the tradable.
