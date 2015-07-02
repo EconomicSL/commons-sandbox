@@ -14,53 +14,56 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 import akka.actor.ActorRef
-import communication.PromiseMaker
-import contracts.commitments.Contract
+import acl.PromiseMaker
+import edsl.commitments.Contract
 
 import scala.collection.immutable
 
 
-/** Provides classes for facilitating communication between economic actors.
+/** Provides classes defining a high-level actor communication language (ACL).
   *
   * ==Overview==
-  * A [[PromiseMaker]] communicates with other [[PromiseMaker]] actors by promising
-  * contracts which are then either accepted or rejected by the receiving
-  * [[PromiseMaker]] actors. The `communication` communication defines the [[PromiseMaker]] trait
-  * as well as the high-level [[PromiseMaker]] communication language. Our
-  * high-level [[PromiseMaker]] communication language is influenced by, but
+  * A [[PromiseMaker]] communicates with other [[PromiseMaker]] edsl by promising
+  * edsl which are then either accepted or rejected by the receiving
+  * [[PromiseMaker]] edsl. The `acl` acl defines the [[PromiseMaker]] trait
+  * as well as the high-level [[PromiseMaker]] acl language. Our
+  * high-level [[PromiseMaker]] acl language is influenced by, but
   * not slave to, the [[http://www.fipa.org/ Foundation for Intelligent Physical Agents (FIPA)]]
   * compliant [[http://www.fipa.org/specs/fipa00037/SC00037J.pdf Agent Communication Language (ACL)]].
   */
-package object communication {
+package object acl {
+
+  /** A message indicating that a [[Counterparty]] actor has broken an
+    * existing [[edsl.commitments.Contract Contract]].
+    *
+    * @param sender the [[Counterparty]] actor breaking the existing
+    *               [[edsl.commitments.Contract Contract]].
+    * @param receiver the [[ContractLike]] actor representing the existing
+    *                 [[edsl.commitments.Contract Contract]] who's terms
+    *                 are being breached.
+    */
+  case class ContractBroken(sender: ActorRef, receiver: ActorRef)
+
 
   /** A promise made by some [[PromiseMaker]] to a collection of other
-    * [[PromiseMaker]] actors to perform actions specified in the
-    * [[contracts.commitments.Contract Contract]].
+    * [[PromiseMaker]] edsl to perform actions specified in the
+    * [[edsl.commitments.Contract Contract]].
     *
     * @param sender the [[PromiseMaker]] making the proposal.
-    * @param receiver a collection of [[PromiseMaker]] actors who are receiving the
+    * @param receiver a collection of [[PromiseMaker]] edsl who are receiving the
     *                 [[Promise]] and therefore are potential counter parties to
-    *                 the [[contracts.commitments.Contract Contract]].
-    * @param contract a [[contracts.commitments.Contract Contract]] specifying
+    *                 the [[edsl.commitments.Contract Contract]].
+    * @param contract a [[edsl.commitments.Contract Contract]] specifying
     *                 certain actions that the sender and receiver should perform.
     */
   case class Promise(sender: ActorRef, receiver: immutable.Set[ActorRef], contract: Contract)
 
-  /** A message indicating that a [[PromiseMaker]] has broken a previously accepted
-    * [[Promise]].
-    *
-    * @param sender the [[PromiseMaker]] breaking the existing [[contracts.commitments.Contract Contract]].
-    * @param receiver the [[ContractActor]] representing the existing
-    *                 [[contracts.commitments.Contract Contract]] who's terms are being breached.
-    */
-  case class PromiseBroken(sender: ActorRef, receiver: ActorRef)
-
   /** A message indicated that a previously submitted [[Promise]] has been accepted.
     *
     * @param sender the [[PromiseMaker]] accepting the previously received [[Promise]].
-    * @param receiver a collection of [[PromiseMaker]] actors who are receiving the
+    * @param receiver a collection of [[PromiseMaker]] edsl who are receiving the
     *                 [[Promise]] and therefore are potential counter parties to
-    *                 the [[contracts.commitments.Contract Contract]].
+    *                 the [[edsl.commitments.Contract Contract]].
     * @param promise the previously received [[Promise]] that is being accepted.
 
     */
@@ -69,9 +72,9 @@ package object communication {
   /** A message indicating that a previously submitted [[Promise]] has been rejected.
     *
     * @param sender the [[PromiseMaker]] rejecting the previously received [[Promise]].
-    * @param receiver a collection of [[PromiseMaker]] actors who are receiving the
+    * @param receiver a collection of [[PromiseMaker]] edsl who are receiving the
     *                 [[Promise]] and therefore are potential counter parties to
-    *                 the [[contracts.commitments.Contract Contract]].
+    *                 the [[edsl.commitments.Contract Contract]].
     * @param promise the previously received [[Promise]] that is being rejected.
     */
   case class PromiseRejected(sender: ActorRef, receiver: immutable.Set[ActorRef], promise: Promise)

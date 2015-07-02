@@ -14,6 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+import acl.{Counterparty, ContractLike}
 import akka.actor.ActorRef
 
 
@@ -70,7 +71,7 @@ import akka.actor.ActorRef
   *  around the Sources and Uses terminology from lecture 4 of Perry Mehrling's
   *  course on ''Money and Banking.''
   *
-  * ===Composable edsl===
+  * ===Composable Commercial Contracts===
   *
   * ==A language for Promises==
   * Having defined the concepts of a Good and a Promise as well as sets of
@@ -89,18 +90,5 @@ import akka.actor.ActorRef
   * Need to build a catalogue of examples demonstrating how to build common
   * edsl using our language.
   */
-package object edsl {
-
-  /** A message indicating that a [[Counterparty]] actor has broken an
-    * existing [[edsl.commitments.Contract Contract]].
-    *
-    * @param sender the [[Counterparty]] actor breaking the existing
-    *               [[edsl.commitments.Contract Contract]].
-    * @param receiver the [[edsl.ContractLike]] actor representing the existing
-    *                 [[edsl.commitments.Contract Contract]] who's terms
-    *                 are being breached.
-    */
-  case class ContractBroken(sender: ActorRef, receiver: ActorRef)
-
-}
+package object edsl
 
