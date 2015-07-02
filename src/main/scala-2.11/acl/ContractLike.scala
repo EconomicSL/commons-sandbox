@@ -25,17 +25,17 @@ import scala.collection.immutable
 trait ContractLike extends Actor
   with ActorLogging {
 
-  /** Mapping of a [[Counterparty]] actor to a [[edsl.commitments.Contract Contract]]
-    * representing that [[Counterparty]] actors obligations.
+  /** Mapping of a [[acl.Counterparty Counterparty]] actor to a [[edsl.commitments.Contract Contract]]
+    * representing that [[acl.Counterparty Counterparty]] actors obligations.
     */
   def commitments: immutable.Map[ActorRef, Contract]
 
-  /** [[Counterparty]] actor for whom the underlying
+  /** [[acl.Counterparty Counterparty]] actor for whom the underlying
     * [[edsl.commitments.Contract Contract]] represents a liability.
     */
   def issuer: ActorRef
 
-  /** Collection of [[Counterparty]] actors for whom the underlying
+  /** Collection of [[acl.Counterparty Counterparty]] actors for whom the underlying
     * [[edsl.commitments.Contract Contract]] represents an asset.
     */
   def owners: immutable.Set[ActorRef]
