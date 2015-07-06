@@ -1,1 +1,5 @@
-_site
+# ignore .idea project files
+.idea/
+
+# ignore _site folder
+_site/
