@@ -51,19 +51,19 @@
 the <a href="../acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a> can be used to construct a <a href="ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a> actor that
 serves as a &quot;channel&quot; of communication between the various
 <a href="CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor">CounterParty</a> actors for the duration of the underlying
-<a href="commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><p>A <a href="CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor">Counterparty</a> actor should...</p><ul><li>be able to communicate directly with a <a href="ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a> actor.</li><li>be able to communicate with any relevant <a href="CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor">Counterparty</a>
+<a href="commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a>.</p><p>A <a href="CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor">Counterparty</a> actor should...</p><ul><li>be able to communicate directly with a <a href="ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a> actor.</li><li>be able to communicate with any relevant <a href="CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor">Counterparty</a>
  actor indirectly using the <a href="ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a> actor as channel.</li><li>have a balance sheet.</li><li>be able to add (remove) assets and liabilities from its balance sheet.</li></ul><h5><code>ContractLike</code></h5><p>A <a href="ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a> actor should have...</p><ul><li>an issuer: the issuer is the <a href="CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor">Counterparty</a> actor for
- which the <a href="commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> represents a liability.</li><li>an immutable collection of owners: the owners are for
+ which the <a href="commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a> represents a liability.</li><li>an immutable collection of owners: the owners are for
  which the contract represents an asset.</li></ul><h5><code>BalanceSheetLike</code></h5><p>Instead of defining a fixed catalogue of contracts our approach is to follow...</p><ul><li><a href="https://lexifi.com/files/resources/MLFiPaper.pdf" target="_blank">Peyton-Jones et al (2000)</a></li><li><a href="http://www.itu.dk/~elsborg/sttt06.pdf" target="_blank">Andersen et al (2006)</a></li></ul><p>...and instead define an <a href="https://en.wikipedia.org/wiki/Domain-specific_language" target="_blank">embedded domain specific language (EDSL)</a>. Our EDSL consists of a small set of
 atomic contracts, called <a href="commitments/package.html" class="extype" name="edsl.commitments">commitments</a>, that we use as
 &quot;building blocks&quot; to construct ever more complex contracts.</p><h5>Composable Commercial Contracts</h5><p>Following <a href="http://www.itu.dk/~elsborg/sttt06.pdf" target="_blank">Andersen et al (2006)</a>
 we focus on the following basic <i>contract patterns</i> for composing
 commercial contracts from sub-contracts:</p><ul><li>A <i>commitment</i> stipulates the transfer of a resource or a set of
  resources between two parties; a commitment represents an <i>atomic</i>
- <code>Contract</code>.</li><li>A <code>Contract</code> may require <i>sequential</i> execution of its sub-contracts.</li><li>A <code>Contract</code> may require <i>concurrent</i> execution of its sub-contracts,
+ <code>Commitment</code>.</li><li>A <code>Commitment</code> may require <i>sequential</i> execution of its sub-contracts.</li><li>A <code>Commitment</code> may require <i>concurrent</i> execution of its sub-contracts,
  i.e., execution of all sub-contracts, where individual commitments are
- inter-leavened in any order.</li><li>A <code>Contract</code> may require execution of one of a number of <i>alternative</i>
- sub-contracts.</li><li>A <code>Contract</code> may require <i>repeated</i> execution of a sub-contract.</li></ul><h4>Overview</h4><h5>Requirements</h5><p>Current list of requirements for edsl is as follows...</p><ol class="decimal"><li>Each contract has a collection of commitments.</li></ol><p> 2. Each contract must have both a face value (objective) and a present value (subjective).</p><h5>Composable Commercial Contracts</h5></div><div class="toggleContainer block">
+ inter-leavened in any order.</li><li>A <code>Commitment</code> may require execution of one of a number of <i>alternative</i>
+ sub-contracts.</li><li>A <code>Commitment</code> may require <i>repeated</i> execution of a sub-contract.</li></ul><h4>Overview</h4><h5>Requirements</h5><p>Current list of requirements for edsl is as follows...</p><ol class="decimal"><li>Each contract has a collection of commitments.</li></ol><p> 2. Each contract must have both a face value (objective) and a present value (subjective).</p><h5>Composable Commercial Contracts</h5></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
@@ -197,9 +197,9 @@ cash flow events (i.e., expenditures of various kinds) over time.</p><p>A balanc
       </a>
     </span>
       <p class="shortcomment cmt">Trait defining behavior for an actor that is a counterparty to the
-underlying <a href="commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> of some
+underlying <a href="commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a> of some
 <a href="ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Trait defining behavior for an actor that is a counterparty to the
-underlying <a href="commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> of some
+underlying <a href="commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a> of some
 <a href="ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a>.
 </p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>A <code>CounterpartyActor</code> communicates with another <code>CounterpartyActor</code>
       using a <a href="ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a> as a communication
@@ -221,7 +221,7 @@ underlying <a href="commitments/Contract.html" class="extype" name="edsl.commitm
         <img src="../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">A <code>Contract</code> that immediately pays the holder a particular amount of the
+      <p class="shortcomment cmt">A <code>Commitment</code> that immediately pays the holder a particular amount of the
 specified currency.</p>
     </li><li name="edsl.Deposit" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="DepositextendsAnytime"></a>
@@ -239,7 +239,7 @@ specified currency.</p>
         <img src="../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">A <code>Contract</code> representing a demand deposit for the specified currency.</p>
+      <p class="shortcomment cmt">A <code>Commitment</code> representing a demand deposit for the specified currency.</p>
     </li><li name="edsl.RemoveAsset" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="RemoveAssetextendsProductwithSerializable"></a>
       <a id="RemoveAsset:RemoveAsset"></a>
@@ -299,7 +299,7 @@ specified currency.</p>
     </span>
       <p class="shortcomment cmt">Provides classes for defining commitments.</p><div class="fullcomment"><div class="comment cmt"><p>Provides classes for defining commitments.</p><h4>Overview</h4><p>A <i>commitment</i> stipulates the transfer of a resource or a set of
 resources between two parties; a commitment represents an <i>atomic</i>
-<a href="commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><p>We envision that:</p><ol class="decimal"><li>model builders will use commitments, as well as the higher-level
+<a href="commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a>.</p><p>We envision that:</p><ol class="decimal"><li>model builders will use commitments, as well as the higher-level
   contacts in our library, to construct commonly encountered contracts
   for their specific use cases.</li></ol><p>  2. <a href="../acl/PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMaker</a> actors within a model can use
   commitments, as well as the higher-level contracts in our library, to

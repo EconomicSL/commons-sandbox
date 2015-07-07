@@ -45,19 +45,19 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">Get</span><span class="params">(<span name="contract">contract: <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>)</span><span class="result"> extends <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <span class="name">Get</span><span class="params">(<span name="contract">contract: <a href="Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a></span>)</span><span class="result"> extends <a href="Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>A <code>Contract</code> that, when acquired, acquires the underlying <code>contract</code> at
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>A <code>Commitment</code> that, when acquired, acquires the underlying <code>contract</code> at
 the <code>contract</code> horizon (i.e., at the last possible moment) regardless of
 when the composite contract <code>Get(contract)</code> was acquired.
-</p></div><dl class="paramcmts block"><dt class="param">contract</dt><dd class="cmt"><p>The underlying <code>Contract</code>.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>If you acquire <code>Get(contract)</code>, then you must acquire <code>contract</code>
+</p></div><dl class="paramcmts block"><dt class="param">contract</dt><dd class="cmt"><p>The underlying <code>Commitment</code>.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>If you acquire <code>Get(contract)</code>, then you must acquire <code>contract</code>
       at the <code>contract</code> expiry date. The composite contract <code>Get(contract)</code>
       expires at the same moment that <code>contract</code> expires.
 </p></span></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a>, <span class="extype" name="java.io.Serializable">Serializable</span>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Equals" class="extype" target="_top">Equals</a>, <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a>, <span class="extype" name="java.io.Serializable">Serializable</span>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Equals" class="extype" target="_top">Equals</a>, <a href="Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -75,7 +75,7 @@ when the composite contract <code>Get(contract)</code> was acquired.
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="edsl.commitments.Get"><span>Get</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="edsl.commitments.Contract"><span>Contract</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="edsl.commitments.Get"><span>Get</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="edsl.commitments.Commitment"><span>Commitment</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -96,7 +96,7 @@ when the composite contract <code>Get(contract)</code> was acquired.
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="edsl.commitments.Get#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;init&gt;(contract:edsl.commitments.Contract):edsl.commitments.Get"></a>
+      <a id="&lt;init&gt;(contract:edsl.commitments.Commitment):edsl.commitments.Get"></a>
       <a id="&lt;init&gt;:Get"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -104,14 +104,14 @@ when the composite contract <code>Get(contract)</code> was acquired.
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">Get</span><span class="params">(<span name="contract">contract: <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>)</span>
+        <span class="name">Get</span><span class="params">(<span name="contract">contract: <a href="Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a></span>)</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#edsl.commitments.Get@&lt;init&gt;(contract:edsl.commitments.Contract):edsl.commitments.Get" title="Permalink" target="_top">
+      <a href="../../index.html#edsl.commitments.Get@&lt;init&gt;(contract:edsl.commitments.Commitment):edsl.commitments.Get" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">contract</dt><dd class="cmt"><p>The underlying <code>Contract</code>.</p></dd></dl></div>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">contract</dt><dd class="cmt"><p>The underlying <code>Commitment</code>.</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -213,22 +213,22 @@ when the composite contract <code>Get(contract)</code> was acquired.
               
         </dd></dl></div>
     </li><li name="edsl.commitments.Get#contract" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="contract:edsl.commitments.Contract"></a>
-      <a id="contract:Contract"></a>
+      <a id="contract:edsl.commitments.Commitment"></a>
+      <a id="contract:Commitment"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">contract</span><span class="result">: <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>
+        <span class="name">contract</span><span class="result">: <a href="Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#edsl.commitments.Get@contract:edsl.commitments.Contract" title="Permalink" target="_top">
+      <a href="../../index.html#edsl.commitments.Get@contract:edsl.commitments.Commitment" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">The underlying <code>Contract</code>.</p>
+      <p class="shortcomment cmt">The underlying <code>Commitment</code>.</p>
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a>
       <a id="eq(AnyRef):Boolean"></a>
@@ -457,8 +457,8 @@ when the composite contract <code>Get(contract)</code> was acquired.
               <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a></h3>
             </div><div class="parent" name="scala.Equals">
               <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Equals" class="extype" target="_top">Equals</a></h3>
-            </div><div class="parent" name="edsl.commitments.Contract">
-              <h3>Inherited from <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></h3>
+            </div><div class="parent" name="edsl.commitments.Commitment">
+              <h3>Inherited from <a href="Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a></h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">

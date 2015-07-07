@@ -49,7 +49,7 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Trait defining behavior for an actor that trades <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> objects.</p></div><dl class="attributes block"> <dt>Self Type</dt><dd><a href="" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a> with <span class="extype" name="akka.actor.Actor">Actor</span> with <span class="extype" name="akka.actor.ActorLogging">ActorLogging</span></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Trait defining behavior for an actor that trades <a href="../edsl/commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a> objects.</p></div><dl class="attributes block"> <dt>Self Type</dt><dd><a href="" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a> with <span class="extype" name="akka.actor.Actor">Actor</span> with <span class="extype" name="akka.actor.ActorLogging">ActorLogging</span></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div><div class="toggleContainer block">
@@ -166,14 +166,14 @@
       </a>
     </span>
       <p class="shortcomment cmt">The act of accepting a previously submitted <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> to perform
-actions specified in some <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><div class="fullcomment"><div class="comment cmt"><p>The act of accepting a previously submitted <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> to perform
-actions specified in some <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.
-</p></div><dl class="paramcmts block"><dt class="param">promise</dt><dd class="cmt"><p>a <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> containing a <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> specifying certain actions
+actions specified in some <a href="../edsl/commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a>.</p><div class="fullcomment"><div class="comment cmt"><p>The act of accepting a previously submitted <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> to perform
+actions specified in some <a href="../edsl/commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a>.
+</p></div><dl class="paramcmts block"><dt class="param">promise</dt><dd class="cmt"><p>a <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> containing a <a href="../edsl/commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a> specifying certain actions
                that the <code>PromiseMakingActor</code> is to perform.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p><code>acceptPromise</code> is a general-purpose acceptance of a <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a>
       that was previously submitted (typically via a <code>makePromise</code> act).
       The <code>PromiseMakingActor</code> sending <a href="package$$PromiseAccepted.html" class="extype" name="acl.PromiseAccepted">PromiseAccepted</a> is informing the
       receiver that it intends to perform the actions as specified in
-      the <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.
+      the <a href="../edsl/commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a>.
 </p></span></dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
@@ -324,33 +324,33 @@ actions specified in some <a href="../edsl/commitments/Contract.html" class="ext
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
     </li><li name="acl.PromiseMakingActor#makePromise" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="makePromise(receiver:scala.collection.immutable.Set[akka.actor.ActorRef],contract:edsl.commitments.Contract):Unit"></a>
-      <a id="makePromise(Set[ActorRef],Contract):Unit"></a>
+      <a id="makePromise(receiver:scala.collection.immutable.Set[akka.actor.ActorRef],contract:edsl.commitments.Commitment):Unit"></a>
+      <a id="makePromise(Set[ActorRef],Commitment):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">makePromise</span><span class="params">(<span name="receiver">receiver: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="akka.actor.ActorRef">ActorRef</span>]</span>, <span name="contract">contract: <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">makePromise</span><span class="params">(<span name="receiver">receiver: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="akka.actor.ActorRef">ActorRef</span>]</span>, <span name="contract">contract: <a href="../edsl/commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.PromiseMakingActor@makePromise(receiver:scala.collection.immutable.Set[akka.actor.ActorRef],contract:edsl.commitments.Contract):Unit" title="Permalink" target="_top">
+      <a href="../index.html#acl.PromiseMakingActor@makePromise(receiver:scala.collection.immutable.Set[akka.actor.ActorRef],contract:edsl.commitments.Commitment):Unit" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
       <p class="shortcomment cmt">The action of submitting a <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> made by the <code>PromiseMakingActor</code> to a
 collection of other <code>PromiseMakingActors</code> to perform actions specified in the
-<a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><div class="fullcomment"><div class="comment cmt"><p>The action of submitting a <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> made by the <code>PromiseMakingActor</code> to a
+<a href="../edsl/commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a>.</p><div class="fullcomment"><div class="comment cmt"><p>The action of submitting a <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> made by the <code>PromiseMakingActor</code> to a
 collection of other <code>PromiseMakingActors</code> to perform actions specified in the
-<a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.
+<a href="../edsl/commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a>.
 </p></div><dl class="paramcmts block"><dt class="param">receiver</dt><dd class="cmt"><p>a collection of <code>PromiseMakingActors</code> who are receiving the
                 <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> and therefore are potential counter parties to
-                the <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p></dd><dt class="param">contract</dt><dd class="cmt"><p>a <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> specifying certain actions that the various
+                the <a href="../edsl/commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a>.</p></dd><dt class="param">contract</dt><dd class="cmt"><p>a <a href="../edsl/commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a> specifying certain actions that the various
                 parties should perform.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p><code>makePromise</code> is a general-purpose act to make a <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> or
       respond to a previously submitted <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> (i.e., during a
       negotiation process) by promising to perform certain actions
-      defined by the <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.
+      defined by the <a href="../edsl/commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a>.
 </p></span></dd></dl></div>
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
@@ -420,14 +420,14 @@ collection of other <code>PromiseMakingActors</code> to perform actions specifie
       </a>
     </span>
       <p class="shortcomment cmt">The action of rejecting a previously submitted <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> to perform
-actions specified in some <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><div class="fullcomment"><div class="comment cmt"><p>The action of rejecting a previously submitted <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> to perform
-actions specified in some <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.
-</p></div><dl class="paramcmts block"><dt class="param">promise</dt><dd class="cmt"><p>a <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> containing a <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> specifying certain
+actions specified in some <a href="../edsl/commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a>.</p><div class="fullcomment"><div class="comment cmt"><p>The action of rejecting a previously submitted <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> to perform
+actions specified in some <a href="../edsl/commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a>.
+</p></div><dl class="paramcmts block"><dt class="param">promise</dt><dd class="cmt"><p>a <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> containing a <a href="../edsl/commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a> specifying certain
                actions that the <code>PromiseMakingActor</code> is to perform.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p><code>rejectPromise</code> is a general-purpose rejection to a <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a>
       that was previously submitted (typically via a <code>makePromise</code> act).
       The <code>PromiseMakingActor</code> sending <a href="package$$PromiseRejected.html" class="extype" name="acl.PromiseRejected">PromiseRejected</a> is informing the
       receiver that it has no intention to perform the actions as
-      specified in the promised <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.
+      specified in the promised <a href="../edsl/commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a>.
 </p></span></dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>

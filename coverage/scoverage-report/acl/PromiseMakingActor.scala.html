@@ -40,25 +40,25 @@
 </span>16 <span style=''>package acl
 </span>17 <span style=''>
 </span>18 <span style=''>import akka.actor.{Actor, ActorLogging, ActorRef}
-</span>19 <span style=''>import edsl.commitments.Contract
+</span>19 <span style=''>import edsl.commitments.Commitment
 </span>20 <span style=''>
 </span>21 <span style=''>import scala.collection.immutable
 </span>22 <span style=''>
 </span>23 <span style=''>
-</span>24 <span style=''>/** Trait defining behavior for an actor that trades [[edsl.commitments.Contract Contract]] objects. */
+</span>24 <span style=''>/** Trait defining behavior for an actor that trades [[edsl.commitments.Commitment Commitment]] objects. */
 </span>25 <span style=''>trait PromiseMakingActor {
 </span>26 <span style=''>  this: Actor with ActorLogging =>
 </span>27 <span style=''>
 </span>28 <span style=''>  /** The act of accepting a previously submitted [[Promise]] to perform
-</span>29 <span style=''>    * actions specified in some [[edsl.commitments.Contract Contract]].
+</span>29 <span style=''>    * actions specified in some [[edsl.commitments.Commitment Commitment]].
 </span>30 <span style=''>    *
-</span>31 <span style=''>    * @param promise a [[Promise]] containing a [[edsl.commitments.Contract Contract]] specifying certain actions
+</span>31 <span style=''>    * @param promise a [[Promise]] containing a [[edsl.commitments.Commitment Commitment]] specifying certain actions
 </span>32 <span style=''>    *                that the `PromiseMakingActor` is to perform.
 </span>33 <span style=''>    * @note `acceptPromise` is a general-purpose acceptance of a [[Promise]]
 </span>34 <span style=''>    *       that was previously submitted (typically via a `makePromise` act).
 </span>35 <span style=''>    *       The `PromiseMakingActor` sending [[PromiseAccepted]] is informing the
 </span>36 <span style=''>    *       receiver that it intends to perform the actions as specified in
-</span>37 <span style=''>    *       the [[edsl.commitments.Contract Contract]].
+</span>37 <span style=''>    *       the [[edsl.commitments.Commitment Commitment]].
 </span>38 <span style=''>    */
 </span>39 <span style=''>  def acceptPromise(promise: Promise): Unit = {
 </span>40 <span style=''>    </span><span style='background: #F0ADAD'>promise.sender ! PromiseAccepted(self, promise.receiver, promise)</span><span style=''>
@@ -66,32 +66,32 @@
 </span>42 <span style=''>
 </span>43 <span style=''>  /** The action of submitting a [[Promise]] made by the `PromiseMakingActor` to a
 </span>44 <span style=''>    * collection of other `PromiseMakingActors` to perform actions specified in the
-</span>45 <span style=''>    * [[edsl.commitments.Contract Contract]].
+</span>45 <span style=''>    * [[edsl.commitments.Commitment Commitment]].
 </span>46 <span style=''>    *
 </span>47 <span style=''>    * @param receiver a collection of `PromiseMakingActors` who are receiving the
 </span>48 <span style=''>    *                 [[Promise]] and therefore are potential counter parties to
-</span>49 <span style=''>    *                 the [[edsl.commitments.Contract Contract]].
-</span>50 <span style=''>    * @param contract a [[edsl.commitments.Contract Contract]] specifying certain actions that the various
+</span>49 <span style=''>    *                 the [[edsl.commitments.Commitment Commitment]].
+</span>50 <span style=''>    * @param contract a [[edsl.commitments.Commitment Commitment]] specifying certain actions that the various
 </span>51 <span style=''>    *                 parties should perform.
 </span>52 <span style=''>    * @note `makePromise` is a general-purpose act to make a [[Promise]] or
 </span>53 <span style=''>    *       respond to a previously submitted [[Promise]] (i.e., during a
 </span>54 <span style=''>    *       negotiation process) by promising to perform certain actions
-</span>55 <span style=''>    *       defined by the [[edsl.commitments.Contract Contract]].
+</span>55 <span style=''>    *       defined by the [[edsl.commitments.Commitment Commitment]].
 </span>56 <span style=''>    */
-</span>57 <span style=''>  def makePromise(receiver: immutable.Set[ActorRef], contract: Contract): Unit = {
+</span>57 <span style=''>  def makePromise(receiver: immutable.Set[ActorRef], contract: Commitment): Unit = {
 </span>58 <span style=''>    </span><span style='background: #F0ADAD'>receiver.foreach(r => r ! Promise(self, receiver, contract))</span><span style=''>
 </span>59 <span style=''>  }
 </span>60 <span style=''>
 </span>61 <span style=''>  /** The action of rejecting a previously submitted [[Promise]] to perform
-</span>62 <span style=''>    * actions specified in some [[edsl.commitments.Contract Contract]].
+</span>62 <span style=''>    * actions specified in some [[edsl.commitments.Commitment Commitment]].
 </span>63 <span style=''>    *
-</span>64 <span style=''>    * @param promise a [[Promise]] containing a [[edsl.commitments.Contract Contract]] specifying certain
+</span>64 <span style=''>    * @param promise a [[Promise]] containing a [[edsl.commitments.Commitment Commitment]] specifying certain
 </span>65 <span style=''>    *                actions that the `PromiseMakingActor` is to perform.
 </span>66 <span style=''>    * @note `rejectPromise` is a general-purpose rejection to a [[Promise]]
 </span>67 <span style=''>    *       that was previously submitted (typically via a `makePromise` act).
 </span>68 <span style=''>    *       The `PromiseMakingActor` sending [[PromiseRejected]] is informing the
 </span>69 <span style=''>    *       receiver that it has no intention to perform the actions as
-</span>70 <span style=''>    *       specified in the promised [[edsl.commitments.Contract Contract]].
+</span>70 <span style=''>    *       specified in the promised [[edsl.commitments.Commitment Commitment]].
 </span>71 <span style=''>    */
 </span>72 <span style=''>  def rejectPromise(promise: Promise): Unit = {
 </span>73 <span style=''>    </span><span style='background: #F0ADAD'>promise.sender ! PromiseRejected(self, promise.receiver, promise)</span><span style=''>
@@ -116,9 +116,9 @@
           2
         </td>
         <td>
-          1679
+          1697
           -
-          1683
+          1701
         </td>
         <td>
           Select
@@ -137,9 +137,9 @@
           5
         </td>
         <td>
-          1661
+          1679
           -
-          1661
+          1679
         </td>
         <td>
           Select
@@ -158,9 +158,9 @@
           4
         </td>
         <td>
-          1663
+          1681
           -
-          1711
+          1729
         </td>
         <td>
           Apply
@@ -179,9 +179,9 @@
           1
         </td>
         <td>
-          1646
+          1664
           -
-          1660
+          1678
         </td>
         <td>
           Select
@@ -200,9 +200,9 @@
           3
         </td>
         <td>
-          1685
+          1703
           -
-          1701
+          1719
         </td>
         <td>
           Select
@@ -221,9 +221,9 @@
           6
         </td>
         <td>
-          1646
+          1664
           -
-          1711
+          1729
         </td>
         <td>
           ApplyToImplicitArgs
@@ -242,9 +242,9 @@
           8
         </td>
         <td>
-          2728
+          2764
           -
-          2761
+          2797
         </td>
         <td>
           Apply
@@ -263,9 +263,9 @@
           11
         </td>
         <td>
-          2702
+          2738
           -
-          2762
+          2798
         </td>
         <td>
           Apply
@@ -284,9 +284,9 @@
           7
         </td>
         <td>
-          2736
+          2772
           -
-          2740
+          2776
         </td>
         <td>
           Select
@@ -305,9 +305,9 @@
           10
         </td>
         <td>
-          2724
+          2760
           -
-          2761
+          2797
         </td>
         <td>
           ApplyToImplicitArgs
@@ -326,9 +326,9 @@
           9
         </td>
         <td>
-          2726
+          2762
           -
-          2726
+          2762
         </td>
         <td>
           Select
@@ -347,9 +347,9 @@
           17
         </td>
         <td>
-          3548
+          3596
           -
-          3613
+          3661
         </td>
         <td>
           ApplyToImplicitArgs
@@ -368,9 +368,9 @@
           14
         </td>
         <td>
-          3587
+          3635
           -
-          3603
+          3651
         </td>
         <td>
           Select
@@ -389,9 +389,9 @@
           13
         </td>
         <td>
-          3581
+          3629
           -
-          3585
+          3633
         </td>
         <td>
           Select
@@ -410,9 +410,9 @@
           16
         </td>
         <td>
-          3563
+          3611
           -
-          3563
+          3611
         </td>
         <td>
           Select
@@ -431,9 +431,9 @@
           12
         </td>
         <td>
-          3548
+          3596
           -
-          3562
+          3610
         </td>
         <td>
           Select
@@ -452,9 +452,9 @@
           15
         </td>
         <td>
-          3565
-          -
           3613
+          -
+          3661
         </td>
         <td>
           Apply

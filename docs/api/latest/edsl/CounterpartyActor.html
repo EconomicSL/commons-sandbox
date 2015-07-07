@@ -50,7 +50,7 @@
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Trait defining behavior for an actor that is a counterparty to the
-underlying <a href="commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> of some
+underlying <a href="commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a> of some
 <a href="ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a>.
 </p></div><dl class="attributes block"> <dt>Self Type</dt><dd><a href="" class="extype" name="edsl.CounterpartyActor">CounterpartyActor</a> with <span class="extype" name="akka.actor.Actor">Actor</span> with <span class="extype" name="akka.actor.ActorLogging">ActorLogging</span></dd><dt>Note</dt><dd><span class="cmt"><p>A <code>CounterpartyActor</code> communicates with another <code>CounterpartyActor</code>
       using a <a href="ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a> as a communication
@@ -209,15 +209,15 @@ and liabilities.</p>
         <img src="../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">The act of breaking the terms of some existing <a href="commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><div class="fullcomment"><div class="comment cmt"><p>The act of breaking the terms of some existing <a href="commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.
+      <p class="shortcomment cmt">The act of breaking the terms of some existing <a href="commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a>.</p><div class="fullcomment"><div class="comment cmt"><p>The act of breaking the terms of some existing <a href="commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a>.
 </p></div><dl class="paramcmts block"><dt class="param">receiver</dt><dd class="cmt"><p>A <a href="ContractActorLike.html" class="extype" name="edsl.ContractActorLike">edsl.ContractActorLike</a> actor whose underlying
-                <a href="commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> the <code>Counterparty</code>
+                <a href="commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a> the <code>Counterparty</code>
                 actor wishes to break.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>When a <code>Counterparty</code> actor breaks the terms of some existing
-      <a href="commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> it becomes in &quot;breach
+      <a href="commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a> it becomes in &quot;breach
       of contract.&quot; The <code>Counterparty</code> actor sending <span class="extype" name="ContractBroken">ContractBroken</span>
       is informing the receiver that it no longer has the intention of
       performing the actions specified in the receiver's underlying
-      <a href="commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.
+      <a href="commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a>.
 </p></span></dd></dl></div>
     </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a>
@@ -453,72 +453,72 @@ and liabilities.</p>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="edsl.CounterpartyActor#valueAssets" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="valueAssets(f:akka.actor.ActorRef=&gt;edsl.commitments.Contract):edsl.commitments.Contract"></a>
-      <a id="valueAssets((ActorRef)⇒Contract):Contract"></a>
+      <a id="valueAssets(f:akka.actor.ActorRef=&gt;edsl.commitments.Commitment):edsl.commitments.Commitment"></a>
+      <a id="valueAssets((ActorRef)⇒Commitment):Commitment"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">valueAssets</span><span class="params">(<span name="f">f: (<span class="extype" name="akka.actor.ActorRef">ActorRef</span>) ⇒ <a href="commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>)</span><span class="result">: <a href="commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>
+        <span class="name">valueAssets</span><span class="params">(<span name="f">f: (<span class="extype" name="akka.actor.ActorRef">ActorRef</span>) ⇒ <a href="commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a></span>)</span><span class="result">: <a href="commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#edsl.CounterpartyActor@valueAssets(f:akka.actor.ActorRef=&gt;edsl.commitments.Contract):edsl.commitments.Contract" title="Permalink" target="_top">
+      <a href="../index.html#edsl.CounterpartyActor@valueAssets(f:akka.actor.ActorRef=&gt;edsl.commitments.Commitment):edsl.commitments.Commitment" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
       <p class="shortcomment cmt">Compute the value of the <code>Counterparty</code> actor's stock of assets.</p><div class="fullcomment"><div class="comment cmt"><p>Compute the value of the <code>Counterparty</code> actor's stock of assets.
 </p></div><dl class="paramcmts block"><dt class="param">f</dt><dd class="cmt"><p>A function mapping a <a href="ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a> actor to a
-         <a href="commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> representing the value
+         <a href="commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a> representing the value
          of the <a href="ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a> actor's underlying
-         <a href="commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> to the <code>Counterparty</code> actor.</p></dd><dt>returns</dt><dd class="cmt"><p>The total value of the <code>Counterparty</code> actor's stock of assets.
+         <a href="commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a> to the <code>Counterparty</code> actor.</p></dd><dt>returns</dt><dd class="cmt"><p>The total value of the <code>Counterparty</code> actor's stock of assets.
 </p></dd></dl></div>
     </li><li name="edsl.CounterpartyActor#valueEquity" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="valueEquity(f:akka.actor.ActorRef=&gt;edsl.commitments.Contract):edsl.commitments.Contract"></a>
-      <a id="valueEquity((ActorRef)⇒Contract):Contract"></a>
+      <a id="valueEquity(f:akka.actor.ActorRef=&gt;edsl.commitments.Commitment):edsl.commitments.Commitment"></a>
+      <a id="valueEquity((ActorRef)⇒Commitment):Commitment"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">valueEquity</span><span class="params">(<span name="f">f: (<span class="extype" name="akka.actor.ActorRef">ActorRef</span>) ⇒ <a href="commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>)</span><span class="result">: <a href="commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>
+        <span class="name">valueEquity</span><span class="params">(<span name="f">f: (<span class="extype" name="akka.actor.ActorRef">ActorRef</span>) ⇒ <a href="commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a></span>)</span><span class="result">: <a href="commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#edsl.CounterpartyActor@valueEquity(f:akka.actor.ActorRef=&gt;edsl.commitments.Contract):edsl.commitments.Contract" title="Permalink" target="_top">
+      <a href="../index.html#edsl.CounterpartyActor@valueEquity(f:akka.actor.ActorRef=&gt;edsl.commitments.Commitment):edsl.commitments.Commitment" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
       <p class="shortcomment cmt">Compute the value of the <code>Counterparty</code> actor's equity.</p><div class="fullcomment"><div class="comment cmt"><p>Compute the value of the <code>Counterparty</code> actor's equity.
 </p></div><dl class="paramcmts block"><dt class="param">f</dt><dd class="cmt"><p>A function mapping a <a href="ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a> actor to a
-         <a href="commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> representing the value
+         <a href="commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a> representing the value
          of the <a href="ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a> actor's underlying
-         <a href="commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> to the <code>Counterparty</code> actor.</p></dd><dt>returns</dt><dd class="cmt"><p>The total value of the <code>Counterparty</code> actor's stock of assets.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>By definition, the value of equity is the difference between the
+         <a href="commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a> to the <code>Counterparty</code> actor.</p></dd><dt>returns</dt><dd class="cmt"><p>The total value of the <code>Counterparty</code> actor's stock of assets.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>By definition, the value of equity is the difference between the
       value of the <code>Counterparty</code> actor's stock of assets and the value
       of the <code>Counterparty</code> actor's stock of liabilities.
 </p></span></dd></dl></div>
     </li><li name="edsl.CounterpartyActor#valueLiabilities" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="valueLiabilities(f:akka.actor.ActorRef=&gt;edsl.commitments.Contract):edsl.commitments.Contract"></a>
-      <a id="valueLiabilities((ActorRef)⇒Contract):Contract"></a>
+      <a id="valueLiabilities(f:akka.actor.ActorRef=&gt;edsl.commitments.Commitment):edsl.commitments.Commitment"></a>
+      <a id="valueLiabilities((ActorRef)⇒Commitment):Commitment"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">valueLiabilities</span><span class="params">(<span name="f">f: (<span class="extype" name="akka.actor.ActorRef">ActorRef</span>) ⇒ <a href="commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>)</span><span class="result">: <a href="commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>
+        <span class="name">valueLiabilities</span><span class="params">(<span name="f">f: (<span class="extype" name="akka.actor.ActorRef">ActorRef</span>) ⇒ <a href="commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a></span>)</span><span class="result">: <a href="commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#edsl.CounterpartyActor@valueLiabilities(f:akka.actor.ActorRef=&gt;edsl.commitments.Contract):edsl.commitments.Contract" title="Permalink" target="_top">
+      <a href="../index.html#edsl.CounterpartyActor@valueLiabilities(f:akka.actor.ActorRef=&gt;edsl.commitments.Commitment):edsl.commitments.Commitment" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
       <p class="shortcomment cmt">Compute the value of the <code>Counterparty</code> actor's stock of liabilities.</p><div class="fullcomment"><div class="comment cmt"><p>Compute the value of the <code>Counterparty</code> actor's stock of liabilities.
 </p></div><dl class="paramcmts block"><dt class="param">f</dt><dd class="cmt"><p>A function mapping a <a href="ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a> actor to a
-         <a href="commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> representing the value
+         <a href="commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a> representing the value
          of the <a href="ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a> actor's underlying
-         <a href="commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> to the <code>Counterparty</code> actor.</p></dd><dt>returns</dt><dd class="cmt"><p>The total value of the <code>Counterparty</code> actor's stock of liabilities.
+         <a href="commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a> to the <code>Counterparty</code> actor.</p></dd><dt>returns</dt><dd class="cmt"><p>The total value of the <code>Counterparty</code> actor's stock of liabilities.
 </p></dd></dl></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>

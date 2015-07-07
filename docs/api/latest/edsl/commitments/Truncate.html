@@ -45,7 +45,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">Truncate</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="obs">obs: <a href="../observables/Observable.html" class="extype" name="edsl.observables.Observable">Observable</a>[<span class="extype" name="edsl.commitments.Truncate.A">A</span>]</span>, <span name="contract">contract: <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>)</span><span class="result"> extends <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <span class="name">Truncate</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="obs">obs: <a href="../observables/Observable.html" class="extype" name="edsl.observables.Observable">Observable</a>[<span class="extype" name="edsl.commitments.Truncate.A">A</span>]</span>, <span name="contract">contract: <a href="Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a></span>)</span><span class="result"> extends <a href="Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4>
       
@@ -57,7 +57,7 @@ that it expires at the earlier of <code>date</code> and the horizon of the <code
       well beyond <code>date</code>.
 </p></span></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a>, <span class="extype" name="java.io.Serializable">Serializable</span>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Equals" class="extype" target="_top">Equals</a>, <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a>, <span class="extype" name="java.io.Serializable">Serializable</span>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Equals" class="extype" target="_top">Equals</a>, <a href="Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -75,7 +75,7 @@ that it expires at the earlier of <code>date</code> and the horizon of the <code
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="edsl.commitments.Truncate"><span>Truncate</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="edsl.commitments.Contract"><span>Contract</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="edsl.commitments.Truncate"><span>Truncate</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="edsl.commitments.Commitment"><span>Commitment</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -96,7 +96,7 @@ that it expires at the earlier of <code>date</code> and the horizon of the <code
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="edsl.commitments.Truncate#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(obs:edsl.observables.Observable[A],contract:edsl.commitments.Contract):edsl.commitments.Truncate[A]"></a>
+      <a id="&lt;init&gt;(obs:edsl.observables.Observable[A],contract:edsl.commitments.Commitment):edsl.commitments.Truncate[A]"></a>
       <a id="&lt;init&gt;:Truncate[A]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -104,10 +104,10 @@ that it expires at the earlier of <code>date</code> and the horizon of the <code
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">Truncate</span><span class="params">(<span name="obs">obs: <a href="../observables/Observable.html" class="extype" name="edsl.observables.Observable">Observable</a>[<span class="extype" name="edsl.commitments.Truncate.A">A</span>]</span>, <span name="contract">contract: <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>)</span>
+        <span class="name">Truncate</span><span class="params">(<span name="obs">obs: <a href="../observables/Observable.html" class="extype" name="edsl.observables.Observable">Observable</a>[<span class="extype" name="edsl.commitments.Truncate.A">A</span>]</span>, <span name="contract">contract: <a href="Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a></span>)</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#edsl.commitments.Truncate@&lt;init&gt;(obs:edsl.observables.Observable[A],contract:edsl.commitments.Contract):edsl.commitments.Truncate[A]" title="Permalink" target="_top">
+      <a href="../../index.html#edsl.commitments.Truncate@&lt;init&gt;(obs:edsl.observables.Observable[A],contract:edsl.commitments.Commitment):edsl.commitments.Truncate[A]" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
@@ -213,18 +213,18 @@ that it expires at the earlier of <code>date</code> and the horizon of the <code
               
         </dd></dl></div>
     </li><li name="edsl.commitments.Truncate#contract" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="contract:edsl.commitments.Contract"></a>
-      <a id="contract:Contract"></a>
+      <a id="contract:edsl.commitments.Commitment"></a>
+      <a id="contract:Commitment"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">contract</span><span class="result">: <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>
+        <span class="name">contract</span><span class="result">: <a href="Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#edsl.commitments.Truncate@contract:edsl.commitments.Contract" title="Permalink" target="_top">
+      <a href="../../index.html#edsl.commitments.Truncate@contract:edsl.commitments.Commitment" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
@@ -474,8 +474,8 @@ that it expires at the earlier of <code>date</code> and the horizon of the <code
               <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a></h3>
             </div><div class="parent" name="scala.Equals">
               <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Equals" class="extype" target="_top">Equals</a></h3>
-            </div><div class="parent" name="edsl.commitments.Contract">
-              <h3>Inherited from <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></h3>
+            </div><div class="parent" name="edsl.commitments.Commitment">
+              <h3>Inherited from <a href="Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a></h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">

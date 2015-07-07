@@ -45,18 +45,18 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">And</span><span class="params">(<span name="first">first: <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>, <span name="second">second: <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>)</span><span class="result"> extends <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <span class="name">And</span><span class="params">(<span name="first">first: <a href="Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a></span>, <span name="second">second: <a href="Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a></span>)</span><span class="result"> extends <a href="Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Combines two <code>Contract</code> objects to create a new <code>Contract</code>.
-</p></div><dl class="paramcmts block"><dt class="param">first</dt><dd class="cmt"><p>A <code>Contract</code> object.</p></dd><dt class="param">second</dt><dd class="cmt"><p>Another <code>Contract</code> object.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>If you acquire <code>And(first, second)</code>, then you immediately acquire
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Combines two <code>Commitment</code> objects to create a new <code>Commitment</code>.
+</p></div><dl class="paramcmts block"><dt class="param">first</dt><dd class="cmt"><p>A <code>Commitment</code> object.</p></dd><dt class="param">second</dt><dd class="cmt"><p>Another <code>Commitment</code> object.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>If you acquire <code>And(first, second)</code>, then you immediately acquire
       both the <code>first</code> contract (unless it has expired) and the <code>second</code>
       contract (unless it has expired). The contract <code>And(first, second)</code>
       expires only after both <code>first</code> and <code>second</code> edsl have expired.
 </p></span></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a>, <span class="extype" name="java.io.Serializable">Serializable</span>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Equals" class="extype" target="_top">Equals</a>, <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a>, <span class="extype" name="java.io.Serializable">Serializable</span>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Equals" class="extype" target="_top">Equals</a>, <a href="Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -74,7 +74,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="edsl.commitments.And"><span>And</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="edsl.commitments.Contract"><span>Contract</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="edsl.commitments.And"><span>And</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="edsl.commitments.Commitment"><span>Commitment</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -95,7 +95,7 @@
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="edsl.commitments.And#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;init&gt;(first:edsl.commitments.Contract,second:edsl.commitments.Contract):edsl.commitments.And"></a>
+      <a id="&lt;init&gt;(first:edsl.commitments.Commitment,second:edsl.commitments.Commitment):edsl.commitments.And"></a>
       <a id="&lt;init&gt;:And"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -103,14 +103,14 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">And</span><span class="params">(<span name="first">first: <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>, <span name="second">second: <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>)</span>
+        <span class="name">And</span><span class="params">(<span name="first">first: <a href="Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a></span>, <span name="second">second: <a href="Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a></span>)</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#edsl.commitments.And@&lt;init&gt;(first:edsl.commitments.Contract,second:edsl.commitments.Contract):edsl.commitments.And" title="Permalink" target="_top">
+      <a href="../../index.html#edsl.commitments.And@&lt;init&gt;(first:edsl.commitments.Commitment,second:edsl.commitments.Commitment):edsl.commitments.And" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">first</dt><dd class="cmt"><p>A <code>Contract</code> object.</p></dd><dt class="param">second</dt><dd class="cmt"><p>Another <code>Contract</code> object.</p></dd></dl></div>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">first</dt><dd class="cmt"><p>A <code>Commitment</code> object.</p></dd><dt class="param">second</dt><dd class="cmt"><p>Another <code>Commitment</code> object.</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -252,22 +252,22 @@
               
         </dd></dl></div>
     </li><li name="edsl.commitments.And#first" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="first:edsl.commitments.Contract"></a>
-      <a id="first:Contract"></a>
+      <a id="first:edsl.commitments.Commitment"></a>
+      <a id="first:Commitment"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">first</span><span class="result">: <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>
+        <span class="name">first</span><span class="result">: <a href="Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#edsl.commitments.And@first:edsl.commitments.Contract" title="Permalink" target="_top">
+      <a href="../../index.html#edsl.commitments.And@first:edsl.commitments.Commitment" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">A <code>Contract</code> object.</p>
+      <p class="shortcomment cmt">A <code>Commitment</code> object.</p>
     </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <a id="getClass():Class[_]"></a>
@@ -354,22 +354,22 @@
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="edsl.commitments.And#second" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="second:edsl.commitments.Contract"></a>
-      <a id="second:Contract"></a>
+      <a id="second:edsl.commitments.Commitment"></a>
+      <a id="second:Commitment"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">second</span><span class="result">: <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>
+        <span class="name">second</span><span class="result">: <a href="Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#edsl.commitments.And@second:edsl.commitments.Contract" title="Permalink" target="_top">
+      <a href="../../index.html#edsl.commitments.And@second:edsl.commitments.Commitment" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Another <code>Contract</code> object.</p>
+      <p class="shortcomment cmt">Another <code>Commitment</code> object.</p>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
@@ -473,8 +473,8 @@
               <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a></h3>
             </div><div class="parent" name="scala.Equals">
               <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Equals" class="extype" target="_top">Equals</a></h3>
-            </div><div class="parent" name="edsl.commitments.Contract">
-              <h3>Inherited from <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></h3>
+            </div><div class="parent" name="edsl.commitments.Commitment">
+              <h3>Inherited from <a href="Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a></h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">

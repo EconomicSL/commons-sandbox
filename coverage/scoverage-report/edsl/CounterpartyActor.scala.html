@@ -41,11 +41,11 @@
 </span>17 <span style=''>
 </span>18 <span style=''>import acl.ContractBroken
 </span>19 <span style=''>import akka.actor.{Actor, ActorLogging, ActorRef}
-</span>20 <span style=''>import edsl.commitments.{Give, And, Contract}
+</span>20 <span style=''>import edsl.commitments.{Give, And, Commitment}
 </span>21 <span style=''>
 </span>22 <span style=''>
 </span>23 <span style=''>/** Trait defining behavior for an actor that is a counterparty to the
-</span>24 <span style=''>  * underlying [[edsl.commitments.Contract Contract]] of some
+</span>24 <span style=''>  * underlying [[edsl.commitments.Commitment Commitment]] of some
 </span>25 <span style=''>  * [[edsl.ContractActorLike ContractActorLike]].
 </span>26 <span style=''>  *
 </span>27 <span style=''>  * @note A `CounterpartyActor` communicates with another `CounterpartyActor`
@@ -60,17 +60,17 @@
 </span>36 <span style=''>    */
 </span>37 <span style=''>  def balanceSheet: BalanceSheetLike
 </span>38 <span style=''>
-</span>39 <span style=''>  /** The act of breaking the terms of some existing [[edsl.commitments.Contract Contract]].
+</span>39 <span style=''>  /** The act of breaking the terms of some existing [[edsl.commitments.Commitment Commitment]].
 </span>40 <span style=''>    *
 </span>41 <span style=''>    * @param receiver A [[edsl.ContractActorLike]] actor whose underlying
-</span>42 <span style=''>    *                 [[edsl.commitments.Contract Contract]] the `Counterparty`
+</span>42 <span style=''>    *                 [[edsl.commitments.Commitment Commitment]] the `Counterparty`
 </span>43 <span style=''>    *                 actor wishes to break.
 </span>44 <span style=''>    * @note When a `Counterparty` actor breaks the terms of some existing
-</span>45 <span style=''>    *       [[edsl.commitments.Contract Contract]] it becomes in "breach
+</span>45 <span style=''>    *       [[edsl.commitments.Commitment Commitment]] it becomes in "breach
 </span>46 <span style=''>    *       of contract." The `Counterparty` actor sending [[ContractBroken]]
 </span>47 <span style=''>    *       is informing the receiver that it no longer has the intention of
 </span>48 <span style=''>    *       performing the actions specified in the receiver's underlying
-</span>49 <span style=''>    *       [[edsl.commitments.Contract Contract]].
+</span>49 <span style=''>    *       [[edsl.commitments.Commitment Commitment]].
 </span>50 <span style=''>    */
 </span>51 <span style=''>  def breakContract(receiver: ActorRef): Unit = {
 </span>52 <span style=''>    </span><span style='background: #F0ADAD'>receiver ! ContractBroken(self, receiver)</span><span style=''>
@@ -79,39 +79,39 @@
 </span>55 <span style=''>  /** Compute the value of the `Counterparty` actor's stock of assets.
 </span>56 <span style=''>    *
 </span>57 <span style=''>    * @param f A function mapping a [[ContractActorLike]] actor to a
-</span>58 <span style=''>    *          [[edsl.commitments.Contract Contract]] representing the value
+</span>58 <span style=''>    *          [[edsl.commitments.Commitment Commitment]] representing the value
 </span>59 <span style=''>    *          of the [[ContractActorLike]] actor's underlying
-</span>60 <span style=''>    *          [[edsl.commitments.Contract Contract]] to the `Counterparty` actor.
+</span>60 <span style=''>    *          [[edsl.commitments.Commitment Commitment]] to the `Counterparty` actor.
 </span>61 <span style=''>    * @return The total value of the `Counterparty` actor's stock of assets.
 </span>62 <span style=''>    */
-</span>63 <span style=''>  def valueAssets(f: ActorRef => Contract): Contract = {
+</span>63 <span style=''>  def valueAssets(f: ActorRef => Commitment): Commitment = {
 </span>64 <span style=''>    </span><span style='background: #F0ADAD'>balanceSheet.assets.map(f).reduce((contract1, contract2) => And(contract1, contract2))</span><span style=''>
 </span>65 <span style=''>  }
 </span>66 <span style=''>
 </span>67 <span style=''>  /** Compute the value of the `Counterparty` actor's equity.
 </span>68 <span style=''>    *
 </span>69 <span style=''>    * @param f A function mapping a [[ContractActorLike]] actor to a
-</span>70 <span style=''>    *          [[edsl.commitments.Contract Contract]] representing the value
+</span>70 <span style=''>    *          [[edsl.commitments.Commitment Commitment]] representing the value
 </span>71 <span style=''>    *          of the [[ContractActorLike]] actor's underlying
-</span>72 <span style=''>    *          [[edsl.commitments.Contract Contract]] to the `Counterparty` actor.
+</span>72 <span style=''>    *          [[edsl.commitments.Commitment Commitment]] to the `Counterparty` actor.
 </span>73 <span style=''>    * @return The total value of the `Counterparty` actor's stock of assets.
 </span>74 <span style=''>    * @note By definition, the value of equity is the difference between the
 </span>75 <span style=''>    *       value of the `Counterparty` actor's stock of assets and the value
 </span>76 <span style=''>    *       of the `Counterparty` actor's stock of liabilities.
 </span>77 <span style=''>    */
-</span>78 <span style=''>  def valueEquity(f: ActorRef => Contract): Contract = {
+</span>78 <span style=''>  def valueEquity(f: ActorRef => Commitment): Commitment = {
 </span>79 <span style=''>    </span><span style='background: #F0ADAD'>And(valueAssets(f), Give(valueLiabilities(f)))</span><span style=''>
 </span>80 <span style=''>  }
 </span>81 <span style=''>
 </span>82 <span style=''>  /** Compute the value of the `Counterparty` actor's stock of liabilities.
 </span>83 <span style=''>    *
 </span>84 <span style=''>    * @param f A function mapping a [[ContractActorLike]] actor to a
-</span>85 <span style=''>    *          [[edsl.commitments.Contract Contract]] representing the value
+</span>85 <span style=''>    *          [[edsl.commitments.Commitment Commitment]] representing the value
 </span>86 <span style=''>    *          of the [[ContractActorLike]] actor's underlying
-</span>87 <span style=''>    *          [[edsl.commitments.Contract Contract]] to the `Counterparty` actor.
+</span>87 <span style=''>    *          [[edsl.commitments.Commitment Commitment]] to the `Counterparty` actor.
 </span>88 <span style=''>    * @return The total value of the `Counterparty` actor's stock of liabilities.
 </span>89 <span style=''>    */
-</span>90 <span style=''>  def valueLiabilities(f: ActorRef => Contract): Contract = {
+</span>90 <span style=''>  def valueLiabilities(f: ActorRef => Commitment): Commitment = {
 </span>91 <span style=''>    </span><span style='background: #F0ADAD'>balanceSheet.liabilities.map(f).reduce((contract1, contract2) => And(contract1, contract2))</span><span style=''>
 </span>92 <span style=''>  }
 </span>93 <span style=''>
@@ -143,9 +143,9 @@
           20
         </td>
         <td>
-          2098
+          2120
           -
-          2098
+          2120
         </td>
         <td>
           Select
@@ -164,9 +164,9 @@
           19
         </td>
         <td>
-          2100
+          2122
           -
-          2130
+          2152
         </td>
         <td>
           Apply
@@ -185,9 +185,9 @@
           18
         </td>
         <td>
-          2115
+          2137
           -
-          2119
+          2141
         </td>
         <td>
           Select
@@ -206,9 +206,9 @@
           21
         </td>
         <td>
-          2089
+          2111
           -
-          2130
+          2152
         </td>
         <td>
           ApplyToImplicitArgs
@@ -227,9 +227,9 @@
           23
         </td>
         <td>
-          2710
+          2744
           -
-          2735
+          2769
         </td>
         <td>
           Apply
@@ -248,9 +248,9 @@
           22
         </td>
         <td>
-          2673
+          2707
           -
-          2673
+          2707
         </td>
         <td>
           TypeApply
@@ -259,7 +259,7 @@
           scala.collection.mutable.Set.canBuildFrom
         </td>
         <td style="background: #F0ADAD">
-          mutable.this.Set.canBuildFrom[edsl.commitments.Contract]
+          mutable.this.Set.canBuildFrom[edsl.commitments.Commitment]
         </td>
       </tr><tr>
         <td>
@@ -269,9 +269,9 @@
           24
         </td>
         <td>
-          2650
+          2684
           -
-          2736
+          2770
         </td>
         <td>
           Apply
@@ -280,7 +280,7 @@
           scala.collection.TraversableOnce.reduce
         </td>
         <td style="background: #F0ADAD">
-          CounterpartyActor.this.balanceSheet.assets.map[edsl.commitments.Contract, scala.collection.mutable.Set[edsl.commitments.Contract]](f)(mutable.this.Set.canBuildFrom[edsl.commitments.Contract]).reduce[edsl.commitments.Contract](((contract1: edsl.commitments.Contract, contract2: edsl.commitments.Contract) =&gt; edsl.commitments.And.apply(contract1, contract2)))
+          CounterpartyActor.this.balanceSheet.assets.map[edsl.commitments.Commitment, scala.collection.mutable.Set[edsl.commitments.Commitment]](f)(mutable.this.Set.canBuildFrom[edsl.commitments.Commitment]).reduce[edsl.commitments.Commitment](((contract1: edsl.commitments.Commitment, contract2: edsl.commitments.Commitment) =&gt; edsl.commitments.And.apply(contract1, contract2)))
         </td>
       </tr><tr>
         <td>
@@ -290,9 +290,9 @@
           26
         </td>
         <td>
-          3491
+          3537
           -
-          3510
+          3556
         </td>
         <td>
           Apply
@@ -311,9 +311,9 @@
           25
         </td>
         <td>
-          3470
+          3516
           -
-          3484
+          3530
         </td>
         <td>
           Apply
@@ -332,9 +332,9 @@
           28
         </td>
         <td>
-          3466
-          -
           3512
+          -
+          3558
         </td>
         <td>
           Apply
@@ -353,9 +353,9 @@
           27
         </td>
         <td>
-          3486
+          3532
           -
-          3511
+          3557
         </td>
         <td>
           Apply
@@ -374,9 +374,9 @@
           29
         </td>
         <td>
-          4075
+          4133
           -
-          4075
+          4133
         </td>
         <td>
           TypeApply
@@ -385,7 +385,7 @@
           scala.collection.mutable.Set.canBuildFrom
         </td>
         <td style="background: #F0ADAD">
-          mutable.this.Set.canBuildFrom[edsl.commitments.Contract]
+          mutable.this.Set.canBuildFrom[edsl.commitments.Commitment]
         </td>
       </tr><tr>
         <td>
@@ -395,9 +395,9 @@
           31
         </td>
         <td>
-          4047
+          4105
           -
-          4138
+          4196
         </td>
         <td>
           Apply
@@ -406,7 +406,7 @@
           scala.collection.TraversableOnce.reduce
         </td>
         <td style="background: #F0ADAD">
-          CounterpartyActor.this.balanceSheet.liabilities.map[edsl.commitments.Contract, scala.collection.mutable.Set[edsl.commitments.Contract]](f)(mutable.this.Set.canBuildFrom[edsl.commitments.Contract]).reduce[edsl.commitments.Contract](((contract1: edsl.commitments.Contract, contract2: edsl.commitments.Contract) =&gt; edsl.commitments.And.apply(contract1, contract2)))
+          CounterpartyActor.this.balanceSheet.liabilities.map[edsl.commitments.Commitment, scala.collection.mutable.Set[edsl.commitments.Commitment]](f)(mutable.this.Set.canBuildFrom[edsl.commitments.Commitment]).reduce[edsl.commitments.Commitment](((contract1: edsl.commitments.Commitment, contract2: edsl.commitments.Commitment) =&gt; edsl.commitments.And.apply(contract1, contract2)))
         </td>
       </tr><tr>
         <td>
@@ -416,9 +416,9 @@
           30
         </td>
         <td>
-          4112
+          4170
           -
-          4137
+          4195
         </td>
         <td>
           Apply
@@ -437,9 +437,9 @@
           40
         </td>
         <td>
-          4239
+          4297
           -
-          4239
+          4297
         </td>
         <td>
           Apply
@@ -458,9 +458,9 @@
           32
         </td>
         <td>
-          4272
+          4330
           -
-          4305
+          4363
         </td>
         <td>
           Apply
@@ -479,9 +479,9 @@
           33
         </td>
         <td>
-          4295
+          4353
           -
-          4295
+          4353
         </td>
         <td>
           Literal
@@ -500,9 +500,9 @@
           35
         </td>
         <td>
-          4369
+          4427
           -
-          4369
+          4427
         </td>
         <td>
           Literal
@@ -521,9 +521,9 @@
           34
         </td>
         <td>
-          4341
+          4399
           -
-          4379
+          4437
         </td>
         <td>
           Apply
@@ -542,9 +542,9 @@
           37
         </td>
         <td>
-          4440
+          4498
           -
-          4440
+          4498
         </td>
         <td>
           Literal
@@ -563,9 +563,9 @@
           36
         </td>
         <td>
-          4414
+          4472
           -
-          4450
+          4508
         </td>
         <td>
           Apply
@@ -584,9 +584,9 @@
           38
         </td>
         <td>
-          4489
+          4547
           -
-          4530
+          4588
         </td>
         <td>
           Apply
@@ -605,9 +605,9 @@
           39
         </td>
         <td>
-          4520
+          4578
           -
-          4520
+          4578
         </td>
         <td>
           Literal

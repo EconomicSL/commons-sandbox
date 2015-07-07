@@ -129,11 +129,11 @@ or <a href="package$$PromiseRejected.html" class="extype" name="acl.PromiseRejec
       </a>
     </span>
       <p class="shortcomment cmt">A message indicating that a <span class="extype" name="CounterpartyActor">CounterpartyActor</span> actor has broken an
-existing <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><div class="fullcomment"><div class="comment cmt"><p>A message indicating that a <span class="extype" name="CounterpartyActor">CounterpartyActor</span> actor has broken an
-existing <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.
+existing <a href="../edsl/commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a>.</p><div class="fullcomment"><div class="comment cmt"><p>A message indicating that a <span class="extype" name="CounterpartyActor">CounterpartyActor</span> actor has broken an
+existing <a href="../edsl/commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a>.
 </p></div><dl class="paramcmts block"><dt class="param">sender</dt><dd class="cmt"><p>the <span class="extype" name="CounterpartyActor">CounterpartyActor</span> actor breaking the existing
-              <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>the <span class="extype" name="ContractActorLike">ContractActorLike</span> actor representing the existing
-                <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> who's terms
+              <a href="../edsl/commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a>.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>the <span class="extype" name="ContractActorLike">ContractActorLike</span> actor representing the existing
+                <a href="../edsl/commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a> who's terms
                 are being breached.
 </p></dd></dl></div>
     </li><li name="acl.Promise" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -145,7 +145,7 @@ existing <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.c
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="package$$Promise.html"><span class="name">Promise</span></a><span class="params">(<span name="sender">sender: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="receiver">receiver: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="akka.actor.ActorRef">ActorRef</span>]</span>, <span name="contract">contract: <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="package$$Promise.html"><span class="name">Promise</span></a><span class="params">(<span name="sender">sender: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="receiver">receiver: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="akka.actor.ActorRef">ActorRef</span>]</span>, <span name="contract">contract: <a href="../edsl/commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../index.html#acl.package@PromiseextendsProductwithSerializable" title="Permalink" target="_top">
@@ -154,12 +154,12 @@ existing <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.c
     </span>
       <p class="shortcomment cmt">A promise made by some <a href="PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a> to a collection of other
 <a href="PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a> edsl to perform actions specified in the
-<a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><div class="fullcomment"><div class="comment cmt"><p>A promise made by some <a href="PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a> to a collection of other
+<a href="../edsl/commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a>.</p><div class="fullcomment"><div class="comment cmt"><p>A promise made by some <a href="PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a> to a collection of other
 <a href="PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a> edsl to perform actions specified in the
-<a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.
+<a href="../edsl/commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a>.
 </p></div><dl class="paramcmts block"><dt class="param">sender</dt><dd class="cmt"><p>the <a href="PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a> making the proposal.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>a collection of <a href="PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a> edsl who are receiving the
                 <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> and therefore are potential counter parties to
-                the <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p></dd><dt class="param">contract</dt><dd class="cmt"><p>a <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> specifying
+                the <a href="../edsl/commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a>.</p></dd><dt class="param">contract</dt><dd class="cmt"><p>a <a href="../edsl/commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a> specifying
                 certain actions that the sender and receiver should perform.
 </p></dd></dl></div>
     </li><li name="acl.PromiseAccepted" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -181,7 +181,7 @@ existing <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.c
       <p class="shortcomment cmt">A message indicated that a previously submitted <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> has been accepted.</p><div class="fullcomment"><div class="comment cmt"><p>A message indicated that a previously submitted <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> has been accepted.
 </p></div><dl class="paramcmts block"><dt class="param">sender</dt><dd class="cmt"><p>the <a href="PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a> accepting the previously received <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a>.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>a collection of <a href="PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a> edsl who are receiving the
                 <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> and therefore are potential counter parties to
-                the <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p></dd><dt class="param">promise</dt><dd class="cmt"><p>the previously received <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> that is being accepted.</p></dd></dl></div>
+                the <a href="../edsl/commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a>.</p></dd><dt class="param">promise</dt><dd class="cmt"><p>the previously received <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> that is being accepted.</p></dd></dl></div>
     </li><li name="acl.PromiseMakingActor" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="PromiseMakingActorextendsAnyRef"></a>
       <a id="PromiseMakingActor:PromiseMakingActor"></a>
@@ -198,7 +198,7 @@ existing <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.c
         <img src="../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Trait defining behavior for an actor that trades <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> objects.</p>
+      <p class="shortcomment cmt">Trait defining behavior for an actor that trades <a href="../edsl/commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a> objects.</p>
     </li><li name="acl.PromiseRejected" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="PromiseRejectedextendsProductwithSerializable"></a>
       <a id="PromiseRejected:PromiseRejected"></a>
@@ -218,7 +218,7 @@ existing <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.c
       <p class="shortcomment cmt">A message indicating that a previously submitted <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> has been rejected.</p><div class="fullcomment"><div class="comment cmt"><p>A message indicating that a previously submitted <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> has been rejected.
 </p></div><dl class="paramcmts block"><dt class="param">sender</dt><dd class="cmt"><p>the <a href="PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a> rejecting the previously received <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a>.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>a collection of <a href="PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a> edsl who are receiving the
                 <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> and therefore are potential counter parties to
-                the <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p></dd><dt class="param">promise</dt><dd class="cmt"><p>the previously received <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> that is being rejected.
+                the <a href="../edsl/commitments/Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a>.</p></dd><dt class="param">promise</dt><dd class="cmt"><p>the previously received <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> that is being rejected.
 </p></dd></dl></div>
     </li></ol>
             </div>

@@ -45,17 +45,17 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">Scale</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="amount">amount: <a href="../observables/Observable.html" class="extype" name="edsl.observables.Observable">Observable</a>[<span class="extype" name="edsl.commitments.Scale.A">A</span>]</span>, <span name="contract">contract: <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>)</span><span class="result"> extends <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <span class="name">Scale</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="amount">amount: <a href="../observables/Observable.html" class="extype" name="edsl.observables.Observable">Observable</a>[<span class="extype" name="edsl.commitments.Scale.A">A</span>]</span>, <span name="contract">contract: <a href="Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a></span>)</span><span class="result"> extends <a href="Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Scales an underlying <code>Contract</code> by a potentially time-varying value.</p></div><dl class="paramcmts block"><dt class="param">amount</dt><dd class="cmt"><p>The scaling factor applied the the underlying <code>Contract</code>.</p></dd><dt class="param">contract</dt><dd class="cmt"><p>The underlying <code>Contract</code>.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>If you acquire <code>Scale(observable, contract)</code>, then you acquire <code>contract</code>
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Scales an underlying <code>Commitment</code> by a potentially time-varying value.</p></div><dl class="paramcmts block"><dt class="param">amount</dt><dd class="cmt"><p>The scaling factor applied the the underlying <code>Commitment</code>.</p></dd><dt class="param">contract</dt><dd class="cmt"><p>The underlying <code>Commitment</code>.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>If you acquire <code>Scale(observable, contract)</code>, then you acquire <code>contract</code>
       at the same moment except that all rights and obligations of <code>contract</code>
       are multiplied by the value of the <code>observable</code> at the moment of
       acquisition.
 </p></span></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a>, <span class="extype" name="java.io.Serializable">Serializable</span>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Equals" class="extype" target="_top">Equals</a>, <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a>, <span class="extype" name="java.io.Serializable">Serializable</span>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Equals" class="extype" target="_top">Equals</a>, <a href="Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div><div class="toggleContainer block">
             <span class="toggle">Known Subclasses</span>
             <div class="subClasses hiddenContent"><a href="../Currency.html" class="extype" name="edsl.Currency">Currency</a></div>
@@ -76,7 +76,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="edsl.commitments.Scale"><span>Scale</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="edsl.commitments.Contract"><span>Contract</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="edsl.commitments.Scale"><span>Scale</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="edsl.commitments.Commitment"><span>Commitment</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -97,7 +97,7 @@
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="edsl.commitments.Scale#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;init&gt;(amount:edsl.observables.Observable[A],contract:edsl.commitments.Contract):edsl.commitments.Scale[A]"></a>
+      <a id="&lt;init&gt;(amount:edsl.observables.Observable[A],contract:edsl.commitments.Commitment):edsl.commitments.Scale[A]"></a>
       <a id="&lt;init&gt;:Scale[A]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -105,14 +105,14 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">Scale</span><span class="params">(<span name="amount">amount: <a href="../observables/Observable.html" class="extype" name="edsl.observables.Observable">Observable</a>[<span class="extype" name="edsl.commitments.Scale.A">A</span>]</span>, <span name="contract">contract: <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>)</span>
+        <span class="name">Scale</span><span class="params">(<span name="amount">amount: <a href="../observables/Observable.html" class="extype" name="edsl.observables.Observable">Observable</a>[<span class="extype" name="edsl.commitments.Scale.A">A</span>]</span>, <span name="contract">contract: <a href="Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a></span>)</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#edsl.commitments.Scale@&lt;init&gt;(amount:edsl.observables.Observable[A],contract:edsl.commitments.Contract):edsl.commitments.Scale[A]" title="Permalink" target="_top">
+      <a href="../../index.html#edsl.commitments.Scale@&lt;init&gt;(amount:edsl.observables.Observable[A],contract:edsl.commitments.Commitment):edsl.commitments.Scale[A]" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">amount</dt><dd class="cmt"><p>The scaling factor applied the the underlying <code>Contract</code>.</p></dd><dt class="param">contract</dt><dd class="cmt"><p>The underlying <code>Contract</code>.</p></dd></dl></div>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">amount</dt><dd class="cmt"><p>The scaling factor applied the the underlying <code>Commitment</code>.</p></dd><dt class="param">contract</dt><dd class="cmt"><p>The underlying <code>Commitment</code>.</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -189,7 +189,7 @@
         <img src="../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">The scaling factor applied the the underlying <code>Contract</code>.</p>
+      <p class="shortcomment cmt">The scaling factor applied the the underlying <code>Commitment</code>.</p>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -231,22 +231,22 @@
               
         </dd></dl></div>
     </li><li name="edsl.commitments.Scale#contract" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="contract:edsl.commitments.Contract"></a>
-      <a id="contract:Contract"></a>
+      <a id="contract:edsl.commitments.Commitment"></a>
+      <a id="contract:Commitment"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">contract</span><span class="result">: <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>
+        <span class="name">contract</span><span class="result">: <a href="Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#edsl.commitments.Scale@contract:edsl.commitments.Contract" title="Permalink" target="_top">
+      <a href="../../index.html#edsl.commitments.Scale@contract:edsl.commitments.Commitment" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">The underlying <code>Contract</code>.</p>
+      <p class="shortcomment cmt">The underlying <code>Commitment</code>.</p>
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a>
       <a id="eq(AnyRef):Boolean"></a>
@@ -475,8 +475,8 @@
               <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a></h3>
             </div><div class="parent" name="scala.Equals">
               <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Equals" class="extype" target="_top">Equals</a></h3>
-            </div><div class="parent" name="edsl.commitments.Contract">
-              <h3>Inherited from <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></h3>
+            </div><div class="parent" name="edsl.commitments.Commitment">
+              <h3>Inherited from <a href="Commitment.html" class="extype" name="edsl.commitments.Commitment">Commitment</a></h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">
