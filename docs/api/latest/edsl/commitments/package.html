@@ -98,40 +98,40 @@ extension of retail deposits).</p></div><div class="toggleContainer block">
         <div id="types" class="types members">
               <h3>Type Members</h3>
               <ol><li name="edsl.commitments.And" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="AndextendsContract"></a>
+      <a id="AndextendsContractwithProductwithSerializable"></a>
       <a id="And:And"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">class</span>
+        <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="And.html"><span class="name">And</span></a><span class="result"> extends <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>
+        <a href="And.html"><span class="name">And</span></a><span class="params">(<span name="first">first: <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>, <span name="second">second: <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>)</span><span class="result"> extends <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#edsl.commitments.package@AndextendsContract" title="Permalink" target="_top">
+      <a href="../../index.html#edsl.commitments.package@AndextendsContractwithProductwithSerializable" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
       <p class="shortcomment cmt">Combines two <code>Contract</code> objects to create a new <code>Contract</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Combines two <code>Contract</code> objects to create a new <code>Contract</code>.
-</p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>If you acquire <code>And(first, second)</code>, then you immediately acquire
+</p></div><dl class="paramcmts block"><dt class="param">first</dt><dd class="cmt"><p>A <code>Contract</code> object.</p></dd><dt class="param">second</dt><dd class="cmt"><p>Another <code>Contract</code> object.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>If you acquire <code>And(first, second)</code>, then you immediately acquire
       both the <code>first</code> contract (unless it has expired) and the <code>second</code>
       contract (unless it has expired). The contract <code>And(first, second)</code>
       expires only after both <code>first</code> and <code>second</code> edsl have expired.
 </p></span></dd></dl></div>
     </li><li name="edsl.commitments.Anytime" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="AnytimeextendsContract"></a>
+      <a id="AnytimeextendsContractwithProductwithSerializable"></a>
       <a id="Anytime:Anytime"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">class</span>
+        <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="Anytime.html"><span class="name">Anytime</span></a><span class="result"> extends <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>
+        <a href="Anytime.html"><span class="name">Anytime</span></a><span class="params">(<span name="contract">contract: <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>)</span><span class="result"> extends <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#edsl.commitments.package@AnytimeextendsContract" title="Permalink" target="_top">
+      <a href="../../index.html#edsl.commitments.package@AnytimeextendsContractwithProductwithSerializable" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
@@ -139,7 +139,7 @@ extension of retail deposits).</p></div><div class="toggleContainer block">
 at some point between the acquisition of the contract and the expiration
 of the underlying contract.</p><div class="fullcomment"><div class="comment cmt"><p>A contract that creates an obligation to acquire an underlying contract
 at some point between the acquisition of the contract and the expiration
-of the underlying contract.</p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>If an economic actor acquires <code>Anytime(contract)</code>, then it must
+of the underlying contract.</p></div><dl class="paramcmts block"><dt class="param">contract</dt><dd class="cmt"><p>The <code>Contract</code> which must eventually be acquired.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>If an economic actor acquires <code>Anytime(contract)</code>, then it must
       acquire <code>contract</code>, but is free to do so at any point between the
       acquisition of <code>Anytime(contract)</code> and the expiration of <code>contract.</code>
       The contract <code>Anytime(contract)</code> expires when <code>contract</code> expires.
@@ -164,18 +164,18 @@ of the underlying contract.</p></div><dl class="attributes block"> <dt>Note</dt>
 specifies, for each party, obligations to undertake (or not) actions
 or make certain payments.</p></div></div>
     </li><li name="edsl.commitments.Get" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="GetextendsContract"></a>
+      <a id="GetextendsContractwithProductwithSerializable"></a>
       <a id="Get:Get"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">class</span>
+        <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="Get.html"><span class="name">Get</span></a><span class="result"> extends <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>
+        <a href="Get.html"><span class="name">Get</span></a><span class="params">(<span name="contract">contract: <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>)</span><span class="result"> extends <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#edsl.commitments.package@GetextendsContract" title="Permalink" target="_top">
+      <a href="../../index.html#edsl.commitments.package@GetextendsContractwithProductwithSerializable" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
@@ -184,44 +184,44 @@ the <code>contract</code> horizon (i.e., at the last possible moment) regardless
 when the composite contract <code>Get(contract)</code> was acquired.</p><div class="fullcomment"><div class="comment cmt"><p>A <code>Contract</code> that, when acquired, acquires the underlying <code>contract</code> at
 the <code>contract</code> horizon (i.e., at the last possible moment) regardless of
 when the composite contract <code>Get(contract)</code> was acquired.
-</p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>If you acquire <code>Get(contract)</code>, then you must acquire <code>contract</code>
+</p></div><dl class="paramcmts block"><dt class="param">contract</dt><dd class="cmt"><p>The underlying <code>Contract</code>.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>If you acquire <code>Get(contract)</code>, then you must acquire <code>contract</code>
       at the <code>contract</code> expiry date. The composite contract <code>Get(contract)</code>
       expires at the same moment that <code>contract</code> expires.
 </p></span></dd></dl></div>
     </li><li name="edsl.commitments.Give" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="GiveextendsContract"></a>
+      <a id="GiveextendsContractwithProductwithSerializable"></a>
       <a id="Give:Give"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">class</span>
+        <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="Give.html"><span class="name">Give</span></a><span class="result"> extends <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>
+        <a href="Give.html"><span class="name">Give</span></a><span class="params">(<span name="contract">contract: <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>)</span><span class="result"> extends <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#edsl.commitments.package@GiveextendsContract" title="Permalink" target="_top">
+      <a href="../../index.html#edsl.commitments.package@GiveextendsContractwithProductwithSerializable" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Reverses the rights and obligations of the underlying <code>Contract</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Reverses the rights and obligations of the underlying <code>Contract</code>.</p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>Acquiring <code>Give(contract)</code> is the acquire all of <code>contract</code> rights
+      <p class="shortcomment cmt">Reverses the rights and obligations of the underlying <code>Contract</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Reverses the rights and obligations of the underlying <code>Contract</code>.</p></div><dl class="paramcmts block"><dt class="param">contract</dt><dd class="cmt"><p>The underlying <code>Contract</code>.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>Acquiring <code>Give(contract)</code> is the acquire all of <code>contract</code> rights
       and obligations (and vice versa). Note that for a bilateral contract
       between parties A and B, A acquiring <code>contract</code> implies that B must
       acquire <code>Give(contract)</code>.
 </p></span></dd></dl></div>
     </li><li name="edsl.commitments.One" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="OneextendsContract"></a>
+      <a id="OneextendsContractwithProductwithSerializable"></a>
       <a id="One:One"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">class</span>
+        <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="One.html"><span class="name">One</span></a><span class="result"> extends <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>
+        <a href="One.html"><span class="name">One</span></a><span class="params">(<span name="currency">currency: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#edsl.commitments.package@OneextendsContract" title="Permalink" target="_top">
+      <a href="../../index.html#edsl.commitments.package@OneextendsContractwithProductwithSerializable" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
@@ -255,22 +255,22 @@ currency.
       only after both <code>first</code> and <code>second</code> edsl have expired.
 </p></span></dd></dl></div>
     </li><li name="edsl.commitments.Scale" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="Scale[A]extendsContract"></a>
+      <a id="Scale[A]extendsContractwithProductwithSerializable"></a>
       <a id="Scale[A]:Scale[A]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">class</span>
+        <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="Scale.html"><span class="name">Scale</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="result"> extends <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>
+        <a href="Scale.html"><span class="name">Scale</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="amount">amount: <a href="../observables/Observable.html" class="extype" name="edsl.observables.Observable">Observable</a>[<span class="extype" name="edsl.commitments.Scale.A">A</span>]</span>, <span name="contract">contract: <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>)</span><span class="result"> extends <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#edsl.commitments.package@Scale[A]extendsContract" title="Permalink" target="_top">
+      <a href="../../index.html#edsl.commitments.package@Scale[A]extendsContractwithProductwithSerializable" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Scales an underlying <code>Contract</code> by a potentially time-varying value.</p><div class="fullcomment"><div class="comment cmt"><p>Scales an underlying <code>Contract</code> by a potentially time-varying value.</p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>If you acquire <code>Scale(observable, contract)</code>, then you acquire <code>contract</code>
+      <p class="shortcomment cmt">Scales an underlying <code>Contract</code> by a potentially time-varying value.</p><div class="fullcomment"><div class="comment cmt"><p>Scales an underlying <code>Contract</code> by a potentially time-varying value.</p></div><dl class="paramcmts block"><dt class="param">amount</dt><dd class="cmt"><p>The scaling factor applied the the underlying <code>Contract</code>.</p></dd><dt class="param">contract</dt><dd class="cmt"><p>The underlying <code>Contract</code>.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>If you acquire <code>Scale(observable, contract)</code>, then you acquire <code>contract</code>
       at the same moment except that all rights and obligations of <code>contract</code>
       are multiplied by the value of the <code>observable</code> at the moment of
       acquisition.
@@ -299,18 +299,18 @@ currency.
       after both <code>first</code> and <code>second</code> edsl have expired.
 </p></span></dd></dl></div>
     </li><li name="edsl.commitments.Truncate" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="Truncate[A]extendsContract"></a>
+      <a id="Truncate[A]extendsContractwithProductwithSerializable"></a>
       <a id="Truncate[A]:Truncate[A]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">class</span>
+        <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="Truncate.html"><span class="name">Truncate</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="result"> extends <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>
+        <a href="Truncate.html"><span class="name">Truncate</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="obs">obs: <a href="../observables/Observable.html" class="extype" name="edsl.observables.Observable">Observable</a>[<span class="extype" name="edsl.commitments.Truncate.A">A</span>]</span>, <span name="contract">contract: <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>)</span><span class="result"> extends <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#edsl.commitments.package@Truncate[A]extendsContract" title="Permalink" target="_top">
+      <a href="../../index.html#edsl.commitments.package@Truncate[A]extendsContractwithProductwithSerializable" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
