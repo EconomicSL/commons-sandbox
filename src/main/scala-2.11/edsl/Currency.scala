@@ -19,7 +19,7 @@ import edsl.commitments.{One, Scale}
 import edsl.observables.Constant
 
 
-/** A `Contract` that immediately pays the holder a particular amount of the
+/** A `Commitment` that immediately pays the holder a particular amount of the
   * specified currency.
   * @param code A string identifying the currency.
   * @param amount The quantity of currency held.

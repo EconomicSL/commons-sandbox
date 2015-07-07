@@ -16,12 +16,12 @@ limitations under the License.
 package edsl.commitments
 
 
-/** Reverses the rights and obligations of the underlying `Contract`.
-  * @param contract The underlying `Contract`.
+/** Reverses the rights and obligations of the underlying `Commitment`.
+  * @param contract The underlying `Commitment`.
   * @note Acquiring `Give(contract)` is the acquire all of `contract` rights
   *       and obligations (and vice versa). Note that for a bilateral contract
   *       between parties A and B, A acquiring `contract` implies that B must
   *       acquire `Give(contract)`.
   */
-case class Give(contract: Contract) extends Contract
+case class Give(contract: Commitment) extends Commitment
 

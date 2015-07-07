@@ -16,7 +16,7 @@ limitations under the License.
 import akka.actor.ActorRef
 import acl.{Promise, PromiseMakingActor}
 import edsl.{ContractActorLike, CounterpartyActor}
-import edsl.commitments.Contract
+import edsl.commitments.Commitment
 
 import scala.collection.immutable
 
@@ -73,12 +73,12 @@ import scala.collection.immutable
 package object acl {
 
   /** A message indicating that a [[CounterpartyActor]] actor has broken an
-    * existing [[edsl.commitments.Contract Contract]].
+    * existing [[edsl.commitments.Commitment Commitment]].
     *
     * @param sender the [[CounterpartyActor]] actor breaking the existing
-    *               [[edsl.commitments.Contract Contract]].
+    *               [[edsl.commitments.Commitment Commitment]].
     * @param receiver the [[ContractActorLike]] actor representing the existing
-    *                 [[edsl.commitments.Contract Contract]] who's terms
+    *                 [[edsl.commitments.Commitment Commitment]] who's terms
     *                 are being breached.
     */
   case class ContractBroken(sender: ActorRef, receiver: ActorRef)
@@ -86,23 +86,23 @@ package object acl {
 
   /** A promise made by some [[PromiseMakingActor]] to a collection of other
     * [[PromiseMakingActor]] edsl to perform actions specified in the
-    * [[edsl.commitments.Contract Contract]].
+    * [[edsl.commitments.Commitment Commitment]].
     *
     * @param sender the [[PromiseMakingActor]] making the proposal.
     * @param receiver a collection of [[PromiseMakingActor]] edsl who are receiving the
     *                 [[Promise]] and therefore are potential counter parties to
-    *                 the [[edsl.commitments.Contract Contract]].
-    * @param contract a [[edsl.commitments.Contract Contract]] specifying
+    *                 the [[edsl.commitments.Commitment Commitment]].
+    * @param contract a [[edsl.commitments.Commitment Commitment]] specifying
     *                 certain actions that the sender and receiver should perform.
     */
-  case class Promise(sender: ActorRef, receiver: immutable.Set[ActorRef], contract: Contract)
+  case class Promise(sender: ActorRef, receiver: immutable.Set[ActorRef], contract: Commitment)
 
   /** A message indicated that a previously submitted [[Promise]] has been accepted.
     *
     * @param sender the [[PromiseMakingActor]] accepting the previously received [[Promise]].
     * @param receiver a collection of [[PromiseMakingActor]] edsl who are receiving the
     *                 [[Promise]] and therefore are potential counter parties to
-    *                 the [[edsl.commitments.Contract Contract]].
+    *                 the [[edsl.commitments.Commitment Commitment]].
     * @param promise the previously received [[Promise]] that is being accepted.
 
     */
@@ -113,7 +113,7 @@ package object acl {
     * @param sender the [[PromiseMakingActor]] rejecting the previously received [[Promise]].
     * @param receiver a collection of [[PromiseMakingActor]] edsl who are receiving the
     *                 [[Promise]] and therefore are potential counter parties to
-    *                 the [[edsl.commitments.Contract Contract]].
+    *                 the [[edsl.commitments.Commitment Commitment]].
     * @param promise the previously received [[Promise]] that is being rejected.
     */
   case class PromiseRejected(sender: ActorRef, receiver: immutable.Set[ActorRef], promise: Promise)

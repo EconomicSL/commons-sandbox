@@ -27,7 +27,7 @@ limitations under the License.
   * the [[acl.Promise Promise]] can be used to construct a [[ContractActorLike]] actor that
   * serves as a "channel" of communication between the various
   * [[edsl.CounterpartyActor CounterParty]] actors for the duration of the underlying
-  * [[edsl.commitments.Contract Contract]].
+  * [[edsl.commitments.Commitment Commitment]].
   *
   * A [[edsl.CounterpartyActor Counterparty]] actor should...
   *
@@ -44,7 +44,7 @@ limitations under the License.
   * A [[ContractActorLike]] actor should have...
   *
   *  - an issuer: the issuer is the [[edsl.CounterpartyActor Counterparty]] actor for
-  *  which the [[edsl.commitments.Contract Contract]] represents a liability.
+  *  which the [[edsl.commitments.Commitment Commitment]] represents a liability.
   *
   *  - an immutable collection of owners: the owners are for
   *  which the contract represents an asset.
@@ -68,18 +68,18 @@ limitations under the License.
   *
   *  - A ''commitment'' stipulates the transfer of a resource or a set of
   *  resources between two parties; a commitment represents an ''atomic''
-  *  `Contract`.
+  *  `Commitment`.
   *
-  *  - A `Contract` may require ''sequential'' execution of its sub-contracts.
+  *  - A `Commitment` may require ''sequential'' execution of its sub-contracts.
   *
-  *  - A `Contract` may require ''concurrent'' execution of its sub-contracts,
+  *  - A `Commitment` may require ''concurrent'' execution of its sub-contracts,
   *  i.e., execution of all sub-contracts, where individual commitments are
   *  inter-leavened in any order.
   *
-  *  - A `Contract` may require execution of one of a number of ''alternative''
+  *  - A `Commitment` may require execution of one of a number of ''alternative''
   *  sub-contracts.
   *
-  *  - A `Contract` may require ''repeated'' execution of a sub-contract.
+  *  - A `Commitment` may require ''repeated'' execution of a sub-contract.
   *
   * ==Overview==
   *

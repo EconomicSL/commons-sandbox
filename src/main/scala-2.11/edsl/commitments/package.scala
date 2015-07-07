@@ -21,7 +21,7 @@ package edsl
   * ==Overview==
   * A ''commitment'' stipulates the transfer of a resource or a set of
   * resources between two parties; a commitment represents an ''atomic''
-  * [[edsl.commitments.Contract Contract]].
+  * [[edsl.commitments.Commitment Commitment]].
   *
   * We envision that:
   *

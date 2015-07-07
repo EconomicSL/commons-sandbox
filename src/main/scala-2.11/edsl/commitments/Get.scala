@@ -16,14 +16,14 @@ limitations under the License.
 package edsl.commitments
 
 
-/** A `Contract` that, when acquired, acquires the underlying `contract` at
+/** A `Commitment` that, when acquired, acquires the underlying `contract` at
   * the `contract` horizon (i.e., at the last possible moment) regardless of
   * when the composite contract `Get(contract)` was acquired.
   *
-  * @param contract The underlying `Contract`.
+  * @param contract The underlying `Commitment`.
   * @note If you acquire `Get(contract)`, then you must acquire `contract`
   *       at the `contract` expiry date. The composite contract `Get(contract)`
   *       expires at the same moment that `contract` expires.
   */
-case class Get(contract: Contract) extends Contract
+case class Get(contract: Commitment) extends Commitment
 

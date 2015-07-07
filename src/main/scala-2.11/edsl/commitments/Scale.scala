@@ -18,12 +18,12 @@ package edsl.commitments
 import edsl.observables.Observable
 
 
-/** Scales an underlying `Contract` by a potentially time-varying value.
-  * @param amount The scaling factor applied the the underlying `Contract`.
-  * @param contract The underlying `Contract`.
+/** Scales an underlying `Commitment` by a potentially time-varying value.
+  * @param amount The scaling factor applied the the underlying `Commitment`.
+  * @param contract The underlying `Commitment`.
   * @note If you acquire `Scale(observable, contract)`, then you acquire `contract`
   *       at the same moment except that all rights and obligations of `contract`
   *       are multiplied by the value of the `observable` at the moment of
   *       acquisition.
   */
-case class Scale[A](amount: Observable[A], contract: Contract) extends Contract
+case class Scale[A](amount: Observable[A], contract: Commitment) extends Commitment

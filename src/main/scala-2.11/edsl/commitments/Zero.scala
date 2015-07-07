@@ -16,9 +16,9 @@ limitations under the License.
 package edsl.commitments
 
 
-/** A [[Contract]] that has no rights or obligations.
+/** A [[Commitment]] that has no rights or obligations.
   *
   * @note This contract has an infinite horizon: there is no restriction on
   *       when this contract can be acquired.
   */
-case object Zero extends Contract
+case object Zero extends Commitment

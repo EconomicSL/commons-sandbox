@@ -19,10 +19,10 @@ package edsl.commitments
 /** A contract that creates an obligation to acquire an underlying contract
   * at some point between the acquisition of the contract and the expiration
   * of the underlying contract.
-  * @param contract The `Contract` which must eventually be acquired.
+  * @param contract The `Commitment` which must eventually be acquired.
   * @note If an economic actor acquires `Anytime(contract)`, then it must
   *       acquire `contract`, but is free to do so at any point between the
   *       acquisition of `Anytime(contract)` and the expiration of `contract.`
   *       The contract `Anytime(contract)` expires when `contract` expires.
   */
-case class Anytime(contract: Contract) extends Contract
+case class Anytime(contract: Commitment) extends Commitment

@@ -16,14 +16,14 @@ limitations under the License.
 package edsl.commitments
 
 
-/** Class for representing a conditional `Contract`.
+/** Class for representing a conditional `Commitment`.
   *
-  * @param first A `Contract` object.
-  * @param second Another `Contract` object.
+  * @param first A `Commitment` object.
+  * @param second Another `Commitment` object.
   * @note If you acquire `Then(first, second)` and `first` contract has not
   *       expired, then you acquire the `first` contract. If the `first` contract
   *       has expired but the `second` contract has not, then you acquire the
   *       `second` contract.  The contract `Then(first, second)` expires only
   *       after both `first` and `second` edsl have expired.
   */
-case class Then(first: Contract, second: Contract) extends Contract
+case class Then(first: Commitment, second: Commitment) extends Commitment

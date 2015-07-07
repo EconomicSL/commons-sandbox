@@ -18,7 +18,7 @@ package edsl
 import edsl.commitments.Anytime
 
 
-/** A `Contract` representing a demand deposit for the specified currency.
+/** A `Commitment` representing a demand deposit for the specified currency.
   * @param code A string identifying the currency.
   * @param amount The quantity of deposits held.
   */

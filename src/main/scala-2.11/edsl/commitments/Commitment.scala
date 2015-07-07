@@ -16,11 +16,10 @@ limitations under the License.
 package edsl.commitments
 
 
-/** The base trait for all edsl.
+/** The base trait for all commitments.
   *
-  * A `Contract` represents an agreement between two or more parties that
+  * A `Commitment` represents an agreement between two or more parties that
   * specifies, for each party, obligations to undertake (or not) actions
   * or make certain payments.
-  *
   */
-trait Contract
+trait Commitment

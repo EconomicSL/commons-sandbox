@@ -18,13 +18,13 @@ package edsl.commitments
 
 /** Choose which of two edsl to acquire.
   *
-  * @param first A `Contract` object.
-  * @param second Another `Contract` object.
+  * @param first A `Commitment` object.
+  * @param second Another `Commitment` object.
   * @note If you acquire `Or(first, second)`, then you immediately acquire
   *       either the `first` contract (unless it has expired) or the `second`
   *       contract (unless it has expired). You can not acquire both `first`
   *       and `second` edsl. The contract `Or(first, second)` expires
   *       only after both `first` and `second` edsl have expired.
   */
-case class Or(first: Contract, second: Contract) extends Contract
+case class Or(first: Commitment, second: Commitment) extends Commitment
 
