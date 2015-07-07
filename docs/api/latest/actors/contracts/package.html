@@ -97,7 +97,7 @@
         <div id="types" class="types members">
               <h3>Type Members</h3>
               <ol><li name="actors.contracts.Currency" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="CurrencyextendsContractLike"></a>
+      <a id="CurrencyextendsContractActorLike"></a>
       <a id="Currency:Currency"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -105,33 +105,33 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="Currency.html"><span class="name">Currency</span></a><span class="result"> extends <a href="../../acl/ContractLike.html" class="extype" name="acl.ContractLike">ContractLike</a></span>
+        <a href="Currency.html"><span class="name">Currency</span></a><span class="result"> extends <a href="../../edsl/ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#actors.contracts.package@CurrencyextendsContractLike" title="Permalink" target="_top">
+      <a href="../../index.html#actors.contracts.package@CurrencyextendsContractActorLike" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
       
-    </li><li name="actors.contracts.DepositLike" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="DepositLikeextendsContractLike"></a>
-      <a id="DepositLike:DepositLike"></a>
+    </li><li name="actors.contracts.DepositActorLike" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="DepositActorLikeextendsContractActorLike"></a>
+      <a id="DepositActorLike:DepositActorLike"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="DepositLike.html"><span class="name">DepositLike</span></a><span class="result"> extends <a href="../../acl/ContractLike.html" class="extype" name="acl.ContractLike">ContractLike</a></span>
+        <a href="DepositActorLike.html"><span class="name">DepositActorLike</span></a><span class="result"> extends <a href="../../edsl/ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#actors.contracts.package@DepositLikeextendsContractLike" title="Permalink" target="_top">
+      <a href="../../index.html#actors.contracts.package@DepositActorLikeextendsContractActorLike" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
       <p class="shortcomment cmt">Trait defining a deposit actor.</p>
     </li><li name="actors.contracts.ReserveDeposit" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="ReserveDepositextendsDepositLikewithProductwithSerializable"></a>
+      <a id="ReserveDepositextendsDepositActorLikewithProductwithSerializable"></a>
       <a id="ReserveDeposit:ReserveDeposit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -139,17 +139,17 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="ReserveDeposit.html"><span class="name">ReserveDeposit</span></a><span class="params">(<span name="balance">balance: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Double" class="extype" target="_top">Double</a></span>, <span name="code">code: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="issuer">issuer: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="owners">owners: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="akka.actor.ActorRef">ActorRef</span>]</span>)</span><span class="result"> extends <a href="DepositLike.html" class="extype" name="actors.contracts.DepositLike">DepositLike</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="ReserveDeposit.html"><span class="name">ReserveDeposit</span></a><span class="params">(<span name="balance">balance: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Double" class="extype" target="_top">Double</a></span>, <span name="code">code: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="issuer">issuer: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="owners">owners: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="akka.actor.ActorRef">ActorRef</span>]</span>)</span><span class="result"> extends <a href="DepositActorLike.html" class="extype" name="actors.contracts.DepositActorLike">DepositActorLike</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#actors.contracts.package@ReserveDepositextendsDepositLikewithProductwithSerializable" title="Permalink" target="_top">
+      <a href="../../index.html#actors.contracts.package@ReserveDepositextendsDepositActorLikewithProductwithSerializable" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
       <p class="shortcomment cmt">Class defining a reserve deposit.</p><div class="fullcomment"><div class="comment cmt"><p>Class defining a reserve deposit.
 </p></div><dl class="paramcmts block"><dt class="param">balance</dt><dd class="cmt"><p>Amount of the underlying deposit contract.</p></dd><dt class="param">code</dt><dd class="cmt"><p>String identifying the underlying currency.</p></dd><dt class="param">issuer</dt><dd class="cmt"><p>Actor for whom the underlying deposit contract is a liability.</p></dd><dt class="param">owners</dt><dd class="cmt"><p>Actor(s) for whom the underlying deposit contract is an asset.</p></dd></dl></div>
     </li><li name="actors.contracts.RetailDeposit" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="RetailDepositextendsDepositLikewithProductwithSerializable"></a>
+      <a id="RetailDepositextendsDepositActorLikewithProductwithSerializable"></a>
       <a id="RetailDeposit:RetailDeposit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -157,10 +157,10 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="RetailDeposit.html"><span class="name">RetailDeposit</span></a><span class="params">(<span name="balance">balance: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Double" class="extype" target="_top">Double</a></span>, <span name="code">code: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="issuer">issuer: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="owners">owners: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="akka.actor.ActorRef">ActorRef</span>]</span>)</span><span class="result"> extends <a href="DepositLike.html" class="extype" name="actors.contracts.DepositLike">DepositLike</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="RetailDeposit.html"><span class="name">RetailDeposit</span></a><span class="params">(<span name="balance">balance: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Double" class="extype" target="_top">Double</a></span>, <span name="code">code: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="issuer">issuer: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="owners">owners: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="akka.actor.ActorRef">ActorRef</span>]</span>)</span><span class="result"> extends <a href="DepositActorLike.html" class="extype" name="actors.contracts.DepositActorLike">DepositActorLike</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#actors.contracts.package@RetailDepositextendsDepositLikewithProductwithSerializable" title="Permalink" target="_top">
+      <a href="../../index.html#actors.contracts.package@RetailDepositextendsDepositActorLikewithProductwithSerializable" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>

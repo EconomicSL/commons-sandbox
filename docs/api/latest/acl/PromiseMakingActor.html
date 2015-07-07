@@ -1,9 +1,9 @@
 <!DOCTYPE html >
 <html>
         <head>
-          <title>Counterparty - acl.Counterparty</title>
-          <meta name="description" content="Counterparty - acl.Counterparty" />
-          <meta name="keywords" content="Counterparty acl.Counterparty" />
+          <title>PromiseMakingActor - acl.PromiseMakingActor</title>
+          <meta name="description" content="PromiseMakingActor - acl.PromiseMakingActor" />
+          <meta name="keywords" content="PromiseMakingActor acl.PromiseMakingActor" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
@@ -16,7 +16,7 @@
       <script type="text/javascript">
          if(top === self) {
             var url = '../index.html';
-            var hash = 'acl.Counterparty';
+            var hash = 'acl.PromiseMakingActor';
             var anchor = window.location.hash;
             var anchor_opt = '';
             if (anchor.length >= 1)
@@ -30,10 +30,10 @@
       <div id="definition">
         <img src="../lib/trait_big.png" />
         <p id="owner"><a href="package.html" class="extype" name="acl">acl</a></p>
-        <h1>Counterparty</h1><h3><span class="morelinks"><div>Related Doc:
+        <h1>PromiseMakingActor</h1><h3><span class="morelinks"><div>Related Doc:
             <a href="package.html" class="extype" name="acl">package acl</a>
           </div></span></h3><span class="permalink">
-      <a href="../index.html#acl.Counterparty" title="Permalink" target="_top">
+      <a href="../index.html#acl.PromiseMakingActor" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
@@ -45,19 +45,16 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <span class="name">Counterparty</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <span class="name">PromiseMakingActor</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Trait defining behavior for an actor that is party to some
-<a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><p><code>Counterparty</code> actors communicate with other <code>Counterparty</code> actors using
-<a href="ContractLike.html" class="extype" name="acl.ContractLike">ContractLike</a> actors as &quot;channels.&quot;
-</p></div><dl class="attributes block"> <dt>Self Type</dt><dd><a href="" class="extype" name="acl.Counterparty">Counterparty</a> with <span class="extype" name="akka.actor.Actor">Actor</span> with <span class="extype" name="akka.actor.ActorLogging">ActorLogging</span></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Trait defining behavior for an actor that trades <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> objects.</p></div><dl class="attributes block"> <dt>Self Type</dt><dd><a href="" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a> with <span class="extype" name="akka.actor.Actor">Actor</span> with <span class="extype" name="akka.actor.ActorLogging">ActorLogging</span></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div><div class="toggleContainer block">
             <span class="toggle">Known Subclasses</span>
-            <div class="subClasses hiddenContent"><a href="../actors/EconomicActor.html" class="extype" name="actors.EconomicActor">EconomicActor</a></div>
+            <div class="subClasses hiddenContent"><a href="../actors/consumers/ConsumerLike.html" class="extype" name="actors.consumers.ConsumerLike">ConsumerLike</a>, <a href="../actors/EconomicActor.html" class="extype" name="actors.EconomicActor">EconomicActor</a>, <a href="../actors/financiers/FinancierLike.html" class="extype" name="actors.financiers.FinancierLike">FinancierLike</a>, <a href="../actors/government/FiscalAuthorityLike.html" class="extype" name="actors.government.FiscalAuthorityLike">FiscalAuthorityLike</a>, <a href="../actors/markets/MarketLike.html" class="extype" name="actors.markets.MarketLike">MarketLike</a>, <a href="../actors/behaviors/MarketParticipantLike.html" class="extype" name="actors.behaviors.MarketParticipantLike">MarketParticipantLike</a>, <a href="../actors/government/MonetaryAuthorityLike.html" class="extype" name="actors.government.MonetaryAuthorityLike">MonetaryAuthorityLike</a>, <a href="../actors/producers/ProducerLike.html" class="extype" name="actors.producers.ProducerLike">ProducerLike</a></div>
           </div></div>
         
 
@@ -75,7 +72,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="acl.Counterparty"><span>Counterparty</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="acl.PromiseMakingActor"><span>PromiseMakingActor</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -113,7 +110,7 @@
         <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.Counterparty@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+      <a href="../index.html#acl.PromiseMakingActor@!=(x$1:Any):Boolean" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
@@ -130,7 +127,7 @@
         <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Int" class="extype" target="_top">Int</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.Counterparty@##():Int" title="Permalink" target="_top">
+      <a href="../index.html#acl.PromiseMakingActor@##():Int" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
@@ -147,11 +144,37 @@
         <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.Counterparty@==(x$1:Any):Boolean" title="Permalink" target="_top">
+      <a href="../index.html#acl.PromiseMakingActor@==(x$1:Any):Boolean" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="acl.PromiseMakingActor#acceptPromise" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="acceptPromise(promise:acl.Promise):Unit"></a>
+      <a id="acceptPromise(Promise):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">acceptPromise</span><span class="params">(<span name="promise">promise: <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#acl.PromiseMakingActor@acceptPromise(promise:acl.Promise):Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The act of accepting a previously submitted <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> to perform
+actions specified in some <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><div class="fullcomment"><div class="comment cmt"><p>The act of accepting a previously submitted <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> to perform
+actions specified in some <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.
+</p></div><dl class="paramcmts block"><dt class="param">promise</dt><dd class="cmt"><p>a <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> containing a <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> specifying certain actions
+               that the <code>PromiseMakingActor</code> is to perform.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p><code>acceptPromise</code> is a general-purpose acceptance of a <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a>
+      that was previously submitted (typically via a <code>makePromise</code> act).
+      The <code>PromiseMakingActor</code> sending <a href="package$$PromiseAccepted.html" class="extype" name="acl.PromiseAccepted">PromiseAccepted</a> is informing the
+      receiver that it intends to perform the actions as specified in
+      the <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.
+</p></span></dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -164,37 +187,11 @@
         <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.Counterparty@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+      <a href="../index.html#acl.PromiseMakingActor@asInstanceOf[T0]:T0" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="acl.Counterparty#breakContract" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="breakContract(receiver:akka.actor.ActorRef):Unit"></a>
-      <a id="breakContract(ActorRef):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">breakContract</span><span class="params">(<span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../index.html#acl.Counterparty@breakContract(receiver:akka.actor.ActorRef):Unit" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">The act of breaking the terms of some existing <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><div class="fullcomment"><div class="comment cmt"><p>The act of breaking the terms of some existing <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.
-</p></div><dl class="paramcmts block"><dt class="param">receiver</dt><dd class="cmt"><p>a <a href="ContractLike.html" class="extype" name="acl.ContractLike">ContractLike</a> actor whose underlying
-                <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> the <code>Counterparty</code>
-                actor wishes to break.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>When a <code>Counterparty</code> actor breaks the terms of some existing
-      <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> it becomes in &quot;breach
-      of contract.&quot; The <code>Counterparty</code> actor sending <a href="package$$ContractBroken.html" class="extype" name="acl.ContractBroken">ContractBroken</a>
-      is informing the receiver that it no longer has the intention of
-      performing the actions specified in the receiver's underlying
-      <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.
-</p></span></dd></dl></div>
     </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a>
       <a id="clone():AnyRef"></a>
@@ -207,7 +204,7 @@
         <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.Counterparty@clone():Object" title="Permalink" target="_top">
+      <a href="../index.html#acl.PromiseMakingActor@clone():Object" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
@@ -230,7 +227,7 @@
         <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.Counterparty@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+      <a href="../index.html#acl.PromiseMakingActor@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
@@ -247,7 +244,7 @@
         <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.Counterparty@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+      <a href="../index.html#acl.PromiseMakingActor@equals(x$1:Any):Boolean" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
@@ -264,7 +261,7 @@
         <span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.Counterparty@finalize():Unit" title="Permalink" target="_top">
+      <a href="../index.html#acl.PromiseMakingActor@finalize():Unit" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
@@ -287,7 +284,7 @@
         <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.Counterparty@getClass():Class[_]" title="Permalink" target="_top">
+      <a href="../index.html#acl.PromiseMakingActor@getClass():Class[_]" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
@@ -304,7 +301,7 @@
         <span class="name">hashCode</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Int" class="extype" target="_top">Int</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.Counterparty@hashCode():Int" title="Permalink" target="_top">
+      <a href="../index.html#acl.PromiseMakingActor@hashCode():Int" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
@@ -321,11 +318,40 @@
         <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.Counterparty@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+      <a href="../index.html#acl.PromiseMakingActor@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="acl.PromiseMakingActor#makePromise" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="makePromise(receiver:scala.collection.immutable.Set[akka.actor.ActorRef],contract:edsl.commitments.Contract):Unit"></a>
+      <a id="makePromise(Set[ActorRef],Contract):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">makePromise</span><span class="params">(<span name="receiver">receiver: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="akka.actor.ActorRef">ActorRef</span>]</span>, <span name="contract">contract: <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#acl.PromiseMakingActor@makePromise(receiver:scala.collection.immutable.Set[akka.actor.ActorRef],contract:edsl.commitments.Contract):Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The action of submitting a <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> made by the <code>PromiseMakingActor</code> to a
+collection of other <code>PromiseMakingActors</code> to perform actions specified in the
+<a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><div class="fullcomment"><div class="comment cmt"><p>The action of submitting a <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> made by the <code>PromiseMakingActor</code> to a
+collection of other <code>PromiseMakingActors</code> to perform actions specified in the
+<a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.
+</p></div><dl class="paramcmts block"><dt class="param">receiver</dt><dd class="cmt"><p>a collection of <code>PromiseMakingActors</code> who are receiving the
+                <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> and therefore are potential counter parties to
+                the <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p></dd><dt class="param">contract</dt><dd class="cmt"><p>a <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> specifying certain actions that the various
+                parties should perform.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p><code>makePromise</code> is a general-purpose act to make a <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> or
+      respond to a previously submitted <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> (i.e., during a
+      negotiation process) by promising to perform certain actions
+      defined by the <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.
+</p></span></dd></dl></div>
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>
@@ -338,7 +364,7 @@
         <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.Counterparty@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+      <a href="../index.html#acl.PromiseMakingActor@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
@@ -355,7 +381,7 @@
         <span class="name">notify</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.Counterparty@notify():Unit" title="Permalink" target="_top">
+      <a href="../index.html#acl.PromiseMakingActor@notify():Unit" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
@@ -372,11 +398,37 @@
         <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.Counterparty@notifyAll():Unit" title="Permalink" target="_top">
+      <a href="../index.html#acl.PromiseMakingActor@notifyAll():Unit" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="acl.PromiseMakingActor#rejectPromise" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="rejectPromise(promise:acl.Promise):Unit"></a>
+      <a id="rejectPromise(Promise):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">rejectPromise</span><span class="params">(<span name="promise">promise: <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#acl.PromiseMakingActor@rejectPromise(promise:acl.Promise):Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The action of rejecting a previously submitted <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> to perform
+actions specified in some <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><div class="fullcomment"><div class="comment cmt"><p>The action of rejecting a previously submitted <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> to perform
+actions specified in some <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.
+</p></div><dl class="paramcmts block"><dt class="param">promise</dt><dd class="cmt"><p>a <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> containing a <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> specifying certain
+               actions that the <code>PromiseMakingActor</code> is to perform.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p><code>rejectPromise</code> is a general-purpose rejection to a <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a>
+      that was previously submitted (typically via a <code>makePromise</code> act).
+      The <code>PromiseMakingActor</code> sending <a href="package$$PromiseRejected.html" class="extype" name="acl.PromiseRejected">PromiseRejected</a> is informing the
+      receiver that it has no intention to perform the actions as
+      specified in the promised <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.
+</p></span></dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
@@ -389,7 +441,7 @@
         <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.Counterparty@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+      <a href="../index.html#acl.PromiseMakingActor@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
@@ -406,7 +458,7 @@
         <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.Counterparty@toString():String" title="Permalink" target="_top">
+      <a href="../index.html#acl.PromiseMakingActor@toString():String" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
@@ -423,7 +475,7 @@
         <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.Counterparty@wait():Unit" title="Permalink" target="_top">
+      <a href="../index.html#acl.PromiseMakingActor@wait():Unit" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
@@ -446,7 +498,7 @@
         <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Long" class="extype" target="_top">Long</a></span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.Counterparty@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+      <a href="../index.html#acl.PromiseMakingActor@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
@@ -469,7 +521,7 @@
         <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Long" class="extype" target="_top">Long</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.Counterparty@wait(x$1:Long):Unit" title="Permalink" target="_top">
+      <a href="../index.html#acl.PromiseMakingActor@wait(x$1:Long):Unit" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>

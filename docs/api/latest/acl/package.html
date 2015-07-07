@@ -47,20 +47,30 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Provides classes defining a high-level actor communication language (ACL).</p><h4>Overview</h4><p>The <code>acl</code> package defines the <a href="PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> trait as well as the
-high-level <a href="PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> communication language.</p><p>Our high-level <a href="PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> acl language is influenced by, but not slave
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Provides classes defining an economic actor as well as a high-level economic
+actor communication language (ACL).</p><h4>Overview</h4><p>&quot;To analyze how financial commitments affect the economy it is necessary to
+look at economic units in terms of their cash flows. The cash-flow approach
+looks at all units -- be they households, corporations, state and municipal
+governments, or even national governments -- as if they were banks.&quot;</p><p>The above quotation is taken from Hyman Minsky's magnum opus <i>Stabilizing
+an Unstable Economy</i>.  Following Minsky, and more recently Perry Mehrling,
+we view every economic actor as an entity that is both receiving certain
+cash flow events (i.e., receipts of various kinds) as well as generating
+cash flow events (i.e., expenditures of various kinds) over time.</p><p>The accumulation of cash flow events for a particular economic actor is
+captured by its balance sheet. Most basic constraint that economic actors face in our framework is, to
+again borrow from Minsky, the survival constraint: the inflow of cash flow
+events must be at least as big as the outflow of generated cash flow
+events.  By taking the &quot;banking perspective&quot; our primary concern is the
+liquidity of economic actors; solvency of economic actors is a secondary
+concern.</p><p>Anytime an economic actor needs to make a payment it has only three
+options:</p><ol class="decimal"><li>Spend down hoards of money.</li></ol><p> 2. Liquidate accumulations of financial assets.</p><p> 3. Increase accumulations of financial liabilities.</p><p>Crucially both 2 and 3 depend on finding some other economic actor to take
+the other side of the transaction. This may be easier said than done.  Only
+option 1 is completely dependable.  Thus the import of money.</p><h5><code>PromiseMaker</code></h5><p>The <code>acl</code> package defines the <a href="PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a> trait as well as the
+high-level <a href="PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a> communication language.</p><p>Our high-level <a href="PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a> acl language is influenced by, but not slave
 to, the <a href="http://www.fipa.org/" target="_blank">Foundation for Intelligent Physical Agents (FIPA)</a>
-compliant <a href="http://www.fipa.org/specs/fipa00037/SC00037J.pdf" target="_blank">Agent Communication Language (ACL)</a>.</p><h5><code>PromiseMaker</code></h5><p>A <a href="PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> communicates with other <a href="PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> actors by making
+compliant <a href="http://www.fipa.org/specs/fipa00037/SC00037J.pdf" target="_blank">Agent Communication Language (ACL)</a>.</p><p>A <a href="PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a> communicates with other <a href="PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a> actors by making
 <a href="package$$Promise.html" class="extype" name="acl.Promise">promises</a> which are then either <a href="package$$PromiseAccepted.html" class="extype" name="acl.PromiseAccepted">accepted</a>
-or <a href="package$$PromiseRejected.html" class="extype" name="acl.PromiseRejected">rejected</a> by the receiving <a href="PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> actors.</p><h5><code>Counterparty</code></h5><p>Once a <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> has been accepted by all relevant <a href="PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> actors
-the <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> can be used to construct a <a href="ContractLike.html" class="extype" name="acl.ContractLike">ContractLike</a> actor that
-serves as a &quot;channel&quot; of communication between the various
-<a href="Counterparty.html" class="extype" name="acl.Counterparty">CounterParty</a> actors for the duration of the underlying
-<a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><p>A <a href="Counterparty.html" class="extype" name="acl.Counterparty">Counterparty</a> actor should...</p><ul><li>be able to communicate directly with a <a href="ContractLike.html" class="extype" name="acl.ContractLike">ContractLike</a> actor.</li><li>be able to communicate with any relevant <a href="Counterparty.html" class="extype" name="acl.Counterparty">Counterparty</a>
- actor indirectly using the <a href="ContractLike.html" class="extype" name="acl.ContractLike">ContractLike</a> actor as channel.</li></ul><h5><code>ContractLike</code></h5><p>A <a href="ContractLike.html" class="extype" name="acl.ContractLike">ContractLike</a> actor should have...</p><ul><li>an issuer: the issuer is the <a href="Counterparty.html" class="extype" name="acl.Counterparty">Counterparty</a> actor for
- which the <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> represents a liability.</li><li>an immutable collection of owners: the owners are for
- which the contract represents an asset.
-</li></ul></div><div class="toggleContainer block">
+or <a href="package$$PromiseRejected.html" class="extype" name="acl.PromiseRejected">rejected</a> by the receiving <a href="PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a> actors.
+</p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
@@ -118,52 +128,14 @@ serves as a &quot;channel&quot; of communication between the various
         <img src="../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">A message indicating that a <a href="Counterparty.html" class="extype" name="acl.Counterparty">Counterparty</a> actor has broken an
-existing <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><div class="fullcomment"><div class="comment cmt"><p>A message indicating that a <a href="Counterparty.html" class="extype" name="acl.Counterparty">Counterparty</a> actor has broken an
+      <p class="shortcomment cmt">A message indicating that a <span class="extype" name="CounterpartyActor">CounterpartyActor</span> actor has broken an
+existing <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><div class="fullcomment"><div class="comment cmt"><p>A message indicating that a <span class="extype" name="CounterpartyActor">CounterpartyActor</span> actor has broken an
 existing <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.
-</p></div><dl class="paramcmts block"><dt class="param">sender</dt><dd class="cmt"><p>the <a href="Counterparty.html" class="extype" name="acl.Counterparty">Counterparty</a> actor breaking the existing
-              <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>the <a href="ContractLike.html" class="extype" name="acl.ContractLike">ContractLike</a> actor representing the existing
+</p></div><dl class="paramcmts block"><dt class="param">sender</dt><dd class="cmt"><p>the <span class="extype" name="CounterpartyActor">CounterpartyActor</span> actor breaking the existing
+              <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>the <span class="extype" name="ContractActorLike">ContractActorLike</span> actor representing the existing
                 <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> who's terms
                 are being breached.
 </p></dd></dl></div>
-    </li><li name="acl.ContractLike" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="ContractLikeextendsActorwithActorLogging"></a>
-      <a id="ContractLike:ContractLike"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">trait</span>
-      </span>
-      <span class="symbol">
-        <a href="ContractLike.html"><span class="name">ContractLike</span></a><span class="result"> extends <span class="extype" name="akka.actor.Actor">Actor</span> with <span class="extype" name="akka.actor.ActorLogging">ActorLogging</span></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../index.html#acl.package@ContractLikeextendsActorwithActorLogging" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Trait defining the behavior for a generic contract actor.</p>
-    </li><li name="acl.Counterparty" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
-      <a id="CounterpartyextendsAnyRef"></a>
-      <a id="Counterparty:Counterparty"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">trait</span>
-      </span>
-      <span class="symbol">
-        <a href="Counterparty.html"><span class="name">Counterparty</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../index.html#acl.package@CounterpartyextendsAnyRef" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Trait defining behavior for an actor that is party to some
-<a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Trait defining behavior for an actor that is party to some
-<a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><p><code>Counterparty</code> actors communicate with other <code>Counterparty</code> actors using
-<a href="ContractLike.html" class="extype" name="acl.ContractLike">ContractLike</a> actors as &quot;channels.&quot;
-</p></div></div>
     </li><li name="acl.Promise" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="PromiseextendsProductwithSerializable"></a>
       <a id="Promise:Promise"></a>
@@ -180,12 +152,12 @@ existing <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.c
         <img src="../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">A promise made by some <a href="PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> to a collection of other
-<a href="PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> edsl to perform actions specified in the
-<a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><div class="fullcomment"><div class="comment cmt"><p>A promise made by some <a href="PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> to a collection of other
-<a href="PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> edsl to perform actions specified in the
+      <p class="shortcomment cmt">A promise made by some <a href="PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a> to a collection of other
+<a href="PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a> edsl to perform actions specified in the
+<a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><div class="fullcomment"><div class="comment cmt"><p>A promise made by some <a href="PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a> to a collection of other
+<a href="PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a> edsl to perform actions specified in the
 <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.
-</p></div><dl class="paramcmts block"><dt class="param">sender</dt><dd class="cmt"><p>the <a href="PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> making the proposal.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>a collection of <a href="PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> edsl who are receiving the
+</p></div><dl class="paramcmts block"><dt class="param">sender</dt><dd class="cmt"><p>the <a href="PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a> making the proposal.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>a collection of <a href="PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a> edsl who are receiving the
                 <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> and therefore are potential counter parties to
                 the <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p></dd><dt class="param">contract</dt><dd class="cmt"><p>a <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> specifying
                 certain actions that the sender and receiver should perform.
@@ -207,22 +179,22 @@ existing <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.c
       </a>
     </span>
       <p class="shortcomment cmt">A message indicated that a previously submitted <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> has been accepted.</p><div class="fullcomment"><div class="comment cmt"><p>A message indicated that a previously submitted <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> has been accepted.
-</p></div><dl class="paramcmts block"><dt class="param">sender</dt><dd class="cmt"><p>the <a href="PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> accepting the previously received <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a>.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>a collection of <a href="PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> edsl who are receiving the
+</p></div><dl class="paramcmts block"><dt class="param">sender</dt><dd class="cmt"><p>the <a href="PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a> accepting the previously received <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a>.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>a collection of <a href="PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a> edsl who are receiving the
                 <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> and therefore are potential counter parties to
                 the <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p></dd><dt class="param">promise</dt><dd class="cmt"><p>the previously received <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> that is being accepted.</p></dd></dl></div>
-    </li><li name="acl.PromiseMaker" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="PromiseMakerextendsAnyRef"></a>
-      <a id="PromiseMaker:PromiseMaker"></a>
+    </li><li name="acl.PromiseMakingActor" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="PromiseMakingActorextendsAnyRef"></a>
+      <a id="PromiseMakingActor:PromiseMakingActor"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="PromiseMaker.html"><span class="name">PromiseMaker</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <a href="PromiseMakingActor.html"><span class="name">PromiseMakingActor</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.package@PromiseMakerextendsAnyRef" title="Permalink" target="_top">
+      <a href="../index.html#acl.package@PromiseMakingActorextendsAnyRef" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
@@ -244,7 +216,7 @@ existing <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.c
       </a>
     </span>
       <p class="shortcomment cmt">A message indicating that a previously submitted <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> has been rejected.</p><div class="fullcomment"><div class="comment cmt"><p>A message indicating that a previously submitted <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> has been rejected.
-</p></div><dl class="paramcmts block"><dt class="param">sender</dt><dd class="cmt"><p>the <a href="PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> rejecting the previously received <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a>.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>a collection of <a href="PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> edsl who are receiving the
+</p></div><dl class="paramcmts block"><dt class="param">sender</dt><dd class="cmt"><p>the <a href="PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a> rejecting the previously received <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a>.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>a collection of <a href="PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a> edsl who are receiving the
                 <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> and therefore are potential counter parties to
                 the <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p></dd><dt class="param">promise</dt><dd class="cmt"><p>the previously received <a href="package$$Promise.html" class="extype" name="acl.Promise">Promise</a> that is being rejected.
 </p></dd></dl></div>

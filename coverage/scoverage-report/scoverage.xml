@@ -1,96 +1,74 @@
 <scoverage 
-statement-count="36" statements-invoked="0" statement-rate="0.00" branch-rate="0.00" version="1.0" timestamp="1436260919872">
+statement-count="46" statements-invoked="0" statement-rate="0.00" branch-rate="0.00" version="1.0" timestamp="1436273119016">
     <packages>
-        <package name="acl" statement-count="21" statements-invoked="0" statement-rate="0.00">
+        <package name="acl" statement-count="17" statements-invoked="0" statement-rate="0.00">
             <classes>
                 <class 
-                name="Counterparty" filename="acl/Counterparty.scala" statement-count="4" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
+                name="PromiseMakingActor" filename="acl/PromiseMakingActor.scala" statement-count="17" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
                     <methods>
                         <method 
-                        name="acl/Counterparty/breakContract" statement-count="4" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
+                        name="acl/PromiseMakingActor/makePromise" statement-count="5" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
                             <statements>
                                 <statement 
-                                package="acl" class="Counterparty" class-type="Trait" top-level-class="Counterparty" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/Counterparty.scala" method="breakContract" start="1744" end="1774" line="42" branch="false" invocation-count="0" ignored="false">
+                                package="acl" class="PromiseMakingActor" class-type="Trait" top-level-class="PromiseMakingActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/PromiseMakingActor.scala" method="makePromise" start="2728" end="2761" line="58" branch="false" invocation-count="0" ignored="false">
 </statement>
                                 <statement 
-                                package="acl" class="Counterparty" class-type="Trait" top-level-class="Counterparty" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/Counterparty.scala" method="breakContract" start="1733" end="1774" line="42" branch="false" invocation-count="0" ignored="false">
+                                package="acl" class="PromiseMakingActor" class-type="Trait" top-level-class="PromiseMakingActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/PromiseMakingActor.scala" method="makePromise" start="2702" end="2762" line="58" branch="false" invocation-count="0" ignored="false">
 </statement>
                                 <statement 
-                                package="acl" class="Counterparty" class-type="Trait" top-level-class="Counterparty" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/Counterparty.scala" method="breakContract" start="1759" end="1763" line="42" branch="false" invocation-count="0" ignored="false">
+                                package="acl" class="PromiseMakingActor" class-type="Trait" top-level-class="PromiseMakingActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/PromiseMakingActor.scala" method="makePromise" start="2736" end="2740" line="58" branch="false" invocation-count="0" ignored="false">
 </statement>
                                 <statement 
-                                package="acl" class="Counterparty" class-type="Trait" top-level-class="Counterparty" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/Counterparty.scala" method="breakContract" start="1742" end="1742" line="42" branch="false" invocation-count="0" ignored="false">
-</statement>
-                            </statements>
-</method>
-                    </methods>
-</class>
-                <class 
-                name="PromiseMaker" filename="acl/PromiseMaker.scala" statement-count="17" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
-                    <methods>
-                        <method 
-                        name="acl/PromiseMaker/makePromise" statement-count="5" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
-                            <statements>
-                                <statement 
-                                package="acl" class="PromiseMaker" class-type="Trait" top-level-class="PromiseMaker" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/PromiseMaker.scala" method="makePromise" start="2700" end="2704" line="58" branch="false" invocation-count="0" ignored="false">
+                                package="acl" class="PromiseMakingActor" class-type="Trait" top-level-class="PromiseMakingActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/PromiseMakingActor.scala" method="makePromise" start="2724" end="2761" line="58" branch="false" invocation-count="0" ignored="false">
 </statement>
                                 <statement 
-                                package="acl" class="PromiseMaker" class-type="Trait" top-level-class="PromiseMaker" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/PromiseMaker.scala" method="makePromise" start="2688" end="2725" line="58" branch="false" invocation-count="0" ignored="false">
-</statement>
-                                <statement 
-                                package="acl" class="PromiseMaker" class-type="Trait" top-level-class="PromiseMaker" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/PromiseMaker.scala" method="makePromise" start="2690" end="2690" line="58" branch="false" invocation-count="0" ignored="false">
-</statement>
-                                <statement 
-                                package="acl" class="PromiseMaker" class-type="Trait" top-level-class="PromiseMaker" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/PromiseMaker.scala" method="makePromise" start="2692" end="2725" line="58" branch="false" invocation-count="0" ignored="false">
-</statement>
-                                <statement 
-                                package="acl" class="PromiseMaker" class-type="Trait" top-level-class="PromiseMaker" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/PromiseMaker.scala" method="makePromise" start="2666" end="2726" line="58" branch="false" invocation-count="0" ignored="false">
+                                package="acl" class="PromiseMakingActor" class-type="Trait" top-level-class="PromiseMakingActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/PromiseMakingActor.scala" method="makePromise" start="2726" end="2726" line="58" branch="false" invocation-count="0" ignored="false">
 </statement>
                             </statements>
 </method>
                         <method 
-                        name="acl/PromiseMaker/rejectPromise" statement-count="6" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
+                        name="acl/PromiseMakingActor/acceptPromise" statement-count="6" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
                             <statements>
                                 <statement 
-                                package="acl" class="PromiseMaker" class-type="Trait" top-level-class="PromiseMaker" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/PromiseMaker.scala" method="rejectPromise" start="3533" end="3537" line="73" branch="false" invocation-count="0" ignored="false">
+                                package="acl" class="PromiseMakingActor" class-type="Trait" top-level-class="PromiseMakingActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/PromiseMakingActor.scala" method="acceptPromise" start="1679" end="1683" line="40" branch="false" invocation-count="0" ignored="false">
 </statement>
                                 <statement 
-                                package="acl" class="PromiseMaker" class-type="Trait" top-level-class="PromiseMaker" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/PromiseMaker.scala" method="rejectPromise" start="3515" end="3515" line="73" branch="false" invocation-count="0" ignored="false">
+                                package="acl" class="PromiseMakingActor" class-type="Trait" top-level-class="PromiseMakingActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/PromiseMakingActor.scala" method="acceptPromise" start="1661" end="1661" line="40" branch="false" invocation-count="0" ignored="false">
 </statement>
                                 <statement 
-                                package="acl" class="PromiseMaker" class-type="Trait" top-level-class="PromiseMaker" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/PromiseMaker.scala" method="rejectPromise" start="3500" end="3514" line="73" branch="false" invocation-count="0" ignored="false">
+                                package="acl" class="PromiseMakingActor" class-type="Trait" top-level-class="PromiseMakingActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/PromiseMakingActor.scala" method="acceptPromise" start="1663" end="1711" line="40" branch="false" invocation-count="0" ignored="false">
 </statement>
                                 <statement 
-                                package="acl" class="PromiseMaker" class-type="Trait" top-level-class="PromiseMaker" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/PromiseMaker.scala" method="rejectPromise" start="3517" end="3565" line="73" branch="false" invocation-count="0" ignored="false">
+                                package="acl" class="PromiseMakingActor" class-type="Trait" top-level-class="PromiseMakingActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/PromiseMakingActor.scala" method="acceptPromise" start="1646" end="1660" line="40" branch="false" invocation-count="0" ignored="false">
 </statement>
                                 <statement 
-                                package="acl" class="PromiseMaker" class-type="Trait" top-level-class="PromiseMaker" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/PromiseMaker.scala" method="rejectPromise" start="3539" end="3555" line="73" branch="false" invocation-count="0" ignored="false">
+                                package="acl" class="PromiseMakingActor" class-type="Trait" top-level-class="PromiseMakingActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/PromiseMakingActor.scala" method="acceptPromise" start="1685" end="1701" line="40" branch="false" invocation-count="0" ignored="false">
 </statement>
                                 <statement 
-                                package="acl" class="PromiseMaker" class-type="Trait" top-level-class="PromiseMaker" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/PromiseMaker.scala" method="rejectPromise" start="3500" end="3565" line="73" branch="false" invocation-count="0" ignored="false">
+                                package="acl" class="PromiseMakingActor" class-type="Trait" top-level-class="PromiseMakingActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/PromiseMakingActor.scala" method="acceptPromise" start="1646" end="1711" line="40" branch="false" invocation-count="0" ignored="false">
 </statement>
                             </statements>
 </method>
                         <method 
-                        name="acl/PromiseMaker/acceptPromise" statement-count="6" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
+                        name="acl/PromiseMakingActor/rejectPromise" statement-count="6" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
                             <statements>
                                 <statement 
-                                package="acl" class="PromiseMaker" class-type="Trait" top-level-class="PromiseMaker" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/PromiseMaker.scala" method="acceptPromise" start="1645" end="1693" line="40" branch="false" invocation-count="0" ignored="false">
+                                package="acl" class="PromiseMakingActor" class-type="Trait" top-level-class="PromiseMakingActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/PromiseMakingActor.scala" method="rejectPromise" start="3548" end="3613" line="73" branch="false" invocation-count="0" ignored="false">
 </statement>
                                 <statement 
-                                package="acl" class="PromiseMaker" class-type="Trait" top-level-class="PromiseMaker" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/PromiseMaker.scala" method="acceptPromise" start="1628" end="1642" line="40" branch="false" invocation-count="0" ignored="false">
+                                package="acl" class="PromiseMakingActor" class-type="Trait" top-level-class="PromiseMakingActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/PromiseMakingActor.scala" method="rejectPromise" start="3587" end="3603" line="73" branch="false" invocation-count="0" ignored="false">
 </statement>
                                 <statement 
-                                package="acl" class="PromiseMaker" class-type="Trait" top-level-class="PromiseMaker" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/PromiseMaker.scala" method="acceptPromise" start="1667" end="1683" line="40" branch="false" invocation-count="0" ignored="false">
+                                package="acl" class="PromiseMakingActor" class-type="Trait" top-level-class="PromiseMakingActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/PromiseMakingActor.scala" method="rejectPromise" start="3581" end="3585" line="73" branch="false" invocation-count="0" ignored="false">
 </statement>
                                 <statement 
-                                package="acl" class="PromiseMaker" class-type="Trait" top-level-class="PromiseMaker" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/PromiseMaker.scala" method="acceptPromise" start="1628" end="1693" line="40" branch="false" invocation-count="0" ignored="false">
+                                package="acl" class="PromiseMakingActor" class-type="Trait" top-level-class="PromiseMakingActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/PromiseMakingActor.scala" method="rejectPromise" start="3563" end="3563" line="73" branch="false" invocation-count="0" ignored="false">
 </statement>
                                 <statement 
-                                package="acl" class="PromiseMaker" class-type="Trait" top-level-class="PromiseMaker" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/PromiseMaker.scala" method="acceptPromise" start="1643" end="1643" line="40" branch="false" invocation-count="0" ignored="false">
+                                package="acl" class="PromiseMakingActor" class-type="Trait" top-level-class="PromiseMakingActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/PromiseMakingActor.scala" method="rejectPromise" start="3548" end="3562" line="73" branch="false" invocation-count="0" ignored="false">
 </statement>
                                 <statement 
-                                package="acl" class="PromiseMaker" class-type="Trait" top-level-class="PromiseMaker" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/PromiseMaker.scala" method="acceptPromise" start="1661" end="1665" line="40" branch="false" invocation-count="0" ignored="false">
+                                package="acl" class="PromiseMakingActor" class-type="Trait" top-level-class="PromiseMakingActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/acl/PromiseMakingActor.scala" method="rejectPromise" start="3565" end="3613" line="73" branch="false" invocation-count="0" ignored="false">
 </statement>
                             </statements>
 </method>
@@ -107,7 +85,7 @@ statement-count="36" statements-invoked="0" statement-rate="0.00" branch-rate="0
                         name="actors.contracts/RetailDeposit/commitments" statement-count="1" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
                             <statements>
                                 <statement 
-                                package="actors.contracts" class="RetailDeposit" class-type="Class" top-level-class="RetailDeposit" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/actors/contracts/RetailDeposit.scala" method="commitments" start="1333" end="1336" line="37" branch="false" invocation-count="0" ignored="false">
+                                package="actors.contracts" class="RetailDeposit" class-type="Class" top-level-class="RetailDeposit" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/actors/contracts/RetailDeposit.scala" method="commitments" start="1338" end="1341" line="37" branch="false" invocation-count="0" ignored="false">
 </statement>
                             </statements>
 </method>
@@ -115,28 +93,7 @@ statement-count="36" statements-invoked="0" statement-rate="0.00" branch-rate="0
                         name="actors.contracts/RetailDeposit/receive" statement-count="1" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
                             <statements>
                                 <statement 
-                                package="actors.contracts" class="RetailDeposit" class-type="Class" top-level-class="RetailDeposit" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/actors/contracts/RetailDeposit.scala" method="receive" start="1373" end="1376" line="41" branch="false" invocation-count="0" ignored="false">
-</statement>
-                            </statements>
-</method>
-                    </methods>
-</class>
-                <class 
-                name="ReserveDeposit" filename="actors/contracts/ReserveDeposit.scala" statement-count="2" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
-                    <methods>
-                        <method 
-                        name="actors.contracts/ReserveDeposit/commitments" statement-count="1" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
-                            <statements>
-                                <statement 
-                                package="actors.contracts" class="ReserveDeposit" class-type="Class" top-level-class="ReserveDeposit" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/actors/contracts/ReserveDeposit.scala" method="commitments" start="1326" end="1329" line="38" branch="false" invocation-count="0" ignored="false">
-</statement>
-                            </statements>
-</method>
-                        <method 
-                        name="actors.contracts/ReserveDeposit/receive" statement-count="1" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
-                            <statements>
-                                <statement 
-                                package="actors.contracts" class="ReserveDeposit" class-type="Class" top-level-class="ReserveDeposit" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/actors/contracts/ReserveDeposit.scala" method="receive" start="1366" end="1369" line="42" branch="false" invocation-count="0" ignored="false">
+                                package="actors.contracts" class="RetailDeposit" class-type="Class" top-level-class="RetailDeposit" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/actors/contracts/RetailDeposit.scala" method="receive" start="1378" end="1381" line="41" branch="false" invocation-count="0" ignored="false">
 </statement>
                             </statements>
 </method>
@@ -149,7 +106,7 @@ statement-count="36" statements-invoked="0" statement-rate="0.00" branch-rate="0
                         name="actors.contracts/Currency/receive" statement-count="1" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
                             <statements>
                                 <statement 
-                                package="actors.contracts" class="Currency" class-type="Class" top-level-class="Currency" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/actors/contracts/Currency.scala" method="receive" start="1022" end="1025" line="35" branch="false" invocation-count="0" ignored="false">
+                                package="actors.contracts" class="Currency" class-type="Class" top-level-class="Currency" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/actors/contracts/Currency.scala" method="receive" start="1033" end="1036" line="35" branch="false" invocation-count="0" ignored="false">
 </statement>
                             </statements>
 </method>
@@ -157,7 +114,28 @@ statement-count="36" statements-invoked="0" statement-rate="0.00" branch-rate="0
                         name="actors.contracts/Currency/commitments" statement-count="1" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
                             <statements>
                                 <statement 
-                                package="actors.contracts" class="Currency" class-type="Class" top-level-class="Currency" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/actors/contracts/Currency.scala" method="commitments" start="982" end="985" line="31" branch="false" invocation-count="0" ignored="false">
+                                package="actors.contracts" class="Currency" class-type="Class" top-level-class="Currency" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/actors/contracts/Currency.scala" method="commitments" start="993" end="996" line="31" branch="false" invocation-count="0" ignored="false">
+</statement>
+                            </statements>
+</method>
+                    </methods>
+</class>
+                <class 
+                name="ReserveDeposit" filename="actors/contracts/ReserveDeposit.scala" statement-count="2" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
+                    <methods>
+                        <method 
+                        name="actors.contracts/ReserveDeposit/commitments" statement-count="1" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
+                            <statements>
+                                <statement 
+                                package="actors.contracts" class="ReserveDeposit" class-type="Class" top-level-class="ReserveDeposit" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/actors/contracts/ReserveDeposit.scala" method="commitments" start="1331" end="1334" line="38" branch="false" invocation-count="0" ignored="false">
+</statement>
+                            </statements>
+</method>
+                        <method 
+                        name="actors.contracts/ReserveDeposit/receive" statement-count="1" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
+                            <statements>
+                                <statement 
+                                package="actors.contracts" class="ReserveDeposit" class-type="Class" top-level-class="ReserveDeposit" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/actors/contracts/ReserveDeposit.scala" method="receive" start="1371" end="1374" line="42" branch="false" invocation-count="0" ignored="false">
 </statement>
                             </statements>
 </method>
@@ -165,40 +143,102 @@ statement-count="36" statements-invoked="0" statement-rate="0.00" branch-rate="0
 </class>
             </classes>
         </package>
-        <package name="plumbing.balancesheets" statement-count="9" statements-invoked="0" statement-rate="0.00">
+        <package name="edsl" statement-count="23" statements-invoked="0" statement-rate="0.00">
             <classes>
                 <class 
-                name="BalanceSheetActor" filename="plumbing/balancesheets/BalanceSheetActor.scala" statement-count="9" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
+                name="CounterpartyActor" filename="edsl/CounterpartyActor.scala" statement-count="23" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
                     <methods>
                         <method 
-                        name="plumbing.balancesheets/BalanceSheetActor/receive" statement-count="9" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
+                        name="edsl/CounterpartyActor/valueEquity" statement-count="4" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
                             <statements>
                                 <statement 
-                                package="plumbing.balancesheets" class="BalanceSheetActor" class-type="Class" top-level-class="BalanceSheetActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/plumbing/balancesheets/BalanceSheetActor.scala" method="receive" start="1303" end="1329" line="41" branch="false" invocation-count="0" ignored="false">
+                                package="edsl" class="CounterpartyActor" class-type="Trait" top-level-class="CounterpartyActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/edsl/CounterpartyActor.scala" method="valueEquity" start="3491" end="3510" line="79" branch="false" invocation-count="0" ignored="false">
 </statement>
                                 <statement 
-                                package="plumbing.balancesheets" class="BalanceSheetActor" class-type="Class" top-level-class="BalanceSheetActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/plumbing/balancesheets/BalanceSheetActor.scala" method="receive" start="1393" end="1393" line="43" branch="false" invocation-count="0" ignored="false">
+                                package="edsl" class="CounterpartyActor" class-type="Trait" top-level-class="CounterpartyActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/edsl/CounterpartyActor.scala" method="valueEquity" start="3470" end="3484" line="79" branch="false" invocation-count="0" ignored="false">
 </statement>
                                 <statement 
-                                package="plumbing.balancesheets" class="BalanceSheetActor" class-type="Class" top-level-class="BalanceSheetActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/plumbing/balancesheets/BalanceSheetActor.scala" method="receive" start="1195" end="1195" line="37" branch="false" invocation-count="0" ignored="false">
+                                package="edsl" class="CounterpartyActor" class-type="Trait" top-level-class="CounterpartyActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/edsl/CounterpartyActor.scala" method="valueEquity" start="3466" end="3512" line="79" branch="false" invocation-count="0" ignored="false">
 </statement>
                                 <statement 
-                                package="plumbing.balancesheets" class="BalanceSheetActor" class-type="Class" top-level-class="BalanceSheetActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/plumbing/balancesheets/BalanceSheetActor.scala" method="receive" start="1253" end="1253" line="39" branch="false" invocation-count="0" ignored="false">
+                                package="edsl" class="CounterpartyActor" class-type="Trait" top-level-class="CounterpartyActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/edsl/CounterpartyActor.scala" method="valueEquity" start="3486" end="3511" line="79" branch="false" invocation-count="0" ignored="false">
+</statement>
+                            </statements>
+</method>
+                        <method 
+                        name="edsl/CounterpartyActor/valueLiabilities" statement-count="3" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
+                            <statements>
+                                <statement 
+                                package="edsl" class="CounterpartyActor" class-type="Trait" top-level-class="CounterpartyActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/edsl/CounterpartyActor.scala" method="valueLiabilities" start="4075" end="4075" line="91" branch="false" invocation-count="0" ignored="false">
 </statement>
                                 <statement 
-                                package="plumbing.balancesheets" class="BalanceSheetActor" class-type="Class" top-level-class="BalanceSheetActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/plumbing/balancesheets/BalanceSheetActor.scala" method="receive" start="1375" end="1404" line="43" branch="false" invocation-count="0" ignored="false">
+                                package="edsl" class="CounterpartyActor" class-type="Trait" top-level-class="CounterpartyActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/edsl/CounterpartyActor.scala" method="valueLiabilities" start="4047" end="4138" line="91" branch="false" invocation-count="0" ignored="false">
 </statement>
                                 <statement 
-                                package="plumbing.balancesheets" class="BalanceSheetActor" class-type="Class" top-level-class="BalanceSheetActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/plumbing/balancesheets/BalanceSheetActor.scala" method="receive" start="1185" end="1202" line="37" branch="false" invocation-count="0" ignored="false">
+                                package="edsl" class="CounterpartyActor" class-type="Trait" top-level-class="CounterpartyActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/edsl/CounterpartyActor.scala" method="valueLiabilities" start="4112" end="4137" line="91" branch="false" invocation-count="0" ignored="false">
+</statement>
+                            </statements>
+</method>
+                        <method 
+                        name="edsl/CounterpartyActor/valueAssets" statement-count="3" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
+                            <statements>
+                                <statement 
+                                package="edsl" class="CounterpartyActor" class-type="Trait" top-level-class="CounterpartyActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/edsl/CounterpartyActor.scala" method="valueAssets" start="2710" end="2735" line="64" branch="false" invocation-count="0" ignored="false">
 </statement>
                                 <statement 
-                                package="plumbing.balancesheets" class="BalanceSheetActor" class-type="Class" top-level-class="BalanceSheetActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/plumbing/balancesheets/BalanceSheetActor.scala" method="receive" start="1149" end="1149" line="35" branch="false" invocation-count="0" ignored="false">
+                                package="edsl" class="CounterpartyActor" class-type="Trait" top-level-class="CounterpartyActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/edsl/CounterpartyActor.scala" method="valueAssets" start="2673" end="2673" line="64" branch="false" invocation-count="0" ignored="false">
 </statement>
                                 <statement 
-                                package="plumbing.balancesheets" class="BalanceSheetActor" class-type="Class" top-level-class="BalanceSheetActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/plumbing/balancesheets/BalanceSheetActor.scala" method="receive" start="1240" end="1260" line="39" branch="false" invocation-count="0" ignored="false">
+                                package="edsl" class="CounterpartyActor" class-type="Trait" top-level-class="CounterpartyActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/edsl/CounterpartyActor.scala" method="valueAssets" start="2650" end="2736" line="64" branch="false" invocation-count="0" ignored="false">
+</statement>
+                            </statements>
+</method>
+                        <method 
+                        name="edsl/CounterpartyActor/breakContract" statement-count="4" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
+                            <statements>
+                                <statement 
+                                package="edsl" class="CounterpartyActor" class-type="Trait" top-level-class="CounterpartyActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/edsl/CounterpartyActor.scala" method="breakContract" start="2098" end="2098" line="52" branch="false" invocation-count="0" ignored="false">
 </statement>
                                 <statement 
-                                package="plumbing.balancesheets" class="BalanceSheetActor" class-type="Class" top-level-class="BalanceSheetActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/plumbing/balancesheets/BalanceSheetActor.scala" method="receive" start="1318" end="1318" line="41" branch="false" invocation-count="0" ignored="false">
+                                package="edsl" class="CounterpartyActor" class-type="Trait" top-level-class="CounterpartyActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/edsl/CounterpartyActor.scala" method="breakContract" start="2100" end="2130" line="52" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="edsl" class="CounterpartyActor" class-type="Trait" top-level-class="CounterpartyActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/edsl/CounterpartyActor.scala" method="breakContract" start="2089" end="2130" line="52" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="edsl" class="CounterpartyActor" class-type="Trait" top-level-class="CounterpartyActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/edsl/CounterpartyActor.scala" method="breakContract" start="2115" end="2119" line="52" branch="false" invocation-count="0" ignored="false">
+</statement>
+                            </statements>
+</method>
+                        <method 
+                        name="edsl/CounterpartyActor/counterpartyBehavior" statement-count="9" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
+                            <statements>
+                                <statement 
+                                package="edsl" class="CounterpartyActor" class-type="Trait" top-level-class="CounterpartyActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/edsl/CounterpartyActor.scala" method="counterpartyBehavior" start="4369" end="4369" line="97" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="edsl" class="CounterpartyActor" class-type="Trait" top-level-class="CounterpartyActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/edsl/CounterpartyActor.scala" method="counterpartyBehavior" start="4489" end="4530" line="99" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="edsl" class="CounterpartyActor" class-type="Trait" top-level-class="CounterpartyActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/edsl/CounterpartyActor.scala" method="counterpartyBehavior" start="4272" end="4305" line="96" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="edsl" class="CounterpartyActor" class-type="Trait" top-level-class="CounterpartyActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/edsl/CounterpartyActor.scala" method="counterpartyBehavior" start="4239" end="4239" line="95" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="edsl" class="CounterpartyActor" class-type="Trait" top-level-class="CounterpartyActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/edsl/CounterpartyActor.scala" method="counterpartyBehavior" start="4341" end="4379" line="97" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="edsl" class="CounterpartyActor" class-type="Trait" top-level-class="CounterpartyActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/edsl/CounterpartyActor.scala" method="counterpartyBehavior" start="4440" end="4440" line="98" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="edsl" class="CounterpartyActor" class-type="Trait" top-level-class="CounterpartyActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/edsl/CounterpartyActor.scala" method="counterpartyBehavior" start="4520" end="4520" line="99" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="edsl" class="CounterpartyActor" class-type="Trait" top-level-class="CounterpartyActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/edsl/CounterpartyActor.scala" method="counterpartyBehavior" start="4295" end="4295" line="96" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="edsl" class="CounterpartyActor" class-type="Trait" top-level-class="CounterpartyActor" source="/home/travis/build/inet-oxford/commons-sandbox/src/main/scala-2.11/edsl/CounterpartyActor.scala" method="counterpartyBehavior" start="4414" end="4450" line="98" branch="false" invocation-count="0" ignored="false">
 </statement>
                             </statements>
 </method>

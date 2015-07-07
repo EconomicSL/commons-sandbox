@@ -51,7 +51,7 @@
 resources between two parties; a commitment represents an <i>atomic</i>
 <a href="Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><p>We envision that:</p><ol class="decimal"><li>model builders will use commitments, as well as the higher-level
   contacts in our library, to construct commonly encountered contracts
-  for their specific use cases.</li></ol><p>  2. <a href="../../acl/PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> actors within a model can use
+  for their specific use cases.</li></ol><p>  2. <a href="../../acl/PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMaker</a> actors within a model can use
   commitments, as well as the higher-level contracts in our library, to
   innovate previously unknown contracts.</p><h5>Requirements</h5><h5>Use cases</h5><h6>Payment systems</h6><p>To model a &quot;one big bank&quot; payment system, we need...</p><p>- a representation of retail deposits</p><p>- a representation of currency</p><p>- a representation of an un-collateralized overdraft</p><p>We can model both the base &quot;multiple banks&quot; payment system as well as a payment
 payment system with bilateral intra-day netting by adding...</p><ul><li>a representation of reserve deposits</li></ul><p>To model a payment system with correspondent banking we need...</p><p>- a representation of correspondent deposits (which can probably be a simple

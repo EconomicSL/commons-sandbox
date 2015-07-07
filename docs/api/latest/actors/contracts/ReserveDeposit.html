@@ -45,14 +45,14 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">ReserveDeposit</span><span class="params">(<span name="balance">balance: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Double" class="extype" target="_top">Double</a></span>, <span name="code">code: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="issuer">issuer: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="owners">owners: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="akka.actor.ActorRef">ActorRef</span>]</span>)</span><span class="result"> extends <a href="DepositLike.html" class="extype" name="actors.contracts.DepositLike">DepositLike</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <span class="name">ReserveDeposit</span><span class="params">(<span name="balance">balance: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Double" class="extype" target="_top">Double</a></span>, <span name="code">code: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="issuer">issuer: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="owners">owners: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="akka.actor.ActorRef">ActorRef</span>]</span>)</span><span class="result"> extends <a href="DepositActorLike.html" class="extype" name="actors.contracts.DepositActorLike">DepositActorLike</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Class defining a reserve deposit.
 </p></div><dl class="paramcmts block"><dt class="param">balance</dt><dd class="cmt"><p>Amount of the underlying deposit contract.</p></dd><dt class="param">code</dt><dd class="cmt"><p>String identifying the underlying currency.</p></dd><dt class="param">issuer</dt><dd class="cmt"><p>Actor for whom the underlying deposit contract is a liability.</p></dd><dt class="param">owners</dt><dd class="cmt"><p>Actor(s) for whom the underlying deposit contract is an asset.</p></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a>, <span class="extype" name="java.io.Serializable">Serializable</span>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Equals" class="extype" target="_top">Equals</a>, <a href="DepositLike.html" class="extype" name="actors.contracts.DepositLike">DepositLike</a>, <a href="../../acl/ContractLike.html" class="extype" name="acl.ContractLike">ContractLike</a>, <span class="extype" name="akka.actor.ActorLogging">ActorLogging</span>, <span class="extype" name="akka.actor.Actor">Actor</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a>, <span class="extype" name="java.io.Serializable">Serializable</span>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Equals" class="extype" target="_top">Equals</a>, <a href="DepositActorLike.html" class="extype" name="actors.contracts.DepositActorLike">DepositActorLike</a>, <a href="../../edsl/ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a>, <span class="extype" name="akka.actor.ActorLogging">ActorLogging</span>, <span class="extype" name="akka.actor.Actor">Actor</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -70,7 +70,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="actors.contracts.ReserveDeposit"><span>ReserveDeposit</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="actors.contracts.DepositLike"><span>DepositLike</span></li><li class="in" name="acl.ContractLike"><span>ContractLike</span></li><li class="in" name="akka.actor.ActorLogging"><span>ActorLogging</span></li><li class="in" name="akka.actor.Actor"><span>Actor</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="actors.contracts.ReserveDeposit"><span>ReserveDeposit</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="actors.contracts.DepositActorLike"><span>DepositActorLike</span></li><li class="in" name="edsl.ContractActorLike"><span>ContractActorLike</span></li><li class="in" name="akka.actor.ActorLogging"><span>ActorLogging</span></li><li class="in" name="akka.actor.Actor"><span>Actor</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -362,10 +362,10 @@
         <img src="../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Mapping of a <a href="../../acl/Counterparty.html" class="extype" name="acl.Counterparty">Counterparty</a> actor to a <a href="../../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>
-representing that <a href="../../acl/Counterparty.html" class="extype" name="acl.Counterparty">Counterparty</a> actors obligations.</p><div class="fullcomment"><div class="comment cmt"><p>Mapping of a <a href="../../acl/Counterparty.html" class="extype" name="acl.Counterparty">Counterparty</a> actor to a <a href="../../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>
-representing that <a href="../../acl/Counterparty.html" class="extype" name="acl.Counterparty">Counterparty</a> actors obligations.
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="actors.contracts.ReserveDeposit">ReserveDeposit</a> → <a href="../../acl/ContractLike.html" class="extype" name="acl.ContractLike">ContractLike</a></dd></dl></div>
+      <p class="shortcomment cmt">Mapping of a <a href="../../edsl/CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor">CounterpartyActor</a> actor to a <a href="../../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>
+representing that <a href="../../edsl/CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor">CounterpartyActor</a> actors obligations.</p><div class="fullcomment"><div class="comment cmt"><p>Mapping of a <a href="../../edsl/CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor">CounterpartyActor</a> actor to a <a href="../../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>
+representing that <a href="../../edsl/CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor">CounterpartyActor</a> actors obligations.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="actors.contracts.ReserveDeposit">ReserveDeposit</a> → <a href="../../edsl/ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a></dd></dl></div>
     </li><li name="akka.actor.Actor#context" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="context:akka.actor.ActorContext"></a>
       <a id="context:ActorContext"></a>
@@ -473,7 +473,7 @@ representing that <a href="../../acl/Counterparty.html" class="extype" name="acl
         <img src="../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Actor for whom the underlying deposit contract is a liability.</p><div class="fullcomment"><div class="comment cmt"><p>Actor for whom the underlying deposit contract is a liability.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="actors.contracts.ReserveDeposit">ReserveDeposit</a> → <a href="../../acl/ContractLike.html" class="extype" name="acl.ContractLike">ContractLike</a></dd></dl></div>
+      <p class="shortcomment cmt">Actor for whom the underlying deposit contract is a liability.</p><div class="fullcomment"><div class="comment cmt"><p>Actor for whom the underlying deposit contract is a liability.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="actors.contracts.ReserveDeposit">ReserveDeposit</a> → <a href="../../edsl/ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a></dd></dl></div>
     </li><li name="akka.actor.ActorLogging#log" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="log:akka.event.LoggingAdapter"></a>
       <a id="log:LoggingAdapter"></a>
@@ -558,7 +558,7 @@ representing that <a href="../../acl/Counterparty.html" class="extype" name="acl
         <img src="../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Actor(s) for whom the underlying deposit contract is an asset.</p><div class="fullcomment"><div class="comment cmt"><p>Actor(s) for whom the underlying deposit contract is an asset.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="actors.contracts.ReserveDeposit">ReserveDeposit</a> → <a href="../../acl/ContractLike.html" class="extype" name="acl.ContractLike">ContractLike</a></dd></dl></div>
+      <p class="shortcomment cmt">Actor(s) for whom the underlying deposit contract is an asset.</p><div class="fullcomment"><div class="comment cmt"><p>Actor(s) for whom the underlying deposit contract is an asset.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="actors.contracts.ReserveDeposit">ReserveDeposit</a> → <a href="../../edsl/ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a></dd></dl></div>
     </li><li name="akka.actor.Actor#postRestart" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="postRestart(reason:Throwable):Unit"></a>
       <a id="postRestart(Throwable):Unit"></a>
@@ -839,10 +839,10 @@ representing that <a href="../../acl/Counterparty.html" class="extype" name="acl
               <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a></h3>
             </div><div class="parent" name="scala.Equals">
               <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Equals" class="extype" target="_top">Equals</a></h3>
-            </div><div class="parent" name="actors.contracts.DepositLike">
-              <h3>Inherited from <a href="DepositLike.html" class="extype" name="actors.contracts.DepositLike">DepositLike</a></h3>
-            </div><div class="parent" name="acl.ContractLike">
-              <h3>Inherited from <a href="../../acl/ContractLike.html" class="extype" name="acl.ContractLike">ContractLike</a></h3>
+            </div><div class="parent" name="actors.contracts.DepositActorLike">
+              <h3>Inherited from <a href="DepositActorLike.html" class="extype" name="actors.contracts.DepositActorLike">DepositActorLike</a></h3>
+            </div><div class="parent" name="edsl.ContractActorLike">
+              <h3>Inherited from <a href="../../edsl/ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a></h3>
             </div><div class="parent" name="akka.actor.ActorLogging">
               <h3>Inherited from <span class="extype" name="akka.actor.ActorLogging">ActorLogging</span></h3>
             </div><div class="parent" name="akka.actor.Actor">

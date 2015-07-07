@@ -2,7 +2,7 @@
       <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <title id="title">
-          acl/PromiseMaker.scala.html
+          acl/PromiseMakingActor.scala.html
         </title>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.20.1/css/theme.default.min.css" type="text/css"/><script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.20.1/js/jquery.tablesorter.min.js"></script><link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" type="text/css"/><script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script><script type="text/javascript">
         $(document).ready(function() {$(".tablesorter").tablesorter();});
@@ -46,17 +46,17 @@
 </span>22 <span style=''>
 </span>23 <span style=''>
 </span>24 <span style=''>/** Trait defining behavior for an actor that trades [[edsl.commitments.Contract Contract]] objects. */
-</span>25 <span style=''>trait PromiseMaker {
+</span>25 <span style=''>trait PromiseMakingActor {
 </span>26 <span style=''>  this: Actor with ActorLogging =>
 </span>27 <span style=''>
 </span>28 <span style=''>  /** The act of accepting a previously submitted [[Promise]] to perform
 </span>29 <span style=''>    * actions specified in some [[edsl.commitments.Contract Contract]].
 </span>30 <span style=''>    *
 </span>31 <span style=''>    * @param promise a [[Promise]] containing a [[edsl.commitments.Contract Contract]] specifying certain actions
-</span>32 <span style=''>    *                that the `PromiseMaker` is to perform.
+</span>32 <span style=''>    *                that the `PromiseMakingActor` is to perform.
 </span>33 <span style=''>    * @note `acceptPromise` is a general-purpose acceptance of a [[Promise]]
 </span>34 <span style=''>    *       that was previously submitted (typically via a `makePromise` act).
-</span>35 <span style=''>    *       The `PromiseMaker` sending [[PromiseAccepted]] is informing the
+</span>35 <span style=''>    *       The `PromiseMakingActor` sending [[PromiseAccepted]] is informing the
 </span>36 <span style=''>    *       receiver that it intends to perform the actions as specified in
 </span>37 <span style=''>    *       the [[edsl.commitments.Contract Contract]].
 </span>38 <span style=''>    */
@@ -64,11 +64,11 @@
 </span>40 <span style=''>    </span><span style='background: #F0ADAD'>promise.sender ! PromiseAccepted(self, promise.receiver, promise)</span><span style=''>
 </span>41 <span style=''>  }
 </span>42 <span style=''>
-</span>43 <span style=''>  /** The action of submitting a [[Promise]] made by the `PromiseMaker` to a
-</span>44 <span style=''>    * collection of other `PromiseMakers` to perform actions specified in the
+</span>43 <span style=''>  /** The action of submitting a [[Promise]] made by the `PromiseMakingActor` to a
+</span>44 <span style=''>    * collection of other `PromiseMakingActors` to perform actions specified in the
 </span>45 <span style=''>    * [[edsl.commitments.Contract Contract]].
 </span>46 <span style=''>    *
-</span>47 <span style=''>    * @param receiver a collection of `PromiseMakers` who are receiving the
+</span>47 <span style=''>    * @param receiver a collection of `PromiseMakingActors` who are receiving the
 </span>48 <span style=''>    *                 [[Promise]] and therefore are potential counter parties to
 </span>49 <span style=''>    *                 the [[edsl.commitments.Contract Contract]].
 </span>50 <span style=''>    * @param contract a [[edsl.commitments.Contract Contract]] specifying certain actions that the various
@@ -86,10 +86,10 @@
 </span>62 <span style=''>    * actions specified in some [[edsl.commitments.Contract Contract]].
 </span>63 <span style=''>    *
 </span>64 <span style=''>    * @param promise a [[Promise]] containing a [[edsl.commitments.Contract Contract]] specifying certain
-</span>65 <span style=''>    *                actions that the `PromiseMaker` is to perform.
+</span>65 <span style=''>    *                actions that the `PromiseMakingActor` is to perform.
 </span>66 <span style=''>    * @note `rejectPromise` is a general-purpose rejection to a [[Promise]]
 </span>67 <span style=''>    *       that was previously submitted (typically via a `makePromise` act).
-</span>68 <span style=''>    *       The `PromiseMaker` sending [[PromiseRejected]] is informing the
+</span>68 <span style=''>    *       The `PromiseMakingActor` sending [[PromiseRejected]] is informing the
 </span>69 <span style=''>    *       receiver that it has no intention to perform the actions as
 </span>70 <span style=''>    *       specified in the promised [[edsl.commitments.Contract Contract]].
 </span>71 <span style=''>    */
@@ -113,21 +113,21 @@
           40
         </td>
         <td>
-          8
+          2
         </td>
         <td>
-          1645
+          1679
           -
-          1693
+          1683
         </td>
         <td>
-          Apply
+          Select
         </td>
         <td>
-          acl.PromiseAccepted.apply
+          akka.actor.Actor.self
         </td>
         <td style="background: #F0ADAD">
-          acl.this.`package`.PromiseAccepted.apply(PromiseMaker.this.self, promise.receiver, promise)
+          PromiseMakingActor.this.self
         </td>
       </tr><tr>
         <td>
@@ -137,9 +137,51 @@
           5
         </td>
         <td>
-          1628
+          1661
           -
-          1642
+          1661
+        </td>
+        <td>
+          Select
+        </td>
+        <td>
+          akka.actor.Actor.self
+        </td>
+        <td style="background: #F0ADAD">
+          PromiseMakingActor.this.self
+        </td>
+      </tr><tr>
+        <td>
+          40
+        </td>
+        <td>
+          4
+        </td>
+        <td>
+          1663
+          -
+          1711
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          acl.PromiseAccepted.apply
+        </td>
+        <td style="background: #F0ADAD">
+          acl.this.`package`.PromiseAccepted.apply(PromiseMakingActor.this.self, promise.receiver, promise)
+        </td>
+      </tr><tr>
+        <td>
+          40
+        </td>
+        <td>
+          1
+        </td>
+        <td>
+          1646
+          -
+          1660
         </td>
         <td>
           Select
@@ -155,12 +197,12 @@
           40
         </td>
         <td>
-          7
+          3
         </td>
         <td>
-          1667
+          1685
           -
-          1683
+          1701
         </td>
         <td>
           Select
@@ -170,48 +212,6 @@
         </td>
         <td style="background: #F0ADAD">
           promise.receiver
-        </td>
-      </tr><tr>
-        <td>
-          40
-        </td>
-        <td>
-          10
-        </td>
-        <td>
-          1628
-          -
-          1693
-        </td>
-        <td>
-          ApplyToImplicitArgs
-        </td>
-        <td>
-          akka.actor.ScalaActorRef.!
-        </td>
-        <td style="background: #F0ADAD">
-          akka.this.actor.`package`.actorRef2Scala(promise.sender).!(acl.this.`package`.PromiseAccepted.apply(PromiseMaker.this.self, promise.receiver, promise))(PromiseMaker.this.self)
-        </td>
-      </tr><tr>
-        <td>
-          40
-        </td>
-        <td>
-          9
-        </td>
-        <td>
-          1643
-          -
-          1643
-        </td>
-        <td>
-          Select
-        </td>
-        <td>
-          akka.actor.Actor.self
-        </td>
-        <td style="background: #F0ADAD">
-          PromiseMaker.this.self
         </td>
       </tr><tr>
         <td>
@@ -221,18 +221,39 @@
           6
         </td>
         <td>
-          1661
+          1646
           -
-          1665
+          1711
         </td>
         <td>
-          Select
+          ApplyToImplicitArgs
         </td>
         <td>
-          akka.actor.Actor.self
+          akka.actor.ScalaActorRef.!
         </td>
         <td style="background: #F0ADAD">
-          PromiseMaker.this.self
+          akka.this.actor.`package`.actorRef2Scala(promise.sender).!(acl.this.`package`.PromiseAccepted.apply(PromiseMakingActor.this.self, promise.receiver, promise))(PromiseMakingActor.this.self)
+        </td>
+      </tr><tr>
+        <td>
+          58
+        </td>
+        <td>
+          8
+        </td>
+        <td>
+          2728
+          -
+          2761
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          acl.Promise.apply
+        </td>
+        <td style="background: #F0ADAD">
+          acl.this.`package`.Promise.apply(PromiseMakingActor.this.self, receiver, contract)
         </td>
       </tr><tr>
         <td>
@@ -242,93 +263,9 @@
           11
         </td>
         <td>
-          2700
+          2702
           -
-          2704
-        </td>
-        <td>
-          Select
-        </td>
-        <td>
-          akka.actor.Actor.self
-        </td>
-        <td style="background: #F0ADAD">
-          PromiseMaker.this.self
-        </td>
-      </tr><tr>
-        <td>
-          58
-        </td>
-        <td>
-          14
-        </td>
-        <td>
-          2688
-          -
-          2725
-        </td>
-        <td>
-          ApplyToImplicitArgs
-        </td>
-        <td>
-          akka.actor.ScalaActorRef.!
-        </td>
-        <td style="background: #F0ADAD">
-          akka.this.actor.`package`.actorRef2Scala(r).!(acl.this.`package`.Promise.apply(PromiseMaker.this.self, receiver, contract))(PromiseMaker.this.self)
-        </td>
-      </tr><tr>
-        <td>
-          58
-        </td>
-        <td>
-          13
-        </td>
-        <td>
-          2690
-          -
-          2690
-        </td>
-        <td>
-          Select
-        </td>
-        <td>
-          akka.actor.Actor.self
-        </td>
-        <td style="background: #F0ADAD">
-          PromiseMaker.this.self
-        </td>
-      </tr><tr>
-        <td>
-          58
-        </td>
-        <td>
-          12
-        </td>
-        <td>
-          2692
-          -
-          2725
-        </td>
-        <td>
-          Apply
-        </td>
-        <td>
-          acl.Promise.apply
-        </td>
-        <td style="background: #F0ADAD">
-          acl.this.`package`.Promise.apply(PromiseMaker.this.self, receiver, contract)
-        </td>
-      </tr><tr>
-        <td>
-          58
-        </td>
-        <td>
-          15
-        </td>
-        <td>
-          2666
-          -
-          2726
+          2762
         </td>
         <td>
           Apply
@@ -337,7 +274,70 @@
           scala.collection.IterableLike.foreach
         </td>
         <td style="background: #F0ADAD">
-          receiver.foreach[Unit](((r: akka.actor.ActorRef) =&gt; akka.this.actor.`package`.actorRef2Scala(r).!(acl.this.`package`.Promise.apply(PromiseMaker.this.self, receiver, contract))(PromiseMaker.this.self)))
+          receiver.foreach[Unit](((r: akka.actor.ActorRef) =&gt; akka.this.actor.`package`.actorRef2Scala(r).!(acl.this.`package`.Promise.apply(PromiseMakingActor.this.self, receiver, contract))(PromiseMakingActor.this.self)))
+        </td>
+      </tr><tr>
+        <td>
+          58
+        </td>
+        <td>
+          7
+        </td>
+        <td>
+          2736
+          -
+          2740
+        </td>
+        <td>
+          Select
+        </td>
+        <td>
+          akka.actor.Actor.self
+        </td>
+        <td style="background: #F0ADAD">
+          PromiseMakingActor.this.self
+        </td>
+      </tr><tr>
+        <td>
+          58
+        </td>
+        <td>
+          10
+        </td>
+        <td>
+          2724
+          -
+          2761
+        </td>
+        <td>
+          ApplyToImplicitArgs
+        </td>
+        <td>
+          akka.actor.ScalaActorRef.!
+        </td>
+        <td style="background: #F0ADAD">
+          akka.this.actor.`package`.actorRef2Scala(r).!(acl.this.`package`.Promise.apply(PromiseMakingActor.this.self, receiver, contract))(PromiseMakingActor.this.self)
+        </td>
+      </tr><tr>
+        <td>
+          58
+        </td>
+        <td>
+          9
+        </td>
+        <td>
+          2726
+          -
+          2726
+        </td>
+        <td>
+          Select
+        </td>
+        <td>
+          akka.actor.Actor.self
+        </td>
+        <td style="background: #F0ADAD">
+          PromiseMakingActor.this.self
         </td>
       </tr><tr>
         <td>
@@ -347,93 +347,30 @@
           17
         </td>
         <td>
-          3533
+          3548
           -
-          3537
+          3613
         </td>
         <td>
-          Select
+          ApplyToImplicitArgs
         </td>
         <td>
-          akka.actor.Actor.self
+          akka.actor.ScalaActorRef.!
         </td>
         <td style="background: #F0ADAD">
-          PromiseMaker.this.self
+          akka.this.actor.`package`.actorRef2Scala(promise.sender).!(acl.this.`package`.PromiseRejected.apply(PromiseMakingActor.this.self, promise.receiver, promise))(PromiseMakingActor.this.self)
         </td>
       </tr><tr>
         <td>
           73
         </td>
         <td>
-          20
+          14
         </td>
         <td>
-          3515
+          3587
           -
-          3515
-        </td>
-        <td>
-          Select
-        </td>
-        <td>
-          akka.actor.Actor.self
-        </td>
-        <td style="background: #F0ADAD">
-          PromiseMaker.this.self
-        </td>
-      </tr><tr>
-        <td>
-          73
-        </td>
-        <td>
-          16
-        </td>
-        <td>
-          3500
-          -
-          3514
-        </td>
-        <td>
-          Select
-        </td>
-        <td>
-          acl.Promise.sender
-        </td>
-        <td style="background: #F0ADAD">
-          promise.sender
-        </td>
-      </tr><tr>
-        <td>
-          73
-        </td>
-        <td>
-          19
-        </td>
-        <td>
-          3517
-          -
-          3565
-        </td>
-        <td>
-          Apply
-        </td>
-        <td>
-          acl.PromiseRejected.apply
-        </td>
-        <td style="background: #F0ADAD">
-          acl.this.`package`.PromiseRejected.apply(PromiseMaker.this.self, promise.receiver, promise)
-        </td>
-      </tr><tr>
-        <td>
-          73
-        </td>
-        <td>
-          18
-        </td>
-        <td>
-          3539
-          -
-          3555
+          3603
         </td>
         <td>
           Select
@@ -449,21 +386,84 @@
           73
         </td>
         <td>
-          21
+          13
         </td>
         <td>
-          3500
+          3581
           -
-          3565
+          3585
         </td>
         <td>
-          ApplyToImplicitArgs
+          Select
         </td>
         <td>
-          akka.actor.ScalaActorRef.!
+          akka.actor.Actor.self
         </td>
         <td style="background: #F0ADAD">
-          akka.this.actor.`package`.actorRef2Scala(promise.sender).!(acl.this.`package`.PromiseRejected.apply(PromiseMaker.this.self, promise.receiver, promise))(PromiseMaker.this.self)
+          PromiseMakingActor.this.self
+        </td>
+      </tr><tr>
+        <td>
+          73
+        </td>
+        <td>
+          16
+        </td>
+        <td>
+          3563
+          -
+          3563
+        </td>
+        <td>
+          Select
+        </td>
+        <td>
+          akka.actor.Actor.self
+        </td>
+        <td style="background: #F0ADAD">
+          PromiseMakingActor.this.self
+        </td>
+      </tr><tr>
+        <td>
+          73
+        </td>
+        <td>
+          12
+        </td>
+        <td>
+          3548
+          -
+          3562
+        </td>
+        <td>
+          Select
+        </td>
+        <td>
+          acl.Promise.sender
+        </td>
+        <td style="background: #F0ADAD">
+          promise.sender
+        </td>
+      </tr><tr>
+        <td>
+          73
+        </td>
+        <td>
+          15
+        </td>
+        <td>
+          3565
+          -
+          3613
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          acl.PromiseRejected.apply
+        </td>
+        <td style="background: #F0ADAD">
+          acl.this.`package`.PromiseRejected.apply(PromiseMakingActor.this.self, promise.receiver, promise)
         </td>
       </tr>
     </table>

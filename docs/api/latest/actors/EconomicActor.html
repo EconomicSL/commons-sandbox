@@ -45,13 +45,13 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <span class="name">EconomicActor</span><span class="result"> extends <a href="../acl/PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> with <a href="../acl/Counterparty.html" class="extype" name="acl.Counterparty">Counterparty</a> with <span class="extype" name="akka.actor.Actor">Actor</span> with <span class="extype" name="akka.actor.ActorLogging">ActorLogging</span></span>
+        <span class="name">EconomicActor</span><span class="result"> extends <a href="../acl/PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a> with <a href="../edsl/CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor">CounterpartyActor</a> with <span class="extype" name="akka.actor.Actor">Actor</span> with <span class="extype" name="akka.actor.ActorLogging">ActorLogging</span></span>
       </span>
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Base class for all economic actors.</p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><span class="extype" name="akka.actor.ActorLogging">ActorLogging</span>, <span class="extype" name="akka.actor.Actor">Actor</span>, <a href="../acl/Counterparty.html" class="extype" name="acl.Counterparty">Counterparty</a>, <a href="../acl/PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="akka.actor.ActorLogging">ActorLogging</span>, <span class="extype" name="akka.actor.Actor">Actor</span>, <a href="../edsl/CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor">CounterpartyActor</a>, <a href="../acl/PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -69,7 +69,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="actors.EconomicActor"><span>EconomicActor</span></li><li class="in" name="akka.actor.ActorLogging"><span>ActorLogging</span></li><li class="in" name="akka.actor.Actor"><span>Actor</span></li><li class="in" name="acl.Counterparty"><span>Counterparty</span></li><li class="in" name="acl.PromiseMaker"><span>PromiseMaker</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="actors.EconomicActor"><span>EconomicActor</span></li><li class="in" name="akka.actor.ActorLogging"><span>ActorLogging</span></li><li class="in" name="akka.actor.Actor"><span>Actor</span></li><li class="in" name="edsl.CounterpartyActor"><span>CounterpartyActor</span></li><li class="in" name="acl.PromiseMakingActor"><span>PromiseMakingActor</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -133,7 +133,27 @@
 
         <div id="values" class="values members">
               <h3>Abstract Value Members</h3>
-              <ol><li name="akka.actor.Actor#receive" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+              <ol><li name="edsl.CounterpartyActor#balanceSheet" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="balanceSheet:edsl.BalanceSheetLike"></a>
+      <a id="balanceSheet:BalanceSheetLike"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">balanceSheet</span><span class="result">: <a href="../edsl/BalanceSheetLike.html" class="extype" name="edsl.BalanceSheetLike">BalanceSheetLike</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#actors.EconomicActor@balanceSheet:edsl.BalanceSheetLike" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The balance sheet contains the <code>CounterpartyActor</code>'s collection of assets
+and liabilities.</p><div class="fullcomment"><div class="comment cmt"><p>The balance sheet contains the <code>CounterpartyActor</code>'s collection of assets
+and liabilities.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../edsl/CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor">CounterpartyActor</a></dd></dl></div>
+    </li><li name="akka.actor.Actor#receive" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="receive:akka.actor.Actor.Receive"></a>
       <a id="receive:akka.actor.Actor.Receive"></a>
       <h4 class="signature">
@@ -206,7 +226,7 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="acl.PromiseMaker#acceptPromise" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="acl.PromiseMakingActor#acceptPromise" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="acceptPromise(promise:acl.Promise):Unit"></a>
       <a id="acceptPromise(Promise):Unit"></a>
       <h4 class="signature">
@@ -226,9 +246,9 @@
 actions specified in some <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><div class="fullcomment"><div class="comment cmt"><p>The act of accepting a previously submitted <a href="../acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a> to perform
 actions specified in some <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.
 </p></div><dl class="paramcmts block"><dt class="param">promise</dt><dd class="cmt"><p>a <a href="../acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a> containing a <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> specifying certain actions
-               that the <code>PromiseMaker</code> is to perform.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../acl/PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a></dd><dt>Note</dt><dd><span class="cmt"><p><code>acceptPromise</code> is a general-purpose acceptance of a <a href="../acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a>
+               that the <code>PromiseMakingActor</code> is to perform.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../acl/PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a></dd><dt>Note</dt><dd><span class="cmt"><p><code>acceptPromise</code> is a general-purpose acceptance of a <a href="../acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a>
       that was previously submitted (typically via a <code>makePromise</code> act).
-      The <code>PromiseMaker</code> sending <a href="../acl/package$$PromiseAccepted.html" class="extype" name="acl.PromiseAccepted">PromiseAccepted</a> is informing the
+      The <code>PromiseMakingActor</code> sending <a href="../acl/package$$PromiseAccepted.html" class="extype" name="acl.PromiseAccepted">PromiseAccepted</a> is informing the
       receiver that it intends to perform the actions as specified in
       the <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.
 </p></span></dd></dl></div>
@@ -334,7 +354,7 @@ actions specified in some <a href="../edsl/commitments/Contract.html" class="ext
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="acl.Counterparty#breakContract" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="edsl.CounterpartyActor#breakContract" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="breakContract(receiver:akka.actor.ActorRef):Unit"></a>
       <a id="breakContract(ActorRef):Unit"></a>
       <h4 class="signature">
@@ -351,11 +371,11 @@ actions specified in some <a href="../edsl/commitments/Contract.html" class="ext
       </a>
     </span>
       <p class="shortcomment cmt">The act of breaking the terms of some existing <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><div class="fullcomment"><div class="comment cmt"><p>The act of breaking the terms of some existing <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.
-</p></div><dl class="paramcmts block"><dt class="param">receiver</dt><dd class="cmt"><p>a <a href="../acl/ContractLike.html" class="extype" name="acl.ContractLike">ContractLike</a> actor whose underlying
+</p></div><dl class="paramcmts block"><dt class="param">receiver</dt><dd class="cmt"><p>A <a href="../edsl/ContractActorLike.html" class="extype" name="edsl.ContractActorLike">edsl.ContractActorLike</a> actor whose underlying
                 <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> the <code>Counterparty</code>
-                actor wishes to break.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../acl/Counterparty.html" class="extype" name="acl.Counterparty">Counterparty</a></dd><dt>Note</dt><dd><span class="cmt"><p>When a <code>Counterparty</code> actor breaks the terms of some existing
+                actor wishes to break.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../edsl/CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor">CounterpartyActor</a></dd><dt>Note</dt><dd><span class="cmt"><p>When a <code>Counterparty</code> actor breaks the terms of some existing
       <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> it becomes in &quot;breach
-      of contract.&quot; The <code>Counterparty</code> actor sending <a href="../acl/package$$ContractBroken.html" class="extype" name="acl.ContractBroken">ContractBroken</a>
+      of contract.&quot; The <code>Counterparty</code> actor sending <span class="extype" name="ContractBroken">ContractBroken</span>
       is informing the receiver that it no longer has the intention of
       performing the actions specified in the receiver's underlying
       <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.
@@ -400,6 +420,23 @@ actions specified in some <a href="../edsl/commitments/Contract.html" class="ext
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Actor</dd></dl></div>
+    </li><li name="edsl.CounterpartyActor#counterpartyBehavior" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="counterpartyBehavior:CounterpartyActor.this.Receive"></a>
+      <a id="counterpartyBehavior:Receive"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">counterpartyBehavior</span><span class="result">: <a href="#Receive=akka.actor.Actor.Receive" class="extmbr" name="actors.EconomicActor.Receive">Receive</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#actors.EconomicActor@counterpartyBehavior:CounterpartyActor.this.Receive" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Defines the behavior of a <code>Counterparty</code> actor.</p><div class="fullcomment"><div class="comment cmt"><p>Defines the behavior of a <code>Counterparty</code> actor.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../edsl/CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor">CounterpartyActor</a></dd></dl></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a>
       <a id="eq(AnyRef):Boolean"></a>
@@ -525,7 +562,7 @@ actions specified in some <a href="../edsl/commitments/Contract.html" class="ext
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>ActorLogging</dd></dl></div>
-    </li><li name="acl.PromiseMaker#makePromise" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="acl.PromiseMakingActor#makePromise" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="makePromise(receiver:scala.collection.immutable.Set[akka.actor.ActorRef],contract:edsl.commitments.Contract):Unit"></a>
       <a id="makePromise(Set[ActorRef],Contract):Unit"></a>
       <h4 class="signature">
@@ -541,15 +578,15 @@ actions specified in some <a href="../edsl/commitments/Contract.html" class="ext
         <img src="../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">The action of submitting a <a href="../acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a> made by the <code>PromiseMaker</code> to a
-collection of other <code>PromiseMakers</code> to perform actions specified in the
-<a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><div class="fullcomment"><div class="comment cmt"><p>The action of submitting a <a href="../acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a> made by the <code>PromiseMaker</code> to a
-collection of other <code>PromiseMakers</code> to perform actions specified in the
+      <p class="shortcomment cmt">The action of submitting a <a href="../acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a> made by the <code>PromiseMakingActor</code> to a
+collection of other <code>PromiseMakingActors</code> to perform actions specified in the
+<a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><div class="fullcomment"><div class="comment cmt"><p>The action of submitting a <a href="../acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a> made by the <code>PromiseMakingActor</code> to a
+collection of other <code>PromiseMakingActors</code> to perform actions specified in the
 <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.
-</p></div><dl class="paramcmts block"><dt class="param">receiver</dt><dd class="cmt"><p>a collection of <code>PromiseMakers</code> who are receiving the
+</p></div><dl class="paramcmts block"><dt class="param">receiver</dt><dd class="cmt"><p>a collection of <code>PromiseMakingActors</code> who are receiving the
                 <a href="../acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a> and therefore are potential counter parties to
                 the <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p></dd><dt class="param">contract</dt><dd class="cmt"><p>a <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> specifying certain actions that the various
-                parties should perform.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../acl/PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a></dd><dt>Note</dt><dd><span class="cmt"><p><code>makePromise</code> is a general-purpose act to make a <a href="../acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a> or
+                parties should perform.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../acl/PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a></dd><dt>Note</dt><dd><span class="cmt"><p><code>makePromise</code> is a general-purpose act to make a <a href="../acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a> or
       respond to a previously submitted <a href="../acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a> (i.e., during a
       negotiation process) by promising to perform certain actions
       defined by the <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.
@@ -697,7 +734,7 @@ collection of other <code>PromiseMakers</code> to perform actions specified in t
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="acl.PromiseMaker#rejectPromise" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="acl.PromiseMakingActor#rejectPromise" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="rejectPromise(promise:acl.Promise):Unit"></a>
       <a id="rejectPromise(Promise):Unit"></a>
       <h4 class="signature">
@@ -717,9 +754,9 @@ collection of other <code>PromiseMakers</code> to perform actions specified in t
 actions specified in some <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><div class="fullcomment"><div class="comment cmt"><p>The action of rejecting a previously submitted <a href="../acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a> to perform
 actions specified in some <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.
 </p></div><dl class="paramcmts block"><dt class="param">promise</dt><dd class="cmt"><p>a <a href="../acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a> containing a <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> specifying certain
-               actions that the <code>PromiseMaker</code> is to perform.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../acl/PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a></dd><dt>Note</dt><dd><span class="cmt"><p><code>rejectPromise</code> is a general-purpose rejection to a <a href="../acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a>
+               actions that the <code>PromiseMakingActor</code> is to perform.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../acl/PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a></dd><dt>Note</dt><dd><span class="cmt"><p><code>rejectPromise</code> is a general-purpose rejection to a <a href="../acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a>
       that was previously submitted (typically via a <code>makePromise</code> act).
-      The <code>PromiseMaker</code> sending <a href="../acl/package$$PromiseRejected.html" class="extype" name="acl.PromiseRejected">PromiseRejected</a> is informing the
+      The <code>PromiseMakingActor</code> sending <a href="../acl/package$$PromiseRejected.html" class="extype" name="acl.PromiseRejected">PromiseRejected</a> is informing the
       receiver that it has no intention to perform the actions as
       specified in the promised <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.
 </p></span></dd></dl></div>
@@ -825,6 +862,74 @@ actions specified in some <a href="../edsl/commitments/Contract.html" class="ext
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Actor</dd></dl></div>
+    </li><li name="edsl.CounterpartyActor#valueAssets" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="valueAssets(f:akka.actor.ActorRef=&gt;edsl.commitments.Contract):edsl.commitments.Contract"></a>
+      <a id="valueAssets((ActorRef)⇒Contract):Contract"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">valueAssets</span><span class="params">(<span name="f">f: (<span class="extype" name="akka.actor.ActorRef">ActorRef</span>) ⇒ <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>)</span><span class="result">: <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#actors.EconomicActor@valueAssets(f:akka.actor.ActorRef=&gt;edsl.commitments.Contract):edsl.commitments.Contract" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Compute the value of the <code>Counterparty</code> actor's stock of assets.</p><div class="fullcomment"><div class="comment cmt"><p>Compute the value of the <code>Counterparty</code> actor's stock of assets.
+</p></div><dl class="paramcmts block"><dt class="param">f</dt><dd class="cmt"><p>A function mapping a <a href="../edsl/ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a> actor to a
+         <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> representing the value
+         of the <a href="../edsl/ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a> actor's underlying
+         <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> to the <code>Counterparty</code> actor.</p></dd><dt>returns</dt><dd class="cmt"><p>The total value of the <code>Counterparty</code> actor's stock of assets.
+</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../edsl/CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor">CounterpartyActor</a></dd></dl></div>
+    </li><li name="edsl.CounterpartyActor#valueEquity" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="valueEquity(f:akka.actor.ActorRef=&gt;edsl.commitments.Contract):edsl.commitments.Contract"></a>
+      <a id="valueEquity((ActorRef)⇒Contract):Contract"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">valueEquity</span><span class="params">(<span name="f">f: (<span class="extype" name="akka.actor.ActorRef">ActorRef</span>) ⇒ <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>)</span><span class="result">: <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#actors.EconomicActor@valueEquity(f:akka.actor.ActorRef=&gt;edsl.commitments.Contract):edsl.commitments.Contract" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Compute the value of the <code>Counterparty</code> actor's equity.</p><div class="fullcomment"><div class="comment cmt"><p>Compute the value of the <code>Counterparty</code> actor's equity.
+</p></div><dl class="paramcmts block"><dt class="param">f</dt><dd class="cmt"><p>A function mapping a <a href="../edsl/ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a> actor to a
+         <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> representing the value
+         of the <a href="../edsl/ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a> actor's underlying
+         <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> to the <code>Counterparty</code> actor.</p></dd><dt>returns</dt><dd class="cmt"><p>The total value of the <code>Counterparty</code> actor's stock of assets.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../edsl/CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor">CounterpartyActor</a></dd><dt>Note</dt><dd><span class="cmt"><p>By definition, the value of equity is the difference between the
+      value of the <code>Counterparty</code> actor's stock of assets and the value
+      of the <code>Counterparty</code> actor's stock of liabilities.
+</p></span></dd></dl></div>
+    </li><li name="edsl.CounterpartyActor#valueLiabilities" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="valueLiabilities(f:akka.actor.ActorRef=&gt;edsl.commitments.Contract):edsl.commitments.Contract"></a>
+      <a id="valueLiabilities((ActorRef)⇒Contract):Contract"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">valueLiabilities</span><span class="params">(<span name="f">f: (<span class="extype" name="akka.actor.ActorRef">ActorRef</span>) ⇒ <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>)</span><span class="result">: <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#actors.EconomicActor@valueLiabilities(f:akka.actor.ActorRef=&gt;edsl.commitments.Contract):edsl.commitments.Contract" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Compute the value of the <code>Counterparty</code> actor's stock of liabilities.</p><div class="fullcomment"><div class="comment cmt"><p>Compute the value of the <code>Counterparty</code> actor's stock of liabilities.
+</p></div><dl class="paramcmts block"><dt class="param">f</dt><dd class="cmt"><p>A function mapping a <a href="../edsl/ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a> actor to a
+         <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> representing the value
+         of the <a href="../edsl/ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a> actor's underlying
+         <a href="../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> to the <code>Counterparty</code> actor.</p></dd><dt>returns</dt><dd class="cmt"><p>The total value of the <code>Counterparty</code> actor's stock of liabilities.
+</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../edsl/CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor">CounterpartyActor</a></dd></dl></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <a id="wait():Unit"></a>
@@ -907,10 +1012,10 @@ actions specified in some <a href="../edsl/commitments/Contract.html" class="ext
               <h3>Inherited from <span class="extype" name="akka.actor.ActorLogging">ActorLogging</span></h3>
             </div><div class="parent" name="akka.actor.Actor">
               <h3>Inherited from <span class="extype" name="akka.actor.Actor">Actor</span></h3>
-            </div><div class="parent" name="acl.Counterparty">
-              <h3>Inherited from <a href="../acl/Counterparty.html" class="extype" name="acl.Counterparty">Counterparty</a></h3>
-            </div><div class="parent" name="acl.PromiseMaker">
-              <h3>Inherited from <a href="../acl/PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a></h3>
+            </div><div class="parent" name="edsl.CounterpartyActor">
+              <h3>Inherited from <a href="../edsl/CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor">CounterpartyActor</a></h3>
+            </div><div class="parent" name="acl.PromiseMakingActor">
+              <h3>Inherited from <a href="../acl/PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a></h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">

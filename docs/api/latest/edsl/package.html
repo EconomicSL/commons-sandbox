@@ -47,7 +47,14 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Provides classes for modeling commercial contracts.</p><h4>Overview</h4><p>Instead of defining a fixed catalogue of contracts our approach is to follow...</p><ul><li><a href="https://lexifi.com/files/resources/MLFiPaper.pdf" target="_blank">Peyton-Jones et al (2000)</a></li><li><a href="http://www.itu.dk/~elsborg/sttt06.pdf" target="_blank">Andersen et al (2006)</a></li></ul><p>...and instead define an <a href="https://en.wikipedia.org/wiki/Domain-specific_language" target="_blank">embedded domain specific language (EDSL)</a>. Our EDSL consists of a small set of
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Provides classes for modeling commercial contracts.</p><h4>Overview</h4><h5><code>Counterparty</code></h5><p>Once a <a href="../acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a> has been accepted by all relevant <span class="extype" name="PromiseMakingActor">PromiseMakingActor</span> actors
+the <a href="../acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a> can be used to construct a <a href="ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a> actor that
+serves as a &quot;channel&quot; of communication between the various
+<a href="CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor">CounterParty</a> actors for the duration of the underlying
+<a href="commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><p>A <a href="CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor">Counterparty</a> actor should...</p><ul><li>be able to communicate directly with a <a href="ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a> actor.</li><li>be able to communicate with any relevant <a href="CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor">Counterparty</a>
+ actor indirectly using the <a href="ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a> actor as channel.</li><li>have a balance sheet.</li><li>be able to add (remove) assets and liabilities from its balance sheet.</li></ul><h5><code>ContractLike</code></h5><p>A <a href="ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a> actor should have...</p><ul><li>an issuer: the issuer is the <a href="CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor">Counterparty</a> actor for
+ which the <a href="commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> represents a liability.</li><li>an immutable collection of owners: the owners are for
+ which the contract represents an asset.</li></ul><h5><code>BalanceSheetLike</code></h5><p>Instead of defining a fixed catalogue of contracts our approach is to follow...</p><ul><li><a href="https://lexifi.com/files/resources/MLFiPaper.pdf" target="_blank">Peyton-Jones et al (2000)</a></li><li><a href="http://www.itu.dk/~elsborg/sttt06.pdf" target="_blank">Andersen et al (2006)</a></li></ul><p>...and instead define an <a href="https://en.wikipedia.org/wiki/Domain-specific_language" target="_blank">embedded domain specific language (EDSL)</a>. Our EDSL consists of a small set of
 atomic contracts, called <a href="commitments/package.html" class="extype" name="edsl.commitments">commitments</a>, that we use as
 &quot;building blocks&quot; to construct ever more complex contracts.</p><h5>Composable Commercial Contracts</h5><p>Following <a href="http://www.itu.dk/~elsborg/sttt06.pdf" target="_blank">Andersen et al (2006)</a>
 we focus on the following basic <i>contract patterns</i> for composing
@@ -98,7 +105,107 @@ commercial contracts from sub-contracts:</p><ul><li>A <i>commitment</i> stipulat
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="edsl.Currency" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+              <ol><li name="edsl.AddAsset" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AddAssetextendsProductwithSerializable"></a>
+      <a id="AddAsset:AddAsset"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="package$$AddAsset.html"><span class="name">AddAsset</span></a><span class="params">(<span name="contract">contract: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#edsl.package@AddAssetextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Add a <a href="ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a> to a <a href="CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor">CounterpartyActor</a> actor's <a href="BalanceSheetLike.html" class="extype" name="edsl.BalanceSheetLike">BalanceSheetLike</a> as an asset.</p>
+    </li><li name="edsl.AddLiability" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AddLiabilityextendsProductwithSerializable"></a>
+      <a id="AddLiability:AddLiability"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="package$$AddLiability.html"><span class="name">AddLiability</span></a><span class="params">(<span name="contract">contract: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#edsl.package@AddLiabilityextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Add a <a href="ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a> to a <a href="CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor">CounterpartyActor</a> actor's <a href="BalanceSheetLike.html" class="extype" name="edsl.BalanceSheetLike">BalanceSheetLike</a> as a liability.</p>
+    </li><li name="edsl.BalanceSheetLike" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="BalanceSheetLikeextendsAnyRef"></a>
+      <a id="BalanceSheetLike:BalanceSheetLike"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="BalanceSheetLike.html"><span class="name">BalanceSheetLike</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#edsl.package@BalanceSheetLikeextendsAnyRef" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Base trait for representing a balance sheet.</p><div class="fullcomment"><div class="comment cmt"><p>Base trait for representing a balance sheet.</p><p>We think of every actor in the economy as a kind of &quot;bank&quot;, in the sense
+that every actor needs to be monitoring its inflow and outflow of money
+balances. The current state of represents the current state of its
+money balances and stores collections of [ContractLike] actors representing
+contracts which will generate modey inflows (i.e., assets)
+cash flow events (i.e., receipts of various kinds) as well as liabilities
+cash flow events (i.e., expenditures of various kinds) over time.</p><p>A balance sheet represents the state of an economic actor's assets, liabilities, and equity at a particular point in time. In particular, the balance sheet details the balance of cash inflows and cash outflows over the preceding period.
+</p></div></div>
+    </li><li name="edsl.ContractActorLike" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ContractActorLikeextendsActorwithActorLogging"></a>
+      <a id="ContractActorLike:ContractActorLike"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ContractActorLike.html"><span class="name">ContractActorLike</span></a><span class="result"> extends <span class="extype" name="akka.actor.Actor">Actor</span> with <span class="extype" name="akka.actor.ActorLogging">ActorLogging</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#edsl.package@ContractActorLikeextendsActorwithActorLogging" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Trait defining the behavior for a generic contract actor.</p>
+    </li><li name="edsl.CounterpartyActor" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="CounterpartyActorextendsAnyRef"></a>
+      <a id="CounterpartyActor:CounterpartyActor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="CounterpartyActor.html"><span class="name">CounterpartyActor</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#edsl.package@CounterpartyActorextendsAnyRef" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Trait defining behavior for an actor that is a counterparty to the
+underlying <a href="commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> of some
+<a href="ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Trait defining behavior for an actor that is a counterparty to the
+underlying <a href="commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> of some
+<a href="ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a>.
+</p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>A <code>CounterpartyActor</code> communicates with another <code>CounterpartyActor</code>
+      using a <a href="ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a> as a communication
+      &quot;channel.&quot;
+</p></span></dd></dl></div>
+    </li><li name="edsl.Currency" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="CurrencyextendsScale[Double]"></a>
       <a id="Currency:Currency"></a>
       <h4 class="signature">
@@ -133,6 +240,40 @@ specified currency.</p>
       </a>
     </span>
       <p class="shortcomment cmt">A <code>Contract</code> representing a demand deposit for the specified currency.</p>
+    </li><li name="edsl.RemoveAsset" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RemoveAssetextendsProductwithSerializable"></a>
+      <a id="RemoveAsset:RemoveAsset"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="package$$RemoveAsset.html"><span class="name">RemoveAsset</span></a><span class="params">(<span name="contract">contract: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#edsl.package@RemoveAssetextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Remove a <a href="ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a> asset from a <a href="CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor">CounterpartyActor</a> actor's <a href="BalanceSheetLike.html" class="extype" name="edsl.BalanceSheetLike">BalanceSheetLike</a>.</p>
+    </li><li name="edsl.RemoveLiability" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RemoveLiabilityextendsProductwithSerializable"></a>
+      <a id="RemoveLiability:RemoveLiability"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="package$$RemoveLiability.html"><span class="name">RemoveLiability</span></a><span class="params">(<span name="contract">contract: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#edsl.package@RemoveLiabilityextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Remove a <a href="ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a> liability from a <a href="CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor">CounterpartyActor</a> actor's <a href="BalanceSheetLike.html" class="extype" name="edsl.BalanceSheetLike">BalanceSheetLike</a>.</p>
     </li></ol>
             </div>
 
@@ -160,7 +301,7 @@ specified currency.</p>
 resources between two parties; a commitment represents an <i>atomic</i>
 <a href="commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><p>We envision that:</p><ol class="decimal"><li>model builders will use commitments, as well as the higher-level
   contacts in our library, to construct commonly encountered contracts
-  for their specific use cases.</li></ol><p>  2. <a href="../acl/PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a> actors within a model can use
+  for their specific use cases.</li></ol><p>  2. <a href="../acl/PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMaker</a> actors within a model can use
   commitments, as well as the higher-level contracts in our library, to
   innovate previously unknown contracts.</p><h5>Requirements</h5><h5>Use cases</h5><h6>Payment systems</h6><p>To model a &quot;one big bank&quot; payment system, we need...</p><p>- a representation of retail deposits</p><p>- a representation of currency</p><p>- a representation of an un-collateralized overdraft</p><p>We can model both the base &quot;multiple banks&quot; payment system as well as a payment
 payment system with bilateral intra-day netting by adding...</p><ul><li>a representation of reserve deposits</li></ul><p>To model a payment system with correspondent banking we need...</p><p>- a representation of correspondent deposits (which can probably be a simple

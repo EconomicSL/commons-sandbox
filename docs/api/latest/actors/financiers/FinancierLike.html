@@ -45,13 +45,13 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <span class="name">FinancierLike</span><span class="result"> extends <a href="../../acl/PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a></span>
+        <span class="name">FinancierLike</span><span class="result"> extends <a href="../../acl/PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a></span>
       </span>
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Trait representing a generic financier.</p></div><dl class="attributes block"> <dt>Self Type</dt><dd><a href="" class="extype" name="actors.financiers.FinancierLike">FinancierLike</a> with <span class="extype" name="akka.actor.Actor">Actor</span> with <span class="extype" name="akka.actor.ActorLogging">ActorLogging</span></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><a href="../../acl/PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="../../acl/PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -69,7 +69,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="actors.financiers.FinancierLike"><span>FinancierLike</span></li><li class="in" name="acl.PromiseMaker"><span>PromiseMaker</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="actors.financiers.FinancierLike"><span>FinancierLike</span></li><li class="in" name="acl.PromiseMakingActor"><span>PromiseMakingActor</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -146,7 +146,7 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="acl.PromiseMaker#acceptPromise" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="acl.PromiseMakingActor#acceptPromise" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="acceptPromise(promise:acl.Promise):Unit"></a>
       <a id="acceptPromise(Promise):Unit"></a>
       <h4 class="signature">
@@ -166,9 +166,9 @@
 actions specified in some <a href="../../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><div class="fullcomment"><div class="comment cmt"><p>The act of accepting a previously submitted <a href="../../acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a> to perform
 actions specified in some <a href="../../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.
 </p></div><dl class="paramcmts block"><dt class="param">promise</dt><dd class="cmt"><p>a <a href="../../acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a> containing a <a href="../../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> specifying certain actions
-               that the <code>PromiseMaker</code> is to perform.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../acl/PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a></dd><dt>Note</dt><dd><span class="cmt"><p><code>acceptPromise</code> is a general-purpose acceptance of a <a href="../../acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a>
+               that the <code>PromiseMakingActor</code> is to perform.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../acl/PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a></dd><dt>Note</dt><dd><span class="cmt"><p><code>acceptPromise</code> is a general-purpose acceptance of a <a href="../../acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a>
       that was previously submitted (typically via a <code>makePromise</code> act).
-      The <code>PromiseMaker</code> sending <a href="../../acl/package$$PromiseAccepted.html" class="extype" name="acl.PromiseAccepted">PromiseAccepted</a> is informing the
+      The <code>PromiseMakingActor</code> sending <a href="../../acl/package$$PromiseAccepted.html" class="extype" name="acl.PromiseAccepted">PromiseAccepted</a> is informing the
       receiver that it intends to perform the actions as specified in
       the <a href="../../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.
 </p></span></dd></dl></div>
@@ -320,7 +320,7 @@ actions specified in some <a href="../../edsl/commitments/Contract.html" class="
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="acl.PromiseMaker#makePromise" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="acl.PromiseMakingActor#makePromise" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="makePromise(receiver:scala.collection.immutable.Set[akka.actor.ActorRef],contract:edsl.commitments.Contract):Unit"></a>
       <a id="makePromise(Set[ActorRef],Contract):Unit"></a>
       <h4 class="signature">
@@ -336,15 +336,15 @@ actions specified in some <a href="../../edsl/commitments/Contract.html" class="
         <img src="../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">The action of submitting a <a href="../../acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a> made by the <code>PromiseMaker</code> to a
-collection of other <code>PromiseMakers</code> to perform actions specified in the
-<a href="../../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><div class="fullcomment"><div class="comment cmt"><p>The action of submitting a <a href="../../acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a> made by the <code>PromiseMaker</code> to a
-collection of other <code>PromiseMakers</code> to perform actions specified in the
+      <p class="shortcomment cmt">The action of submitting a <a href="../../acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a> made by the <code>PromiseMakingActor</code> to a
+collection of other <code>PromiseMakingActors</code> to perform actions specified in the
+<a href="../../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><div class="fullcomment"><div class="comment cmt"><p>The action of submitting a <a href="../../acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a> made by the <code>PromiseMakingActor</code> to a
+collection of other <code>PromiseMakingActors</code> to perform actions specified in the
 <a href="../../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.
-</p></div><dl class="paramcmts block"><dt class="param">receiver</dt><dd class="cmt"><p>a collection of <code>PromiseMakers</code> who are receiving the
+</p></div><dl class="paramcmts block"><dt class="param">receiver</dt><dd class="cmt"><p>a collection of <code>PromiseMakingActors</code> who are receiving the
                 <a href="../../acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a> and therefore are potential counter parties to
                 the <a href="../../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p></dd><dt class="param">contract</dt><dd class="cmt"><p>a <a href="../../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> specifying certain actions that the various
-                parties should perform.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../acl/PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a></dd><dt>Note</dt><dd><span class="cmt"><p><code>makePromise</code> is a general-purpose act to make a <a href="../../acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a> or
+                parties should perform.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../acl/PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a></dd><dt>Note</dt><dd><span class="cmt"><p><code>makePromise</code> is a general-purpose act to make a <a href="../../acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a> or
       respond to a previously submitted <a href="../../acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a> (i.e., during a
       negotiation process) by promising to perform certain actions
       defined by the <a href="../../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.
@@ -400,7 +400,7 @@ collection of other <code>PromiseMakers</code> to perform actions specified in t
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="acl.PromiseMaker#rejectPromise" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="acl.PromiseMakingActor#rejectPromise" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="rejectPromise(promise:acl.Promise):Unit"></a>
       <a id="rejectPromise(Promise):Unit"></a>
       <h4 class="signature">
@@ -420,9 +420,9 @@ collection of other <code>PromiseMakers</code> to perform actions specified in t
 actions specified in some <a href="../../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.</p><div class="fullcomment"><div class="comment cmt"><p>The action of rejecting a previously submitted <a href="../../acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a> to perform
 actions specified in some <a href="../../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.
 </p></div><dl class="paramcmts block"><dt class="param">promise</dt><dd class="cmt"><p>a <a href="../../acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a> containing a <a href="../../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a> specifying certain
-               actions that the <code>PromiseMaker</code> is to perform.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../acl/PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a></dd><dt>Note</dt><dd><span class="cmt"><p><code>rejectPromise</code> is a general-purpose rejection to a <a href="../../acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a>
+               actions that the <code>PromiseMakingActor</code> is to perform.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../acl/PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a></dd><dt>Note</dt><dd><span class="cmt"><p><code>rejectPromise</code> is a general-purpose rejection to a <a href="../../acl/package$$Promise.html" class="extype" name="acl.Promise">Promise</a>
       that was previously submitted (typically via a <code>makePromise</code> act).
-      The <code>PromiseMaker</code> sending <a href="../../acl/package$$PromiseRejected.html" class="extype" name="acl.PromiseRejected">PromiseRejected</a> is informing the
+      The <code>PromiseMakingActor</code> sending <a href="../../acl/package$$PromiseRejected.html" class="extype" name="acl.PromiseRejected">PromiseRejected</a> is informing the
       receiver that it has no intention to perform the actions as
       specified in the promised <a href="../../edsl/commitments/Contract.html" class="extype" name="edsl.commitments.Contract">Contract</a>.
 </p></span></dd></dl></div>
@@ -538,8 +538,8 @@ actions specified in some <a href="../../edsl/commitments/Contract.html" class="
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="acl.PromiseMaker">
-              <h3>Inherited from <a href="../../acl/PromiseMaker.html" class="extype" name="acl.PromiseMaker">PromiseMaker</a></h3>
+        <div class="parent" name="acl.PromiseMakingActor">
+              <h3>Inherited from <a href="../../acl/PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a></h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">

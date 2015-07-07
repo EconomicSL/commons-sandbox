@@ -55,7 +55,7 @@
 </span>31 <span style=''>case class RetailDeposit(var balance: Double,
 </span>32 <span style=''>                              code: String,
 </span>33 <span style=''>                              issuer: ActorRef,
-</span>34 <span style=''>                              owners: immutable.Set[ActorRef]) extends DepositLike {
+</span>34 <span style=''>                              owners: immutable.Set[ActorRef]) extends DepositActorLike {
 </span>35 <span style=''>
 </span>36 <span style=''>  def commitments: immutable.Map[ActorRef, Contract] = {
 </span>37 <span style=''>    </span><span style='background: #F0ADAD'>???</span><span style=''>
@@ -82,12 +82,12 @@
           37
         </td>
         <td>
-          26
+          22
         </td>
         <td>
-          1333
+          1338
           -
-          1336
+          1341
         </td>
         <td>
           Select
@@ -103,12 +103,12 @@
           41
         </td>
         <td>
-          27
+          23
         </td>
         <td>
-          1373
+          1378
           -
-          1376
+          1381
         </td>
         <td>
           Select

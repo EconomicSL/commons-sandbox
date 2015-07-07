@@ -39,8 +39,8 @@
 </span>15 <span style=''>*/
 </span>16 <span style=''>package actors.contracts
 </span>17 <span style=''>
-</span>18 <span style=''>import acl.ContractLike
-</span>19 <span style=''>import akka.actor.ActorRef
+</span>18 <span style=''>import akka.actor.ActorRef
+</span>19 <span style=''>import edsl.ContractActorLike
 </span>20 <span style=''>import edsl.commitments.Contract
 </span>21 <span style=''>
 </span>22 <span style=''>import scala.collection.immutable
@@ -49,7 +49,7 @@
 </span>25 <span style=''>class Currency(amount: Double,
 </span>26 <span style=''>                    code: String,
 </span>27 <span style=''>                    val issuer: ActorRef,
-</span>28 <span style=''>                    val owners: immutable.Set[ActorRef]) extends ContractLike {
+</span>28 <span style=''>                    val owners: immutable.Set[ActorRef]) extends ContractActorLike {
 </span>29 <span style=''>
 </span>30 <span style=''>  def commitments: immutable.Map[ActorRef, Contract] = {
 </span>31 <span style=''>    </span><span style='background: #F0ADAD'>???</span><span style=''>
@@ -76,12 +76,12 @@
           31
         </td>
         <td>
-          22
+          18
         </td>
         <td>
-          982
+          993
           -
-          985
+          996
         </td>
         <td>
           Select
@@ -97,12 +97,12 @@
           35
         </td>
         <td>
-          23
+          19
         </td>
         <td>
-          1022
+          1033
           -
-          1025
+          1036
         </td>
         <td>
           Select
