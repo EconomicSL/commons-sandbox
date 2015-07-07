@@ -16,5 +16,5 @@ limitations under the License.
 package actors
 
 
-/** Classes for modeling behavior of an [[acl.PromiseMaker]]. */
+/** Classes for modeling behavior of an [[acl.PromiseMakingActor]]. */
 package object behaviors

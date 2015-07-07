@@ -1,5 +1,6 @@
-import acl.PromiseMaker
-import edsl.ContractLike
+import acl.PromiseMakingActor
+import akka.actor.ActorRef
+import edsl.ContractActorLike
 
 /*
 Copyright 2015 David R. Pugh, Dan F. Tang, J. Doyne Farmer
@@ -22,27 +23,27 @@ limitations under the License.
   * ==Overview==
   *
   * ===`Counterparty`===
-  * Once a [[acl.Promise Promise]] has been accepted by all relevant [[PromiseMaker]] actors
-  * the [[acl.Promise Promise]] can be used to construct a [[ContractLike]] actor that
+  * Once a [[acl.Promise Promise]] has been accepted by all relevant [[PromiseMakingActor]] actors
+  * the [[acl.Promise Promise]] can be used to construct a [[ContractActorLike]] actor that
   * serves as a "channel" of communication between the various
-  * [[edsl.Counterparty CounterParty]] actors for the duration of the underlying
+  * [[edsl.CounterpartyActor CounterParty]] actors for the duration of the underlying
   * [[edsl.commitments.Contract Contract]].
   *
-  * A [[edsl.Counterparty Counterparty]] actor should...
+  * A [[edsl.CounterpartyActor Counterparty]] actor should...
   *
-  *  - be able to communicate directly with a [[ContractLike]] actor.
+  *  - be able to communicate directly with a [[ContractActorLike]] actor.
   *
-  *  - be able to communicate with any relevant [[edsl.Counterparty Counterparty]]
-  *  actor indirectly using the [[ContractLike]] actor as channel.
+  *  - be able to communicate with any relevant [[edsl.CounterpartyActor Counterparty]]
+  *  actor indirectly using the [[ContractActorLike]] actor as channel.
   *
   *  - have a balance sheet.
   *
   *  - be able to add (remove) assets and liabilities from its balance sheet.
   *
   * ===`ContractLike`===
-  * A [[ContractLike]] actor should have...
+  * A [[ContractActorLike]] actor should have...
   *
-  *  - an issuer: the issuer is the [[edsl.Counterparty Counterparty]] actor for
+  *  - an issuer: the issuer is the [[edsl.CounterpartyActor Counterparty]] actor for
   *  which the [[edsl.commitments.Contract Contract]] represents a liability.
   *
   *  - an immutable collection of owners: the owners are for
@@ -91,5 +92,19 @@ limitations under the License.
   *
   * ===Composable Commercial Contracts===
   */
-package object edsl
+package object edsl {
+
+  /** Add a [[ContractActorLike]] to a [[CounterpartyActor]] actor's [[BalanceSheetLike]] as an asset. */
+  case class AddAsset(contract: ActorRef)
+
+  /** Remove a [[ContractActorLike]] asset from a [[CounterpartyActor]] actor's [[BalanceSheetLike]]. */
+  case class RemoveAsset(contract: ActorRef)
+
+  /** Add a [[ContractActorLike]] to a [[CounterpartyActor]] actor's [[BalanceSheetLike]] as a liability. */
+  case class AddLiability(contract: ActorRef)
+
+  /** Remove a [[ContractActorLike]] liability from a [[CounterpartyActor]] actor's [[BalanceSheetLike]]. */
+  case class RemoveLiability(contract: ActorRef)
+
+}
 

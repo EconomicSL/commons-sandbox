@@ -22,17 +22,17 @@ import scala.collection.immutable
 
 
 /** Trait defining behavior for an actor that trades [[edsl.commitments.Contract Contract]] objects. */
-trait PromiseMaker {
+trait PromiseMakingActor {
   this: Actor with ActorLogging =>
 
   /** The act of accepting a previously submitted [[Promise]] to perform
     * actions specified in some [[edsl.commitments.Contract Contract]].
     *
     * @param promise a [[Promise]] containing a [[edsl.commitments.Contract Contract]] specifying certain actions
-    *                that the `PromiseMaker` is to perform.
+    *                that the `PromiseMakingActor` is to perform.
     * @note `acceptPromise` is a general-purpose acceptance of a [[Promise]]
     *       that was previously submitted (typically via a `makePromise` act).
-    *       The `PromiseMaker` sending [[PromiseAccepted]] is informing the
+    *       The `PromiseMakingActor` sending [[PromiseAccepted]] is informing the
     *       receiver that it intends to perform the actions as specified in
     *       the [[edsl.commitments.Contract Contract]].
     */
@@ -40,11 +40,11 @@ trait PromiseMaker {
     promise.sender ! PromiseAccepted(self, promise.receiver, promise)
   }
 
-  /** The action of submitting a [[Promise]] made by the `PromiseMaker` to a
-    * collection of other `PromiseMakers` to perform actions specified in the
+  /** The action of submitting a [[Promise]] made by the `PromiseMakingActor` to a
+    * collection of other `PromiseMakingActors` to perform actions specified in the
     * [[edsl.commitments.Contract Contract]].
     *
-    * @param receiver a collection of `PromiseMakers` who are receiving the
+    * @param receiver a collection of `PromiseMakingActors` who are receiving the
     *                 [[Promise]] and therefore are potential counter parties to
     *                 the [[edsl.commitments.Contract Contract]].
     * @param contract a [[edsl.commitments.Contract Contract]] specifying certain actions that the various
@@ -62,10 +62,10 @@ trait PromiseMaker {
     * actions specified in some [[edsl.commitments.Contract Contract]].
     *
     * @param promise a [[Promise]] containing a [[edsl.commitments.Contract Contract]] specifying certain
-    *                actions that the `PromiseMaker` is to perform.
+    *                actions that the `PromiseMakingActor` is to perform.
     * @note `rejectPromise` is a general-purpose rejection to a [[Promise]]
     *       that was previously submitted (typically via a `makePromise` act).
-    *       The `PromiseMaker` sending [[PromiseRejected]] is informing the
+    *       The `PromiseMakingActor` sending [[PromiseRejected]] is informing the
     *       receiver that it has no intention to perform the actions as
     *       specified in the promised [[edsl.commitments.Contract Contract]].
     */

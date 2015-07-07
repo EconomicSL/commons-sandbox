@@ -15,8 +15,8 @@ limitations under the License.
 */
 package actors.behaviors
 
-import acl.PromiseMaker
+import acl.PromiseMakingActor
 
 
-/** Classes for modeling expectations of an [[PromiseMaker]]. */
+/** Classes for modeling expectations of an [[PromiseMakingActor]]. */
 package object expectations

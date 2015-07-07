@@ -15,8 +15,8 @@ limitations under the License.
 */
 package actors.contracts
 
-import acl.ContractLike
 import akka.actor.ActorRef
+import edsl.ContractActorLike
 import edsl.commitments.Contract
 
 import scala.collection.immutable
@@ -25,7 +25,7 @@ import scala.collection.immutable
 class Currency(amount: Double,
                     code: String,
                     val issuer: ActorRef,
-                    val owners: immutable.Set[ActorRef]) extends ContractLike {
+                    val owners: immutable.Set[ActorRef]) extends ContractActorLike {
 
   def commitments: immutable.Map[ActorRef, Contract] = {
     ???

@@ -16,11 +16,11 @@ limitations under the License.
 package actors.behaviors
 
 import akka.actor.{ActorLogging, Actor}
-import acl.PromiseMaker
+import acl.PromiseMakingActor
 
 
 /** Trait for describing behavior of an economic agent that trades via markets. */
-trait MarketParticipantLike extends PromiseMaker {
+trait MarketParticipantLike extends PromiseMakingActor {
   this: Actor with ActorLogging =>
 
 }

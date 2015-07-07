@@ -15,13 +15,14 @@ limitations under the License.
 */
 package actors
 
-import acl.{Counterparty, PromiseMaker}
+import acl.PromiseMakingActor
 import akka.actor.{ActorLogging, Actor}
+import edsl.CounterpartyActor
 
 
 /** Base class for all economic actors. */
-abstract class EconomicActor extends PromiseMaker
-  with Counterparty
+abstract class EconomicActor extends PromiseMakingActor
+  with CounterpartyActor
   with Actor
   with ActorLogging {
 

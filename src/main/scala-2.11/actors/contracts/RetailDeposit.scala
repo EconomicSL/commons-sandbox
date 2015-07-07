@@ -31,7 +31,7 @@ import scala.collection.immutable
 case class RetailDeposit(var balance: Double,
                               code: String,
                               issuer: ActorRef,
-                              owners: immutable.Set[ActorRef]) extends DepositLike {
+                              owners: immutable.Set[ActorRef]) extends DepositActorLike {
 
   def commitments: immutable.Map[ActorRef, Contract] = {
     ???

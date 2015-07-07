@@ -32,7 +32,7 @@ import scala.collection.immutable
 case class ReserveDeposit(balance: Double,
                                code: String,
                                issuer: ActorRef,
-                               owners: immutable.Set[ActorRef]) extends DepositLike {
+                               owners: immutable.Set[ActorRef]) extends DepositActorLike {
 
   def commitments: immutable.Map[ActorRef, Contract] = {
     ???

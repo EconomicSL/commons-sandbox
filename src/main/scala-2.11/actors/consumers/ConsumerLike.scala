@@ -16,11 +16,11 @@ limitations under the License.
 package actors.consumers
 
 import akka.actor.{ActorLogging, Actor}
-import acl.PromiseMaker
+import acl.PromiseMakingActor
 
 
 /** Trait representing a generic consumer. */
-trait ConsumerLike extends PromiseMaker {
+trait ConsumerLike extends PromiseMakingActor {
   this: Actor with ActorLogging =>
 
 }

@@ -16,10 +16,10 @@ limitations under the License.
 package actors.markets
 
 import akka.actor.{ActorLogging, Actor}
-import acl.PromiseMaker
+import acl.PromiseMakingActor
 
 
-trait MarketLike extends PromiseMaker{
+trait MarketLike extends PromiseMakingActor{
   this: Actor with ActorLogging =>
 
 }

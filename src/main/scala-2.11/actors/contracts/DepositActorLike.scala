@@ -15,7 +15,7 @@ limitations under the License.
 */
 package actors.contracts
 
-import acl.ContractLike
+import edsl.ContractActorLike
 
 /** Trait defining a deposit actor. */
-trait DepositLike extends ContractLike
+trait DepositActorLike extends ContractActorLike
