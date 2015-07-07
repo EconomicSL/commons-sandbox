@@ -23,5 +23,5 @@ package edsl.commitments
   *       between parties A and B, A acquiring `contract` implies that B must
   *       acquire `Give(contract)`.
   */
-class Give(val contract: Contract) extends Contract
+case class Give(contract: Contract) extends Contract
 

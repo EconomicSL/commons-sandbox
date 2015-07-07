@@ -26,4 +26,4 @@ import edsl.observables.Observable
   *       are multiplied by the value of the `observable` at the moment of
   *       acquisition.
   */
-class Scale[A](val amount: Observable[A], val contract: Contract) extends Contract
+case class Scale[A](amount: Observable[A], contract: Contract) extends Contract

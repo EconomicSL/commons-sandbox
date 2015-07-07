@@ -25,4 +25,4 @@ package edsl.commitments
   *       contract (unless it has expired). The contract `And(first, second)`
   *       expires only after both `first` and `second` edsl have expired.
   */
-class And(val first: Contract, val second: Contract) extends Contract
+case class And(first: Contract, second: Contract) extends Contract

@@ -25,5 +25,5 @@ package edsl.commitments
   *       at the `contract` expiry date. The composite contract `Get(contract)`
   *       expires at the same moment that `contract` expires.
   */
-class Get(val contract: Contract) extends Contract
+case class Get(contract: Contract) extends Contract
 

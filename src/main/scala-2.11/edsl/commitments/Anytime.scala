@@ -25,4 +25,4 @@ package edsl.commitments
   *       acquisition of `Anytime(contract)` and the expiration of `contract.`
   *       The contract `Anytime(contract)` expires when `contract` expires.
   */
-class Anytime(val contract: Contract) extends Contract
+case class Anytime(contract: Contract) extends Contract

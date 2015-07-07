@@ -22,4 +22,4 @@ package edsl.commitments
   * @note This contract has an infinite horizon: there is no restriction on
   *       when this contract can be acquired.
   */
-class One(val currency: String) extends Contract
+case class One(currency: String) extends Contract

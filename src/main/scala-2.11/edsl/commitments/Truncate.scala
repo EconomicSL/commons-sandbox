@@ -26,5 +26,5 @@ import edsl.observables.Observable
   *       defined in `contract` as such rights and obligations might extend
   *       well beyond `date`.
   */
-class Truncate[A](obs: Observable[A], contract: Contract) extends Contract
+case class Truncate[A](obs: Observable[A], contract: Contract) extends Contract
 
