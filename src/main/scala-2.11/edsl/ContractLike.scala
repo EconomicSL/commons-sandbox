@@ -13,7 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package acl
+package edsl
 
 import akka.actor.{Actor, ActorLogging, ActorRef}
 import edsl.commitments.Contract
@@ -25,17 +25,17 @@ import scala.collection.immutable
 trait ContractLike extends Actor
   with ActorLogging {
 
-  /** Mapping of a [[acl.Counterparty Counterparty]] actor to a [[edsl.commitments.Contract Contract]]
-    * representing that [[acl.Counterparty Counterparty]] actors obligations.
+  /** Mapping of a [[edsl.Counterparty Counterparty]] actor to a [[edsl.commitments.Contract Contract]]
+    * representing that [[edsl.Counterparty Counterparty]] actors obligations.
     */
   def commitments: immutable.Map[ActorRef, Contract]
 
-  /** [[acl.Counterparty Counterparty]] actor for whom the underlying
+  /** [[edsl.Counterparty Counterparty]] actor for whom the underlying
     * [[edsl.commitments.Contract Contract]] represents a liability.
     */
   def issuer: ActorRef
 
-  /** Collection of [[acl.Counterparty Counterparty]] actors for whom the underlying
+  /** Collection of [[edsl.Counterparty Counterparty]] actors for whom the underlying
     * [[edsl.commitments.Contract Contract]] represents an asset.
     */
   def owners: immutable.Set[ActorRef]

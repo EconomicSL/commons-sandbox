@@ -1,3 +1,6 @@
+import acl.PromiseMaker
+import edsl.ContractLike
+
 /*
 Copyright 2015 David R. Pugh, Dan F. Tang, J. Doyne Farmer
 
@@ -17,6 +20,36 @@ limitations under the License.
 /** Provides classes for modeling commercial contracts.
   *
   * ==Overview==
+  *
+  * ===`Counterparty`===
+  * Once a [[acl.Promise Promise]] has been accepted by all relevant [[PromiseMaker]] actors
+  * the [[acl.Promise Promise]] can be used to construct a [[ContractLike]] actor that
+  * serves as a "channel" of communication between the various
+  * [[edsl.Counterparty CounterParty]] actors for the duration of the underlying
+  * [[edsl.commitments.Contract Contract]].
+  *
+  * A [[edsl.Counterparty Counterparty]] actor should...
+  *
+  *  - be able to communicate directly with a [[ContractLike]] actor.
+  *
+  *  - be able to communicate with any relevant [[edsl.Counterparty Counterparty]]
+  *  actor indirectly using the [[ContractLike]] actor as channel.
+  *
+  *  - have a balance sheet.
+  *
+  *  - be able to add (remove) assets and liabilities from its balance sheet.
+  *
+  * ===`ContractLike`===
+  * A [[ContractLike]] actor should have...
+  *
+  *  - an issuer: the issuer is the [[edsl.Counterparty Counterparty]] actor for
+  *  which the [[edsl.commitments.Contract Contract]] represents a liability.
+  *
+  *  - an immutable collection of owners: the owners are for
+  *  which the contract represents an asset.
+  *
+  * ===`BalanceSheetLike`===
+
   * Instead of defining a fixed catalogue of contracts our approach is to follow...
   *
   *   - [[https://lexifi.com/files/resources/MLFiPaper.pdf Peyton-Jones et al (2000)]]
