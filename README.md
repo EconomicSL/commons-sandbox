@@ -20,7 +20,7 @@ Download and install the Java Development Kit (JDK) 8 from [Oracle](http://www.o
 
 Once you have installed JDK 8, then you can download and install [Typesafe Activator](https://www.typesafe.com/community/core-tools/activator-and-sbt). Activator includes the sbt build tool, a quick-start GUI, and a catalog of template applications.  Mac users can install the Activator via Homebrew (assuming of course that you have installed [Homebrew](http://brew.sh/)) using the following command in a terminal to install Activator.
 
-    $ brew install activator
+    $ brew install typesafe-activator
 
 ## Code coverage
 Out project uses the [sbt-scoverage](https://github.com/scoverage/sbt-scoverage) plugin to generate test coverage statistics. To run all tests with coverage enabled simply run the following command in a terminal from the project root directory.
