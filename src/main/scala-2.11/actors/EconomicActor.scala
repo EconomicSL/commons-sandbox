@@ -1,17 +1,15 @@
 /*
 Copyright 2015 David R. Pugh, Dan F. Tang, J. Doyne Farmer
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+in compliance with the License. You may obtain a copy of the License at
 
 http://www.apache.org/licenses/LICENSE-2.0
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+Unless required by applicable law or agreed to in writing, software distributed under the License
+is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+or implied. See the License for the specific language governing permissions and limitations under
+the License.
 */
 package actors
 
@@ -20,10 +18,21 @@ import akka.actor.{ActorLogging, Actor}
 import edsl.CounterpartyActor
 
 
-/** Base class for all economic actors. */
-abstract class EconomicActor extends PromiseMakingActor
+/** Base trait defining the behavior of all `EconomicActor` actors.
+  *
+  * We follow in the tradition of Hyman Minsky and Perry Mehrling and view every `EconomicActor`
+  * in our framework as a kind of "bank," in the sense that the primary objective of every such
+  * actor is to monitor the balance between its inflow and outflow of payments.
+  *
+  * Every `EconomicActor` is a [[acl.PromiseMakingActor `PromiseMakingActor`]] and communicates with
+  * other such actors using the actor communication language defined in the [[acl `acl`]] package.
+  *
+  * Every `EconomicActor` is also a [[edsl.CounterpartyActor `CounterpartyActor`]] and communicates
+  * directly with [[edsl.ContractActorLike `ContractActorLike`]] actors and indirectly with other
+  * [[edsl.CounterpartyActor `CounterpartyActor`]] actors using
+  * [[edsl.ContractActorLike `ContractActorLike`]] actors as communication "channels."
+  */
+trait EconomicActor extends Actor
+  with ActorLogging
+  with PromiseMakingActor
   with CounterpartyActor
-  with Actor
-  with ActorLogging {
-
-}
