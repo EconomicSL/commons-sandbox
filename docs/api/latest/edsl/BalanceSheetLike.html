@@ -49,13 +49,9 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Base trait for representing a balance sheet.</p><p>We think of every actor in the economy as a kind of &quot;bank&quot;, in the sense
-that every actor needs to be monitoring its inflow and outflow of money
-balances. The current state of represents the current state of its
-money balances and stores collections of [ContractLike] actors representing
-contracts which will generate modey inflows (i.e., assets)
-cash flow events (i.e., receipts of various kinds) as well as liabilities
-cash flow events (i.e., expenditures of various kinds) over time.</p><p>A balance sheet represents the state of an economic actor's assets, liabilities, and equity at a particular point in time. In particular, the balance sheet details the balance of cash inflows and cash outflows over the preceding period.
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Base trait for representing a balance sheet.</p><p>A <code>BalanceSheetLike</code> object represents the state of a <a href="CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor">CounterpartyActor</a> actor's assets,
+liabilities, and equity at a point in time. In particular, the balance sheet details the
+overall balance of incoming payment and outgoing payments for a <a href="CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor">CounterpartyActor</a>.
 </p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
@@ -116,7 +112,7 @@ cash flow events (i.e., expenditures of various kinds) over time.</p><p>A balanc
         <img src="../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Unordered collection of tradable objects that are assets.</p>
+      <p class="shortcomment cmt">Collection of <a href="ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a> actors that represent assets.</p>
     </li><li name="edsl.BalanceSheetLike#liabilities" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="liabilities:scala.collection.mutable.Set[akka.actor.ActorRef]"></a>
       <a id="liabilities:Set[ActorRef]"></a>
@@ -133,7 +129,7 @@ cash flow events (i.e., expenditures of various kinds) over time.</p><p>A balanc
         <img src="../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Unordered collection of tradable objects that are liabilities.</p>
+      <p class="shortcomment cmt">Collection of <a href="ContractActorLike.html" class="extype" name="edsl.ContractActorLike">ContractActorLike</a> actors that represent liabilities.</p>
     </li></ol>
             </div>
 
