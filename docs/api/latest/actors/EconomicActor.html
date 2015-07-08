@@ -28,7 +28,7 @@
         </head>
         <body class="type">
       <div id="definition">
-        <img src="../lib/class_big.png" />
+        <img src="../lib/trait_big.png" />
         <p id="owner"><a href="package.html" class="extype" name="actors">actors</a></p>
         <h1>EconomicActor</h1><h3><span class="morelinks"><div>Related Doc:
             <a href="package.html" class="extype" name="actors">package actors</a>
@@ -41,17 +41,24 @@
 
       <h4 id="signature" class="signature">
       <span class="modifier_kind">
-        <span class="modifier">abstract </span>
-        <span class="kind">class</span>
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <span class="name">EconomicActor</span><span class="result"> extends <a href="../acl/PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a> with <a href="../edsl/CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor">CounterpartyActor</a> with <span class="extype" name="akka.actor.Actor">Actor</span> with <span class="extype" name="akka.actor.ActorLogging">ActorLogging</span></span>
+        <span class="name">EconomicActor</span><span class="result"> extends <span class="extype" name="akka.actor.Actor">Actor</span> with <span class="extype" name="akka.actor.ActorLogging">ActorLogging</span> with <a href="../acl/PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a> with <a href="../edsl/CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor">CounterpartyActor</a></span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Base class for all economic actors.</p></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Base trait defining the behavior of all <code>EconomicActor</code> actors.</p><p>We follow in the tradition of Hyman Minsky and Perry Mehrling and view every <code>EconomicActor</code>
+in our framework as a kind of &quot;bank,&quot; in the sense that the primary objective of every such
+actor is to monitor the balance between its inflow and outflow of payments.</p><p>Every <code>EconomicActor</code> is a <a href="../acl/PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor"><code>PromiseMakingActor</code></a> and communicates with
+other such actors using the actor communication language defined in the <a href="../acl/package.html" class="extype" name="acl"><code>acl</code></a> package.</p><p>Every <code>EconomicActor</code> is also a <a href="../edsl/CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor"><code>CounterpartyActor</code></a> and communicates
+directly with <a href="../edsl/ContractActorLike.html" class="extype" name="edsl.ContractActorLike"><code>ContractActorLike</code></a> actors and indirectly with other
+<a href="../edsl/CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor"><code>CounterpartyActor</code></a> actors using
+<a href="../edsl/ContractActorLike.html" class="extype" name="edsl.ContractActorLike"><code>ContractActorLike</code></a> actors as communication &quot;channels.&quot;
+</p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><span class="extype" name="akka.actor.ActorLogging">ActorLogging</span>, <span class="extype" name="akka.actor.Actor">Actor</span>, <a href="../edsl/CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor">CounterpartyActor</a>, <a href="../acl/PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="../edsl/CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor">CounterpartyActor</a>, <a href="../acl/PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a>, <span class="extype" name="akka.actor.ActorLogging">ActorLogging</span>, <span class="extype" name="akka.actor.Actor">Actor</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -69,7 +76,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="actors.EconomicActor"><span>EconomicActor</span></li><li class="in" name="akka.actor.ActorLogging"><span>ActorLogging</span></li><li class="in" name="akka.actor.Actor"><span>Actor</span></li><li class="in" name="edsl.CounterpartyActor"><span>CounterpartyActor</span></li><li class="in" name="acl.PromiseMakingActor"><span>PromiseMakingActor</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="actors.EconomicActor"><span>EconomicActor</span></li><li class="in" name="edsl.CounterpartyActor"><span>CounterpartyActor</span></li><li class="in" name="acl.PromiseMakingActor"><span>PromiseMakingActor</span></li><li class="in" name="akka.actor.ActorLogging"><span>ActorLogging</span></li><li class="in" name="akka.actor.Actor"><span>Actor</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -87,27 +94,7 @@
 
       <div id="template">
         <div id="allMembers">
-        <div id="constructors" class="members">
-              <h3>Instance Constructors</h3>
-              <ol><li name="actors.EconomicActor#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;():actors.EconomicActor"></a>
-      <a id="&lt;init&gt;:EconomicActor"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">new</span>
-      </span>
-      <span class="symbol">
-        <span class="name">EconomicActor</span><span class="params">()</span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../index.html#actors.EconomicActor@&lt;init&gt;():actors.EconomicActor" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" />
-      </a>
-    </span>
-      
-    </li></ol>
-            </div>
+        
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
@@ -1008,14 +995,14 @@ actions specified in some <a href="../edsl/commitments/Commitment.html" class="e
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="akka.actor.ActorLogging">
-              <h3>Inherited from <span class="extype" name="akka.actor.ActorLogging">ActorLogging</span></h3>
-            </div><div class="parent" name="akka.actor.Actor">
-              <h3>Inherited from <span class="extype" name="akka.actor.Actor">Actor</span></h3>
-            </div><div class="parent" name="edsl.CounterpartyActor">
+        <div class="parent" name="edsl.CounterpartyActor">
               <h3>Inherited from <a href="../edsl/CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor">CounterpartyActor</a></h3>
             </div><div class="parent" name="acl.PromiseMakingActor">
               <h3>Inherited from <a href="../acl/PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a></h3>
+            </div><div class="parent" name="akka.actor.ActorLogging">
+              <h3>Inherited from <span class="extype" name="akka.actor.ActorLogging">ActorLogging</span></h3>
+            </div><div class="parent" name="akka.actor.Actor">
+              <h3>Inherited from <span class="extype" name="akka.actor.Actor">Actor</span></h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">

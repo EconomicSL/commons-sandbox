@@ -89,23 +89,30 @@
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="actors.EconomicActor" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="EconomicActorextendsPromiseMakingActorwithCounterpartyActorwithActorwithActorLogging"></a>
+              <ol><li name="actors.EconomicActor" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="EconomicActorextendsActorwithActorLoggingwithPromiseMakingActorwithCounterpartyActor"></a>
       <a id="EconomicActor:EconomicActor"></a>
       <h4 class="signature">
       <span class="modifier_kind">
-        <span class="modifier">abstract </span>
-        <span class="kind">class</span>
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="EconomicActor.html"><span class="name">EconomicActor</span></a><span class="result"> extends <a href="../acl/PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a> with <a href="../edsl/CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor">CounterpartyActor</a> with <span class="extype" name="akka.actor.Actor">Actor</span> with <span class="extype" name="akka.actor.ActorLogging">ActorLogging</span></span>
+        <a href="EconomicActor.html"><span class="name">EconomicActor</span></a><span class="result"> extends <span class="extype" name="akka.actor.Actor">Actor</span> with <span class="extype" name="akka.actor.ActorLogging">ActorLogging</span> with <a href="../acl/PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor">PromiseMakingActor</a> with <a href="../edsl/CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor">CounterpartyActor</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#actors.package@EconomicActorextendsPromiseMakingActorwithCounterpartyActorwithActorwithActorLogging" title="Permalink" target="_top">
+      <a href="../index.html#actors.package@EconomicActorextendsActorwithActorLoggingwithPromiseMakingActorwithCounterpartyActor" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Base class for all economic actors.</p>
+      <p class="shortcomment cmt">Base trait defining the behavior of all <code>EconomicActor</code> actors.</p><div class="fullcomment"><div class="comment cmt"><p>Base trait defining the behavior of all <code>EconomicActor</code> actors.</p><p>We follow in the tradition of Hyman Minsky and Perry Mehrling and view every <code>EconomicActor</code>
+in our framework as a kind of &quot;bank,&quot; in the sense that the primary objective of every such
+actor is to monitor the balance between its inflow and outflow of payments.</p><p>Every <code>EconomicActor</code> is a <a href="../acl/PromiseMakingActor.html" class="extype" name="acl.PromiseMakingActor"><code>PromiseMakingActor</code></a> and communicates with
+other such actors using the actor communication language defined in the <a href="../acl/package.html" class="extype" name="acl"><code>acl</code></a> package.</p><p>Every <code>EconomicActor</code> is also a <a href="../edsl/CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor"><code>CounterpartyActor</code></a> and communicates
+directly with <a href="../edsl/ContractActorLike.html" class="extype" name="edsl.ContractActorLike"><code>ContractActorLike</code></a> actors and indirectly with other
+<a href="../edsl/CounterpartyActor.html" class="extype" name="edsl.CounterpartyActor"><code>CounterpartyActor</code></a> actors using
+<a href="../edsl/ContractActorLike.html" class="extype" name="edsl.ContractActorLike"><code>ContractActorLike</code></a> actors as communication &quot;channels.&quot;
+</p></div></div>
     </li></ol>
             </div>
 
