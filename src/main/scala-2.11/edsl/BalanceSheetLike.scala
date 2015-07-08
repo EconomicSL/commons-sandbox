@@ -18,18 +18,19 @@ import akka.actor.ActorRef
 import scala.collection.mutable
 
 
-/** Base trait for representing a balance sheet.
+/** Base trait for a [[CounterpartyActor `CounterpartyActor`]] actor's `BalanceSheet`.
   *
-  * A `BalanceSheetLike` object represents the state of a [[CounterpartyActor]] actor's assets,
-  * liabilities, and equity at a point in time. In particular, the balance sheet details the
-  * overall balance of incoming payment and outgoing payments for a [[CounterpartyActor]].
+  * A `BalanceSheetLike` object represents the state of a
+  * [[CounterpartyActor `CounterpartyActor`]] actor's assets, liabilities, and equity at a point
+  * in time. In particular, the balance sheet details the overall balance of incoming payment and
+  * outgoing payments for a [[CounterpartyActor `CounterpartyActor`]].
   */
 trait BalanceSheetLike {
 
-  /** Collection of [[ContractActorLike]] actors that represent assets. */
+  /** Collection of [[CounterpartyActor `CounterpartyActor`]] actors that represent assets. */
   def assets: mutable.Set[ActorRef]
 
-  /** Collection of [[ContractActorLike]] actors that represent liabilities. */
+  /** Collection of [[CounterpartyActor `CounterpartyActor`]] actors that represent liabilities. */
   def liabilities: mutable.Set[ActorRef]
 
 }
