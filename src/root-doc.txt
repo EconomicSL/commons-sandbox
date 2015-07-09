@@ -3,25 +3,26 @@ Our API consists of several different layers each of which is represented by
 its own package.
 
 ===`acl` package===
-A [[acl.PromiseMaker]] communicates with other [[acl.PromiseMaker]] actors by making
-promises which are then either accepted or rejected by the receiving
-[[acl.PromiseMaker]] actor. The [[acl]] package defines the [[acl.PromiseMaker]] trait
-as well as the high-level [[acl.PromiseMaker]] communication language.
+A [[acl.PromiseMakingActor PromiseMakingActor]] actor communicates with other
+[[acl.PromiseMakingActor PromiseMakingActor]] actors by making promises which are then either
+accepted or rejected by the receiving [[acl.PromiseMakingActor PromiseMakingActor]] actors. The
+[[acl]] package defines the [[acl.PromiseMakingActor PromiseMakingActor]] trait as well as the
+high-level [[acl.PromiseMakingActor PromiseMakingActor]] communication language.
 
-Our high-level [[acl.PromiseMaker]] acl language is influenced by, but
-not slave to, the [[http://www.fipa.org/ Foundation for Intelligent Physical Agents (FIPA)]]
-compliant [[http://www.fipa.org/specs/fipa00037/SC00037J.pdf Agent Communication Language (ACL)]].
+Our high-level [[acl.PromiseMakingActor PromiseMakingActor]] actor communication language is
+influenced by, but not slave to, the [[http://www.fipa.org/ Foundation for Intelligent Physical
+Agents (FIPA)]] compliant [[http://www.fipa.org/specs/fipa00037/SC00037J.pdf Agent Communication
+Language (ACL)]].
 
 ===`edsl` package===
-The [[edsl]] package defines the low-level embedded domain specific language (DSL)
-that we use for constructing composable commercial contracts. Instead of defining a fixed
-catalogue of contracts our approach is to follow...
+The [[edsl]] package defines the low-level embedded domain specific language (DSL) that we use
+for constructing composable commercial contracts. Instead of defining a fixed catalogue of
+contracts our approach is to follow...
 
  - [[https://lexifi.com/files/resources/MLFiPaper.pdf Peyton-Jones et al (2000)]]
  - [[http://www.itu.dk/~elsborg/sttt06.pdf Andersen et al (2006)]]
 
-...and instead define a small set of atomic contracts, called
-[[edsl.commitments `commitments`]], that can be used as "building blocks"
-to construct ever more complex contracts.
+...and instead define a small set of atomic contracts, called [[edsl.commitments commitments]],
+that can be used as "building blocks" to construct ever more complex contracts.
 
-===`actor` package===
+===`actors` package===
