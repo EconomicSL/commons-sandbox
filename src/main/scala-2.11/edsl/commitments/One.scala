@@ -16,10 +16,11 @@ limitations under the License.
 package edsl.commitments
 
 
-/** A `Commitment` that immediately pays the holder one unit of some specified
+/** A [[Commitment]] that immediately pays the holder one unit of some specified
   * currency.
   *
-  * @note This contract has an infinite horizon: there is no restriction on
+  * @param currency A string representation of a currency.
+  * @note This [[Commitment]] has an infinite horizon: there is no restriction on
   *       when this contract can be acquired.
   */
 case class One(currency: String) extends Commitment

@@ -16,13 +16,14 @@ limitations under the License.
 package edsl.commitments
 
 
-/** Combines two `Commitment` objects to create a new `Commitment`.
+/** Combines two [[Commitment]] objects to create a new [[Commitment]].
   *
-  * @param first A `Commitment` object.
-  * @param second Another `Commitment` object.
+  * @param first A [[Commitment]] object.
+  * @param second Another [[Commitment]] object.
   * @note If you acquire `And(first, second)`, then you immediately acquire
-  *       both the `first` contract (unless it has expired) and the `second`
-  *       contract (unless it has expired). The contract `And(first, second)`
-  *       expires only after both `first` and `second` edsl have expired.
+  *       both the `first` [[Commitment]] (unless it has expired) and the `second`
+  *       [[Commitment]] (unless it has expired). The [[Commitment]]
+  *       `And(first, second)` expires only after both the `first` and the `second`
+  *       [[Commitment]] have expired.
   */
 case class And(first: Commitment, second: Commitment) extends Commitment
