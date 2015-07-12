@@ -40,7 +40,7 @@ class ContractActor(var issuer: ActorRef, var owner: ActorRef, commitment: Commi
     * @param guiltyParty The [[edsl.CounterpartyActor `CounterpartyActor`]] in breach of contract.
     * @note Breaking a `ContractActor` involves informing both the `issuer` and the `owner` using
     *       the [[edsl.ContractBroken `ContractBroken`]] message; removing the `ContractActor`
-    *       from the [[edsl.BalanceSheetLike `BalanceSheet`]] of both the `issuer` and the
+    *       from the [[edsl.balancesheets.BalanceSheetLike `BalanceSheet`]] of both the `issuer` and the
     *       `owner`; finally the `ContractActor` swallows the [[PoisonPill]] and terminates.
     */
   def breakContract(guiltyParty: ActorRef): Unit = {

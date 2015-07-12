@@ -1,4 +1,19 @@
 ==Overview==
+"To analyze how financial commitments affect the economy it is necessary to look at economic units in terms of their
+cash flows. The cash-flow approach looks at all units -- be they households, corporations, state and municipal
+governments, or even national governments -- as if they were banks."
+
+The above quotation is taken from Hyman Minsky's magnum opus ''Stabilizing an Unstable Economy''.  Following Minsky,
+and more recently Perry Mehrling, we view every economic actor as an entity that is both receiving certain cash flow
+events (i.e., receipts of various kinds) as well as generating cash flow events (i.e., expenditures of various kinds)
+over time.
+
+The accumulation of cash flow events for a particular economic actor is captured by its balance sheet. The most basic
+constraint that economic actors face in our framework is, to again borrow from Minsky, the survival constraint: the
+inflow of cash flow events must be at least as big as the outflow of generated cash flow events.  By taking the
+"banking perspective" our primary concern is the liquidity of economic actors; solvency of economic actors is a
+secondary concern.
+
 Our API consists of several different layers each of which is represented by
 its own package.
 

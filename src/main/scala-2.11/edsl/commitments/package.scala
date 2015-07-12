@@ -29,9 +29,9 @@ package edsl
   *   contacts in our library, to construct commonly encountered contracts
   *   for their specific use cases.
   *
-  *   2. [[acl.PromiseMakingActor PromiseMaker]] actors within a model can use
-  *   commitments, as well as the higher-level contracts in our library, to
-  *   innovate previously unknown contracts.
+  *   2. [[acl.PromiseMakingActor PromiseMakingActor]] actors within a model can use commitments,
+  *   as well as the higher-level contracts in our library, to innovate previously unknown
+  *   contracts.
   *
   * ===Requirements===
   *

@@ -1,28 +1,28 @@
 /*
 Copyright 2015 David R. Pugh, Dan F. Tang, J. Doyne Farmer
 
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
-in compliance with the License. You may obtain a copy of the License at
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
+the License. You may obtain a copy of the License at
 
 http://www.apache.org/licenses/LICENSE-2.0
 
-Unless required by applicable law or agreed to in writing, software distributed under the License
-is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
-or implied. See the License for the specific language governing permissions and limitations under
-the License.
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
+an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
+specific language governing permissions and limitations under the License.
 */
 package edsl
 
 import akka.actor.{Actor, ActorLogging, ActorRef}
+import edsl.balancesheets.BalanceSheetLike
 import edsl.commitments.{Give, And, Commitment}
 
 
 /** Trait defining behavior for an actor that is a counterparty to the underlying
-  * [[edsl.commitments.Commitment `Commitment`]] of some
-  * [[edsl.ContractActorLike `ContractActorLike`]].
+[[edsl.commitments.Commitment `Commitment`]] of some
+  * [[edsl.ContractActor `ContractActor`]].
   *
   * @note A `CounterpartyActor` communicates with another `CounterpartyActor` using a
-  *       [[ContractActorLike `ContractActorLike`]] as a communication "channel."
+  *       [[ContractActor `ContractActor`]] as a communication "channel."
   */
 trait CounterpartyActor {
   this: Actor with ActorLogging =>
@@ -32,7 +32,7 @@ trait CounterpartyActor {
 
   /** The act of breaking the terms of some existing [[edsl.commitments.Commitment Commitment]].
     *
-    * @param receiver A [[edsl.ContractActorLike `ContractActorLike`]] actor whose underlying
+    * @param receiver A [[edsl.ContractActor `ContractActor`]] actor whose underlying
     *                 [[edsl.commitments.Commitment `Commitment`]] the `Counterparty` actor wishes
     *                 to break.
     * @note When a `Counterparty` actor breaks the terms of some existing
@@ -47,9 +47,9 @@ trait CounterpartyActor {
 
   /** Compute the value of the `Counterparty` actor's stock of assets.
     *
-    * @param f A function mapping a [[edsl.ContractActorLike `ContractActorLike`]] actor to a
+    * @param f A function mapping a [[edsl.ContractActor `ContractActor`]] actor to a
     *          [[edsl.commitments.Commitment `Commitment`]] representing the value of the
-    *          [[edsl.ContractActorLike `ContractActorLike`]] actor's underlying
+    *          [[edsl.ContractActor `ContractActor`]] actor's underlying
     *          [[edsl.commitments.Commitment `Commitment`]] to the `Counterparty` actor.
     * @return The total value of the `Counterparty` actor's stock of assets.
     */
@@ -59,9 +59,9 @@ trait CounterpartyActor {
 
   /** Compute the value of the `Counterparty` actor's equity.
     *
-    * @param f A function mapping a [[edsl.ContractActorLike `ContractActorLike`]] actor to a
+    * @param f A function mapping a [[edsl.ContractActor `ContractActor`]] actor to a
     *          [[edsl.commitments.Commitment `Commitment`]] representing the value of the
-    *          [[edsl.ContractActorLike `ContractActorLike`]] actor's underlying
+    *          [[edsl.ContractActor `ContractActor`]] actor's underlying
     *          [[edsl.commitments.Commitment `Commitment`]] to the `Counterparty` actor.
     * @return The total value of the `Counterparty` actor's stock of assets.
     * @note By definition, the value of equity is the difference between the value of the
@@ -74,9 +74,9 @@ trait CounterpartyActor {
 
   /** Compute the value of the `Counterparty` actor's stock of liabilities.
     *
-    * @param f A function mapping a [[edsl.ContractActorLike `ContractActorLike`]] actor to a
+    * @param f A function mapping a [[edsl.ContractActor `ContractActor`]] actor to a
     *          [[edsl.commitments.Commitment `Commitment`]] representing the value of the
-    *          [[edsl.ContractActorLike `ContractActorLike`]] actor's underlying
+    *          [[edsl.ContractActor `ContractActor`]] actor's underlying
     *          [[edsl.commitments.Commitment `Commitment`]] to the `Counterparty` actor.
     * @return The total value of the `Counterparty` actor's stock of liabilities.
     */
@@ -86,10 +86,10 @@ trait CounterpartyActor {
 
   /** Defines the behavior of a `Counterparty` actor. */
   def counterpartyBehavior: Receive = {
-    case AddAsset(contract) => balanceSheet.assets.add(contract)
-    case AddLiability(contract) => balanceSheet.liabilities.add(contract)
-    case RemoveAsset(contract) => balanceSheet.assets.remove(contract)
-    case RemoveLiability(contract) => balanceSheet.liabilities.remove(contract)
+    case AddAsset(contract, _) => balanceSheet.assets.add(contract)
+    case AddLiability(contract, _) => balanceSheet.liabilities.add(contract)
+    case RemoveAsset(contract, _) => balanceSheet.assets.remove(contract)
+    case RemoveLiability(contract, _) => balanceSheet.liabilities.remove(contract)
   }
 
 }
