@@ -11,18 +11,21 @@ is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND
 or implied. See the License for the specific language governing permissions and limitations under
 the License.
 */
-package edsl
+package edsl.balancesheets
 
 import akka.actor.ActorRef
+import edsl.CounterpartyActor
 
 import scala.collection.mutable
 
 
-/** Class representing an empty [[edsl.BalanceSheetLike BalanceSheetLike]] object. */
-class EmptyBalanceSheet extends BalanceSheetLike {
+/** Base trait for a [[CounterpartyActor `CounterpartyActor`]] actor's `BalanceSheet`. */
+trait BalanceSheetLike {
 
-  def assets: mutable.Set[ActorRef] = mutable.Set.empty[ActorRef]
+  /** Collection of [[CounterpartyActor `CounterpartyActor`]] actors that represent assets. */
+  def assets: mutable.Set[ActorRef]
 
-  def liabilities: mutable.Set[ActorRef] = mutable.Set.empty[ActorRef]
+  /** Collection of [[CounterpartyActor `CounterpartyActor`]] actors that represent liabilities. */
+  def liabilities: mutable.Set[ActorRef]
 
 }
