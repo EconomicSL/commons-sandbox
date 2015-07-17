@@ -9,7 +9,7 @@ http://www.apache.org/licenses/LICENSE-2.0
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
 an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
 specific language governing permissions and limitations under the License.
-*/
+
 package acl
 
 import akka.actor.{Actor, ActorLogging, ActorRef}
@@ -30,30 +30,41 @@ trait PromiseMakingActor {
     */
   def outstandingPromises: mutable.Set[Promise]
 
-  /** The act of informing another `PromiseMakingActor` that a previously received [[acl.Promise `Promise`]] has been
-    * accepted.
+  /** The act of informing a collection of `PromiseMakingActor` that a previously received
+    * [[acl.Promise `Promise`]] has been accepted.
     *
     * @param promise A [[acl.Promise `Promise`]] message.
     * @note `accept` is a general-purpose acceptance of a [[acl.Promise `Promise`]] message that was previously
     *       submitted (typically via a `make` act). The `PromiseMakingActor` sending
-    *       [[acl.PromiseAccepted `PromiseAccepted`]] is informing the receiver that it intends to perform the actions
-    *       as specified in the [[edsl.commitments.Commitment `Commitment`]].
+    *       [[acl.PromiseAccepted `PromiseAccepted`]] is informing the receivers of the message that it intends to
+    *       perform the actions as specified in the [[edsl.commitments.Commitment `Commitment`]].
     */
   def accept(promise: Promise): Unit = {
-    acceptedPromises += promise
-    promise.sender ! PromiseAccepted(self, promise.receiver, promise)
+    val counterparties = promise.receiver - self + promise.sender
+    counterparties.foreach(counterparty => counterparty ! PromiseAccepted(self, counterparties, promise))
   }
 
-  /** The act of informing another `PromiseMakingActor` that a previously accepted [[acl.Promise `Promise`]] has been
-    * cancelled.
+  /** The act of informing another `PromiseMakingActor` that an existing [[acl.Promise `Promise`]] has been cancelled.
     * 
     * @param promise A [[acl.Promise `Promise`]] message.
     * @note The [[acl.PromiseCancelled `PromiseCancelled`]] message should only be sent in response to a
     *       [[acl.CancelPromise `CancelPromise`]] message.
     */
   def cancel(promise: Promise): Unit = {
+    val counterparties = promise.receiver - self + promise.sender
+    counterparties.foreach(counterparty => counterparty ! PromiseCancelled(self, counterparties, promise))
+  }
+
+  /** The act of informing another `PromiseMakingActor` that a previously accepted [[acl.Promise `Promise`]] has been
+    * fulfilled.
+    *
+    * @param promise A [[acl.Promise `Promise`]] message.
+    * @note The [[acl.PromiseFulfilled `PromiseFulfilled`]] message should only be sent in response to a
+    *       [[acl.FulfillPromise `FulfillPromise`]] message.
+    */
+  def fulfill(promise: Promise): Unit = {
     acceptedPromises -= promise
-    promise.sender ! PromiseCancelled(self, promise.sender, promise)
+    promise.sender ! PromiseFulfilled(self, promise.sender, promise)
   }
 
   /** The act of making a [[acl.Promise `Promise`]] to another `PromiseMakingActor`.
@@ -82,9 +93,7 @@ trait PromiseMakingActor {
     promise.sender ! PromiseRejected(self, promise.receiver, promise)
   }
 
-  def promiseMakingBehavior: Receive = {
-    case CancelPromise(sender, receiver, promise) => cancel(promise)
-    case PromiseAccepted(sender, receiver, promise) => outstandingPromises += promise
-  }
+  def promiseMakingBehavior: Receive
 
 }
+*/
