@@ -22,7 +22,6 @@ sealed trait CommunicativeAct
 /** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to a collection of other such actors
   * indicating that a previously received [[acl.Propose `Propose`]] message has been accepted.
   *
-  * @param sender is the [[acl.CommunicatingActor `CommunicatingActor`]] accepting the `proposal`.
   * @param receiver is the collection of [[acl.CommunicatingActor `CommunicatingActor`]] that are being notified
   *                 that the `sender` has accepted the `proposal`.
   * @param proposal is the previously received [acl.Propose `Propose`] message that has been accepted.
@@ -30,13 +29,12 @@ sealed trait CommunicativeAct
   * @note The `AcceptProposal` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
   *       [[acl.CommunicatingActor.acceptProposal `acceptProposal`]] action.
   */
-case class AcceptProposal[A](sender: ActorRef, receiver: Set[ActorRef], proposal: Propose[A]) extends CommunicativeAct
+case class AcceptProposal[A](receiver: immutable.Set[ActorRef], proposal: Propose[A]) extends CommunicativeAct
 
 
 /** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to a collection of other such actors
   * indicating that a previously received [[acl.Request `Request`]] message to perform some action has been agreed.
   *
-  * @param sender is the [[acl.CommunicatingActor `CommunicatingActor`]] agreeing to the `request`.
   * @param receiver is the collection of [[acl.CommunicatingActor `CommunicatingActor`]] that are being notified
   *                 that the `sender` has agreed to the `request`.
   * @param request is the previously received [acl.Request `Request`] message to perform some action that has been
@@ -47,15 +45,14 @@ case class AcceptProposal[A](sender: ActorRef, receiver: Set[ActorRef], proposal
   * @note The `Agree` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
   *       [[acl.CommunicatingActor.agree `agree`]] action.
   */
-case class Agree[A](sender: ActorRef,
-                    receiver: immutable.Set[ActorRef],
+case class Agree[A](receiver: immutable.Set[ActorRef],
                     request: Request[A],
                     precondition: (Beliefs) => Boolean) extends CommunicativeAct
+
 
 /** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to a collection of other such actors
   * requesting proposals that satisfy certain preconditions.
   *
-  * @param sender is the [[acl.CommunicatingActor `CommunicatingActor]] submitting the call for proposals.
   * @param receiver is the collection of [[acl.CommunicatingActor `CommunicatingActor]] that are begin asked to
   *                 submit a proposal.
   * @param content is an action expression defining the action(s) that the `sender` is requesting the `receiver` to
@@ -64,8 +61,7 @@ case class Agree[A](sender: ActorRef,
   *                     accepted.
   * @tparam A is the type of action expression used to construct the `proposal`.
   */
-case class CallForProposal[A](sender: ActorRef,
-                              receiver: immutable.Set[ActorRef],
+case class CallForProposal[A](receiver: immutable.Set[ActorRef],
                               content: A,
                               precondition: (Propose[A]) => Boolean) extends CommunicativeAct
 
@@ -73,7 +69,6 @@ case class CallForProposal[A](sender: ActorRef,
 /** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to a collection of other such actors
   * indicating that a previously received [[acl.Request `Request`]] message to perform some action should be cancelled.
   *
-  * @param sender is the [[acl.CommunicatingActor `CommunicatingActor`]] cancelling the `request`.
   * @param receiver is the collection of [[acl.CommunicatingActor `CommunicatingActor`]] that are being notified
   *                 that the `sender` has cancelled the `request`.
   * @param request is the previously received [acl.Request `Request`] message to perform some action that has been
@@ -82,14 +77,13 @@ case class CallForProposal[A](sender: ActorRef,
   * @note The `Cancel` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
   *       [[acl.CommunicatingActor.cancel `cancel`]] action.
   */
-case class Cancel[A](sender: ActorRef, receiver: immutable.Set[ActorRef], request: Request[A]) extends CommunicativeAct
+case class Cancel[A](receiver: immutable.Set[ActorRef], request: Request[A]) extends CommunicativeAct
 
 
 /** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to a collection of other such actors
   * indicating that a proposition is true, where the receiving actors are known to, at a minimum, be uncertain about
   * the truth value of the proposition.
   *
-  * @param sender is the [[acl.CommunicatingActor `CommunicatingActor`]] confirming the `proposition`.
   * @param receiver is the collection of actors that are being notified that the `CommunicatingActor` has confirmed
   *                 the `proposition`.
   * @param proposition is a proposition that the `CommunicatingActor` believes to be true, and intends that the
@@ -97,16 +91,13 @@ case class Cancel[A](sender: ActorRef, receiver: immutable.Set[ActorRef], reques
   * @note The `Confirm` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
   *       [[acl.CommunicatingActor.confirm `confirm`]] action.
   */
-case class Confirm(sender: ActorRef,
-                   receiver: immutable.Set[ActorRef],
-                   proposition: (Beliefs) => Boolean) extends CommunicativeAct
+case class Confirm(receiver: immutable.Set[ActorRef], proposition: (Beliefs) => Boolean) extends CommunicativeAct
 
 
 /** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to a collection of other such actors
   * indicating that a proposition is false, where the receiving actors are known to, at a minimum, be uncertain about
   * the truth value of the proposition.
   *
-  * @param sender is the [[acl.CommunicatingActor `CommunicatingActor`]] disconfirming the proposition.
   * @param receiver is the collection of actors that are being notified that the `CommunicatingActor` has disconfirmed
   *                 the `proposition`.
   * @param proposition is a proposition that the `CommunicatingActor` believes to be false, and intends that the
@@ -114,48 +105,107 @@ case class Confirm(sender: ActorRef,
   * @note The `Disconfirm` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
   *       [[acl.CommunicatingActor.disconfirm `disconfirm`]] action.
   */
-case class Disconfirm(sender: ActorRef,
-                      receiver: immutable.Set[ActorRef],
-                      proposition: (Beliefs) => Boolean) extends CommunicativeAct
+case class Disconfirm(receiver: immutable.Set[ActorRef], proposition: (Beliefs) => Boolean) extends CommunicativeAct
 
 
-
-case class Failure[A](sender: ActorRef,
-                      receiver: immutable.Set[ActorRef],
+/** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to a collection of other such actors
+  * indicating that some action was attempted, but that the attempt failed.
+  *
+  * @param receiver is the collection of actors that are being notified that the `CommunicatingActor` has failed to
+  *                 perform the actions specified in the `content`.
+  * @param content  is an action expression defining the action(s) that the `sender` has failed to perform.
+  * @tparam A is the type of action expression used to construct the `content` of the message.
+  * @note The `Failure` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
+  *       [[acl.CommunicatingActor.failure `failure`]] action.
+  */
+case class Failure[A](receiver: immutable.Set[ActorRef],
                       content: A,
                       reason: (Beliefs) => Boolean) extends CommunicativeAct
 
-case class Inform(sender: ActorRef,
-                  receiver: immutable.Set[ActorRef],
-                  proposition: (Beliefs) => Boolean) extends CommunicativeAct
+
+/** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to a collection of other such actors
+  * informing them that some proposition is true.
+  *
+  * @param receiver is the collection of actors that are being notified that the `CommunicatingActor` that the
+  *                 `proposition` is true.
+  * @param proposition is a proposition that the `CommunicatingActor` believes to be true, and intends that the
+  *                    `receiver` also comes to believe to be true.
+  * @note The `Inform` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
+  *       [[acl.CommunicatingActor.inform `inform`]] action.
+  */
+case class Inform(receiver: immutable.Set[ActorRef], proposition: (Beliefs) => Boolean) extends CommunicativeAct
 
 
-case class InformIf(sender: ActorRef,
-                    receiver: immutable.Set[ActorRef],
-                    proposition: (Beliefs) => Boolean) extends CommunicativeAct
+/** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to a collection of other such actors
+  * informing them whether or not some proposition is true.
+  *
+  * @param receiver is the collection of actors that are being notified that the `CommunicatingActor` has failed to
+  *                 perform the actions specified in the `content`.
+  * @param proposition is a proposition that the `CommunicatingActor` believes to be true, and intends that the
+  *                    `receiver` also comes to believe to be true.
+  * @note The `Inform` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
+  *       [[acl.CommunicatingActor.inform `inform`]] action.
+  */
+case class InformIf(receiver: immutable.Set[ActorRef], proposition: (Beliefs) => Boolean) extends CommunicativeAct
 
-case class NotUnderstood[A](sender: ActorRef,
-                            receiver: immutable.Set[ActorRef],
+
+/** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to a collection of other such actors
+  * indicating that some action was attempted, but that the attempt failed.
+  *
+  * @param receiver is the collection of actors that are being notified that the `CommunicatingActor` has failed to
+  *                 perform the actions specified in the `content`.
+  * @param content  is an action expression defining the action(s) that the `sender` has failed to perform.
+  * @tparam A is the type of action expression used to construct the `content` of the message.
+  * @note The `Failure` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
+  *       [[acl.CommunicatingActor.failure `failure`]] action.
+  */
+case class NotUnderstood[A](receiver: immutable.Set[ActorRef],
                             content: A,
                             reason: (Beliefs) => Boolean) extends CommunicativeAct
 
 
-case class Propagate(sender: ActorRef,
-                     receiver: immutable.Set[ActorRef],
+/** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to a collection of other such actors
+  * indicating that some action was attempted, but that the attempt failed.
+  *
+  * @param receiver is the collection of actors that are being notified that the `CommunicatingActor` has failed to
+  *                 perform the actions specified in the `content`.
+  * @param content  is an action expression defining the action(s) that the `sender` has failed to perform.
+  * @note The `Failure` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
+  *       [[acl.CommunicatingActor.failure `failure`]] action.
+  */
+case class Propagate(receiver: immutable.Set[ActorRef],
                      content: CommunicativeAct,
                      descriptor: (ActorRef) => Boolean,
                      constraint: (Beliefs) => Boolean) extends CommunicativeAct
 
 
-case class Propose[A](sender: ActorRef,
-                      receiver: immutable.Set[ActorRef],
+/** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to a collection of other such actors
+  * indicating that some action was attempted, but that the attempt failed.
+  *
+  * @param receiver is the collection of actors that are being notified that the `CommunicatingActor` has failed to
+  *                 perform the actions specified in the `content`.
+  * @param content  is an action expression defining the action(s) that the `sender` has failed to perform.
+  * @tparam A is the type of action expression used to construct the `content` of the message.
+  * @note The `Failure` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
+  *       [[acl.CommunicatingActor.failure `failure`]] action.
+  */
+case class Propose[A](receiver: immutable.Set[ActorRef],
                       content: A,
                       precondition: (Beliefs) => Boolean,
                       inReplyTo: Option[Propose[A]]) extends CommunicativeAct
 
 
-case class Proxy[D](sender: ActorRef,
-                    receiver: immutable.Set[ActorRef],
+/** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to a collection of other such actors
+  * indicating that some action was attempted, but that the attempt failed.
+  *
+  * @param receiver is the collection of actors that are being notified that the `CommunicatingActor` has failed to
+  *                 perform the actions specified in the `content`.
+  * @param content  is an action expression defining the action(s) that the `sender` has failed to perform.
+  * @tparam D is the type of action expression used to construct the `content` of the message.
+  * @note The `Failure` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
+  *       [[acl.CommunicatingActor.failure `failure`]] action.
+  */
+case class Proxy[D](receiver: immutable.Set[ActorRef],
                     content: CommunicativeAct,
                     descriptor: (D) => Boolean,
                     constraint: (Beliefs) => Boolean) extends CommunicativeAct
@@ -164,37 +214,32 @@ case class Proxy[D](sender: ActorRef,
 /** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to a collection of other such actors asking
   *  whether or not a given proposition is true.
   *
-  * @param sender is the [[acl.CommunicatingActor `CommunicatingActor`]] sending the query.
   * @param receiver is the collection of [[acl.CommunicatingActor `CommunicatingActor`]] receiving the query.
   * @param proposition is a proposition about which the `CommunicatingActor` is ignorant (i.e., has no knowledge of its
   *                    truth value).
   * @note the `QueryIf` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
   *       [[acl.CommunicatingActor.queryIf, `queryIf`]] method.
   */
-case class QueryIf(sender: ActorRef,
-                   receiver: immutable.Set[ActorRef],
+case class QueryIf(receiver: immutable.Set[ActorRef],
                    proposition: (Beliefs) => Boolean) extends CommunicativeAct
 
 
 /** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to a collection of other such actors asking
   * whether or not the receiving actors have references to objects matching a given descriptor.
   *
-  * @param sender is the [[acl.CommunicatingActor `CommunicatingActor`]] sending the query.
   * @param receiver is the collection of [[acl.CommunicatingActor `CommunicatingActor`]] receiving the query.
   * @param descriptor is a function describing some required characteristics of an object.
   * @tparam D is the type of object characterized by the `descriptor`.
   * @note the `QueryIf` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
   *       [[acl.CommunicatingActor.queryIf, `queryIf`]] method.
   */
-case class QueryRef[D](sender: ActorRef,
-                       receiver: immutable.Set[ActorRef],
+case class QueryRef[D](receiver: immutable.Set[ActorRef],
                        descriptor: (D) => Boolean) extends CommunicativeAct
 
 
 /** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to a collection of other such actors
   * indicating that a previously received [[acl.Request `Request`]] message has been refused.
   *
-  * @param sender is the [[acl.CommunicatingActor `CommunicatingActor`]] refusing the `request`.
   * @param receiver is the collection of [[acl.CommunicatingActor `CommunicatingActor`]] that is being notified
   *                 that the `sender` has refused the `request`.
   * @param request is the previously received [acl.Request `Request`] message that is being refused.
@@ -203,8 +248,7 @@ case class QueryRef[D](sender: ActorRef,
   * @note The `Refuse` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
   *       [[acl.CommunicatingActor.refuse `refuse`]] method.
   */
-case class Refuse[A](sender: ActorRef,
-                     receiver: immutable.Set[ActorRef],
+case class Refuse[A](receiver: immutable.Set[ActorRef],
                      request: Request[A],
                      reason: (Beliefs) => Boolean) extends CommunicativeAct
 
@@ -212,7 +256,6 @@ case class Refuse[A](sender: ActorRef,
 /** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to a collection of other such actors
   * indicating that a previously received [[acl.Propose `Propose`]] message has been rejected.
   *
-  * @param sender is the [[acl.CommunicatingActor `CommunicatingActor`]] rejecting the `proposal`.
   * @param receiver is the collection of [[acl.CommunicatingActor `CommunicatingActor`]] that is being notified
   *                 that the `sender` has rejected the `proposal`.
   * @param proposal is the previously received [acl.Propose `Propose`] message that has been rejected.
@@ -221,8 +264,7 @@ case class Refuse[A](sender: ActorRef,
   * @note The `RejectProposal` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
   *       [[acl.CommunicatingActor.rejectProposal `rejectProposal`]] action.
   */
-case class RejectProposal[A](sender: ActorRef,
-                             receiver: immutable.Set[ActorRef],
+case class RejectProposal[A](receiver: immutable.Set[ActorRef],
                              proposal: Propose[A],
                              reason: (Beliefs) => Boolean) extends CommunicativeAct
 
@@ -230,8 +272,6 @@ case class RejectProposal[A](sender: ActorRef,
 /** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to a collection of other such actors
   * requesting them to perform some action.
   *
-  * @param sender is the [[acl.CommunicatingActor `CommunicatingActor`]] requesting the `receiver` to perform certain
-  *               actions as specified in the `content`.
   * @param receiver is the collection of [[acl.CommunicatingActor `CommunicatingActor`]] that are being requested to
   *                 perform action specified in the `content`.
   * @param request is an action expression defining the action(s) that the `sender` is requesting the `receiver` to
@@ -239,14 +279,12 @@ case class RejectProposal[A](sender: ActorRef,
   * @note The `Request` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
   *       [[acl.CommunicatingActor.request `request`]] action.
   */
-case class Request[A](sender: ActorRef, receiver: immutable.Set[ActorRef], request: A) extends CommunicativeAct
+case class Request[A](receiver: immutable.Set[ActorRef], request: A) extends CommunicativeAct
 
 
 /** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to a collection of other such actors
   * requesting them to perform some action when some given precondition becomes true.
   *
-  * @param sender is the [[acl.CommunicatingActor `CommunicatingActor`]] requesting the `receiver` to perform certain
-  *               action(s) as specified in the `content`.
   * @param receiver is the collection of [[acl.CommunicatingActor `CommunicatingActor`]] that are being requested to
   *                 perform action(s) specified in the `content`.
   * @param content is an action expression defining the action(s) that the `sender` is requesting the `receiver` to
@@ -257,8 +295,7 @@ case class Request[A](sender: ActorRef, receiver: immutable.Set[ActorRef], reque
   * @note The `RequestWhen` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
   *       [[acl.CommunicatingActor.requestWhen `requestWhen`]] action.
   */
-case class RequestWhen[A](sender: ActorRef,
-                          receiver: immutable.Set[ActorRef],
+case class RequestWhen[A](receiver: immutable.Set[ActorRef],
                           content: A,
                           precondition: (Beliefs) => Boolean) extends CommunicativeAct
 
@@ -267,8 +304,6 @@ case class RequestWhen[A](sender: ActorRef,
   * requesting them to perform some action when some given precondition becomes true and thereafter each time the
   * precondition becomes true again.
   *
-  * @param sender is the [[acl.CommunicatingActor `CommunicatingActor`]] requesting the `receiver` to perform certain
-  *               action(s) as specified in the `content`.
   * @param receiver is the collection of [[acl.CommunicatingActor `CommunicatingActor`]] that are being requested to
   *                 perform action(s) specified in the `content`.
   * @param content is an action expression defining the action(s) that the `sender` is requesting the `receiver` to
@@ -279,7 +314,6 @@ case class RequestWhen[A](sender: ActorRef,
   * @note The `RequestWhenever` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
   *       [[acl.CommunicatingActor.requestWhenever `requestWhenever`]] action.
   */
-case class RequestWhenever[A](sender: ActorRef,
-                              receiver: immutable.Set[ActorRef],
+case class RequestWhenever[A](receiver: immutable.Set[ActorRef],
                               content: A,
                               precondition: (Beliefs) => Boolean) extends CommunicativeAct
