@@ -38,7 +38,7 @@ trait CommunicatingActor {
     *       `receiver` that it intends that the `receiver` will perform the according to the terms of the `proposal`.
     */
   def acceptProposal[A](receiver: immutable.Set[ActorRef], proposal: Propose[A]): Unit = {
-    receiver.foreach(r => r! AcceptProposal(receiver, proposal))
+    receiver.foreach(r => r! AcceptProposal(proposal))
   }
 
   /** Agree to perform some action (possibly in the future).
@@ -55,7 +55,7 @@ trait CommunicatingActor {
     *       defined in `request`.
     */
   def agree[A](receiver: immutable.Set[ActorRef], request: Request[A], precondition: (Beliefs) => Boolean): Unit = {
-    receiver.foreach(r => r ! Agree(receiver, request, precondition))
+    receiver.foreach(r => r ! Agree(request, precondition))
   }
 
   /** Submit a request for proposals to perform certain actions where the proposals must satisfy certain preconditions.
@@ -70,7 +70,7 @@ trait CommunicatingActor {
   def callForProposal[A](receiver: immutable.Set[ActorRef],
                          content: A,
                          precondition: (Propose[A]) => Boolean): Unit = {
-    receiver.foreach(r => r ! CallForProposal(receiver, content, precondition))
+    receiver.foreach(r => r ! CallForProposal(content, precondition))
   }
 
   /** Cancel a previously submitted [[acl.Request `Request`]] message.
@@ -86,13 +86,12 @@ trait CommunicatingActor {
     *       [[acl.Request, `Request`]] message that the `receiver` stop performing that action.
     */
   def cancel[A](receiver: immutable.Set[ActorRef], request: Request[A]): Unit = {
-    receiver.foreach(r => r ! Cancel(receiver, request))
+    receiver.foreach(r => r ! Cancel(request))
   }
 
   /** Inform another `CommunicatingActor` that some proposition is true.
     *
-    * @param receiver is the collection of actors that are being notified that the `CommunicatingActor` has confirmed
-    *                 the `proposition`.
+    * @param receiver is the `CommunicatingActor` to inform that the `proposition` is true.
     * @param proposition is a proposition that the `CommunicatingActor` believes to be true, and intends that the
     *                    `receiver` also comes to believe to be true.
     * @note The `confirm` act indicates that the `CommunicatingActor`:
@@ -110,8 +109,13 @@ trait CommunicatingActor {
     *       the `receiver` concerning the sincerity and reliability of the `CommunicatingActor` sending the
     *       [[acl.Confirm]] message.
     */
+  def confirm(receiver: ActorRef, proposition: (Beliefs) => Boolean): Unit = {
+    receiver ! Confirm(proposition)
+  }
+
+  /** Inform a collection of `CommunicatingActors` that some proposition is true. */
   def confirm(receiver: immutable.Set[ActorRef], proposition: (Beliefs) => Boolean): Unit = {
-    receiver.foreach(r => r ! Confirm(receiver, proposition))
+    receiver.foreach(r => r ! Confirm(proposition))
   }
 
   /** Inform another `CommunicatingActor` that some proposition is false.
@@ -136,7 +140,7 @@ trait CommunicatingActor {
     *       [[acl.Confirm]] message.
     */
   def disconfirm(receiver: immutable.Set[ActorRef], proposition: (Beliefs) => Boolean): Unit = {
-    receiver.foreach(r => r ! Disconfirm(receiver, proposition))
+    receiver.foreach(r => r ! Disconfirm(proposition))
   }
 
   /** Informing another `CommunicatingActor` that some action was attempted, but that the attempt failed.
@@ -148,11 +152,11 @@ trait CommunicatingActor {
     * @tparam A is the type of action expression used to construct the `content`.
     */
   def failure[A](receiver: immutable.Set[ActorRef], content: A, reason: (Beliefs) => Boolean): Unit = {
-    receiver.foreach(r => r ! Failure(receiver, content, reason))
+    receiver.foreach(r => r ! Failure(content, reason))
   }
 
   def inform(receiver: immutable.Set[ActorRef], proposition: (Beliefs) => Boolean): Unit = {
-    receiver.foreach(r => r ! Inform(receiver, proposition))
+    receiver.foreach(r => r ! Inform(proposition))
   }
 
   /** A macro action for the `CommunicatingActor` to inform the `receiver` whether or not a `proposition` is true.
@@ -175,9 +179,9 @@ trait CommunicatingActor {
     */
   def informIf(receiver: immutable.Set[ActorRef], proposition: (Beliefs) => Boolean): Unit = {
     if (proposition(beliefs)) {
-      receiver.foreach(r => r ! Inform(receiver, proposition))
+      receiver.foreach(r => r ! Inform(proposition))
     } else {
-      receiver.foreach(r => r ! Inform(receiver, (b: Beliefs) => ! proposition(b)))
+      receiver.foreach(r => r ! Inform((b: Beliefs) => ! proposition(b)))
     }
   }
 
@@ -196,7 +200,7 @@ trait CommunicatingActor {
     * @note
     */
   def notUnderstood[A](receiver: immutable.Set[ActorRef], content: A, reason: (Beliefs) => Boolean): Unit = {
-    receiver.foreach(r => r ! NotUnderstood(receiver, content, reason))
+    receiver.foreach(r => r ! NotUnderstood(content, reason))
   }
 
   /** The `CommunicatingActor` intends that the `receiver` treat the embedded `message` as if it was sent directly
@@ -215,7 +219,7 @@ trait CommunicatingActor {
                 message: CommunicativeAct,
                 descriptor: (ActorRef) => Boolean,
                 constraint: (Beliefs) => Boolean): Unit = {
-    receiver.foreach(r => r ! Propagate(receiver, message, descriptor, constraint))
+    receiver.foreach(r => r ! Propagate(message, descriptor, constraint))
   }
 
   /** Submit a proposal to perform certain actions given certain preconditions.
@@ -232,14 +236,14 @@ trait CommunicatingActor {
                  content: A,
                  precondition: (Beliefs) => Boolean,
                  inReplyTo: Option[Propose[A]] = None): Unit = {
-    receiver.foreach(r => r ! Propose(receiver, content, precondition, inReplyTo))
+    receiver.foreach(r => r ! Propose(content, precondition, inReplyTo))
   }
 
   def proxy(receiver: immutable.Set[ActorRef],
             content: CommunicativeAct,
             descriptor: (ActorRef) => Boolean,
             constraint: (Beliefs) => Boolean): Unit = {
-    receiver.foreach(r => r ! Proxy(receiver, content, descriptor, constraint))
+    receiver.foreach(r => r ! Proxy(content, descriptor, constraint))
   }
 
   /** Query a collection of actors in order to ascertain the truth value of some proposition.
@@ -249,7 +253,7 @@ trait CommunicatingActor {
     *                    its truth value).
     */
   def queryIf(receiver: immutable.Set[ActorRef], proposition: (Beliefs) => Boolean): Unit = {
-    receiver.foreach(r => r ! QueryIf(receiver, proposition))
+    receiver.foreach(r => r ! QueryIf(proposition))
   }
 
   /** Query a collection of actors regarding object(s) that matching a given descriptor.
@@ -266,7 +270,7 @@ trait CommunicatingActor {
     *       - believes that some other [[acl.CommunicatingActor `CommunicatingActor`]] can inform on the object(s).
     */
   def queryRef[D](receiver: immutable.Set[ActorRef], descriptor: (D) => Boolean): Unit = {
-    receiver.foreach(r => r ! QueryRef(receiver, descriptor))
+    receiver.foreach(r => r ! QueryRef(descriptor))
   }
 
   /** The action of one `CommunicatingActor` refusing to perform a request and explaining the reason for the
@@ -280,7 +284,7 @@ trait CommunicatingActor {
     *       it to perform a previously agreed `request`.
     */
   def refuse[A](receiver: immutable.Set[ActorRef], request: Request[A], reason: (Beliefs) => Boolean): Unit = {
-    receiver.foreach(r => r ! Refuse(receiver, request, reason))
+    receiver.foreach(r => r ! Refuse(request, reason))
   }
 
   /** The action of rejecting a previously submitted proposal to perform an action.
@@ -296,7 +300,7 @@ trait CommunicatingActor {
     *       the `proposal`.
     */
   def rejectProposal[A](receiver: immutable.Set[ActorRef], proposal: Propose[A], reason: (Beliefs) => Boolean): Unit = {
-    receiver.foreach(r => r! RejectProposal(receiver, proposal, reason))
+    receiver.foreach(r => r! RejectProposal(proposal, reason))
   }
 
   /** The `CommunicatingActor` requests the receiver to perform some action.
@@ -340,7 +344,7 @@ trait CommunicatingActor {
     *       [[acl.Refuse `Refuse`]] message.
     */
   def requestWhen[A](receiver: immutable.Set[ActorRef], content: A, precondition: (Beliefs) => Boolean): Unit = {
-    receiver.foreach(r => r ! RequestWhen(receiver, content, precondition))
+    receiver.foreach(r => r ! RequestWhen(content, precondition))
   }
 
   /** The `CommunicatingActor` requests the receiver to perform some action when some given precondition becomes true
@@ -362,7 +366,7 @@ trait CommunicatingActor {
     *       [[acl.Cancel `Cancel`]] message.
     */
   def requestWhenever[A](receiver: immutable.Set[ActorRef], content: A, precondition: (Beliefs) => Boolean): Unit = {
-    receiver.foreach(r => r ! RequestWhenever(receiver, content, precondition))
+    receiver.foreach(r => r ! RequestWhenever(content, precondition))
   }
 
   /** Probably much better way to implement this in Akka already. */
@@ -371,8 +375,8 @@ trait CommunicatingActor {
   }
 
   def receive: Receive = {
-    case QueryIf(_, proposition) => informIf(immutable.Set(sender()), proposition)
-    case QueryRef(_, descriptor) => informRef(immutable.Set(sender()), descriptor)
+    case QueryIf(proposition) => informIf(immutable.Set(sender()), proposition)
+    case QueryRef(descriptor) => informRef(immutable.Set(sender()), descriptor)
   }
 
 }
