@@ -114,8 +114,8 @@ case class Failure[A](content: A, reason: (Beliefs) => Boolean) extends Communic
 case class Inform(proposition: (Beliefs) => Boolean) extends CommunicativeAct
 
 
-/** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to a collection of other such actors
-  * informing them whether or not some proposition is true.
+/** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to another
+  * [[acl.CommunicatingActor `CommunicatingActor`]] informing it whether or not some proposition is true.
   *
   * @param proposition is a proposition whose truth value the `sender` has knowledge of which it intends to share
   *                    with the `receiver`.
@@ -125,18 +125,39 @@ case class Inform(proposition: (Beliefs) => Boolean) extends CommunicativeAct
 case class InformIf(proposition: (Beliefs) => Boolean) extends CommunicativeAct
 
 
-/** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to a collection of other such actors
-  * indicating that some previously received message was not understood.
+/** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to another
+  * [[acl.CommunicatingActor `CommunicatingActor`]] informing it of object(s) which satisfy some descriptor.
   *
-  * @param content  is an action expression defining the action(s) that the `sender` has failed to perform.
-  * @tparam A is the type of action expression used to construct the `content` of the message.
+  * @param descriptor is a function describing some required characteristics of the object.
+  * @tparam D is the type of objects described by the `descriptor`.
+  * @note The `InformRef` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
+  *       [[acl.CommunicatingActor.informRef `informRef`]] action.
+  */
+case class InformRef[D](descriptor: (D) => Boolean) extends CommunicativeAct
+
+
+/** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to to another
+  * [[acl.CommunicatingActor `CommunicatingActor`]] informing it that some previously received message was not
+  * understood.
+  *
+  * @param message is the [[acl.CommunicativeAct `CommunicativeAct`]] that was not understood.
   * @note The `NotUnderstood` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
   *       [[acl.CommunicatingActor.notUnderstood `notUnderstood`]] action.
   */
-case class NotUnderstood[A](content: A, reason: (Beliefs) => Boolean) extends CommunicativeAct
+case class NotUnderstood(message: CommunicativeAct, reason: (Beliefs) => Boolean) extends CommunicativeAct
 
 
-case class Propagate(content: CommunicativeAct,
+/** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to to another
+  * [[acl.CommunicatingActor `CommunicatingActor`]] in order to propagate some embedded message.
+  *
+  * @param message is the embedded [[acl.CommunicativeAct `CommunicativeAct`]] which is being propagated.
+  * @param descriptor is a proposition denoting a collection of actors to whom the [[acl.Propagate `Propagate`]]
+  *                   message should be sent by the `receiver`.
+  * @param constraint is a proposition describing a termination condition for the propagation of the `message`.
+  * @note The `Propagate` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
+  *       [[acl.CommunicatingActor#propagate `propagate`]] action.
+  */
+case class Propagate(message: CommunicativeAct,
                      descriptor: (ActorRef) => Boolean,
                      constraint: (Beliefs) => Boolean) extends CommunicativeAct
 
@@ -146,7 +167,17 @@ case class Propose[A](content: A,
                       inReplyTo: Option[Propose[A]]) extends CommunicativeAct
 
 
-case class Proxy[D](content: CommunicativeAct,
+/** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to to another
+  * [[acl.CommunicatingActor `CommunicatingActor`]] in order to proxy some embedded message.
+  *
+  * @param message is the embedded [[acl.CommunicativeAct `CommunicativeAct`]] which is being proxied.
+  * @param descriptor is a proposition denoting a collection of actors to whom the `Proxy` message should be sent by
+  *                   the `receiver`.
+  * @param constraint is a proposition describing a termination condition for the propagation of the `message`.
+  * @note The `Proxy` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
+  *       [[acl.CommunicatingActor#proxy `proxy`]] action.
+  */
+case class Proxy[D](message: CommunicativeAct,
                     descriptor: (D) => Boolean,
                     constraint: (Beliefs) => Boolean) extends CommunicativeAct
 
