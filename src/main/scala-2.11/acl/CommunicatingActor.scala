@@ -12,6 +12,7 @@ specific language governing permissions and limitations under the License.
 */
 package acl
 
+import acl.acts._
 import akka.actor.{ActorRef, Actor, ActorLogging}
 
 import scala.collection.mutable
@@ -29,10 +30,10 @@ trait CommunicatingActor {
   /** Accept a previously received proposal from another `CommunicatingActor`.
     *
     * @param receiver is the `CommunicatingActor` whose `proposal` has been accepted.
-    * @param proposal is the previously received [[acl.Propose `Propose`]] message that has been accepted.
+    * @param proposal is the previously received [[Propose `Propose`]] message that has been accepted.
     * @tparam A is the type of action expression used to construct the content of the `proposal`.
-    * @note `acceptProposal` is a general-purpose acceptance of a previously received [[acl.Propose `Propose`]]
-    *       message. The `CommunicatingActor` sending the [[acl.AcceptProposal `AcceptProposal`]] message informs the
+    * @note `acceptProposal` is a general-purpose acceptance of a previously received [[Propose `Propose`]]
+    *       message. The `CommunicatingActor` sending the [[AcceptProposal `AcceptProposal`]] message informs the
     *       `receiver` that it intends that the `receiver` act in accordance with the terms of the `proposal`.
     */
   def acceptProposal[A](receiver: ActorRef, proposal: Propose[A]): Unit = {
@@ -42,13 +43,13 @@ trait CommunicatingActor {
   /** Agree to perform some action (possibly in the future) for another `CommunicatingActor`.
     *
     * @param receiver is the `CommunicatingActor` whose `request` has been agreed.
-    * @param request is the previously received [[acl.Request `Request`]] that has been agreed.
+    * @param request is the previously received [[Request `Request`]] that has been agreed.
     * @param precondition is a proposition that must be satisfied in order for the `CommunicatingActor` to perform
     *                     the `request`.
     * @tparam A is the type of action expression used to construct the content of the `request`.
-    * @note `agree` is a general purpose agreement to a previously received [[acl.Request `Request`]] message to
+    * @note `agree` is a general purpose agreement to a previously received [[Request `Request`]] message to
     *       perform certain actions given that a `precondition` is satisfied. The `CommunicatingActor` sending the
-    *       [[acl.Agree `Agree`]] message informs the `receiver` that it intends to act in accordance with the terms of
+    *       [[Agree `Agree`]] message informs the `receiver` that it intends to act in accordance with the terms of
     *       the  `request`.
     */
   def agree[A](receiver: ActorRef, request: Request[A], precondition: (Beliefs) => Boolean): Unit = {
@@ -71,13 +72,13 @@ trait CommunicatingActor {
   /** Cancel a request that was previously submitted to another `CommunicatingActor`.
     *
     * @param receiver is the `CommunicatingActor` to notify to notify of the cancellation.
-    * @param request is the previously received [acl.Request `Request`] that has been cancelled.
+    * @param request is the previously received [acl.acts.Request `Request`] that has been cancelled.
     * @tparam A is the type of action expression used to construct the content of the `request`.
     * @note The `cancel` act allows a `CommunicatingActor` to inform the `receiver` that it no longer intends that
     *       the `receiver` perform a previously requested action. This is not the same thing as a
     *       `CommunicatingActor` informing the `receiver` to stop performing an action.  In order for a
     *       `CommunicatingActor` to stop the `receiver` from performing an action it should send a
-    *       [[acl.Request, `Request`]] message that the `receiver` stop performing that action.
+    *       [[Request, `Request`]] message that the `receiver` stop performing that action.
     */
   def cancel[A](receiver: ActorRef, request: Request[A]): Unit = {
     receiver ! Cancel(request)
@@ -101,7 +102,7 @@ trait CommunicatingActor {
     *       `CommunicatingActor` should use the `confirm` vs `inform` vs `disconfirm` action. Note that whether or
     *       not the `receiver` does indeed come to believe that the proposition is true will depend on the beliefs of
     *       the `receiver` concerning the sincerity and reliability of the `CommunicatingActor` sending the
-    *       [[acl.Confirm, `Confirm`]] message.
+    *       [[Confirm, `Confirm`]] message.
     */
   def confirm(receiver: ActorRef, proposition: (Beliefs) => Boolean): Unit = {
     receiver ! Confirm(proposition)
@@ -126,7 +127,7 @@ trait CommunicatingActor {
     *       `CommunicatingActor` should use the `confirm` vs `inform` vs `disconfirm` action. Note that whether or
     *       not the `receiver` does indeed come to believe that the proposition is false will depend on the beliefs of
     *       the `receiver` concerning the sincerity and reliability of the `CommunicatingActor` sending the
-    *       [[acl.Disconfirm `Disconfirm`]] message.
+    *       [[Disconfirm `Disconfirm`]] message.
     */
   def disconfirm(receiver: ActorRef, proposition: (Beliefs) => Boolean): Unit = {
     receiver ! Disconfirm(proposition)
@@ -160,7 +161,7 @@ trait CommunicatingActor {
     *       `CommunicatingActor` should use the `confirm` vs `inform` vs `disconfirm` action. Note that whether or
     *       not the `receiver` does indeed come to believe that the proposition is true will depend on the beliefs of
     *       the `receiver` concerning the sincerity and reliability of the `CommunicatingActor` sending the
-    *       [[acl.Inform `Inform`]] message.
+    *       [[Inform `Inform`]] message.
     */
   def inform(receiver: ActorRef, proposition: (Beliefs) => Boolean): Unit = {
     receiver ! Inform(proposition)
@@ -173,7 +174,7 @@ trait CommunicatingActor {
     *                    `receiver` also comes to believe to be true.
     * @note The `informIf` act is an abbreviation for informing a `receiver` whether or not a `proposition` is
     *       believed. Note that the `CommunicatingActor` enacting `informIf` will actually perform a standard
-    *       `inform` act.  The content of the [[acl.Inform `Inform`]] message will depend on `CommunicatingActor`
+    *       `inform` act.  The content of the [[Inform `Inform`]] message will depend on `CommunicatingActor`
     *       beliefs. Specifically, if the `CommunicatingActor` believes the `proposition` is true, then it will
     *       `inform` the `receiver` that the `proposition` is true; if the `CommunicatingActor` believes the
     *       `proposition` is false, then it will `inform` the `receiver` that the `proposition` is false.
@@ -183,7 +184,7 @@ trait CommunicatingActor {
     *       `receiver` to know the truth value of the `proposition` in order to avoid revealing private information.
     *
     *       Finally, while the `informIf` act can be planned or requested by a `CommunicatingActor` the `informIf` act
-    *       can not be performed directly, but only upon receipt of an [[acl.InformIf `InformIf`]] message.
+    *       can not be performed directly, but only upon receipt of an [[InformIf `InformIf`]] message.
     */
   def informIf(receiver: ActorRef, proposition: (Beliefs) => Boolean): Unit = {
     if (proposition(beliefs)) {
@@ -205,7 +206,7 @@ trait CommunicatingActor {
   /** Inform another `CommunicatingActor` that a message it sent was not understood.
     *
     * @param receiver is the `CommunicatingActor` that sent the `message`.
-    * @param message is the [[acl.CommunicativeAct `CommunicativeAct`]] that was not understood.
+    * @param message is the [[acl.acts.CommunicativeAct `CommunicativeAct`]] that was not understood.
     * @param reason is a proposition indicating the reason that the `message` was not understood.
     */
   def notUnderstood(receiver: ActorRef, message: CommunicativeAct, reason: (Beliefs) => Boolean): Unit = {
@@ -214,23 +215,23 @@ trait CommunicatingActor {
 
   /** Propagate a message to a collection of `CommunicatingActor` satisfying a descriptor.
     *
-    * @param receiver is the `CommunicatingActor` to whom the [[acl.Propagate `Propagate`]] message should be sent.
-    * @param message is the embedded [[acl.CommunicativeAct `CommunicativeAct`]] which is being propagated.
-    * @param descriptor is a proposition denoting a collection of actors to whom the [[acl.Propagate `Propagate`]]
+    * @param receiver is the `CommunicatingActor` to whom the [[Propagate `Propagate`]] message should be sent.
+    * @param message is the embedded [[acl.acts.CommunicativeAct `CommunicativeAct`]] which is being propagated.
+    * @param descriptor is a proposition denoting a collection of actors to whom the [[Propagate `Propagate`]]
     *                   message should be sent by the `receiver`.
     * @param constraint is a proposition describing a termination condition for the propagation of the `message`.
     * @note The `propagate` act works as follows:
     *
     *       1. The `CommunicatingActor` requests the `receiver` to treat the embedded message in the
-    *       received [[acl.Propagate `Propagate`]] message as if it is was directly sent from the
+    *       received [[Propagate `Propagate`]] message as if it is was directly sent from the
     *       `CommunicatingActor`, that is, as if the `CommunicativeActor` performed the embedded communicative act
     *       directly to the `receiver`.
     *
     *       2. The `CommunicatingActor` wants the `receiver` to identify other actors denoted by the given `descriptor`
-    *       and to send the received [[acl.Propagate `Propagate`]] message to them.
+    *       and to send the received [[Propagate `Propagate`]] message to them.
     *
     *       This communicative act is designed for delivering messages through federated agents by creating a chain
-    *       (or tree) of [[acl.Propagate `Propagate`]] messages.
+    *       (or tree) of [[Propagate `Propagate`]] messages.
     */
   def propagate(receiver: ActorRef,
                 message: CommunicativeAct,
@@ -241,12 +242,12 @@ trait CommunicatingActor {
 
   /** Submit a proposal to perform certain actions given certain preconditions.
     *
-    * @param receiver is a collection of actors receiving the [[acl.Propose `Propose`]] message.
+    * @param receiver is a collection of actors receiving the [[Propose `Propose`]] message.
     * @param content is an action expression representing the action that the `CommunicatingActor` is proposing to
     *                perform.
     * @param precondition is a proposition indicating the conditions for the action to be performed.
-    * @param inReplyTo is a previously received [[acl.Propose `Propose`]] message to which the current
-    *                  [[acl.Propose `Propose`]] message is a counter-proposal.
+    * @param inReplyTo is a previously received [[Propose `Propose`]] message to which the current
+    *                  [[Propose `Propose`]] message is a counter-proposal.
     * @tparam A is the type of action expression used to construct `content` of the proposal.
     */
   def propose[A](receiver: ActorRef,
@@ -258,9 +259,9 @@ trait CommunicatingActor {
 
   /** Request another `CommunicatingActor` send a message to a collection of other actors matching a given description.
     *
-    * @param receiver is the `CommunicatingActor` to whom the [[acl.Proxy `Proxy`]] message should be sent.
-    * @param message is the embedded [[acl.CommunicativeAct `CommunicativeAct`]] which is being proxied.
-    * @param descriptor is a proposition denoting a collection of actors to whom the [[acl.Proxy `Proxy`]] message
+    * @param receiver is the `CommunicatingActor` to whom the [[Proxy `Proxy`]] message should be sent.
+    * @param message is the embedded [[acl.acts.CommunicativeAct `CommunicativeAct`]] which is being proxied.
+    * @param descriptor is a proposition denoting a collection of actors to whom the [[Proxy `Proxy`]] message
     *                   should be sent by the `receiver`.
     * @param constraint is a proposition constraining the proxying of the `message`.
     * @note The `CommunicatingActor` informs the `receiver` that it wants the `receiver` to identify actors that
@@ -303,8 +304,8 @@ trait CommunicatingActor {
   /** The action of one `CommunicatingActor` refusing to perform a request and explaining the reason for the
     * refusal.
     *
-    * @param receiver is a collection of actors receiving the [[acl.Refuse `Refuse`]] message.
-    * @param request is the [[acl.Request `Request]] that the `CommunicatingActor` can no longer perform.
+    * @param receiver is a collection of actors receiving the [[Refuse `Refuse`]] message.
+    * @param request is the [[Request `Request]] that the `CommunicatingActor` can no longer perform.
     * @param reason is a proposition indicating the reason that the `request` is being refused.
     * @tparam A is the type of action expression used to construct the `request`.
     * @note The `refuse` act allows a `CommunicatingActor` to inform the `receiver` that it is no longer possible for
@@ -316,12 +317,12 @@ trait CommunicatingActor {
 
   /** The action of rejecting a previously submitted proposal to perform an action.
     *
-    * @param receiver is a collection of actors receiving the [[acl.RejectProposal `RejectProposal`]] message.
-    * @param proposal is a previously received [[acl.Propose, `Propose`]] message that is being rejected.
+    * @param receiver is a collection of actors receiving the [[RejectProposal `RejectProposal`]] message.
+    * @param proposal is a previously received [[Propose, `Propose`]] message that is being rejected.
     * @param reason is a proposition indicating the reason for the rejection.
     * @tparam A is the type of action expression used to construct the `proposal`.
-    * @note `rejectProposal` is a general-purpose rejection of a previously received [[acl.Propose `Propose`]]
-    *       message. The `CommunicatingActor` sending the [[acl.RejectProposal `RejectProposal`]] message informs the
+    * @note `rejectProposal` is a general-purpose rejection of a previously received [[Propose `Propose`]]
+    *       message. The `CommunicatingActor` sending the [[RejectProposal `RejectProposal`]] message informs the
     *       `receiver` that it has no intention that the `receiver` performs the given actions as defined in the
     *       `content`. The additional proposition `reason` indicates the reason that the `CommunicatingActor` rejected
     *       the `proposal`.
@@ -337,7 +338,7 @@ trait CommunicatingActor {
     * @param content An action expression denoting the action(s) to be done.
     * @tparam A is the type of action expression used to construct the request `content`.
     * @note The `CommunicatingActor` is requesting the `receiver` to perform some action. The `content` of the
-    *       [[acl.Request `Request]] message is a description of the action to be performed in a language that the
+    *       [[Request `Request]] message is a description of the action to be performed in a language that the
     *       `receiver` understands.
     *
     *       An important use of the `request` act is to build composite conversations between `CommunicatingActor`,
@@ -358,17 +359,17 @@ trait CommunicatingActor {
     * @note The `requestWhen` act allows a `CommunicatingActor` to inform another actor that a certain action should
     *       be performed as soon as a given precondition, expressed as a proposition, becomes true.
     *
-    *       The `CommunicatingActor` receiving a [[acl.RequestWhen `RequestWhen`]] message should either refuse to
+    *       The `CommunicatingActor` receiving a [[RequestWhen `RequestWhen`]] message should either refuse to
     *       take on the commitment or should arrange that the action will be performed when the precondition becomes
     *       true. The commitment persists until...
     *
     *       - the precondition becomes true,
     *
-    *       - the `CommunicatingActor` that sent the [[acl.RequestWhen `RequestWhen`]] cancels the request by sending
-    *       a [[acl.Cancel `Cancel`]] message,
+    *       - the `CommunicatingActor` that sent the [[RequestWhen `RequestWhen`]] cancels the request by sending
+    *       a [[Cancel `Cancel`]] message,
     *
     *       - the `CommunicatingActor` determines that it can no longer honour the commitment in which case it sends a
-    *       [[acl.Refuse `Refuse`]] message.
+    *       [[Refuse `Refuse`]] message.
     */
   def requestWhen[A](receiver: ActorRef, content: A, precondition: (Beliefs) => Boolean): Unit = {
     receiver ! RequestWhen(content, precondition)
@@ -387,10 +388,10 @@ trait CommunicatingActor {
     *       that, if the precondition should subsequently become false, the action will be repeated as soon as the
     *       precondition becomes true again.
     *
-    *       The [[acl.RequestWhenever `RequestWhenever`]] message represents a persistent commitment to re-evaluate
+    *       The [[RequestWhenever `RequestWhenever`]] message represents a persistent commitment to re-evaluate
     *       the given precondition and to take action when its value changes. The `CommunicatingActor` that sent the
-    *       [[acl.RequestWhenever `RequestWhenever`]] message can cancel the commitment by sending a
-    *       [[acl.Cancel `Cancel`]] message.
+    *       [[RequestWhenever `RequestWhenever`]] message can cancel the commitment by sending a
+    *       [[Cancel `Cancel`]] message.
     */
   def requestWhenever[A](receiver: ActorRef, content: A, precondition: (Beliefs) => Boolean): Unit = {
     receiver ! RequestWhenever(content, precondition)
