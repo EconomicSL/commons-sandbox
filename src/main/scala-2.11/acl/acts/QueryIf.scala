@@ -20,6 +20,8 @@ import acl.Beliefs
 /** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to a collection of other such actors asking
   *  whether or not a given proposition is true.
   *
+  * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
+  *                       form a conversation.
   * @param proposition is a proposition about which the `CommunicatingActor` is ignorant (i.e., has no knowledge of its
   *                    truth value).
   * @note the `QueryIf` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the

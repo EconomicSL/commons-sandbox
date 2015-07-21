@@ -20,6 +20,8 @@ import acl.Beliefs
 /** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to a collection of other such actors
   * indicating that a previously received [[acl.acts.Request `Request`]] message to perform some action has been agreed.
   *
+  * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
+  *                       form a conversation.
   * @param request is the previously received [acl.Request `Request`] message to perform some action that has been
   *                agreed.
   * @param precondition is a proposition defining the precondition that should be satisfied in order for the

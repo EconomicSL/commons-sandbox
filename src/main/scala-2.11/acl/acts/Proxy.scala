@@ -20,6 +20,8 @@ import acl.Beliefs
 /** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to to another
   * [[acl.CommunicatingActor `CommunicatingActor`]] in order to proxy some embedded message.
   *
+  * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
+  *                       form a conversation.
   * @param message is the embedded [[acl.acts.CommunicativeAct `CommunicativeAct`]] which is being proxied.
   * @param descriptor is a proposition denoting a collection of actors to whom the `Proxy` message should be sent by
   *                   the `receiver`.

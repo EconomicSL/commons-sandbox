@@ -21,6 +21,8 @@ import akka.actor.ActorRef
 /** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to to another
   * [[acl.CommunicatingActor `CommunicatingActor`]] in order to propagate some embedded message.
   *
+  * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
+  *                       form a conversation.
   * @param message is the embedded [[acl.acts.CommunicativeAct `CommunicativeAct`]] which is being propagated.
   * @param descriptor is a proposition denoting a collection of actors to whom the [[acl.acts.Propagate `Propagate`]]
   *                   message should be sent by the `receiver`.

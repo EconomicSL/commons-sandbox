@@ -21,7 +21,10 @@ import acl.Beliefs
   * [[acl.CommunicatingActor `CommunicatingActor`]] informing it that some previously received message was not
   * understood.
   *
+  * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
+  *                       form a conversation.
   * @param message is the [[acl.acts.CommunicativeAct `CommunicativeAct`]] that was not understood.
+  * @param reason
   * @note The `NotUnderstood` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
   *       [[acl.CommunicatingActor.notUnderstood `notUnderstood`]] action.
   */

@@ -16,7 +16,15 @@ import java.util.UUID
 
 import acl.Beliefs
 
-
+/** Need to document this!!
+  *
+  * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
+  *                       form a conversation.
+  * @param content
+  * @param precondition
+  * @param inReplyTo
+  * @tparam A
+  */
 case class Propose[A](conversationId: UUID,
                       content: A,
                       precondition: (Beliefs) => Boolean,

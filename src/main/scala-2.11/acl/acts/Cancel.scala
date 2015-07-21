@@ -19,6 +19,8 @@ import java.util.UUID
   * indicating that a previously received [[acl.acts.Request `Request`]] message to perform some action should be
   * cancelled.
   *
+  * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
+  *                       form a conversation.
   * @param request is the previously received [acl.Request `Request`] message to perform some action that has been
   *                cancelled.
   * @tparam A is the type of action expression used to construct the content of the `request`

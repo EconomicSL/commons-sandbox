@@ -12,6 +12,8 @@ specific language governing permissions and limitations under the License.
 */
 package acl
 
+import java.util.UUID
+
 import acl.acts._
 import akka.actor.{ActorRef, Actor, ActorLogging}
 
@@ -29,6 +31,8 @@ trait CommunicatingActor {
 
   /** Accept a previously received proposal from another `CommunicatingActor`.
     *
+    * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
+    *                       form a conversation.
     * @param receiver is the `CommunicatingActor` whose `proposal` has been accepted.
     * @param proposal is the previously received [[Propose `Propose`]] message that has been accepted.
     * @tparam A is the type of action expression used to construct the content of the `proposal`.
@@ -36,12 +40,14 @@ trait CommunicatingActor {
     *       message. The `CommunicatingActor` sending the [[AcceptProposal `AcceptProposal`]] message informs the
     *       `receiver` that it intends that the `receiver` act in accordance with the terms of the `proposal`.
     */
-  def acceptProposal[A](receiver: ActorRef, proposal: Propose[A]): Unit = {
-    receiver ! AcceptProposal(proposal)
+  def acceptProposal[A](conversationId: UUID, receiver: ActorRef, proposal: Propose[A]): Unit = {
+    receiver ! AcceptProposal(conversationId, proposal)
   }
 
   /** Agree to perform some action (possibly in the future) for another `CommunicatingActor`.
     *
+    * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
+    *                       form a conversation.
     * @param receiver is the `CommunicatingActor` whose `request` has been agreed.
     * @param request is the previously received [[Request `Request`]] that has been agreed.
     * @param precondition is a proposition that must be satisfied in order for the `CommunicatingActor` to perform
@@ -52,12 +58,18 @@ trait CommunicatingActor {
     *       [[Agree `Agree`]] message informs the `receiver` that it intends to act in accordance with the terms of
     *       the  `request`.
     */
-  def agree[A](receiver: ActorRef, request: Request[A], precondition: (Beliefs) => Boolean): Unit = {
-    receiver ! Agree(request, precondition)
+  def agree[A](conversationId: UUID,
+               receiver: ActorRef,
+               request: Request[A],
+               precondition: (Beliefs) => Boolean):
+  Unit = {
+    receiver ! Agree(conversationId, request, precondition)
   }
 
   /** Request a proposal from another `CommunicatingActor` to perform certain actions (under certain preconditions).
     *
+    * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
+    *                       form a conversation.
     * @param receiver is the `CommunicatingActor` that should receive a call for proposal.
     * @param content is an action expression defining the action(s) that the `CommunicatingActor` is requesting the
     *                `receiver` to submit a proposal to perform.
@@ -65,12 +77,17 @@ trait CommunicatingActor {
     *                     accepted.
     * @tparam A is the type of action expression used to construct the `proposal`.
     */
-  def callForProposal[A](receiver: ActorRef, content: A, precondition: (Propose[A]) => Boolean): Unit = {
-    receiver ! CallForProposal(content, precondition)
+  def callForProposal[A](conversationId: UUID,
+                         receiver: ActorRef,
+                         content: A,
+                         precondition: (Propose[A]) => Boolean): Unit = {
+    receiver ! CallForProposal(conversationId, content, precondition)
   }
 
   /** Cancel a request that was previously submitted to another `CommunicatingActor`.
     *
+    * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
+    *                       form a conversation.
     * @param receiver is the `CommunicatingActor` to notify to notify of the cancellation.
     * @param request is the previously received [acl.acts.Request `Request`] that has been cancelled.
     * @tparam A is the type of action expression used to construct the content of the `request`.
@@ -80,12 +97,14 @@ trait CommunicatingActor {
     *       `CommunicatingActor` to stop the `receiver` from performing an action it should send a
     *       [[Request, `Request`]] message that the `receiver` stop performing that action.
     */
-  def cancel[A](receiver: ActorRef, request: Request[A]): Unit = {
-    receiver ! Cancel(request)
+  def cancel[A](conversationId: UUID, receiver: ActorRef, request: Request[A]): Unit = {
+    receiver ! Cancel(conversationId, request)
   }
 
   /** Confirm for another `CommunicatingActor` that some proposition is true.
     *
+    * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
+    *                       form a conversation.
     * @param receiver is the `CommunicatingActor` to inform that the `proposition` is true.
     * @param proposition is a proposition that the `CommunicatingActor` believes to be true, and intends that the
     *                    `receiver` also comes to believe to be true.
@@ -104,12 +123,14 @@ trait CommunicatingActor {
     *       the `receiver` concerning the sincerity and reliability of the `CommunicatingActor` sending the
     *       [[Confirm, `Confirm`]] message.
     */
-  def confirm(receiver: ActorRef, proposition: (Beliefs) => Boolean): Unit = {
-    receiver ! Confirm(proposition)
+  def confirm(conversationId: UUID, receiver: ActorRef, proposition: (Beliefs) => Boolean): Unit = {
+    receiver ! Confirm(conversationId, proposition)
   }
 
   /** Confirm for another `CommunicatingActor` that some proposition is false.
     *
+    * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
+    *                       form a conversation.
     * @param receiver is the collection of actors that are being notified that the `CommunicatingActor` has
     *                 dis-confirmed the `proposition`.
     * @param proposition is a proposition that the `CommunicatingActor` believes to be false, and intends that the
@@ -129,23 +150,27 @@ trait CommunicatingActor {
     *       the `receiver` concerning the sincerity and reliability of the `CommunicatingActor` sending the
     *       [[Disconfirm `Disconfirm`]] message.
     */
-  def disconfirm(receiver: ActorRef, proposition: (Beliefs) => Boolean): Unit = {
-    receiver ! Disconfirm(proposition)
+  def disconfirm(conversationId: UUID, receiver: ActorRef, proposition: (Beliefs) => Boolean): Unit = {
+    receiver ! Disconfirm(conversationId, proposition)
   }
 
   /** Inform another `CommunicatingActor` that some action was attempted but that the attempt failed.
     *
+    * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
+    *                       form a conversation.
     * @param receiver is the `CommunicatingActor` to notify of the failure.
     * @param content is an action expression defining the action(s) that were attempted.
     * @param reason is a proposition indicating the reason for the failure.
     * @tparam A is the type of action expression used to construct the `content`.
     */
-  def failure[A](receiver: ActorRef, content: A, reason: (Beliefs) => Boolean): Unit = {
-    receiver ! Failure(content, reason)
+  def failure[A](conversationId: UUID, receiver: ActorRef, content: A, reason: (Beliefs) => Boolean): Unit = {
+    receiver ! Failure(conversationId, content, reason)
   }
 
   /** Inform another `CommunicatingActor` that some proposition is true.
     *
+    * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
+    *                       form a conversation.
     * @param receiver is the `CommunicatingActor` to inform that the `proposition` is true.
     * @param proposition is a proposition that the `CommunicatingActor` believes to be true, and intends that the
     *                    `receiver` also comes to believe to be true.
@@ -163,12 +188,14 @@ trait CommunicatingActor {
     *       the `receiver` concerning the sincerity and reliability of the `CommunicatingActor` sending the
     *       [[Inform `Inform`]] message.
     */
-  def inform(receiver: ActorRef, proposition: (Beliefs) => Boolean): Unit = {
-    receiver ! Inform(proposition)
+  def inform(conversationId: UUID, receiver: ActorRef, proposition: (Beliefs) => Boolean): Unit = {
+    receiver ! Inform(conversationId, proposition)
   }
 
   /** Inform another `CommunicatingActor` whether or not a `proposition` is true.
     *
+    * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
+    *                       form a conversation.
     * @param receiver is the `CommunicatingActor` to notify whether or not the `proposition` is true.
     * @param proposition is a proposition that the `CommunicatingActor` believes to be true, and intends that the
     *                    `receiver` also comes to believe to be true.
@@ -186,35 +213,44 @@ trait CommunicatingActor {
     *       Finally, while the `informIf` act can be planned or requested by a `CommunicatingActor` the `informIf` act
     *       can not be performed directly, but only upon receipt of an [[InformIf `InformIf`]] message.
     */
-  def informIf(receiver: ActorRef, proposition: (Beliefs) => Boolean): Unit = {
+  def informIf(conversationId: UUID, receiver: ActorRef, proposition: (Beliefs) => Boolean): Unit = {
     if (proposition(beliefs)) {
-      inform(receiver, proposition)
+      inform(conversationId, receiver, proposition)
     } else {
-      inform(receiver, (b: Beliefs) => ! proposition(b))
+      inform(conversationId, receiver, (b: Beliefs) => ! proposition(b))
     }
   }
 
   /** Inform another `CommunicatingActor` of object(s) satisfying some descriptor.
     *
+    * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
+    *                       form a conversation.
     * @param receiver is the `CommunicatingActor` to notify whether or not the `proposition` is true.
     * @param descriptor is a function describing some required characteristics of the object.
     */
-  def informRef[D](receiver: ActorRef, descriptor: (D) => Boolean): Unit = {
+  def informRef[D](conversationId: UUID, receiver: ActorRef, descriptor: (D) => Boolean): Unit = {
     ???
   }
 
   /** Inform another `CommunicatingActor` that a message it sent was not understood.
     *
+    * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
+    *                       form a conversation.
     * @param receiver is the `CommunicatingActor` that sent the `message`.
     * @param message is the [[acl.acts.CommunicativeAct `CommunicativeAct`]] that was not understood.
     * @param reason is a proposition indicating the reason that the `message` was not understood.
     */
-  def notUnderstood(receiver: ActorRef, message: CommunicativeAct, reason: (Beliefs) => Boolean): Unit = {
-    receiver ! NotUnderstood(message, reason)
+  def notUnderstood(conversationId: UUID,
+                    receiver: ActorRef,
+                    message: CommunicativeAct,
+                    reason: (Beliefs) => Boolean): Unit = {
+    receiver ! NotUnderstood(conversationId, message, reason)
   }
 
   /** Propagate a message to a collection of `CommunicatingActor` satisfying a descriptor.
     *
+    * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
+    *                       form a conversation.
     * @param receiver is the `CommunicatingActor` to whom the [[Propagate `Propagate`]] message should be sent.
     * @param message is the embedded [[acl.acts.CommunicativeAct `CommunicativeAct`]] which is being propagated.
     * @param descriptor is a proposition denoting a collection of actors to whom the [[Propagate `Propagate`]]
@@ -233,15 +269,18 @@ trait CommunicatingActor {
     *       This communicative act is designed for delivering messages through federated agents by creating a chain
     *       (or tree) of [[Propagate `Propagate`]] messages.
     */
-  def propagate(receiver: ActorRef,
+  def propagate(conversationId: UUID,
+                receiver: ActorRef,
                 message: CommunicativeAct,
                 descriptor: (ActorRef) => Boolean,
                 constraint: (Beliefs) => Boolean): Unit = {
-    receiver ! Propagate(message, descriptor, constraint)
+    receiver ! Propagate(conversationId, message, descriptor, constraint)
   }
 
   /** Submit a proposal to perform certain actions given certain preconditions.
     *
+    * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
+    *                       form a conversation.
     * @param receiver is a collection of actors receiving the [[Propose `Propose`]] message.
     * @param content is an action expression representing the action that the `CommunicatingActor` is proposing to
     *                perform.
@@ -250,15 +289,18 @@ trait CommunicatingActor {
     *                  [[Propose `Propose`]] message is a counter-proposal.
     * @tparam A is the type of action expression used to construct `content` of the proposal.
     */
-  def propose[A](receiver: ActorRef,
+  def propose[A](conversationId: UUID,
+                 receiver: ActorRef,
                  content: A,
                  precondition: (Beliefs) => Boolean,
                  inReplyTo: Option[Propose[A]] = None): Unit = {
-    receiver ! Propose(content, precondition, inReplyTo)
+    receiver ! Propose(conversationId, content, precondition, inReplyTo)
   }
 
   /** Request another `CommunicatingActor` send a message to a collection of other actors matching a given description.
     *
+    * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
+    *                       form a conversation.
     * @param receiver is the `CommunicatingActor` to whom the [[Proxy `Proxy`]] message should be sent.
     * @param message is the embedded [[acl.acts.CommunicativeAct `CommunicativeAct`]] which is being proxied.
     * @param descriptor is a proposition denoting a collection of actors to whom the [[Proxy `Proxy`]] message
@@ -267,25 +309,30 @@ trait CommunicatingActor {
     * @note The `CommunicatingActor` informs the `receiver` that it wants the `receiver` to identify actors that
     *       satisfy the given `descriptor` and forward them the embedded `message`.
     */
-  def proxy(receiver: ActorRef,
+  def proxy(conversationId: UUID,
+            receiver: ActorRef,
             message: CommunicativeAct,
             descriptor: (ActorRef) => Boolean,
             constraint: (Beliefs) => Boolean): Unit = {
-    receiver ! Proxy(message, descriptor, constraint)
+    receiver ! Proxy(conversationId, message, descriptor, constraint)
   }
 
   /** Query a collection of actors in order to ascertain the truth value of some proposition.
     *
+    * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
+    *                       form a conversation.
     * @param receiver is the collection of [[acl.CommunicatingActor `CommunicatingActor`]] receiving the query.
     * @param proposition is a proposition about which the `CommunicatingActor` is ignorant (i.e., has no knowledge of
     *                    its truth value).
     */
-  def queryIf(receiver: ActorRef, proposition: (Beliefs) => Boolean): Unit = {
-    receiver ! QueryIf(proposition)
+  def queryIf(conversationId: UUID, receiver: ActorRef, proposition: (Beliefs) => Boolean): Unit = {
+    receiver ! QueryIf(conversationId, proposition)
   }
 
   /** Query a collection of actors regarding object(s) that matching a given descriptor.
     *
+    * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
+    *                       form a conversation.
     * @param receiver is the collection of [[acl.CommunicatingActor `CommunicatingActor`]] receiving the query.
     * @param descriptor is a function describing some required characteristics of an object.
     * @tparam D is the type of object characterized by the `descriptor`.
@@ -297,13 +344,15 @@ trait CommunicatingActor {
     *
     *       - believes that some other [[acl.CommunicatingActor `CommunicatingActor`]] can inform on the object(s).
     */
-  def queryRef[D](receiver: ActorRef, descriptor: (D) => Boolean): Unit = {
-    receiver ! QueryRef(descriptor)
+  def queryRef[D](conversationId: UUID, receiver: ActorRef, descriptor: (D) => Boolean): Unit = {
+    receiver ! QueryRef(conversationId, descriptor)
   }
 
   /** The action of one `CommunicatingActor` refusing to perform a request and explaining the reason for the
     * refusal.
     *
+    * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
+    *                       form a conversation.
     * @param receiver is a collection of actors receiving the [[Refuse `Refuse`]] message.
     * @param request is the [[Request `Request]] that the `CommunicatingActor` can no longer perform.
     * @param reason is a proposition indicating the reason that the `request` is being refused.
@@ -311,12 +360,17 @@ trait CommunicatingActor {
     * @note The `refuse` act allows a `CommunicatingActor` to inform the `receiver` that it is no longer possible for
     *       it to perform a previously agreed `request`.
     */
-  def refuse[A](receiver: ActorRef, request: Request[A], reason: (Beliefs) => Boolean): Unit = {
-    receiver ! Refuse(request, reason)
+  def refuse[A](conversationId: UUID,
+                receiver: ActorRef,
+                request: Request[A],
+                reason: (Beliefs) => Boolean): Unit = {
+    receiver ! Refuse(conversationId, request, reason)
   }
 
   /** The action of rejecting a previously submitted proposal to perform an action.
     *
+    * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
+    *                       form a conversation.
     * @param receiver is a collection of actors receiving the [[RejectProposal `RejectProposal`]] message.
     * @param proposal is a previously received [[Propose, `Propose`]] message that is being rejected.
     * @param reason is a proposition indicating the reason for the rejection.
@@ -327,12 +381,17 @@ trait CommunicatingActor {
     *       `content`. The additional proposition `reason` indicates the reason that the `CommunicatingActor` rejected
     *       the `proposal`.
     */
-  def rejectProposal[A](receiver: ActorRef, proposal: Propose[A], reason: (Beliefs) => Boolean): Unit = {
-    receiver ! RejectProposal(proposal, reason)
+  def rejectProposal[A](conversationId: UUID,
+                        receiver: ActorRef,
+                        proposal: Propose[A],
+                        reason: (Beliefs) => Boolean): Unit = {
+    receiver ! RejectProposal(conversationId, proposal, reason)
   }
 
   /** The `CommunicatingActor` requests the receiver to perform some action.
     *
+    * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
+    *                       form a conversation.
     * @param receiver is the collection of [[acl.CommunicatingActor `CommunicatingActor`]] that are being requested to
     *                 perform action(s) specified in the `content`.
     * @param content An action expression denoting the action(s) to be done.
@@ -345,12 +404,14 @@ trait CommunicatingActor {
     *       where the actions that are the object of the `request` act are themselves instances of
     *       [[CommunicativeAct `CommunicativeAct`]].
     */
-  def request[A](receiver: ActorRef, content: A): Unit = {
-    receiver ! Request(receiver, content)
+  def request[A](conversationId: UUID, receiver: ActorRef, content: A): Unit = {
+    receiver ! Request(conversationId, content)
   }
 
   /** The `CommunicatingActor` requests the receiver to perform some action when some given precondition becomes true.
     *
+    * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
+    *                       form a conversation.
     * @param receiver is the collection of [[acl.CommunicatingActor `CommunicatingActor`]] that are being requested to
     *                 perform action(s) specified in the `content`.
     * @param content An action expression denoting the action(s) to be done.
@@ -371,13 +432,18 @@ trait CommunicatingActor {
     *       - the `CommunicatingActor` determines that it can no longer honour the commitment in which case it sends a
     *       [[Refuse `Refuse`]] message.
     */
-  def requestWhen[A](receiver: ActorRef, content: A, precondition: (Beliefs) => Boolean): Unit = {
-    receiver ! RequestWhen(content, precondition)
+  def requestWhen[A](conversationId: UUID,
+                     receiver: ActorRef,
+                     content: A,
+                     precondition: (Beliefs) => Boolean): Unit = {
+    receiver ! RequestWhen(conversationId, content, precondition)
   }
 
   /** The `CommunicatingActor` requests the receiver to perform some action when some given precondition becomes true
     * and thereafter each time the proposition becomes true again.
     *
+    * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
+    *                       form a conversation.
     * @param receiver is the collection of [[acl.CommunicatingActor `CommunicatingActor`]] that are being requested to
     *                 perform action(s) specified in the `content`.
     * @param content An action expression denoting the action(s) to be done.
@@ -393,8 +459,10 @@ trait CommunicatingActor {
     *       [[RequestWhenever `RequestWhenever`]] message can cancel the commitment by sending a
     *       [[Cancel `Cancel`]] message.
     */
-  def requestWhenever[A](receiver: ActorRef, content: A, precondition: (Beliefs) => Boolean): Unit = {
-    receiver ! RequestWhenever(content, precondition)
+  def requestWhenever[A](conversationId: UUID,
+                         receiver: ActorRef,
+                         content: A, precondition: (Beliefs) => Boolean): Unit = {
+    receiver ! RequestWhenever(conversationId, content, precondition)
   }
 
   /** Probably much better way to implement this in Akka already. */

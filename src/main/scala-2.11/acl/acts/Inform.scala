@@ -20,6 +20,8 @@ import acl.Beliefs
 /** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to a collection of other such actors
   * informing them that some proposition is true.
   *
+  * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
+  *                       form a conversation.
   * @param proposition is a proposition that the `sender` believes to be true, and intends that the `receiver` also
   *                    comes to believe to be true.
   * @note The `Inform` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
