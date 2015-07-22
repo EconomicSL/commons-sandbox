@@ -15,16 +15,19 @@ package acl.acts
 import java.util.UUID
 
 
-/** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to a collection of other such actors
-  * requesting proposals that satisfy certain preconditions.
+/** A message sent from some [[acl.CommunicatingActor `CommunicatingActor`]] (i.e., `sender`) to a collection of
+  * [[acl.CommunicatingActor `CommunicatingActor`]] (i.e., `receivers`) requesting that each of the
+  * `receivers` submit a [[acl.acts.Propose `Propose`]] message (i.e., `proposal`) that satisfies a certain
+  * `precondition`.
   *
-  * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
-  *                       form a conversation.
+  * @param conversationId is used to identify a sequence of [[acl.acts.CommunicativeAct `CommunicativeAct`]] messages
+  *                       that together form a conversation.
   * @param content is an action expression defining the action(s) that the `sender` is requesting the `receiver` to
-  *                submit a proposal to perform.
-  * @param precondition is a proposition defining conditions that any submitted proposal must satisfy in order to be
-  *                     accepted.
+  *                submit a `proposal` to perform.
+  * @param precondition is a condition that any submitted `proposal` must satisfy in order to be accepted by the
+  *                     `sender`.
   * @tparam A is the type of action expression used to construct the `proposal`.
   */
 case class CallForProposal[A](conversationId: UUID,
-                              content: A, precondition: (Propose[A]) => Boolean) extends CommunicativeAct
+                              content: A,
+                              precondition: (Propose[A]) => Boolean) extends CommunicativeAct
