@@ -17,19 +17,19 @@ import java.util.UUID
 import acl.Beliefs
 
 
-/** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to a collection of other such actors
-  * indicating that a previously received [[acl.acts.Request `Request`]] message to perform some action has been agreed.
+/** A message sent from some [[acl.CommunicatingActor `CommunicatingActor`]] (i.e., `sender`) to another
+  * [[acl.CommunicatingActor `CommunicatingActor`]] (i.e., `receiver`) indicating that the `sender` has agreed to
+  * perform some action(s) as specified in a [[acl.acts.Request `Request`]] message previously sent by the `receiver`.
   *
-  * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
-  *                       form a conversation.
-  * @param request is the previously received [acl.Request `Request`] message to perform some action that has been
-  *                agreed.
-  * @param precondition is a proposition defining the precondition that should be satisfied in order for the
-  *                     `receiver` to perform the action(s) specified in the `request`.
+  * @param conversationId is used to identify an ongoing sequence of [[acl.acts.CommunicativeAct `CommunicativeAct`]]
+  *                       messages that together form a conversation.
+  * @param request is the previously received [acl.Request `Request`] message that has been agreed.
+  * @param predicate defines a precondition that should be satisfied in order for the `sender` to perform the
+  *                  action(s) specified in the agreed `request`.
   * @tparam A is the type of action expression used to construct the content of the `request`.
   * @note The `Agree` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
   *       [[acl.CommunicatingActor.agree `agree`]] action.
   */
 case class Agree[A](conversationId: UUID,
                     request: Request[A],
-                    precondition: (Beliefs) => Boolean) extends CommunicativeAct
+                    predicate: (Beliefs) => Boolean) extends CommunicativeAct
