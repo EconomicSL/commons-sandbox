@@ -16,16 +16,18 @@ import java.util.UUID
 
 import acl.Beliefs
 
-/** Need to document this!!
+/** A message from a [[acl.CommunicatingActor `CommunicatingActor`]] to another
+  * [[acl.CommunicatingActor `CommunicatingActor`]] representing a proposal to perform a certain action, given
+  * certain preconditions.
   *
   * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
   *                       form a conversation.
-  * @param content
-  * @param precondition
-  * @param inReplyTo
-  * @tparam A
+  * @param content is an action expression defining the action(s) that the `sender` is proposing to perform in the
+  *                event that the `precondition` is satisfied.
+  * @param precondition is a proposition defining the precondition that should be satisfied in order for the `sender`
+  *                     to perform the action(s) specified in the `content`.
+  * @tparam A is the type of action expression used to construct the content of the `request`.
   */
 case class Propose[A](conversationId: UUID,
                       content: A,
-                      precondition: (Beliefs) => Boolean,
-                      inReplyTo: Option[Propose[A]]) extends CommunicativeAct
+                      precondition: (Beliefs) => Boolean) extends CommunicativeAct
