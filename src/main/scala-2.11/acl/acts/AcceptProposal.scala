@@ -14,14 +14,15 @@ package acl.acts
 
 import java.util.UUID
 
-/** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to a collection of other such actors
-  * indicating that a previously received [[acl.acts.Propose `Propose`]] message has been accepted.
+/** A message sent from some [[acl.CommunicatingActor `CommunicatingActor`]] (i.e., `sender`) to another
+  * [[acl.CommunicatingActor `CommunicatingActor`]] (i.e., `receiver`) indicating that the `sender` has accepted a
+  * previously received [[acl.acts.Propose `Propose`]] message (i.e., `proposal`) from the `receiver`.
   *
-  * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
-  *                       form a conversation.
-  * @param proposal is the previously received [acl.acts.Propose `Propose`] message that has been accepted.
+  * @param conversationId is used to identify a sequence of [[acl.acts.CommunicativeAct `CommunicativeAct`]] messages
+  *                       that together form a conversation.
+  * @param proposal is the previously received `proposal` that the `sender` has decided to accept.
   * @tparam A is the type of action expression used to construct the content of the `proposal`.
-  * @note The `AcceptProposal` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
+  * @note The `AcceptProposal` message is sent by the `sender` using the
   *       [[acl.CommunicatingActor.acceptProposal `acceptProposal`]] action.
   */
 case class AcceptProposal[A](conversationId: UUID, proposal: Propose[A]) extends CommunicativeAct
