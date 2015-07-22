@@ -461,13 +461,22 @@ trait CommunicatingActor {
     */
   def requestWhenever[A](conversationId: UUID,
                          receiver: ActorRef,
-                         content: A, precondition: (Beliefs) => Boolean): Unit = {
+                         content: A,
+                         precondition: (Beliefs) => Boolean): Unit = {
     receiver ! RequestWhenever(conversationId, content, precondition)
   }
 
-  /** Probably much better way to implement this in Akka already. */
-  def subscribe(): Unit = {
-    ???
+  /** Request another `CommunicatingActor` to notify the value of a reference whenever the object identified by the
+    * reference changes.
+    *
+    * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
+    *                       form a conversation.
+    * @param receiver is [[acl.CommunicatingActor `CommunicatingActor`]] that is to receive the subscription request.
+    * @param descriptor is a function describing some required characteristics of the reference object.
+    * @tparam D is the type of object characterized by the `descriptor`.
+    */
+  def subscribe[D](conversationId: UUID, receiver: ActorRef, descriptor: (D) => Boolean): Unit = {
+    receiver ! Subscribe(conversationId, descriptor)
   }
 
   def receive: Receive = {
