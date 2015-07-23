@@ -4,12 +4,7 @@
 [![Codacy Badge](https://www.codacy.com/project/badge/010943975d84466b85975ff788fe76cb)](https://www.codacy.com/app/drobert-pugh/commons-sandbox)
 [![GitHub license](https://img.shields.io/github/license/ScalABM/commons-sandbox.svg)]()
 
-A workspace for developing reusable components for scalable agent based models (ABMs) of social 
-systems.
-
-## Motivation
-
-## Requirements
+A workspace for developing reusable components for scalable agent-based models.
 
 ## Getting started
 The following instructions will help walk you through the process of downloading and installing 
