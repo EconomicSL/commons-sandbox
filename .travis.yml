@@ -16,7 +16,7 @@ branches:
 
 # necessary in order to handle bug on Travis-CI!
 before_script:
-- curl -L -o $HOME/.sbt/launchers/0.13.8/sbt-launch.jar http://dl.bintray.com/typesafe/ivy-releases/org.scala-sbt/sbt-launch/0.13.8/sbt-launch.jar
+ - curl -L -o $HOME/.sbt/launchers/0.13.8/sbt-launch.jar http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/sbt-launch/0.13.8/sbt-launch.jar
 
 script:
 - sbt clean coverage test
