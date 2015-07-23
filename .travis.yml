@@ -26,6 +26,7 @@ script:
 
 after_success:
 - sbt coveralls
+- .travis/publish_coverage.sh
 
 env:
   global:
