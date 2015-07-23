@@ -2,12 +2,11 @@
 
 if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
 
-  echo -e "Generating scaladoc and coverage report.\n"
+  echo -e "Generating scaladoc.\n"
 
   sbt doc
-  sbt coverageReport
 
-  echo -e "Publishing scaladoc and coverage report.\n"
+  echo -e "Publishing scaladoc.\n"
 
   git config --global user.email "travis@travis-ci.org"
   git config --global user.name "travis-ci"
@@ -15,21 +14,16 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; th
 
   cd gh-pages
 
-  # get rid of old docs and coverage stats
+  # get rid of old docs
   git rm -rf ./docs
-  git rm -rf ./coverage
 
   # copy over the new docs
   mkdir -p ./docs/api/latest
   cp -Rf ../target/scala-2.11/api/* ./docs/api/latest
 
-  # copy over the new coverage stats
-  mkdir -p ./coverage
-  cp -Rf ../target/scala-2.11/scoverage-report ./coverage
-
   # push to github!
   git add -f .
-  git commit -m "Lastest doc and coverage report on successful travis build $TRAVIS_BUILD_NUMBER auto-pushed to gh-pages"
+  git commit -m "Lastest docs for travis build $TRAVIS_BUILD_NUMBER auto-pushed to gh-pages"
   git push -fq origin gh-pages > /dev/null
 
   echo -e "Published scaladoc to gh-pages.\n"
