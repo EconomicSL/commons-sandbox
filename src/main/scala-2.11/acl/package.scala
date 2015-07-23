@@ -21,7 +21,8 @@ specific language governing permissions and limitations under the License.
   * === Actor Communication Language ===
   * Our high-level actor communication language is influenced by, but not slave to, the [[http://www.fipa.org/
   * Foundation for Intelligent Physical Agents (FIPA)]] compliant
-  * [[http://www.fipa.org/specs/fipa00037/SC00037J.pdf Agent Communication Language (ACL)]].
+  * [[http://www.fipa.org/specs/fipa00037/SC00037J.pdf Agent Communication Language (ACL)]]. The FIPA actor
+  * communication language
   *
   * ===`CommunicatingActor`===
   * Currently the [[acl.CommunicatingActor `CommunicatingActor`]] implements methods that send appropriately formatted
