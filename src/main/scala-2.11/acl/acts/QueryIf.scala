@@ -17,14 +17,14 @@ import java.util.UUID
 import acl.Beliefs
 
 
-/** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to a collection of other such actors asking
-  *  whether or not a given proposition is true.
+/** A message sent from some [[acl.CommunicatingActor `CommunicatingActor`]] (i.e., `sender`) to another
+  * [[acl.CommunicatingActor `CommunicatingActor`]] (i.e., `receiver`) asking the `receiver` whether or not a given
+  * `proposition` is true.
   *
-  * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
-  *                       form a conversation.
-  * @param proposition is a proposition about which the `CommunicatingActor` is ignorant (i.e., has no knowledge of its
+  * @param conversationId is an expression used to identify a sequence of communicative acts that together form a
+  *                       conversation.
+  * @param proposition is a proposition about which the `sender` is ignorant (i.e., has no knowledge of its
   *                    truth value).
-  * @note the `QueryIf` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
-  *       [[acl.CommunicatingActor.queryIf, `queryIf`]] method.
+  * @note The `QueryIf` message is sent by the `sender` using the [[acl.CommunicatingActor.queryIf `queryIf`]] method.
   */
 case class QueryIf(conversationId: UUID, proposition: (Beliefs) => Boolean) extends CommunicativeAct

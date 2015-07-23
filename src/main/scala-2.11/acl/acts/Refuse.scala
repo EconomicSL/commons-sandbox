@@ -17,11 +17,12 @@ import java.util.UUID
 import acl.Beliefs
 
 
-/** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to a collection of other such actors
-  * indicating that a previously received [[acl.acts.Request `Request`]] message has been refused.
+/** A message sent from some [[acl.CommunicatingActor `CommunicatingActor`]] (i.e., `sender`) to another
+  * [[acl.CommunicatingActor `CommunicatingActor`]] (i.e., `receiver`) indicating that the `sender` has refused a
+  * previously received [[acl.acts.Request `Request`]] message (i.e., `request`) from the `receiver`.
   *
-  * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
-  *                       form a conversation.
+  * @param conversationId is used to identify a sequence of [[acl.acts.CommunicativeAct `CommunicativeAct`]] messages
+  *                       that together form a conversation.
   * @param request is the previously received [acl.Request `Request`] message that is being refused.
   * @param reason is a proposition denoting the reason that the `request` has been refused.
   * @tparam A is the type of action expression used to construct the content of the `request`.

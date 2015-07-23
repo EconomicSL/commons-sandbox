@@ -10,17 +10,13 @@ Unless required by applicable law or agreed to in writing, software distributed 
 an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
 specific language governing permissions and limitations under the License.
 */
-import akka.actor.ActorRef
-import edsl.commitments.Commitment
 
-import scala.collection.immutable
-
-/** Provides classes defining a high-level economic actor communication language (ACL).
+/** Provides classes defining a low-level actor communication language (ACL).
   *
   * ==Overview==
-  * The `acl` package defines a high-level actor communication language (ACL) as well as the
+  * The `acl` package defines a low-level actor communication language (ACL) as well as a
   * [[acl.CommunicatingActor `CommunicatingActor`]] behavioral trait that an actor must implement in order to
-  * communicate using the ACL protocol.
+  * communicate with other such actors via the ACL.
   *
   * === Actor Communication Language ===
   * Our high-level actor communication language is influenced by, but not slave to, the [[http://www.fipa.org/
@@ -28,9 +24,14 @@ import scala.collection.immutable
   * [[http://www.fipa.org/specs/fipa00037/SC00037J.pdf Agent Communication Language (ACL)]].
   *
   * ===`CommunicatingActor`===
+  * Currently the [[acl.CommunicatingActor `CommunicatingActor`]] implements methods that send appropriately formatted
+  * [[acl.acts.CommunicativeAct]] messages to target actors.  Eventually, the
+  * [[acl.CommunicatingActor `CommunicatingActor`]] will also implement abstract protocols that will impose
+  * additional structure on inter-actor communications.  Examples of such abstract communication protocols can
+  * be found on the [[http://www.fipa.org/repository/standardspecs.html FIPA]] web site.
   *
+  * Concrete implementations of these abstract protocols will define behavioral strategies that will be mixed
+  * together to create an economic actor.
   *
   */
-package object acl {
-
-}
+package object acl

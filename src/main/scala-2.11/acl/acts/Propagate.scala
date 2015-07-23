@@ -18,8 +18,9 @@ import acl.Beliefs
 import akka.actor.ActorRef
 
 
-/** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to to another
-  * [[acl.CommunicatingActor `CommunicatingActor`]] in order to propagate some embedded message.
+/** A message sent from some [[acl.CommunicatingActor `CommunicatingActor`]] (i.e., `sender`) to another
+  * [[acl.CommunicatingActor `CommunicatingActor`]] (i.e., `receiver`) in order to propagate some embedded `message`
+  * to a collection of other actors satisfying a `descriptor`.
   *
   * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
   *                       form a conversation.
@@ -27,8 +28,8 @@ import akka.actor.ActorRef
   * @param descriptor is a proposition denoting a collection of actors to whom the [[acl.acts.Propagate `Propagate`]]
   *                   message should be sent by the `receiver`.
   * @param constraint is a proposition describing a termination condition for the propagation of the `message`.
-  * @note The `Propagate` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
-  *       [[acl.CommunicatingActor#propagate `propagate`]] action.
+  * @note The `Propagate` message is sent by the `sender` using the [[acl.CommunicatingActor.propagate `propagate`]]
+  *       action.
   */
 case class Propagate(conversationId: UUID,
                      message: CommunicativeAct,

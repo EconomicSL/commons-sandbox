@@ -15,14 +15,15 @@ package acl.acts
 import java.util.UUID
 
 
-/** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to another
-  * [[acl.CommunicatingActor `CommunicatingActor`]] informing it of object(s) which satisfy some descriptor.
+/** A message sent from some [[acl.CommunicatingActor `CommunicatingActor`]] (i.e., `sender`) to another
+  * [[acl.CommunicatingActor `CommunicatingActor`]] (i.e., `receiver`) informing the `receiver` of object(s) which
+  * satisfy some `descriptor`.
   *
-  * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
-  *                       form a conversation.
+  * @param conversationId is an expression used to identify a sequence of communicative acts that together form a
+  *                       conversation.
   * @param descriptor is a function describing some required characteristics of the object.
   * @tparam D is the type of objects described by the `descriptor`.
-  * @note The `InformRef` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
-  *       [[acl.CommunicatingActor.informRef `informRef`]] action.
+  * @note The `InformRef` message is sent by the `sender` using the [[acl.CommunicatingActor.informRef `informRef`]]
+  *       action.
   */
 case class InformRef[D](conversationId: UUID, descriptor: (D) => Boolean) extends CommunicativeAct

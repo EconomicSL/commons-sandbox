@@ -17,14 +17,14 @@ import java.util.UUID
 import acl.Beliefs
 
 
-/** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to a collection of other such actors
-  * indicating that some action was attempted, but that the attempt failed.
+/** A message sent from some [[acl.CommunicatingActor `CommunicatingActor`]] (i.e., `sender`) to another
+  * [[acl.CommunicatingActor `CommunicatingActor`]] (i.e., `receiver`) indicating that some action was attempted, but
+  * that the attempt failed.
   *
-  * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
-  *                       form a conversation.
-  * @param content  is an action expression defining the action(s) that the `sender` has failed to perform.
+  * @param conversationId is an expression used to identify a sequence of communicative acts that together form a
+  *                       conversation.
+  * @param content is an action expression defining the action(s) that the `sender` has failed to perform.
   * @tparam A is the type of action expression used to construct the `content` of the message.
-  * @note The `Failure` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
-  *       [[acl.CommunicatingActor.failure `failure`]] action.
+  * @note The `Failure` message is sent by the `sender` using the [[acl.CommunicatingActor.failure `failure`]] action.
   */
 case class Failure[A](conversationId: UUID, content: A, reason: (Beliefs) => Boolean) extends CommunicativeAct

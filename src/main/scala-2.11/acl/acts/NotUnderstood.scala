@@ -17,15 +17,15 @@ import java.util.UUID
 import acl.Beliefs
 
 
-/** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to to another
-  * [[acl.CommunicatingActor `CommunicatingActor`]] informing it that some previously received message was not
-  * understood.
+/** A message sent from some [[acl.CommunicatingActor `CommunicatingActor`]] (i.e., `sender`) to to another
+  * [[acl.CommunicatingActor `CommunicatingActor`]] (i.e., `recevier`) informing it that some previously received
+  * `message` was not understood.
   *
-  * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
-  *                       form a conversation.
+  * @param conversationId is an expression used to identify a sequence of communicative acts that together form a
+  *                       conversation.
   * @param message is the [[acl.acts.CommunicativeAct `CommunicativeAct`]] that was not understood.
-  * @param reason
-  * @note The `NotUnderstood` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
+  * @param reason is a proposition denoting the reason that the `message` was not understood.
+  * @note The `NotUnderstood` message is sent by the `sender` using the
   *       [[acl.CommunicatingActor.notUnderstood `notUnderstood`]] action.
   */
 case class NotUnderstood(conversationId: UUID,

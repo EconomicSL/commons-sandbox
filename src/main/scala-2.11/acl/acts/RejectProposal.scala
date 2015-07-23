@@ -17,15 +17,16 @@ import java.util.UUID
 import acl.Beliefs
 
 
-/** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to a collection of other such actors
-  * indicating that a previously received [[acl.acts.Propose `Propose`]] message has been rejected.
+/** A message sent from some [[acl.CommunicatingActor `CommunicatingActor`]] (i.e., `sender`) to another
+  * [[acl.CommunicatingActor `CommunicatingActor`]] (i.e., `receiver`) indicating that the `sender` has rejected a
+  * previously received [[acl.acts.Propose `Propose`]] message (i.e., `proposal`) from the `receiver`.
   *
-  * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
-  *                       form a conversation.
-  * @param proposal is the previously received [acl.Propose `Propose`] message that has been rejected.
+  * @param conversationId is used to identify a sequence of [[acl.acts.CommunicativeAct `CommunicativeAct`]] messages
+  *                       that together form a conversation.
+  * @param proposal is the previously received `proposal` that the `sender` has decided to reject.
   * @param reason is a proposition denoting the reason that the `proposal` has been rejected.
   * @tparam A is the type of action expression used to construct the content of the `proposal`.
-  * @note The `RejectProposal` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
+  * @note The `AcceptProposal` message is sent by the `sender` using the
   *       [[acl.CommunicatingActor.rejectProposal `rejectProposal`]] action.
   */
 case class RejectProposal[A](conversationId: UUID,

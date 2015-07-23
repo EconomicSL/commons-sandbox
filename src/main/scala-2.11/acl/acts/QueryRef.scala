@@ -15,14 +15,15 @@ package acl.acts
 import java.util.UUID
 
 
-/** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to a collection of other such actors asking
-  * whether or not the receiving actors have references to objects matching a given descriptor.
+/** A message sent from some [[acl.CommunicatingActor `CommunicatingActor`]] (i.e., `sender`) to another
+  * [[acl.CommunicatingActor `CommunicatingActor`]] (i.e., `receiver`) asking whether or not the `receiver` has
+  * references to objects matching a given `descriptor`.
   *
-  * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
-  *                       form a conversation.
+  * @param conversationId is an expression used to identify a sequence of communicative acts that together form a
+  *                       conversation.
   * @param descriptor is a function describing some required characteristics of an object.
   * @tparam D is the type of object characterized by the `descriptor`.
-  * @note the `QueryIf` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
-  *       [[acl.CommunicatingActor.queryIf, `queryIf`]] method.
+  * @note The `QueryRef` message is sent by the `sender` using the [[acl.CommunicatingActor.queryRef `queryRef`]]
+  *       method.
   */
 case class QueryRef[D](conversationId: UUID, descriptor: (D) => Boolean) extends CommunicativeAct

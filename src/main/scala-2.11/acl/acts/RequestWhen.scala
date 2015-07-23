@@ -17,17 +17,18 @@ import java.util.UUID
 import acl.Beliefs
 
 
-/** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to a collection of other such actors
-  * requesting them to perform some action when some given precondition becomes true.
+/** A message sent from some [[acl.CommunicatingActor `CommunicatingActor`]] (i.e., `sender`) to another
+  * [[acl.CommunicatingActor `CommunicatingActor`]] (i.e., `receiver`) requesting the `receiver` to perform some action
+  * when some given `precondition` becomes true.
   *
-  * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
-  *                       form a conversation.
+  * @param conversationId is an expression used to identify a sequence of communicative acts that together form a
+  *                       conversation.
   * @param content is an action expression defining the action(s) that the `sender` is requesting the `receiver` to
   *                perform.
   * @param precondition is a proposition defining the precondition that should be satisfied in order for the
-  *                     `receiver` to perform the action(s) specied in the `content`.
+  *                     `receiver` to perform the action(s) specified in the `content`.
   * @tparam A is the type of action expression used to construct the content of the `request`.
-  * @note The `RequestWhen` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
+  * @note The `RequestWhen` message is sent by the `sender` using the
   *       [[acl.CommunicatingActor.requestWhen `requestWhen`]] action.
   */
 case class RequestWhen[A](conversationId: UUID,

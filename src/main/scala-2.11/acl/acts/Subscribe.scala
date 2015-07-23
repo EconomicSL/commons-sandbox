@@ -15,14 +15,14 @@ package acl.acts
 import java.util.UUID
 
 
-/** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to another
-  * [[acl.CommunicatingActor `CommunicatingActor`]] requesting that the receiving actor notify the sender of the
-  * value of a reference whenever the object identified by the reference changes.
+/** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] (i.e., `sender`) to another
+  * [[acl.CommunicatingActor `CommunicatingActor`]] (i.e., `receiver`)requesting that the `recevier` notify the
+  * `sender` of the value of a reference whenever the object identified by the reference changes.
   *
-  * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
-  *                       form a conversation.
+  * @param conversationId is an expression used to identify a sequence of communicative acts that together form a
+  *                       conversation.
   * @param descriptor is a function describing some required characteristics of the reference object.
-  * @note The `Subscribe` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
-  *       [[acl.CommunicatingActor.subscribe `subscribe`]] action.
+  * @note The `Subscribe` message is sent by the `sender` using the [[acl.CommunicatingActor.subscribe `subscribe`]]
+  *       action.
   */
 case class Subscribe[D](conversationId: UUID, descriptor: (D) => Boolean) extends CommunicativeAct

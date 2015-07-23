@@ -17,14 +17,15 @@ import java.util.UUID
 import acl.Beliefs
 
 
-/** A message sent from a [[acl.CommunicatingActor `CommunicatingActor`]] to another
-  * [[acl.CommunicatingActor `CommunicatingActor`]] informing it whether or not some proposition is true.
+/** A message sent from some [[acl.CommunicatingActor `CommunicatingActor`]] (i.e., `sender`) to another
+  * [[acl.CommunicatingActor `CommunicatingActor`]] (i.e., `receiver`) informing the `receiver` whether or not some
+  * `proposition` is true.
   *
-  * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
-  *                       form a conversation.
+  * @param conversationId is an expression used to identify a sequence of communicative acts that together form a
+  *                       conversation.
   * @param proposition is a proposition whose truth value the `sender` has knowledge of which it intends to share
   *                    with the `receiver`.
-  * @note The `InformIf` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
-  *       [[acl.CommunicatingActor.informIf `informIf`]] action.
+  * @note The `InformIf` message is sent by the `sender` using the [[acl.CommunicatingActor.informIf `informIf`]]
+  *       action.
   */
 case class InformIf(conversationId: UUID, proposition: (Beliefs) => Boolean) extends CommunicativeAct
