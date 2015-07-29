@@ -4,7 +4,10 @@
 [![Codacy Badge](https://www.codacy.com/project/badge/010943975d84466b85975ff788fe76cb)](https://www.codacy.com/app/drobert-pugh/commons-sandbox)
 [![GitHub license](https://img.shields.io/github/license/ScalABM/commons-sandbox.svg)]()
 
-A workspace for developing reusable components for scalable agent-based models.
+A workspace for developing reusable components for scalable agent-based models of complex systems. The core API is 
+being developed in [Scala](http://www.scala-lang.org/) and [Akka](http://akka.io/) while the  actual models 
+themselves will be built to run as web applications using the [Play framework](https://www.playframework.com/) in 
+order to leverage cutting-edge, browser-based tools for data analysis and visualization.
 
 ## Getting started
 The following instructions will help walk you through the process of downloading and installing 
