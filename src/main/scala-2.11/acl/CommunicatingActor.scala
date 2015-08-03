@@ -21,13 +21,9 @@ import scala.collection.mutable
 
 
 /** Trait defining the behavior of a `CommunicatingActor`. */
-trait CommunicatingActor {
-  this: Actor with ActorLogging =>
+trait CommunicatingActor extends Actor with ActorLogging {
 
   def beliefs: Beliefs
-
-  /** Collection of actors to whom the `CommunicatingActor` can directly send a message. */
-  def neighbors: mutable.Set[ActorRef]
 
   /** Accept a previously received proposal from another `CommunicatingActor`.
     *
@@ -61,8 +57,7 @@ trait CommunicatingActor {
   def agree[A](conversationId: UUID,
                receiver: ActorRef,
                request: Request[A],
-               precondition: (Beliefs) => Boolean):
-  Unit = {
+               precondition: (Beliefs) => Boolean): Unit = {
     receiver ! Agree(conversationId, request, precondition)
   }
 
@@ -247,36 +242,6 @@ trait CommunicatingActor {
     receiver ! NotUnderstood(conversationId, message, reason)
   }
 
-  /** Propagate a message to a collection of `CommunicatingActor` satisfying a descriptor.
-    *
-    * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
-    *                       form a conversation.
-    * @param receiver is the `CommunicatingActor` to whom the [[acl.acts.Propagate `Propagate`]] message should be sent.
-    * @param message is the embedded [[acl.acts.CommunicativeAct `CommunicativeAct`]] which is being propagated.
-    * @param descriptor is a proposition denoting a collection of actors to whom the [[acl.acts.Propagate `Propagate`]]
-    *                   message should be sent by the `receiver`.
-    * @param constraint is a proposition describing a termination condition for the propagation of the `message`.
-    * @note The `propagate` act works as follows:
-    *
-    *       1. The `CommunicatingActor` requests the `receiver` to treat the embedded message in the
-    *       received [[acl.acts.Propagate `Propagate`]] message as if it is was directly sent from the
-    *       `CommunicatingActor`, that is, as if the `CommunicativeActor` performed the embedded communicative act
-    *       directly to the `receiver`.
-    *
-    *       2. The `CommunicatingActor` wants the `receiver` to identify other actors denoted by the given `descriptor`
-    *       and to send the received [[acl.acts.Propagate `Propagate`]] message to them.
-    *
-    *       This communicative act is designed for delivering messages through federated agents by creating a chain
-    *       (or tree) of [[acl.acts.Propagate `Propagate`]] messages.
-    */
-  def propagate(conversationId: UUID,
-                receiver: ActorRef,
-                message: CommunicativeAct,
-                descriptor: (ActorRef) => Boolean,
-                constraint: (Beliefs) => Boolean): Unit = {
-    receiver ! Propagate(conversationId, message, descriptor, constraint)
-  }
-
   /** Submit a proposal to perform certain actions given certain preconditions.
     *
     * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
@@ -292,26 +257,6 @@ trait CommunicatingActor {
                  content: A,
                  precondition: (Beliefs) => Boolean): Unit = {
     receiver ! Propose(conversationId, content, precondition)
-  }
-
-  /** Request another `CommunicatingActor` send a message to a collection of other actors matching a given description.
-    *
-    * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
-    *                       form a conversation.
-    * @param receiver is the `CommunicatingActor` to whom the [[acl.acts.Proxy `Proxy`]] message should be sent.
-    * @param message is the embedded [[acl.acts.CommunicativeAct `CommunicativeAct`]] which is being proxied.
-    * @param descriptor is a proposition denoting a collection of actors to whom the [[acl.acts.Proxy `Proxy`]] message
-    *                   should be sent by the `receiver`.
-    * @param constraint is a proposition constraining the proxying of the `message`.
-    * @note The `CommunicatingActor` informs the `receiver` that it wants the `receiver` to identify actors that
-    *       satisfy the given `descriptor` and forward them the embedded `message`.
-    */
-  def proxy(conversationId: UUID,
-            receiver: ActorRef,
-            message: CommunicativeAct,
-            descriptor: (ActorRef) => Boolean,
-            constraint: (Beliefs) => Boolean): Unit = {
-    receiver ! Proxy(conversationId, message, descriptor, constraint)
   }
 
   /** Query a collection of actors in order to ascertain the truth value of some proposition.
