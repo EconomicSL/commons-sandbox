@@ -10,9 +10,9 @@ autoAPIMappings := true
 scalacOptions in (Compile, doc) ++= Seq("-doc-root-content", baseDirectory.value + "/src/root-doc.txt")
 
 libraryDependencies ++= Seq(
-  "io.reactivex" % "rxscala_2.11" % "0.25.0",
   "com.typesafe.akka" %% "akka-actor" % "2.3.11",
   "com.typesafe.akka" %% "akka-agent" % "2.3.11",
   "com.typesafe.akka" %% "akka-testkit" % "2.3.11" % "test",
-  "org.scalatest" % "scalatest_2.11" % "2.2.4" % "test"
+  "org.scalatest" % "scalatest_2.11" % "2.2.4" % "test",
+  "org.scala-lang" % "scala-reflect" % "2.11.6"
 )

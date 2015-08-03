@@ -13,14 +13,18 @@ specific language governing permissions and limitations under the License.
 package acl.acts
 
 import java.util.UUID
+import scala.reflect.runtime.universe._
 
 import acl.Beliefs
 
 
-/** Base trait representing various types of requests. */
-sealed trait RequestActLike[A] extends CommunicativeAct {
+/** Abstract class for representing requests. */
+abstract class RequestActLike[A](implicit tt: TypeTag[A]) extends CommunicativeAct {
+
+  val tpe = tt.tpe
 
   def content: A
+
 }
 
 
