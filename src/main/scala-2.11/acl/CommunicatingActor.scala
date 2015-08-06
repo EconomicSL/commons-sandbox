@@ -17,8 +17,6 @@ import java.util.UUID
 import acl.acts._
 import akka.actor.{ActorRef, Actor, ActorLogging}
 
-import scala.collection.mutable
-
 
 /** Trait defining the behavior of a `CommunicatingActor`. */
 trait CommunicatingActor extends Actor with ActorLogging {
@@ -118,7 +116,7 @@ trait CommunicatingActor extends Actor with ActorLogging {
     *       the `receiver` concerning the sincerity and reliability of the `CommunicatingActor` sending the
     *       [[acl.acts.Confirm `Confirm`]] message.
     */
-  def confirm(conversationId: UUID, receiver: ActorRef, proposition: (Beliefs) => Boolean): Unit = {
+  def confirm(conversationId: UUID, receiver: ActorRef, proposition: Beliefs): Unit = {
     receiver ! Confirm(conversationId, proposition)
   }
 
@@ -145,7 +143,7 @@ trait CommunicatingActor extends Actor with ActorLogging {
     *       the `receiver` concerning the sincerity and reliability of the `CommunicatingActor` sending the
     *       [[acl.acts.Disconfirm `Disconfirm`]] message.
     */
-  def disconfirm(conversationId: UUID, receiver: ActorRef, proposition: (Beliefs) => Boolean): Unit = {
+  def disconfirm(conversationId: UUID, receiver: ActorRef, proposition: Beliefs): Unit = {
     receiver ! Disconfirm(conversationId, proposition)
   }
 
@@ -183,7 +181,7 @@ trait CommunicatingActor extends Actor with ActorLogging {
     *       the `receiver` concerning the sincerity and reliability of the `CommunicatingActor` sending the
     *       [[acl.acts.Inform `Inform`]] message.
     */
-  def inform(conversationId: UUID, receiver: ActorRef, proposition: (Beliefs) => Boolean): Unit = {
+  def inform(conversationId: UUID, receiver: ActorRef, proposition: Beliefs): Unit = {
     receiver ! Inform(conversationId, proposition)
   }
 
@@ -208,12 +206,8 @@ trait CommunicatingActor extends Actor with ActorLogging {
     *       Finally, while the `informIf` act can be planned or requested by a `CommunicatingActor` the `informIf` act
     *       can not be performed directly, but only upon receipt of an [[acl.acts.InformIf `InformIf`]] message.
     */
-  def informIf(conversationId: UUID, receiver: ActorRef, proposition: (Beliefs) => Boolean): Unit = {
-    if (proposition(beliefs)) {
-      inform(conversationId, receiver, proposition)
-    } else {
-      inform(conversationId, receiver, (b: Beliefs) => ! proposition(b))
-    }
+  def informIf(conversationId: UUID, receiver: ActorRef, proposition: Beliefs): Unit = {
+    ???
   }
 
   /** Inform another `CommunicatingActor` of object(s) satisfying some descriptor.
@@ -267,7 +261,7 @@ trait CommunicatingActor extends Actor with ActorLogging {
     * @param proposition is a proposition about which the `CommunicatingActor` is ignorant (i.e., has no knowledge of
     *                    its truth value).
     */
-  def queryIf(conversationId: UUID, receiver: ActorRef, proposition: (Beliefs) => Boolean): Unit = {
+  def queryIf(conversationId: UUID, receiver: ActorRef, proposition: Beliefs): Unit = {
     receiver ! QueryIf(conversationId, proposition)
   }
 
