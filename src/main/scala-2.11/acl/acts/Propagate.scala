@@ -28,7 +28,7 @@ import akka.actor.ActorRef
   * @param descriptor is a proposition denoting a collection of actors to whom the [[acl.acts.Propagate `Propagate`]]
   *                   message should be sent by the `receiver`.
   * @param constraint is a proposition describing a termination condition for the propagation of the `message`.
-  * @note The `Propagate` message is sent by the `sender` using the [[acl.CommunicatingActor.propagate `propagate`]]
+  * @note The `Propagate` message is sent by the `sender` using the [[acl.NodeActor.propagate `propagate`]]
   *       action.
   */
 case class Propagate(conversationId: UUID,

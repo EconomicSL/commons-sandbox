@@ -27,4 +27,4 @@ import acl.Beliefs
   *                    truth value).
   * @note The `QueryIf` message is sent by the `sender` using the [[acl.CommunicatingActor.queryIf `queryIf`]] method.
   */
-case class QueryIf(conversationId: UUID, proposition: (Beliefs) => Boolean) extends CommunicativeAct
+case class QueryIf(conversationId: UUID, proposition: Beliefs) extends CommunicativeAct

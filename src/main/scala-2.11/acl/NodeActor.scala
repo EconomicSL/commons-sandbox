@@ -1,3 +1,15 @@
+/*
+Copyright 2015 David R. Pugh, Dan F. Tang, J. Doyne Farmer
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
+the License. You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
+an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
+specific language governing permissions and limitations under the License.
+*/
 package acl
 
 import java.util.UUID
@@ -8,17 +20,17 @@ import akka.actor.ActorRef
 import scala.collection.mutable
 
 
-/** Trait defining behavior of an [[acl.CommunicatingActor `CommunicatingActor`]] that is also a node in some graph. */
+/** Trait defining behavior of a [[acl.CommunicatingActor `CommunicatingActor`]] that is also a node in some graph. */
 trait NodeActor {
   this: CommunicatingActor =>
 
-  /** Collection of actors to whom the `NodeActor` can directly send a message. */
+  /** Collection of actors to whom the `CommunicatingActor` can directly send a message. */
   def neighbors: mutable.Set[ActorRef]
 
-  /** Propagate a message to a collection of `CommunicatingActor` satisfying a descriptor.
+  /** Propagate a message to another `CommunicatingActor` satisfying a descriptor.
     *
-    * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
-    *                       form a conversation.
+    * @param conversationId is an expression used to identify an ongoing sequence of
+    *                       [[acl.acts.CommunicativeAct `CommunicativeAct`]] that together form a conversation.
     * @param receiver is the `CommunicatingActor` to whom the [[acl.acts.Propagate `Propagate`]] message should be sent.
     * @param message is the embedded [[acl.acts.CommunicativeAct `CommunicativeAct`]] which is being propagated.
     * @param descriptor is a proposition denoting a collection of actors to whom the [[acl.acts.Propagate `Propagate`]]
@@ -45,10 +57,11 @@ trait NodeActor {
     receiver ! Propagate(conversationId, message, descriptor, constraint)
   }
 
-  /** Request another `CommunicatingActor` send a message to a collection of other actors matching a given description.
+  /** Request another `CommunicatingActor` to send a message to a collection of other actors matching a given
+    * descriptor (possibly subject to some constraint).
     *
-    * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
-    *                       form a conversation.
+    * @param conversationId is an expression used to identify an ongoing sequence of
+    *                       [[acl.acts.CommunicativeAct `CommunicativeAct`]] that together form a conversation.
     * @param receiver is the `CommunicatingActor` to whom the [[acl.acts.Proxy `Proxy`]] message should be sent.
     * @param message is the embedded [[acl.acts.CommunicativeAct `CommunicativeAct`]] which is being proxied.
     * @param descriptor is a proposition denoting a collection of actors to whom the [[acl.acts.Proxy `Proxy`]] message
