@@ -27,4 +27,4 @@ import acl.Beliefs
   *                    comes to believe to be true.
   * @note The `Inform` message is sent by the `sender` using the [[acl.CommunicatingActor.inform `inform`]] action.
   */
-case class Inform(conversationId: UUID, proposition: (Beliefs) => Boolean) extends CommunicativeAct
+case class Inform(conversationId: UUID, proposition: Beliefs) extends CommunicativeAct

@@ -27,4 +27,4 @@ import acl.Beliefs
   *                    comes to believe to be true.
   * @note The `Confirm` message is sent by the `sender` using the [[acl.CommunicatingActor.confirm `confirm`]] action.
   */
-case class Confirm(conversationId: UUID, proposition: (Beliefs) => Boolean) extends CommunicativeAct
+case class Confirm(conversationId: UUID, proposition: Beliefs) extends CommunicativeAct

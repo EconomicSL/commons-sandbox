@@ -28,4 +28,4 @@ import acl.Beliefs
   * @note The `Disconfirm` message is sent by the `sender` using the
   *       [[acl.CommunicatingActor.disconfirm `disconfirm`]] action.
   */
-case class Disconfirm(conversationId: UUID, proposition: (Beliefs) => Boolean) extends CommunicativeAct
+case class Disconfirm(conversationId: UUID, proposition: Beliefs) extends CommunicativeAct
