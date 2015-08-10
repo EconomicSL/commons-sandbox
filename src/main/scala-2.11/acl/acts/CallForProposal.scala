@@ -26,8 +26,7 @@ import java.util.UUID
   *                submit a `proposal` to perform.
   * @param precondition is a condition that any submitted `proposal` must satisfy in order to be accepted by the
   *                     `sender`.
-  * @tparam A is the type of action expression used to construct the `proposal`.
   */
-case class CallForProposal[A](conversationId: UUID,
-                              content: A,
-                              precondition: (Propose[A]) => Boolean) extends CommunicativeAct
+case class CallForProposal(conversationId: UUID,
+                           content: Any,
+                           precondition: (Propose) => Boolean) extends CommunicativeAct

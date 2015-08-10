@@ -15,6 +15,7 @@ package acl.acts
 import java.util.UUID
 
 import acl.Beliefs
+import akka.actor.ActorRef
 
 
 /** A message sent from some [[acl.CommunicatingActor `CommunicatingActor`]] (i.e., `sender`) to another
@@ -28,7 +29,7 @@ import acl.Beliefs
   * @param constraint is a proposition describing a termination condition for the propagation of the `message`.
   * @note The `Proxy` message is sent by the `sender` using the [[acl.CommunicatingActor#proxy `proxy`]] action.
   */
-case class Proxy[D](conversationId: UUID,
-                    message: CommunicativeAct,
-                    descriptor: (D) => Boolean,
-                    constraint: (Beliefs) => Boolean) extends CommunicativeAct
+case class Proxy(conversationId: UUID,
+                 message: CommunicativeAct,
+                 descriptor: (ActorRef) => Boolean,
+                 constraint: (Beliefs) => Boolean) extends CommunicativeAct

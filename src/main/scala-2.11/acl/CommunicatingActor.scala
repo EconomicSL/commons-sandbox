@@ -31,12 +31,11 @@ trait CommunicatingActor extends Actor with ActorLogging {
     *                       form a conversation.
     * @param receiver is the `CommunicatingActor` whose `proposal` has been accepted.
     * @param proposal is the previously received [[acl.acts.Propose `Propose`]] message that has been accepted.
-    * @tparam A is the type of action expression used to construct the content of the `proposal`.
     * @note `acceptProposal` is a general-purpose acceptance of a previously received [[acl.acts.Propose `Propose`]]
     *       message. The `CommunicatingActor` sending the [[acl.acts.AcceptProposal `AcceptProposal`]] message informs
     *       the `receiver` that it intends that the `receiver` act in accordance with the terms of the `proposal`.
     */
-  def acceptProposal[A](conversationId: UUID, receiver: ActorRef, proposal: Propose[A]): Unit = {
+  def acceptProposal(conversationId: UUID, receiver: ActorRef, proposal: Propose): Unit = {
     receiver ! AcceptProposal(conversationId, proposal)
   }
 
@@ -48,16 +47,15 @@ trait CommunicatingActor extends Actor with ActorLogging {
     * @param request is the previously received [[acl.acts.Request `Request`]] that has been agreed.
     * @param precondition is a proposition that must be satisfied in order for the `CommunicatingActor` to perform
     *                     the `request`.
-    * @tparam A is the type of action expression used to construct the content of the `request`.
     * @note `agree` is a general purpose agreement to a previously received [[acl.acts.Request `Request`]] message to
     *       perform certain actions given that a `precondition` is satisfied. The `CommunicatingActor` sending the
     *       [[acl.acts.Agree `Agree`]] message informs the `receiver` that it intends to act in accordance with the 
     *       terms of the  `request`.
     */
-  def agree[A](conversationId: UUID,
-               receiver: ActorRef,
-               request: Request[A],
-               precondition: (Beliefs) => Boolean): Unit = {
+  def agree(conversationId: UUID,
+            receiver: ActorRef,
+            request: Request,
+            precondition: (Beliefs) => Boolean): Unit = {
     receiver ! Agree(conversationId, request, precondition)
   }
 
@@ -70,12 +68,11 @@ trait CommunicatingActor extends Actor with ActorLogging {
     *                `receiver` to submit a proposal to perform.
     * @param precondition is a proposition defining conditions that any submitted proposal must satisfy in order to be
     *                     accepted.
-    * @tparam A is the type of action expression used to construct the `proposal`.
     */
-  def callForProposal[A](conversationId: UUID,
-                         receiver: ActorRef,
-                         content: A,
-                         precondition: (Propose[A]) => Boolean): Unit = {
+  def callForProposal(conversationId: UUID,
+                      receiver: ActorRef,
+                      content: Any,
+                      precondition: (Propose) => Boolean): Unit = {
     receiver ! CallForProposal(conversationId, content, precondition)
   }
 
@@ -85,14 +82,13 @@ trait CommunicatingActor extends Actor with ActorLogging {
     *                       form a conversation.
     * @param receiver is the `CommunicatingActor` to notify to notify of the cancellation.
     * @param request is the previously received [acl.acts.Request `Request`] that has been cancelled.
-    * @tparam A is the type of action expression used to construct the content of the `request`.
     * @note The `cancel` act allows a `CommunicatingActor` to inform the `receiver` that it no longer intends that
     *       the `receiver` perform a previously requested action. This is not the same thing as a
     *       `CommunicatingActor` informing the `receiver` to stop performing an action.  In order for a
     *       `CommunicatingActor` to stop the `receiver` from performing an action it should send a
     *       [[acl.acts.Request `Request`]] message that the `receiver` stop performing that action.
     */
-  def cancel[A](conversationId: UUID, receiver: ActorRef, request: Request[A]): Unit = {
+  def cancel(conversationId: UUID, receiver: ActorRef, request: Request): Unit = {
     receiver ! Cancel(conversationId, request)
   }
 
@@ -156,9 +152,8 @@ trait CommunicatingActor extends Actor with ActorLogging {
     * @param receiver is the `CommunicatingActor` to notify of the failure.
     * @param content is an action expression defining the action(s) that were attempted.
     * @param reason is a proposition indicating the reason for the failure.
-    * @tparam A is the type of action expression used to construct the `content`.
     */
-  def failure[A](conversationId: UUID, receiver: ActorRef, content: A, reason: (Beliefs) => Boolean): Unit = {
+  def failure(conversationId: UUID, receiver: ActorRef, content: Any, reason: (Beliefs) => Boolean): Unit = {
     receiver ! Failure(conversationId, content, reason)
   }
 
@@ -246,12 +241,11 @@ trait CommunicatingActor extends Actor with ActorLogging {
     * @param content is an action expression representing the action that the `CommunicatingActor` is proposing to
     *                perform.
     * @param precondition is a proposition indicating the conditions for the action to be performed.
-    * @tparam A is the type of action expression used to construct `content` of the proposal.
     */
-  def propose[A](conversationId: UUID,
-                 receiver: ActorRef,
-                 content: A,
-                 precondition: (Beliefs) => Boolean): Unit = {
+  def propose(conversationId: UUID,
+              receiver: ActorRef,
+              content: Any,
+              precondition: (Beliefs) => Boolean): Unit = {
     receiver ! Propose(conversationId, content, precondition)
   }
 
@@ -275,7 +269,6 @@ trait CommunicatingActor extends Actor with ActorLogging {
     * @param descriptor is a function describing some required characteristics of an object.
     * @param selector is a function describing a rule for choosing some subset of the collection of objects that
     *                 satisfy the `descriptor`.
-    * @tparam D is the type of object characterized by the `descriptor`.
     * @note `queryRef` is the act of asking the `receiver` to inform the `CommunicatingActor` of some subset of
     *       objects matching the provided `descriptor`. The `CommunicatingActor` performing the `queryRef` act is
     *       assumed
@@ -288,10 +281,10 @@ trait CommunicatingActor extends Actor with ActorLogging {
     *       is determined by the `selector`.  Typically, the `selector` will be a behavioral rule used by the
     *       `CommunicatingActor` to choose a particular alternative from some set of options.
     */
-  def queryRef[D](conversationId: UUID,
-                  receiver: ActorRef,
-                  descriptor: (D) => Boolean,
-                  selector: (immutable.Set[D]) => immutable.Set[D]): Unit = {
+  def queryRef(conversationId: UUID,
+               receiver: ActorRef,
+               descriptor: (Any) => Boolean,
+               selector: (immutable.Set[Any]) => immutable.Set[Any]): Unit = {
     receiver ! QueryRef(conversationId, descriptor, selector)
   }
 
@@ -303,14 +296,13 @@ trait CommunicatingActor extends Actor with ActorLogging {
     * @param receiver is a collection of actors receiving the [[acl.acts.Refuse `Refuse`]] message.
     * @param request is the [[acl.acts.Request `Request]] that the `CommunicatingActor` can no longer perform.
     * @param reason is a proposition indicating the reason that the `request` is being refused.
-    * @tparam A is the type of action expression used to construct the `request`.
     * @note The `refuse` act allows a `CommunicatingActor` to inform the `receiver` that it is no longer possible for
     *       it to perform a previously agreed `request`.
     */
-  def refuse[A](conversationId: UUID,
-                receiver: ActorRef,
-                request: Request[A],
-                reason: (Beliefs) => Boolean): Unit = {
+  def refuse(conversationId: UUID,
+             receiver: ActorRef,
+             request: Request,
+             reason: (Beliefs) => Boolean): Unit = {
     receiver ! Refuse(conversationId, request, reason)
   }
 
@@ -321,17 +313,16 @@ trait CommunicatingActor extends Actor with ActorLogging {
     * @param receiver is a collection of actors receiving the [[acl.acts.RejectProposal `RejectProposal`]] message.
     * @param proposal is a previously received [[acl.acts.Propose `Propose`]] message that is being rejected.
     * @param reason is a proposition indicating the reason for the rejection.
-    * @tparam A is the type of action expression used to construct the `proposal`.
     * @note `rejectProposal` is a general-purpose rejection of a previously received [[acl.acts.Propose `Propose`]]
     *       message. The `CommunicatingActor` sending the [[acl.acts.RejectProposal `RejectProposal`]] message informs
     *       the `receiver` that it has no intention that the `receiver` performs the given actions as defined in the
     *       `content`. The additional proposition `reason` indicates the reason that the `CommunicatingActor` rejected
     *       the `proposal`.
     */
-  def rejectProposal[A](conversationId: UUID,
-                        receiver: ActorRef,
-                        proposal: Propose[A],
-                        reason: (Beliefs) => Boolean): Unit = {
+  def rejectProposal(conversationId: UUID,
+                     receiver: ActorRef,
+                     proposal: Propose,
+                     reason: (Beliefs) => Boolean): Unit = {
     receiver ! RejectProposal(conversationId, proposal, reason)
   }
 
@@ -342,7 +333,6 @@ trait CommunicatingActor extends Actor with ActorLogging {
     * @param receiver is the collection of [[acl.CommunicatingActor `CommunicatingActor`]] that are being requested to
     *                 perform action(s) specified in the `content`.
     * @param content An action expression denoting the action(s) to be done.
-    * @tparam A is the type of action expression used to construct the request `content`.
     * @note The `CommunicatingActor` is requesting the `receiver` to perform some action. The `content` of the
     *       [[acl.acts.Request `Request]] message is a description of the action to be performed in a language that the
     *       `receiver` understands.
@@ -351,7 +341,7 @@ trait CommunicatingActor extends Actor with ActorLogging {
     *       where the actions that are the object of the `request` act are themselves instances of
     *       [[acl.acts.CommunicativeAct `CommunicativeAct`]].
     */
-  def request[A](conversationId: UUID, receiver: ActorRef, content: A): Unit = {
+  def request(conversationId: UUID, receiver: ActorRef, content: Any): Unit = {
     receiver ! Request(conversationId, content)
   }
 
@@ -363,7 +353,6 @@ trait CommunicatingActor extends Actor with ActorLogging {
     *                 perform action(s) specified in the `content`.
     * @param content An action expression denoting the action(s) to be done.
     * @param precondition A proposition indicating the conditions for the action to be performed.
-    * @tparam A is the type of action expression used to construct the request `content`.
     * @note The `requestWhen` act allows a `CommunicatingActor` to inform another actor that a certain action should
     *       be performed as soon as a given precondition, expressed as a proposition, becomes true.
     *
@@ -379,10 +368,10 @@ trait CommunicatingActor extends Actor with ActorLogging {
     *       - the `CommunicatingActor` determines that it can no longer honour the commitment in which case it sends a
     *       [[acl.acts.Refuse `Refuse`]] message.
     */
-  def requestWhen[A](conversationId: UUID,
-                     receiver: ActorRef,
-                     content: A,
-                     precondition: (Beliefs) => Boolean): Unit = {
+  def requestWhen(conversationId: UUID,
+                  receiver: ActorRef,
+                  content: Any,
+                  precondition: (Beliefs) => Boolean): Unit = {
     receiver ! RequestWhen(conversationId, content, precondition)
   }
 
@@ -395,7 +384,6 @@ trait CommunicatingActor extends Actor with ActorLogging {
     *                 perform action(s) specified in the `content`.
     * @param content An action expression denoting the action(s) to be done.
     * @param precondition A proposition indicating the conditions for the action to be performed.
-    * @tparam A is the type of action expression used to construct the request `content`.
     * @note The `requestWhenever` act allows a `CommunicatingActor` to inform another actor that a certain action should
     *       be performed as soon as a given precondition, expressed as a proposition, becomes true, and that, after
     *       that, if the precondition should subsequently become false, the action will be repeated as soon as the
@@ -406,10 +394,10 @@ trait CommunicatingActor extends Actor with ActorLogging {
     *       [[acl.acts.RequestWhenever `RequestWhenever`]] message can cancel the commitment by sending a
     *       [[acl.acts.Cancel `Cancel`]] message.
     */
-  def requestWhenever[A](conversationId: UUID,
-                         receiver: ActorRef,
-                         content: A,
-                         precondition: (Beliefs) => Boolean): Unit = {
+  def requestWhenever(conversationId: UUID,
+                      receiver: ActorRef,
+                      content: Any,
+                      precondition: (Beliefs) => Boolean): Unit = {
     receiver ! RequestWhenever(conversationId, content, precondition)
   }
 
@@ -420,9 +408,8 @@ trait CommunicatingActor extends Actor with ActorLogging {
     *                       form a conversation.
     * @param receiver is [[acl.CommunicatingActor `CommunicatingActor`]] that is to receive the subscription request.
     * @param descriptor is a function describing some required characteristics of the reference object.
-    * @tparam D is the type of object characterized by the `descriptor`.
     */
-  def subscribe[D](conversationId: UUID, receiver: ActorRef, descriptor: (D) => Boolean): Unit = {
+  def subscribe(conversationId: UUID, receiver: ActorRef, descriptor: (Any) => Boolean): Unit = {
     receiver ! Subscribe(conversationId, descriptor)
   }
 

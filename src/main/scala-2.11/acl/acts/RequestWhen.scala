@@ -27,10 +27,9 @@ import acl.Beliefs
   *                perform.
   * @param precondition is a proposition defining the precondition that should be satisfied in order for the
   *                     `receiver` to perform the action(s) specified in the `content`.
-  * @tparam A is the type of action expression used to construct the content of the `request`.
   * @note The `RequestWhen` message is sent by the `sender` using the
   *       [[acl.CommunicatingActor.requestWhen `requestWhen`]] action.
   */
-case class RequestWhen[A](conversationId: UUID,
-                          content: A,
-                          precondition: (Beliefs) => Boolean) extends CommunicativeAct
+case class RequestWhen(conversationId: UUID,
+                       content: Any,
+                       precondition: (Beliefs) => Boolean) extends CommunicativeAct

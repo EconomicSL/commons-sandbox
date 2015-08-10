@@ -24,4 +24,4 @@ import java.util.UUID
   *                perform.
   * @note The `Request` message is sent by the `sender` using the [[acl.CommunicatingActor.request `request`]] action.
   */
-case class Request[A](conversationId: UUID, request: A) extends CommunicativeAct
+case class Request(conversationId: UUID, request: Any) extends CommunicativeAct

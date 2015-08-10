@@ -26,9 +26,8 @@ import acl.Beliefs
   *                event that the `precondition` is satisfied.
   * @param precondition is a proposition defining the precondition that should be satisfied in order for the `sender`
   *                     to perform the action(s) specified in the `content`.
-  * @tparam A is the type of action expression used to construct the `content`.
   * @note The `Propose` message is sent by the `sender` using the [[acl.CommunicatingActor.propose `propose`]] method.
   */
-case class Propose[A](conversationId: UUID,
-                      content: A,
-                      precondition: (Beliefs) => Boolean) extends CommunicativeAct
+case class Propose(conversationId: UUID,
+                   content: Any,
+                   precondition: (Beliefs) => Boolean) extends CommunicativeAct

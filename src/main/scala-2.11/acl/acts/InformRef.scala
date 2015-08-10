@@ -22,8 +22,7 @@ import java.util.UUID
   * @param conversationId is an expression used to identify a sequence of communicative acts that together form a
   *                       conversation.
   * @param descriptor is a function describing some required characteristics of the object.
-  * @tparam D is the type of objects described by the `descriptor`.
   * @note The `InformRef` message is sent by the `sender` using the [[acl.CommunicatingActor.informRef `informRef`]]
   *       action.
   */
-case class InformRef[D](conversationId: UUID, descriptor: (D) => Boolean) extends CommunicativeAct
+case class InformRef(conversationId: UUID, descriptor: (Any) => Boolean) extends CommunicativeAct

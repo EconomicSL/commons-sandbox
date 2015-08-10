@@ -25,9 +25,9 @@ import acl.Beliefs
   *                       that together form a conversation.
   * @param proposal is the previously received `proposal` that the `sender` has decided to reject.
   * @param reason is a proposition denoting the reason that the `proposal` has been rejected.
-  * @tparam A is the type of action expression used to construct the content of the `proposal`.
   * @note The `AcceptProposal` message is sent by the `sender` using the
   *       [[acl.CommunicatingActor.rejectProposal `rejectProposal`]] action.
   */
-case class RejectProposal[A](conversationId: UUID,
-                             proposal: Propose[A], reason: (Beliefs) => Boolean) extends CommunicativeAct
+case class RejectProposal(conversationId: UUID,
+                          proposal: Propose,
+                          reason: (Beliefs) => Boolean) extends CommunicativeAct
