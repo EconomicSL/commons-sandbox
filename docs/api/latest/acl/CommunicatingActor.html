@@ -187,45 +187,45 @@
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="acl.CommunicatingActor#acceptProposal" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="acceptProposal[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposal:acl.acts.Propose[A]):Unit"></a>
-      <a id="acceptProposal[A](UUID,ActorRef,Propose[A]):Unit"></a>
+      <a id="acceptProposal(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposal:acl.acts.Propose):Unit"></a>
+      <a id="acceptProposal(UUID,ActorRef,Propose):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">acceptProposal</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="proposal">proposal: <a href="acts/Propose.html" class="extype" name="acl.acts.Propose">Propose</a>[<span class="extype" name="acl.CommunicatingActor.acceptProposal.A">A</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">acceptProposal</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="proposal">proposal: <a href="acts/Propose.html" class="extype" name="acl.acts.Propose">Propose</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.CommunicatingActor@acceptProposal[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposal:acl.acts.Propose[A]):Unit" title="Permalink" target="_top">
+      <a href="../index.html#acl.CommunicatingActor@acceptProposal(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposal:acl.acts.Propose):Unit" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
       <p class="shortcomment cmt">Accept a previously received proposal from another <code>CommunicatingActor</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Accept a previously received proposal from another <code>CommunicatingActor</code>.
-</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>is the type of action expression used to construct the content of the <code>proposal</code>.</p></dd><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify an ongoing sequence of communicative acts that together
+</p></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify an ongoing sequence of communicative acts that together
                       form a conversation.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>is the <code>CommunicatingActor</code> whose <code>proposal</code> has been accepted.</p></dd><dt class="param">proposal</dt><dd class="cmt"><p>is the previously received <a href="acts/Propose.html" class="extype" name="acl.acts.Propose"><code>Propose</code></a> message that has been accepted.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p><code>acceptProposal</code> is a general-purpose acceptance of a previously received <a href="acts/Propose.html" class="extype" name="acl.acts.Propose"><code>Propose</code></a>
       message. The <code>CommunicatingActor</code> sending the <a href="acts/AcceptProposal.html" class="extype" name="acl.acts.AcceptProposal"><code>AcceptProposal</code></a> message informs
       the <code>receiver</code> that it intends that the <code>receiver</code> act in accordance with the terms of the <code>proposal</code>.
 </p></span></dd></dl></div>
     </li><li name="acl.CommunicatingActor#agree" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="agree[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,request:acl.acts.Request[A],precondition:acl.Beliefs=&gt;Boolean):Unit"></a>
-      <a id="agree[A](UUID,ActorRef,Request[A],(Beliefs)⇒Boolean):Unit"></a>
+      <a id="agree(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,request:acl.acts.Request,precondition:acl.Beliefs=&gt;Boolean):Unit"></a>
+      <a id="agree(UUID,ActorRef,Request,(Beliefs)⇒Boolean):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">agree</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="request">request: <a href="acts/Request.html" class="extype" name="acl.acts.Request">Request</a>[<span class="extype" name="acl.CommunicatingActor.agree.A">A</span>]</span>, <span name="precondition">precondition: (<a href="Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">agree</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="request">request: <a href="acts/Request.html" class="extype" name="acl.acts.Request">Request</a></span>, <span name="precondition">precondition: (<a href="Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.CommunicatingActor@agree[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,request:acl.acts.Request[A],precondition:acl.Beliefs=&gt;Boolean):Unit" title="Permalink" target="_top">
+      <a href="../index.html#acl.CommunicatingActor@agree(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,request:acl.acts.Request,precondition:acl.Beliefs=&gt;Boolean):Unit" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
       <p class="shortcomment cmt">Agree to perform some action (possibly in the future) for another <code>CommunicatingActor</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Agree to perform some action (possibly in the future) for another <code>CommunicatingActor</code>.
-</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>is the type of action expression used to construct the content of the <code>request</code>.</p></dd><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify an ongoing sequence of communicative acts that together
+</p></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify an ongoing sequence of communicative acts that together
                       form a conversation.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>is the <code>CommunicatingActor</code> whose <code>request</code> has been agreed.</p></dd><dt class="param">request</dt><dd class="cmt"><p>is the previously received <a href="acts/Request.html" class="extype" name="acl.acts.Request"><code>Request</code></a> that has been agreed.</p></dd><dt class="param">precondition</dt><dd class="cmt"><p>is a proposition that must be satisfied in order for the <code>CommunicatingActor</code> to perform
                     the <code>request</code>.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p><code>agree</code> is a general purpose agreement to a previously received <a href="acts/Request.html" class="extype" name="acl.acts.Request"><code>Request</code></a> message to
       perform certain actions given that a <code>precondition</code> is satisfied. The <code>CommunicatingActor</code> sending the
@@ -335,45 +335,45 @@
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
     </li><li name="acl.CommunicatingActor#callForProposal" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="callForProposal[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:A,precondition:acl.acts.Propose[A]=&gt;Boolean):Unit"></a>
-      <a id="callForProposal[A](UUID,ActorRef,A,(Propose[A])⇒Boolean):Unit"></a>
+      <a id="callForProposal(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:Any,precondition:acl.acts.Propose=&gt;Boolean):Unit"></a>
+      <a id="callForProposal(UUID,ActorRef,Any,(Propose)⇒Boolean):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">callForProposal</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="content">content: <span class="extype" name="acl.CommunicatingActor.callForProposal.A">A</span></span>, <span name="precondition">precondition: (<a href="acts/Propose.html" class="extype" name="acl.acts.Propose">Propose</a>[<span class="extype" name="acl.CommunicatingActor.callForProposal.A">A</span>]) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">callForProposal</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="content">content: <span class="extype" name="scala.Any">Any</span></span>, <span name="precondition">precondition: (<a href="acts/Propose.html" class="extype" name="acl.acts.Propose">Propose</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.CommunicatingActor@callForProposal[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:A,precondition:acl.acts.Propose[A]=&gt;Boolean):Unit" title="Permalink" target="_top">
+      <a href="../index.html#acl.CommunicatingActor@callForProposal(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:Any,precondition:acl.acts.Propose=&gt;Boolean):Unit" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
       <p class="shortcomment cmt">Request a proposal from another <code>CommunicatingActor</code> to perform certain actions (under certain preconditions).</p><div class="fullcomment"><div class="comment cmt"><p>Request a proposal from another <code>CommunicatingActor</code> to perform certain actions (under certain preconditions).
-</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>is the type of action expression used to construct the <code>proposal</code>.
-</p></dd><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify an ongoing sequence of communicative acts that together
+</p></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify an ongoing sequence of communicative acts that together
                       form a conversation.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>is the <code>CommunicatingActor</code> that should receive a call for proposal.</p></dd><dt class="param">content</dt><dd class="cmt"><p>is an action expression defining the action(s) that the <code>CommunicatingActor</code> is requesting the
                <code>receiver</code> to submit a proposal to perform.</p></dd><dt class="param">precondition</dt><dd class="cmt"><p>is a proposition defining conditions that any submitted proposal must satisfy in order to be
-                    accepted.</p></dd></dl></div>
+                    accepted.
+</p></dd></dl></div>
     </li><li name="acl.CommunicatingActor#cancel" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="cancel[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,request:acl.acts.Request[A]):Unit"></a>
-      <a id="cancel[A](UUID,ActorRef,Request[A]):Unit"></a>
+      <a id="cancel(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,request:acl.acts.Request):Unit"></a>
+      <a id="cancel(UUID,ActorRef,Request):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">cancel</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="request">request: <a href="acts/Request.html" class="extype" name="acl.acts.Request">Request</a>[<span class="extype" name="acl.CommunicatingActor.cancel.A">A</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">cancel</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="request">request: <a href="acts/Request.html" class="extype" name="acl.acts.Request">Request</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.CommunicatingActor@cancel[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,request:acl.acts.Request[A]):Unit" title="Permalink" target="_top">
+      <a href="../index.html#acl.CommunicatingActor@cancel(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,request:acl.acts.Request):Unit" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
       <p class="shortcomment cmt">Cancel a request that was previously submitted to another <code>CommunicatingActor</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Cancel a request that was previously submitted to another <code>CommunicatingActor</code>.
-</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>is the type of action expression used to construct the content of the <code>request</code>.</p></dd><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify an ongoing sequence of communicative acts that together
+</p></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify an ongoing sequence of communicative acts that together
                       form a conversation.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>is the <code>CommunicatingActor</code> to notify to notify of the cancellation.</p></dd><dt class="param">request</dt><dd class="cmt"><p>is the previously received [acl.acts.Request <code>Request</code>] that has been cancelled.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>cancel</code> act allows a <code>CommunicatingActor</code> to inform the <code>receiver</code> that it no longer intends that
       the <code>receiver</code> perform a previously requested action. This is not the same thing as a
       <code>CommunicatingActor</code> informing the <code>receiver</code> to stop performing an action.  In order for a
@@ -508,25 +508,25 @@
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="acl.CommunicatingActor#failure" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="failure[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:A,reason:acl.Beliefs=&gt;Boolean):Unit"></a>
-      <a id="failure[A](UUID,ActorRef,A,(Beliefs)⇒Boolean):Unit"></a>
+      <a id="failure(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:Any,reason:acl.Beliefs=&gt;Boolean):Unit"></a>
+      <a id="failure(UUID,ActorRef,Any,(Beliefs)⇒Boolean):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">failure</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="content">content: <span class="extype" name="acl.CommunicatingActor.failure.A">A</span></span>, <span name="reason">reason: (<a href="Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">failure</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="content">content: <span class="extype" name="scala.Any">Any</span></span>, <span name="reason">reason: (<a href="Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.CommunicatingActor@failure[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:A,reason:acl.Beliefs=&gt;Boolean):Unit" title="Permalink" target="_top">
+      <a href="../index.html#acl.CommunicatingActor@failure(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:Any,reason:acl.Beliefs=&gt;Boolean):Unit" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
       <p class="shortcomment cmt">Inform another <code>CommunicatingActor</code> that some action was attempted but that the attempt failed.</p><div class="fullcomment"><div class="comment cmt"><p>Inform another <code>CommunicatingActor</code> that some action was attempted but that the attempt failed.
-</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>is the type of action expression used to construct the <code>content</code>.
-</p></dd><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify an ongoing sequence of communicative acts that together
-                      form a conversation.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>is the <code>CommunicatingActor</code> to notify of the failure.</p></dd><dt class="param">content</dt><dd class="cmt"><p>is an action expression defining the action(s) that were attempted.</p></dd><dt class="param">reason</dt><dd class="cmt"><p>is a proposition indicating the reason for the failure.</p></dd></dl></div>
+</p></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify an ongoing sequence of communicative acts that together
+                      form a conversation.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>is the <code>CommunicatingActor</code> to notify of the failure.</p></dd><dt class="param">content</dt><dd class="cmt"><p>is an action expression defining the action(s) that were attempted.</p></dd><dt class="param">reason</dt><dd class="cmt"><p>is a proposition indicating the reason for the failure.
+</p></dd></dl></div>
     </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <a id="finalize():Unit"></a>
@@ -856,26 +856,26 @@
               
         </dd></dl></div>
     </li><li name="acl.CommunicatingActor#propose" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="propose[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:A,precondition:acl.Beliefs=&gt;Boolean):Unit"></a>
-      <a id="propose[A](UUID,ActorRef,A,(Beliefs)⇒Boolean):Unit"></a>
+      <a id="propose(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:Any,precondition:acl.Beliefs=&gt;Boolean):Unit"></a>
+      <a id="propose(UUID,ActorRef,Any,(Beliefs)⇒Boolean):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">propose</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="content">content: <span class="extype" name="acl.CommunicatingActor.propose.A">A</span></span>, <span name="precondition">precondition: (<a href="Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">propose</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="content">content: <span class="extype" name="scala.Any">Any</span></span>, <span name="precondition">precondition: (<a href="Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.CommunicatingActor@propose[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:A,precondition:acl.Beliefs=&gt;Boolean):Unit" title="Permalink" target="_top">
+      <a href="../index.html#acl.CommunicatingActor@propose(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:Any,precondition:acl.Beliefs=&gt;Boolean):Unit" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
       <p class="shortcomment cmt">Submit a proposal to perform certain actions given certain preconditions.</p><div class="fullcomment"><div class="comment cmt"><p>Submit a proposal to perform certain actions given certain preconditions.
-</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>is the type of action expression used to construct <code>content</code> of the proposal.
-</p></dd><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify an ongoing sequence of communicative acts that together
+</p></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify an ongoing sequence of communicative acts that together
                       form a conversation.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>is a collection of actors receiving the <a href="acts/Propose.html" class="extype" name="acl.acts.Propose"><code>Propose</code></a> message.</p></dd><dt class="param">content</dt><dd class="cmt"><p>is an action expression representing the action that the <code>CommunicatingActor</code> is proposing to
-               perform.</p></dd><dt class="param">precondition</dt><dd class="cmt"><p>is a proposition indicating the conditions for the action to be performed.</p></dd></dl></div>
+               perform.</p></dd><dt class="param">precondition</dt><dd class="cmt"><p>is a proposition indicating the conditions for the action to be performed.
+</p></dd></dl></div>
     </li><li name="acl.CommunicatingActor#queryIf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="queryIf(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposition:acl.Beliefs):Unit"></a>
       <a id="queryIf(UUID,ActorRef,Beliefs):Unit"></a>
@@ -898,23 +898,23 @@
                    its truth value).
 </p></dd></dl></div>
     </li><li name="acl.CommunicatingActor#queryRef" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="queryRef[D](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,descriptor:D=&gt;Boolean,selector:scala.collection.immutable.Set[D]=&gt;scala.collection.immutable.Set[D]):Unit"></a>
-      <a id="queryRef[D](UUID,ActorRef,(D)⇒Boolean,(Set[D])⇒Set[D]):Unit"></a>
+      <a id="queryRef(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,descriptor:Any=&gt;Boolean,selector:scala.collection.immutable.Set[Any]=&gt;scala.collection.immutable.Set[Any]):Unit"></a>
+      <a id="queryRef(UUID,ActorRef,(Any)⇒Boolean,(Set[Any])⇒Set[Any]):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">queryRef</span><span class="tparams">[<span name="D">D</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="descriptor">descriptor: (<span class="extype" name="acl.CommunicatingActor.queryRef.D">D</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="selector">selector: (<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="acl.CommunicatingActor.queryRef.D">D</span>]) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="acl.CommunicatingActor.queryRef.D">D</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">queryRef</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="descriptor">descriptor: (<span class="extype" name="scala.Any">Any</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="selector">selector: (<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="scala.Any">Any</span>]) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="scala.Any">Any</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.CommunicatingActor@queryRef[D](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,descriptor:D=&gt;Boolean,selector:scala.collection.immutable.Set[D]=&gt;scala.collection.immutable.Set[D]):Unit" title="Permalink" target="_top">
+      <a href="../index.html#acl.CommunicatingActor@queryRef(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,descriptor:Any=&gt;Boolean,selector:scala.collection.immutable.Set[Any]=&gt;scala.collection.immutable.Set[Any]):Unit" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
       <p class="shortcomment cmt">Query a collection of actors regarding object(s) that matching a given descriptor.</p><div class="fullcomment"><div class="comment cmt"><p>Query a collection of actors regarding object(s) that matching a given descriptor.
-</p></div><dl class="paramcmts block"><dt class="tparam">D</dt><dd class="cmt"><p>is the type of object characterized by the <code>descriptor</code>.</p></dd><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify an ongoing sequence of communicative acts that together
+</p></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify an ongoing sequence of communicative acts that together
                       form a conversation.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>is the collection of <a href="" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> receiving the query.</p></dd><dt class="param">descriptor</dt><dd class="cmt"><p>is a function describing some required characteristics of an object.</p></dd><dt class="param">selector</dt><dd class="cmt"><p>is a function describing a rule for choosing some subset of the collection of objects that
                 satisfy the <code>descriptor</code>.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p><code>queryRef</code> is the act of asking the <code>receiver</code> to inform the <code>CommunicatingActor</code> of some subset of
       objects matching the provided <code>descriptor</code>. The <code>CommunicatingActor</code> performing the <code>queryRef</code> act is
@@ -940,46 +940,46 @@
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="acl.CommunicatingActor">CommunicatingActor</a> → Actor</dd></dl></div>
     </li><li name="acl.CommunicatingActor#refuse" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="refuse[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,request:acl.acts.Request[A],reason:acl.Beliefs=&gt;Boolean):Unit"></a>
-      <a id="refuse[A](UUID,ActorRef,Request[A],(Beliefs)⇒Boolean):Unit"></a>
+      <a id="refuse(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,request:acl.acts.Request,reason:acl.Beliefs=&gt;Boolean):Unit"></a>
+      <a id="refuse(UUID,ActorRef,Request,(Beliefs)⇒Boolean):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">refuse</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="request">request: <a href="acts/Request.html" class="extype" name="acl.acts.Request">Request</a>[<span class="extype" name="acl.CommunicatingActor.refuse.A">A</span>]</span>, <span name="reason">reason: (<a href="Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">refuse</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="request">request: <a href="acts/Request.html" class="extype" name="acl.acts.Request">Request</a></span>, <span name="reason">reason: (<a href="Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.CommunicatingActor@refuse[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,request:acl.acts.Request[A],reason:acl.Beliefs=&gt;Boolean):Unit" title="Permalink" target="_top">
+      <a href="../index.html#acl.CommunicatingActor@refuse(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,request:acl.acts.Request,reason:acl.Beliefs=&gt;Boolean):Unit" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
       <p class="shortcomment cmt">The action of one <code>CommunicatingActor</code> refusing to perform a request and explaining the reason for the
 refusal.</p><div class="fullcomment"><div class="comment cmt"><p>The action of one <code>CommunicatingActor</code> refusing to perform a request and explaining the reason for the
 refusal.
-</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>is the type of action expression used to construct the <code>request</code>.</p></dd><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify an ongoing sequence of communicative acts that together
+</p></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify an ongoing sequence of communicative acts that together
                       form a conversation.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>is a collection of actors receiving the <a href="acts/Refuse.html" class="extype" name="acl.acts.Refuse"><code>Refuse</code></a> message.</p></dd><dt class="param">request</dt><dd class="cmt"><p>is the <a href="acts/Request.html" class="extype" name="acl.acts.Request"><code>Request]] that the </code>CommunicatingActor<code> can no longer perform.</code></a></p></dd><dt class="param">reason</dt><dd class="cmt"><p>is a proposition indicating the reason that the <code>request</code> is being refused.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>refuse</code> act allows a <code>CommunicatingActor</code> to inform the <code>receiver</code> that it is no longer possible for
       it to perform a previously agreed <code>request</code>.
 </p></span></dd></dl></div>
     </li><li name="acl.CommunicatingActor#rejectProposal" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="rejectProposal[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposal:acl.acts.Propose[A],reason:acl.Beliefs=&gt;Boolean):Unit"></a>
-      <a id="rejectProposal[A](UUID,ActorRef,Propose[A],(Beliefs)⇒Boolean):Unit"></a>
+      <a id="rejectProposal(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposal:acl.acts.Propose,reason:acl.Beliefs=&gt;Boolean):Unit"></a>
+      <a id="rejectProposal(UUID,ActorRef,Propose,(Beliefs)⇒Boolean):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">rejectProposal</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="proposal">proposal: <a href="acts/Propose.html" class="extype" name="acl.acts.Propose">Propose</a>[<span class="extype" name="acl.CommunicatingActor.rejectProposal.A">A</span>]</span>, <span name="reason">reason: (<a href="Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">rejectProposal</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="proposal">proposal: <a href="acts/Propose.html" class="extype" name="acl.acts.Propose">Propose</a></span>, <span name="reason">reason: (<a href="Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.CommunicatingActor@rejectProposal[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposal:acl.acts.Propose[A],reason:acl.Beliefs=&gt;Boolean):Unit" title="Permalink" target="_top">
+      <a href="../index.html#acl.CommunicatingActor@rejectProposal(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposal:acl.acts.Propose,reason:acl.Beliefs=&gt;Boolean):Unit" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
       <p class="shortcomment cmt">The action of rejecting a previously submitted proposal to perform an action.</p><div class="fullcomment"><div class="comment cmt"><p>The action of rejecting a previously submitted proposal to perform an action.
-</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>is the type of action expression used to construct the <code>proposal</code>.</p></dd><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify an ongoing sequence of communicative acts that together
+</p></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify an ongoing sequence of communicative acts that together
                       form a conversation.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>is a collection of actors receiving the <a href="acts/RejectProposal.html" class="extype" name="acl.acts.RejectProposal"><code>RejectProposal</code></a> message.</p></dd><dt class="param">proposal</dt><dd class="cmt"><p>is a previously received <a href="acts/Propose.html" class="extype" name="acl.acts.Propose"><code>Propose</code></a> message that is being rejected.</p></dd><dt class="param">reason</dt><dd class="cmt"><p>is a proposition indicating the reason for the rejection.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p><code>rejectProposal</code> is a general-purpose rejection of a previously received <a href="acts/Propose.html" class="extype" name="acl.acts.Propose"><code>Propose</code></a>
       message. The <code>CommunicatingActor</code> sending the <a href="acts/RejectProposal.html" class="extype" name="acl.acts.RejectProposal"><code>RejectProposal</code></a> message informs
       the <code>receiver</code> that it has no intention that the <code>receiver</code> performs the given actions as defined in the
@@ -987,23 +987,23 @@ refusal.
       the <code>proposal</code>.
 </p></span></dd></dl></div>
     </li><li name="acl.CommunicatingActor#request" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="request[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:A):Unit"></a>
-      <a id="request[A](UUID,ActorRef,A):Unit"></a>
+      <a id="request(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:Any):Unit"></a>
+      <a id="request(UUID,ActorRef,Any):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">request</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="content">content: <span class="extype" name="acl.CommunicatingActor.request.A">A</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">request</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="content">content: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.CommunicatingActor@request[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:A):Unit" title="Permalink" target="_top">
+      <a href="../index.html#acl.CommunicatingActor@request(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:Any):Unit" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
       <p class="shortcomment cmt">The <code>CommunicatingActor</code> requests the receiver to perform some action.</p><div class="fullcomment"><div class="comment cmt"><p>The <code>CommunicatingActor</code> requests the receiver to perform some action.
-</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>is the type of action expression used to construct the request <code>content</code>.</p></dd><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify an ongoing sequence of communicative acts that together
+</p></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify an ongoing sequence of communicative acts that together
                       form a conversation.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>is the collection of <a href="" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> that are being requested to
                 perform action(s) specified in the <code>content</code>.</p></dd><dt class="param">content</dt><dd class="cmt"><p>An action expression denoting the action(s) to be done.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>CommunicatingActor</code> is requesting the <code>receiver</code> to perform some action. The <code>content</code> of the
       <a href="acts/Request.html" class="extype" name="acl.acts.Request"><code>Request]] message is a description of the action to be performed in a language that the
@@ -1012,23 +1012,23 @@ refusal.
       <a href="acts/CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct"><code>CommunicativeAct</code></a>.
 </p></span></dd></dl></div>
     </li><li name="acl.CommunicatingActor#requestWhen" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="requestWhen[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:A,precondition:acl.Beliefs=&gt;Boolean):Unit"></a>
-      <a id="requestWhen[A](UUID,ActorRef,A,(Beliefs)⇒Boolean):Unit"></a>
+      <a id="requestWhen(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:Any,precondition:acl.Beliefs=&gt;Boolean):Unit"></a>
+      <a id="requestWhen(UUID,ActorRef,Any,(Beliefs)⇒Boolean):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">requestWhen</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="content">content: <span class="extype" name="acl.CommunicatingActor.requestWhen.A">A</span></span>, <span name="precondition">precondition: (<a href="Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">requestWhen</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="content">content: <span class="extype" name="scala.Any">Any</span></span>, <span name="precondition">precondition: (<a href="Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.CommunicatingActor@requestWhen[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:A,precondition:acl.Beliefs=&gt;Boolean):Unit" title="Permalink" target="_top">
+      <a href="../index.html#acl.CommunicatingActor@requestWhen(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:Any,precondition:acl.Beliefs=&gt;Boolean):Unit" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
       <p class="shortcomment cmt">The <code>CommunicatingActor</code> requests the receiver to perform some action when some given precondition becomes true.</p><div class="fullcomment"><div class="comment cmt"><p>The <code>CommunicatingActor</code> requests the receiver to perform some action when some given precondition becomes true.
-</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>is the type of action expression used to construct the request <code>content</code>.</p></dd><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify an ongoing sequence of communicative acts that together
+</p></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify an ongoing sequence of communicative acts that together
                       form a conversation.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>is the collection of <a href="" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> that are being requested to
                 perform action(s) specified in the <code>content</code>.</p></dd><dt class="param">content</dt><dd class="cmt"><p>An action expression denoting the action(s) to be done.</p></dd><dt class="param">precondition</dt><dd class="cmt"><p>A proposition indicating the conditions for the action to be performed.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>requestWhen</code> act allows a <code>CommunicatingActor</code> to inform another actor that a certain action should
       be performed as soon as a given precondition, expressed as a proposition, becomes true.</p><p>      The <code>CommunicatingActor</code> receiving a <a href="acts/RequestWhen.html" class="extype" name="acl.acts.RequestWhen"><code>RequestWhen</code></a> message should either refuse to
@@ -1038,25 +1038,25 @@ refusal.
       <a href="acts/Refuse.html" class="extype" name="acl.acts.Refuse"><code>Refuse</code></a> message.
 </li></ul></span></dd></dl></div>
     </li><li name="acl.CommunicatingActor#requestWhenever" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="requestWhenever[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:A,precondition:acl.Beliefs=&gt;Boolean):Unit"></a>
-      <a id="requestWhenever[A](UUID,ActorRef,A,(Beliefs)⇒Boolean):Unit"></a>
+      <a id="requestWhenever(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:Any,precondition:acl.Beliefs=&gt;Boolean):Unit"></a>
+      <a id="requestWhenever(UUID,ActorRef,Any,(Beliefs)⇒Boolean):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">requestWhenever</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="content">content: <span class="extype" name="acl.CommunicatingActor.requestWhenever.A">A</span></span>, <span name="precondition">precondition: (<a href="Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">requestWhenever</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="content">content: <span class="extype" name="scala.Any">Any</span></span>, <span name="precondition">precondition: (<a href="Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.CommunicatingActor@requestWhenever[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:A,precondition:acl.Beliefs=&gt;Boolean):Unit" title="Permalink" target="_top">
+      <a href="../index.html#acl.CommunicatingActor@requestWhenever(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:Any,precondition:acl.Beliefs=&gt;Boolean):Unit" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
       <p class="shortcomment cmt">The <code>CommunicatingActor</code> requests the receiver to perform some action when some given precondition becomes true
 and thereafter each time the proposition becomes true again.</p><div class="fullcomment"><div class="comment cmt"><p>The <code>CommunicatingActor</code> requests the receiver to perform some action when some given precondition becomes true
 and thereafter each time the proposition becomes true again.
-</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>is the type of action expression used to construct the request <code>content</code>.</p></dd><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify an ongoing sequence of communicative acts that together
+</p></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify an ongoing sequence of communicative acts that together
                       form a conversation.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>is the collection of <a href="" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> that are being requested to
                 perform action(s) specified in the <code>content</code>.</p></dd><dt class="param">content</dt><dd class="cmt"><p>An action expression denoting the action(s) to be done.</p></dd><dt class="param">precondition</dt><dd class="cmt"><p>A proposition indicating the conditions for the action to be performed.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>requestWhenever</code> act allows a <code>CommunicatingActor</code> to inform another actor that a certain action should
       be performed as soon as a given precondition, expressed as a proposition, becomes true, and that, after
@@ -1101,27 +1101,27 @@ and thereafter each time the proposition becomes true again.
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Actor</dd></dl></div>
     </li><li name="acl.CommunicatingActor#subscribe" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="subscribe[D](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,descriptor:D=&gt;Boolean):Unit"></a>
-      <a id="subscribe[D](UUID,ActorRef,(D)⇒Boolean):Unit"></a>
+      <a id="subscribe(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,descriptor:Any=&gt;Boolean):Unit"></a>
+      <a id="subscribe(UUID,ActorRef,(Any)⇒Boolean):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">subscribe</span><span class="tparams">[<span name="D">D</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="descriptor">descriptor: (<span class="extype" name="acl.CommunicatingActor.subscribe.D">D</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">subscribe</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="descriptor">descriptor: (<span class="extype" name="scala.Any">Any</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.CommunicatingActor@subscribe[D](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,descriptor:D=&gt;Boolean):Unit" title="Permalink" target="_top">
+      <a href="../index.html#acl.CommunicatingActor@subscribe(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,descriptor:Any=&gt;Boolean):Unit" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
       <p class="shortcomment cmt">Request another <code>CommunicatingActor</code> to notify the value of a reference whenever the object identified by the
 reference changes.</p><div class="fullcomment"><div class="comment cmt"><p>Request another <code>CommunicatingActor</code> to notify the value of a reference whenever the object identified by the
 reference changes.
-</p></div><dl class="paramcmts block"><dt class="tparam">D</dt><dd class="cmt"><p>is the type of object characterized by the <code>descriptor</code>.
-</p></dd><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify an ongoing sequence of communicative acts that together
-                      form a conversation.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>is <a href="" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> that is to receive the subscription request.</p></dd><dt class="param">descriptor</dt><dd class="cmt"><p>is a function describing some required characteristics of the reference object.</p></dd></dl></div>
+</p></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify an ongoing sequence of communicative acts that together
+                      form a conversation.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>is <a href="" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> that is to receive the subscription request.</p></dd><dt class="param">descriptor</dt><dd class="cmt"><p>is a function describing some required characteristics of the reference object.
+</p></dd></dl></div>
     </li><li name="akka.actor.Actor#supervisorStrategy" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="supervisorStrategy:akka.actor.SupervisorStrategy"></a>
       <a id="supervisorStrategy:SupervisorStrategy"></a>

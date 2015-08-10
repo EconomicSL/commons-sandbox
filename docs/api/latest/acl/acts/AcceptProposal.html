@@ -45,16 +45,16 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">AcceptProposal</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="proposal">proposal: <a href="Propose.html" class="extype" name="acl.acts.Propose">Propose</a>[<span class="extype" name="acl.acts.AcceptProposal.A">A</span>]</span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <span class="name">AcceptProposal</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="proposal">proposal: <a href="Propose.html" class="extype" name="acl.acts.Propose">Propose</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>A message sent from some <a href="../CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> (i.e., <code>sender</code>) to another
 <a href="../CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> (i.e., <code>receiver</code>) indicating that the <code>sender</code> has accepted a
 previously received <a href="Propose.html" class="extype" name="acl.acts.Propose"><code>Propose</code></a> message (i.e., <code>proposal</code>) from the <code>receiver</code>.
-</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>is the type of action expression used to construct the content of the <code>proposal</code>.</p></dd><dt class="param">conversationId</dt><dd class="cmt"><p>is used to identify a sequence of <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct"><code>CommunicativeAct</code></a> messages
+</p></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is used to identify a sequence of <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct"><code>CommunicativeAct</code></a> messages
                       that together form a conversation.</p></dd><dt class="param">proposal</dt><dd class="cmt"><p>is the previously received <code>proposal</code> that the <code>sender</code> has decided to accept.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>AcceptProposal</code> message is sent by the <code>sender</code> using the
-      <a href="../CommunicatingActor.html#acceptProposal[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposal:acl.acts.Propose[A]):Unit" class="extmbr" name="acl.CommunicatingActor#acceptProposal"><code>acceptProposal</code></a> action.
+      <a href="../CommunicatingActor.html#acceptProposal(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposal:acl.acts.Propose):Unit" class="extmbr" name="acl.CommunicatingActor#acceptProposal"><code>acceptProposal</code></a> action.
 </p></span></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a>, <span class="extype" name="java.io.Serializable">Serializable</span>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Equals" class="extype" target="_top">Equals</a>, <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
@@ -96,18 +96,18 @@ previously received <a href="Propose.html" class="extype" name="acl.acts.Propose
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="acl.acts.AcceptProposal#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;init&gt;(conversationId:java.util.UUID,proposal:acl.acts.Propose[A]):acl.acts.AcceptProposal[A]"></a>
-      <a id="&lt;init&gt;:AcceptProposal[A]"></a>
+      <a id="&lt;init&gt;(conversationId:java.util.UUID,proposal:acl.acts.Propose):acl.acts.AcceptProposal"></a>
+      <a id="&lt;init&gt;:AcceptProposal"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">AcceptProposal</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="proposal">proposal: <a href="Propose.html" class="extype" name="acl.acts.Propose">Propose</a>[<span class="extype" name="acl.acts.AcceptProposal.A">A</span>]</span>)</span>
+        <span class="name">AcceptProposal</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="proposal">proposal: <a href="Propose.html" class="extype" name="acl.acts.Propose">Propose</a></span>)</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#acl.acts.AcceptProposal@&lt;init&gt;(conversationId:java.util.UUID,proposal:acl.acts.Propose[A]):acl.acts.AcceptProposal[A]" title="Permalink" target="_top">
+      <a href="../../index.html#acl.acts.AcceptProposal@&lt;init&gt;(conversationId:java.util.UUID,proposal:acl.acts.Propose):acl.acts.AcceptProposal" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
@@ -358,18 +358,18 @@ previously received <a href="Propose.html" class="extype" name="acl.acts.Propose
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="acl.acts.AcceptProposal#proposal" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="proposal:acl.acts.Propose[A]"></a>
-      <a id="proposal:Propose[A]"></a>
+      <a id="proposal:acl.acts.Propose"></a>
+      <a id="proposal:Propose"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">proposal</span><span class="result">: <a href="Propose.html" class="extype" name="acl.acts.Propose">Propose</a>[<span class="extype" name="acl.acts.AcceptProposal.A">A</span>]</span>
+        <span class="name">proposal</span><span class="result">: <a href="Propose.html" class="extype" name="acl.acts.Propose">Propose</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#acl.acts.AcceptProposal@proposal:acl.acts.Propose[A]" title="Permalink" target="_top">
+      <a href="../../index.html#acl.acts.AcceptProposal@proposal:acl.acts.Propose" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>

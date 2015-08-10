@@ -45,16 +45,16 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">Refuse</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="request">request: <a href="Request.html" class="extype" name="acl.acts.Request">Request</a>[<span class="extype" name="acl.acts.Refuse.A">A</span>]</span>, <span name="reason">reason: (<a href="../Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <span class="name">Refuse</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="request">request: <a href="Request.html" class="extype" name="acl.acts.Request">Request</a></span>, <span name="reason">reason: (<a href="../Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>A message sent from some <a href="../CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> (i.e., <code>sender</code>) to another
 <a href="../CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> (i.e., <code>receiver</code>) indicating that the <code>sender</code> has refused a
 previously received <a href="Request.html" class="extype" name="acl.acts.Request"><code>Request</code></a> message (i.e., <code>request</code>) from the <code>receiver</code>.
-</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>is the type of action expression used to construct the content of the <code>request</code>.</p></dd><dt class="param">conversationId</dt><dd class="cmt"><p>is used to identify a sequence of <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct"><code>CommunicativeAct</code></a> messages
+</p></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is used to identify a sequence of <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct"><code>CommunicativeAct</code></a> messages
                       that together form a conversation.</p></dd><dt class="param">request</dt><dd class="cmt"><p>is the previously received [acl.Request <code>Request</code>] message that is being refused.</p></dd><dt class="param">reason</dt><dd class="cmt"><p>is a proposition denoting the reason that the <code>request</code> has been refused.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>Refuse</code> message is sent by a <a href="../CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> using the
-      <a href="../CommunicatingActor.html#refuse[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,request:acl.acts.Request[A],reason:acl.Beliefs=&gt;Boolean):Unit" class="extmbr" name="acl.CommunicatingActor#refuse"><code>refuse</code></a> method.
+      <a href="../CommunicatingActor.html#refuse(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,request:acl.acts.Request,reason:acl.Beliefs=&gt;Boolean):Unit" class="extmbr" name="acl.CommunicatingActor#refuse"><code>refuse</code></a> method.
 </p></span></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a>, <span class="extype" name="java.io.Serializable">Serializable</span>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Equals" class="extype" target="_top">Equals</a>, <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
@@ -96,18 +96,18 @@ previously received <a href="Request.html" class="extype" name="acl.acts.Request
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="acl.acts.Refuse#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;init&gt;(conversationId:java.util.UUID,request:acl.acts.Request[A],reason:acl.Beliefs=&gt;Boolean):acl.acts.Refuse[A]"></a>
-      <a id="&lt;init&gt;:Refuse[A]"></a>
+      <a id="&lt;init&gt;(conversationId:java.util.UUID,request:acl.acts.Request,reason:acl.Beliefs=&gt;Boolean):acl.acts.Refuse"></a>
+      <a id="&lt;init&gt;:Refuse"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">Refuse</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="request">request: <a href="Request.html" class="extype" name="acl.acts.Request">Request</a>[<span class="extype" name="acl.acts.Refuse.A">A</span>]</span>, <span name="reason">reason: (<a href="../Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span>
+        <span class="name">Refuse</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="request">request: <a href="Request.html" class="extype" name="acl.acts.Request">Request</a></span>, <span name="reason">reason: (<a href="../Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#acl.acts.Refuse@&lt;init&gt;(conversationId:java.util.UUID,request:acl.acts.Request[A],reason:acl.Beliefs=&gt;Boolean):acl.acts.Refuse[A]" title="Permalink" target="_top">
+      <a href="../../index.html#acl.acts.Refuse@&lt;init&gt;(conversationId:java.util.UUID,request:acl.acts.Request,reason:acl.Beliefs=&gt;Boolean):acl.acts.Refuse" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
@@ -375,18 +375,18 @@ previously received <a href="Request.html" class="extype" name="acl.acts.Request
     </span>
       <p class="shortcomment cmt">is a proposition denoting the reason that the <code>request</code> has been refused.</p>
     </li><li name="acl.acts.Refuse#request" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="request:acl.acts.Request[A]"></a>
-      <a id="request:Request[A]"></a>
+      <a id="request:acl.acts.Request"></a>
+      <a id="request:Request"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">request</span><span class="result">: <a href="Request.html" class="extype" name="acl.acts.Request">Request</a>[<span class="extype" name="acl.acts.Refuse.A">A</span>]</span>
+        <span class="name">request</span><span class="result">: <a href="Request.html" class="extype" name="acl.acts.Request">Request</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#acl.acts.Refuse@request:acl.acts.Request[A]" title="Permalink" target="_top">
+      <a href="../../index.html#acl.acts.Refuse@request:acl.acts.Request" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>

@@ -45,18 +45,18 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">RequestWhen</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="content">content: <span class="extype" name="acl.acts.RequestWhen.A">A</span></span>, <span name="precondition">precondition: (<a href="../Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <span class="name">RequestWhen</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="content">content: <span class="extype" name="scala.Any">Any</span></span>, <span name="precondition">precondition: (<a href="../Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>A message sent from some <a href="../CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> (i.e., <code>sender</code>) to another
 <a href="../CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> (i.e., <code>receiver</code>) requesting the <code>receiver</code> to perform some action
 when some given <code>precondition</code> becomes true.
-</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>is the type of action expression used to construct the content of the <code>request</code>.</p></dd><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify a sequence of communicative acts that together form a
+</p></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify a sequence of communicative acts that together form a
                       conversation.</p></dd><dt class="param">content</dt><dd class="cmt"><p>is an action expression defining the action(s) that the <code>sender</code> is requesting the <code>receiver</code> to
                perform.</p></dd><dt class="param">precondition</dt><dd class="cmt"><p>is a proposition defining the precondition that should be satisfied in order for the
                     <code>receiver</code> to perform the action(s) specified in the <code>content</code>.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>RequestWhen</code> message is sent by the <code>sender</code> using the
-      <a href="../CommunicatingActor.html#requestWhen[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:A,precondition:acl.Beliefs=&gt;Boolean):Unit" class="extmbr" name="acl.CommunicatingActor#requestWhen"><code>requestWhen</code></a> action.
+      <a href="../CommunicatingActor.html#requestWhen(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:Any,precondition:acl.Beliefs=&gt;Boolean):Unit" class="extmbr" name="acl.CommunicatingActor#requestWhen"><code>requestWhen</code></a> action.
 </p></span></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a>, <span class="extype" name="java.io.Serializable">Serializable</span>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Equals" class="extype" target="_top">Equals</a>, <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
@@ -98,18 +98,18 @@ when some given <code>precondition</code> becomes true.
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="acl.acts.RequestWhen#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;init&gt;(conversationId:java.util.UUID,content:A,precondition:acl.Beliefs=&gt;Boolean):acl.acts.RequestWhen[A]"></a>
-      <a id="&lt;init&gt;:RequestWhen[A]"></a>
+      <a id="&lt;init&gt;(conversationId:java.util.UUID,content:Any,precondition:acl.Beliefs=&gt;Boolean):acl.acts.RequestWhen"></a>
+      <a id="&lt;init&gt;:RequestWhen"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">RequestWhen</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="content">content: <span class="extype" name="acl.acts.RequestWhen.A">A</span></span>, <span name="precondition">precondition: (<a href="../Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span>
+        <span class="name">RequestWhen</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="content">content: <span class="extype" name="scala.Any">Any</span></span>, <span name="precondition">precondition: (<a href="../Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#acl.acts.RequestWhen@&lt;init&gt;(conversationId:java.util.UUID,content:A,precondition:acl.Beliefs=&gt;Boolean):acl.acts.RequestWhen[A]" title="Permalink" target="_top">
+      <a href="../../index.html#acl.acts.RequestWhen@&lt;init&gt;(conversationId:java.util.UUID,content:Any,precondition:acl.Beliefs=&gt;Boolean):acl.acts.RequestWhen" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
@@ -218,18 +218,18 @@ when some given <code>precondition</code> becomes true.
               
         </dd></dl></div>
     </li><li name="acl.acts.RequestWhen#content" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="content:A"></a>
-      <a id="content:A"></a>
+      <a id="content:Any"></a>
+      <a id="content:Any"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">content</span><span class="result">: <span class="extype" name="acl.acts.RequestWhen.A">A</span></span>
+        <span class="name">content</span><span class="result">: <span class="extype" name="scala.Any">Any</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#acl.acts.RequestWhen@content:A" title="Permalink" target="_top">
+      <a href="../../index.html#acl.acts.RequestWhen@content:Any" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>

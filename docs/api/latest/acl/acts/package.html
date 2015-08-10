@@ -67,18 +67,18 @@
         <div id="types" class="types members">
               <h3>Type Members</h3>
               <ol><li name="acl.acts.AcceptProposal" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="AcceptProposal[A]extendsCommunicativeActwithProductwithSerializable"></a>
-      <a id="AcceptProposal[A]:AcceptProposal[A]"></a>
+      <a id="AcceptProposalextendsCommunicativeActwithProductwithSerializable"></a>
+      <a id="AcceptProposal:AcceptProposal"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="AcceptProposal.html"><span class="name">AcceptProposal</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="proposal">proposal: <a href="Propose.html" class="extype" name="acl.acts.Propose">Propose</a>[<span class="extype" name="acl.acts.AcceptProposal.A">A</span>]</span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="AcceptProposal.html"><span class="name">AcceptProposal</span></a><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="proposal">proposal: <a href="Propose.html" class="extype" name="acl.acts.Propose">Propose</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#acl.acts.package@AcceptProposal[A]extendsCommunicativeActwithProductwithSerializable" title="Permalink" target="_top">
+      <a href="../../index.html#acl.acts.package@AcceptProposalextendsCommunicativeActwithProductwithSerializable" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
@@ -87,23 +87,23 @@
 previously received <a href="Propose.html" class="extype" name="acl.acts.Propose"><code>Propose</code></a> message (i.e., <code>proposal</code>) from the <code>receiver</code>.</p><div class="fullcomment"><div class="comment cmt"><p>A message sent from some <a href="../CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> (i.e., <code>sender</code>) to another
 <a href="../CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> (i.e., <code>receiver</code>) indicating that the <code>sender</code> has accepted a
 previously received <a href="Propose.html" class="extype" name="acl.acts.Propose"><code>Propose</code></a> message (i.e., <code>proposal</code>) from the <code>receiver</code>.
-</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>is the type of action expression used to construct the content of the <code>proposal</code>.</p></dd><dt class="param">conversationId</dt><dd class="cmt"><p>is used to identify a sequence of <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct"><code>CommunicativeAct</code></a> messages
+</p></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is used to identify a sequence of <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct"><code>CommunicativeAct</code></a> messages
                       that together form a conversation.</p></dd><dt class="param">proposal</dt><dd class="cmt"><p>is the previously received <code>proposal</code> that the <code>sender</code> has decided to accept.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>AcceptProposal</code> message is sent by the <code>sender</code> using the
-      <a href="../CommunicatingActor.html#acceptProposal[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposal:acl.acts.Propose[A]):Unit" class="extmbr" name="acl.CommunicatingActor#acceptProposal"><code>acceptProposal</code></a> action.
+      <a href="../CommunicatingActor.html#acceptProposal(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposal:acl.acts.Propose):Unit" class="extmbr" name="acl.CommunicatingActor#acceptProposal"><code>acceptProposal</code></a> action.
 </p></span></dd></dl></div>
     </li><li name="acl.acts.Agree" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="Agree[A]extendsCommunicativeActwithProductwithSerializable"></a>
-      <a id="Agree[A]:Agree[A]"></a>
+      <a id="AgreeextendsCommunicativeActwithProductwithSerializable"></a>
+      <a id="Agree:Agree"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="Agree.html"><span class="name">Agree</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="request">request: <a href="Request.html" class="extype" name="acl.acts.Request">Request</a>[<span class="extype" name="acl.acts.Agree.A">A</span>]</span>, <span name="precondition">precondition: (<a href="../Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="Agree.html"><span class="name">Agree</span></a><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="request">request: <a href="Request.html" class="extype" name="acl.acts.Request">Request</a></span>, <span name="precondition">precondition: (<a href="../Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#acl.acts.package@Agree[A]extendsCommunicativeActwithProductwithSerializable" title="Permalink" target="_top">
+      <a href="../../index.html#acl.acts.package@AgreeextendsCommunicativeActwithProductwithSerializable" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
@@ -114,23 +114,23 @@ the <code>receiver</code>.</p><div class="fullcomment"><div class="comment cmt">
 <a href="../CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> (i.e., <code>receiver</code>) indicating that the <code>sender</code> has agreed to
 perform some action(s) as specified in a <a href="Request.html" class="extype" name="acl.acts.Request"><code>Request</code></a> message (ie., <code>request</code>) previously sent by
 the <code>receiver</code>.
-</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>is the type of action expression used to construct the content of the <code>request</code>.</p></dd><dt class="param">conversationId</dt><dd class="cmt"><p>is used to identify a sequence of <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct"><code>CommunicativeAct</code></a> messages
+</p></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is used to identify a sequence of <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct"><code>CommunicativeAct</code></a> messages
                       that together form a conversation.</p></dd><dt class="param">request</dt><dd class="cmt"><p>is the previously received <code>request</code> that has been agreed.</p></dd><dt class="param">precondition</dt><dd class="cmt"><p>defines a condition that should be satisfied in order for the <code>sender</code> to perform the action(s)
-                    specified in the agreed <code>request</code>.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>Agree</code> message is sent by <code>sender</code> using the <a href="../CommunicatingActor.html#agree[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,request:acl.acts.Request[A],precondition:acl.Beliefs=&gt;Boolean):Unit" class="extmbr" name="acl.CommunicatingActor#agree"><code>agree</code></a> action.
+                    specified in the agreed <code>request</code>.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>Agree</code> message is sent by <code>sender</code> using the <a href="../CommunicatingActor.html#agree(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,request:acl.acts.Request,precondition:acl.Beliefs=&gt;Boolean):Unit" class="extmbr" name="acl.CommunicatingActor#agree"><code>agree</code></a> action.
 </p></span></dd></dl></div>
     </li><li name="acl.acts.CallForProposal" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="CallForProposal[A]extendsCommunicativeActwithProductwithSerializable"></a>
-      <a id="CallForProposal[A]:CallForProposal[A]"></a>
+      <a id="CallForProposalextendsCommunicativeActwithProductwithSerializable"></a>
+      <a id="CallForProposal:CallForProposal"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="CallForProposal.html"><span class="name">CallForProposal</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="content">content: <span class="extype" name="acl.acts.CallForProposal.A">A</span></span>, <span name="precondition">precondition: (<a href="Propose.html" class="extype" name="acl.acts.Propose">Propose</a>[<span class="extype" name="acl.acts.CallForProposal.A">A</span>]) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="CallForProposal.html"><span class="name">CallForProposal</span></a><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="content">content: <span class="extype" name="scala.Any">Any</span></span>, <span name="precondition">precondition: (<a href="Propose.html" class="extype" name="acl.acts.Propose">Propose</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#acl.acts.package@CallForProposal[A]extendsCommunicativeActwithProductwithSerializable" title="Permalink" target="_top">
+      <a href="../../index.html#acl.acts.package@CallForProposalextendsCommunicativeActwithProductwithSerializable" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
@@ -141,24 +141,24 @@ the <code>receiver</code>.
 <a href="../CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> (i.e., <code>receivers</code>) requesting that each of the
 <code>receivers</code> submit a <a href="Propose.html" class="extype" name="acl.acts.Propose"><code>Propose</code></a> message (i.e., <code>proposal</code>) that satisfies a certain
 <code>precondition</code>.
-</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>is the type of action expression used to construct the <code>proposal</code>.
-</p></dd><dt class="param">conversationId</dt><dd class="cmt"><p>is used to identify a sequence of <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct"><code>CommunicativeAct</code></a> messages
+</p></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is used to identify a sequence of <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct"><code>CommunicativeAct</code></a> messages
                       that together form a conversation.</p></dd><dt class="param">content</dt><dd class="cmt"><p>is an action expression defining the action(s) that the <code>sender</code> is requesting the <code>receiver</code> to
                submit a <code>proposal</code> to perform.</p></dd><dt class="param">precondition</dt><dd class="cmt"><p>is a condition that any submitted <code>proposal</code> must satisfy in order to be accepted by the
-                    <code>sender</code>.</p></dd></dl></div>
+                    <code>sender</code>.
+</p></dd></dl></div>
     </li><li name="acl.acts.Cancel" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="Cancel[A]extendsCommunicativeActwithProductwithSerializable"></a>
-      <a id="Cancel[A]:Cancel[A]"></a>
+      <a id="CancelextendsCommunicativeActwithProductwithSerializable"></a>
+      <a id="Cancel:Cancel"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="Cancel.html"><span class="name">Cancel</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="request">request: <a href="Request.html" class="extype" name="acl.acts.Request">Request</a>[<span class="extype" name="acl.acts.Cancel.A">A</span>]</span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="Cancel.html"><span class="name">Cancel</span></a><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="request">request: <a href="Request.html" class="extype" name="acl.acts.Request">Request</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#acl.acts.package@Cancel[A]extendsCommunicativeActwithProductwithSerializable" title="Permalink" target="_top">
+      <a href="../../index.html#acl.acts.package@CancelextendsCommunicativeActwithProductwithSerializable" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
@@ -167,8 +167,8 @@ the <code>receiver</code>.
 <a href="Request.html" class="extype" name="acl.acts.Request"><code>Request</code></a> message (i.e., <code>request</code>) to perform some action should be cancelled.</p><div class="fullcomment"><div class="comment cmt"><p>A message sent from some <a href="../CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> (i.e., <code>sender</code>) to another
 <a href="../CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> (i.e., <code>receiver</code>) indicating that a previously received
 <a href="Request.html" class="extype" name="acl.acts.Request"><code>Request</code></a> message (i.e., <code>request</code>) to perform some action should be cancelled.
-</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>is the type of action expression used to construct the content of the <code>request</code></p></dd><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify a sequence of communicative acts that together form a
-                      conversation.</p></dd><dt class="param">request</dt><dd class="cmt"><p>is the previously received <code>request</code> to perform some action that should be cancelled.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>Cancel</code> message is sent the <code>sender</code> using the <a href="../CommunicatingActor.html#cancel[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,request:acl.acts.Request[A]):Unit" class="extmbr" name="acl.CommunicatingActor#cancel"><code>cancel</code></a> action.
+</p></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify a sequence of communicative acts that together form a
+                      conversation.</p></dd><dt class="param">request</dt><dd class="cmt"><p>is the previously received <code>request</code> to perform some action that should be cancelled.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>Cancel</code> message is sent the <code>sender</code> using the <a href="../CommunicatingActor.html#cancel(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,request:acl.acts.Request):Unit" class="extmbr" name="acl.CommunicatingActor#cancel"><code>cancel</code></a> action.
 </p></span></dd></dl></div>
     </li><li name="acl.acts.CommunicativeAct" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="CommunicativeActextendsAnyRef"></a>
@@ -239,18 +239,18 @@ the <code>receiver</code> is known to, at a minimum, be uncertain about the trut
       <a href="../CommunicatingActor.html#disconfirm(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposition:acl.Beliefs):Unit" class="extmbr" name="acl.CommunicatingActor#disconfirm"><code>disconfirm</code></a> action.
 </p></span></dd></dl></div>
     </li><li name="acl.acts.Failure" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="Failure[A]extendsCommunicativeActwithProductwithSerializable"></a>
-      <a id="Failure[A]:Failure[A]"></a>
+      <a id="FailureextendsCommunicativeActwithProductwithSerializable"></a>
+      <a id="Failure:Failure"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="Failure.html"><span class="name">Failure</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="content">content: <span class="extype" name="acl.acts.Failure.A">A</span></span>, <span name="reason">reason: (<a href="../Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="Failure.html"><span class="name">Failure</span></a><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="content">content: <span class="extype" name="scala.Any">Any</span></span>, <span name="reason">reason: (<a href="../Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#acl.acts.package@Failure[A]extendsCommunicativeActwithProductwithSerializable" title="Permalink" target="_top">
+      <a href="../../index.html#acl.acts.package@FailureextendsCommunicativeActwithProductwithSerializable" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
@@ -259,8 +259,8 @@ the <code>receiver</code> is known to, at a minimum, be uncertain about the trut
 that the attempt failed.</p><div class="fullcomment"><div class="comment cmt"><p>A message sent from some <a href="../CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> (i.e., <code>sender</code>) to another
 <a href="../CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> (i.e., <code>receiver</code>) indicating that some action was attempted, but
 that the attempt failed.
-</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>is the type of action expression used to construct the <code>content</code> of the message.</p></dd><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify a sequence of communicative acts that together form a
-                      conversation.</p></dd><dt class="param">content</dt><dd class="cmt"><p>is an action expression defining the action(s) that the <code>sender</code> has failed to perform.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>Failure</code> message is sent by the <code>sender</code> using the <a href="../CommunicatingActor.html#failure[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:A,reason:acl.Beliefs=&gt;Boolean):Unit" class="extmbr" name="acl.CommunicatingActor#failure"><code>failure</code></a> action.
+</p></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify a sequence of communicative acts that together form a
+                      conversation.</p></dd><dt class="param">content</dt><dd class="cmt"><p>is an action expression defining the action(s) that the <code>sender</code> has failed to perform.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>Failure</code> message is sent by the <code>sender</code> using the <a href="../CommunicatingActor.html#failure(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:Any,reason:acl.Beliefs=&gt;Boolean):Unit" class="extmbr" name="acl.CommunicatingActor#failure"><code>failure</code></a> action.
 </p></span></dd></dl></div>
     </li><li name="acl.acts.Inform" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="InformextendsCommunicativeActwithProductwithSerializable"></a>
@@ -314,18 +314,18 @@ that the attempt failed.
       action.
 </p></span></dd></dl></div>
     </li><li name="acl.acts.InformRef" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="InformRef[D]extendsCommunicativeActwithProductwithSerializable"></a>
-      <a id="InformRef[D]:InformRef[D]"></a>
+      <a id="InformRefextendsCommunicativeActwithProductwithSerializable"></a>
+      <a id="InformRef:InformRef"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="InformRef.html"><span class="name">InformRef</span></a><span class="tparams">[<span name="D">D</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="descriptor">descriptor: (<span class="extype" name="acl.acts.InformRef.D">D</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="InformRef.html"><span class="name">InformRef</span></a><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="descriptor">descriptor: (<span class="extype" name="scala.Any">Any</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#acl.acts.package@InformRef[D]extendsCommunicativeActwithProductwithSerializable" title="Permalink" target="_top">
+      <a href="../../index.html#acl.acts.package@InformRefextendsCommunicativeActwithProductwithSerializable" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
@@ -334,7 +334,7 @@ that the attempt failed.
 satisfy some <code>descriptor</code>.</p><div class="fullcomment"><div class="comment cmt"><p>A message sent from some <a href="../CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> (i.e., <code>sender</code>) to another
 <a href="../CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> (i.e., <code>receiver</code>) informing the <code>receiver</code> of object(s) which
 satisfy some <code>descriptor</code>.
-</p></div><dl class="paramcmts block"><dt class="tparam">D</dt><dd class="cmt"><p>is the type of objects described by the <code>descriptor</code>.</p></dd><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify a sequence of communicative acts that together form a
+</p></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify a sequence of communicative acts that together form a
                       conversation.</p></dd><dt class="param">descriptor</dt><dd class="cmt"><p>is a function describing some required characteristics of the object.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>InformRef</code> message is sent by the <code>sender</code> using the <a href="../CommunicatingActor.html#informRef[D](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,descriptor:D=&gt;Boolean):Unit" class="extmbr" name="acl.CommunicatingActor#informRef"><code>informRef</code></a>
       action.
 </p></span></dd></dl></div>
@@ -390,18 +390,18 @@ to a collection of other actors satisfying a <code>descriptor</code>.
       action.
 </p></span></dd></dl></div>
     </li><li name="acl.acts.Propose" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="Propose[A]extendsCommunicativeActwithProductwithSerializable"></a>
-      <a id="Propose[A]:Propose[A]"></a>
+      <a id="ProposeextendsCommunicativeActwithProductwithSerializable"></a>
+      <a id="Propose:Propose"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="Propose.html"><span class="name">Propose</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="content">content: <span class="extype" name="acl.acts.Propose.A">A</span></span>, <span name="precondition">precondition: (<a href="../Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="Propose.html"><span class="name">Propose</span></a><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="content">content: <span class="extype" name="scala.Any">Any</span></span>, <span name="precondition">precondition: (<a href="../Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#acl.acts.package@Propose[A]extendsCommunicativeActwithProductwithSerializable" title="Permalink" target="_top">
+      <a href="../../index.html#acl.acts.package@ProposeextendsCommunicativeActwithProductwithSerializable" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
@@ -410,24 +410,24 @@ to a collection of other actors satisfying a <code>descriptor</code>.
 action, given certain preconditions.</p><div class="fullcomment"><div class="comment cmt"><p>A message from some <a href="../CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> (i.e., <code>sender</code>) to another
 <a href="../CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> (i.e., <code>receiver</code>) representing a proposal to perform a certain
 action, given certain preconditions.
-</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>is the type of action expression used to construct the <code>content</code>.</p></dd><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify a sequence of communicative acts that together form a
+</p></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify a sequence of communicative acts that together form a
                       conversation.</p></dd><dt class="param">content</dt><dd class="cmt"><p>is an action expression defining the action(s) that the <code>sender</code> is proposing to perform in the
                event that the <code>precondition</code> is satisfied.</p></dd><dt class="param">precondition</dt><dd class="cmt"><p>is a proposition defining the precondition that should be satisfied in order for the <code>sender</code>
-                    to perform the action(s) specified in the <code>content</code>.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>Propose</code> message is sent by the <code>sender</code> using the <a href="../CommunicatingActor.html#propose[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:A,precondition:acl.Beliefs=&gt;Boolean):Unit" class="extmbr" name="acl.CommunicatingActor#propose"><code>propose</code></a> method.
+                    to perform the action(s) specified in the <code>content</code>.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>Propose</code> message is sent by the <code>sender</code> using the <a href="../CommunicatingActor.html#propose(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:Any,precondition:acl.Beliefs=&gt;Boolean):Unit" class="extmbr" name="acl.CommunicatingActor#propose"><code>propose</code></a> method.
 </p></span></dd></dl></div>
     </li><li name="acl.acts.Proxy" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="Proxy[D]extendsCommunicativeActwithProductwithSerializable"></a>
-      <a id="Proxy[D]:Proxy[D]"></a>
+      <a id="ProxyextendsCommunicativeActwithProductwithSerializable"></a>
+      <a id="Proxy:Proxy"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="Proxy.html"><span class="name">Proxy</span></a><span class="tparams">[<span name="D">D</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="message">message: <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a></span>, <span name="descriptor">descriptor: (<span class="extype" name="acl.acts.Proxy.D">D</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="constraint">constraint: (<a href="../Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="Proxy.html"><span class="name">Proxy</span></a><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="message">message: <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a></span>, <span name="descriptor">descriptor: (<span class="extype" name="akka.actor.ActorRef">ActorRef</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="constraint">constraint: (<a href="../Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#acl.acts.package@Proxy[D]extendsCommunicativeActwithProductwithSerializable" title="Permalink" target="_top">
+      <a href="../../index.html#acl.acts.package@ProxyextendsCommunicativeActwithProductwithSerializable" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
@@ -464,18 +464,18 @@ action, given certain preconditions.
                    truth value).</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>QueryIf</code> message is sent by the <code>sender</code> using the <a href="../CommunicatingActor.html#queryIf(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposition:acl.Beliefs):Unit" class="extmbr" name="acl.CommunicatingActor#queryIf"><code>queryIf</code></a> method.
 </p></span></dd></dl></div>
     </li><li name="acl.acts.QueryRef" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="QueryRef[D]extendsCommunicativeActwithProductwithSerializable"></a>
-      <a id="QueryRef[D]:QueryRef[D]"></a>
+      <a id="QueryRefextendsCommunicativeActwithProductwithSerializable"></a>
+      <a id="QueryRef:QueryRef"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="QueryRef.html"><span class="name">QueryRef</span></a><span class="tparams">[<span name="D">D</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="descriptor">descriptor: (<span class="extype" name="acl.acts.QueryRef.D">D</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="selector">selector: (<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="acl.acts.QueryRef.D">D</span>]) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="acl.acts.QueryRef.D">D</span>]</span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="QueryRef.html"><span class="name">QueryRef</span></a><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="descriptor">descriptor: (<span class="extype" name="scala.Any">Any</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="selector">selector: (<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="scala.Any">Any</span>]) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="scala.Any">Any</span>]</span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#acl.acts.package@QueryRef[D]extendsCommunicativeActwithProductwithSerializable" title="Permalink" target="_top">
+      <a href="../../index.html#acl.acts.package@QueryRefextendsCommunicativeActwithProductwithSerializable" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
@@ -484,24 +484,24 @@ action, given certain preconditions.
 references to objects matching a given <code>descriptor</code>.</p><div class="fullcomment"><div class="comment cmt"><p>A message sent from some <a href="../CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> (i.e., <code>sender</code>) to another
 <a href="../CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> (i.e., <code>receiver</code>) asking whether or not the <code>receiver</code> has
 references to objects matching a given <code>descriptor</code>.
-</p></div><dl class="paramcmts block"><dt class="tparam">D</dt><dd class="cmt"><p>is the type of object characterized by the <code>descriptor</code>.</p></dd><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify a sequence of communicative acts that together form a
+</p></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify a sequence of communicative acts that together form a
                       conversation.</p></dd><dt class="param">descriptor</dt><dd class="cmt"><p>is a function describing some required characteristics of an object.</p></dd><dt class="param">selector</dt><dd class="cmt"><p>is a function describing a rule for choosing some subset of the collection of objects that
-                satisfy the <code>descriptor</code>.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>QueryRef</code> message is sent by the <code>sender</code> using the <a href="../CommunicatingActor.html#queryRef[D](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,descriptor:D=&gt;Boolean,selector:scala.collection.immutable.Set[D]=&gt;scala.collection.immutable.Set[D]):Unit" class="extmbr" name="acl.CommunicatingActor#queryRef"><code>queryRef</code></a>
+                satisfy the <code>descriptor</code>.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>QueryRef</code> message is sent by the <code>sender</code> using the <a href="../CommunicatingActor.html#queryRef(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,descriptor:Any=&gt;Boolean,selector:scala.collection.immutable.Set[Any]=&gt;scala.collection.immutable.Set[Any]):Unit" class="extmbr" name="acl.CommunicatingActor#queryRef"><code>queryRef</code></a>
       method.
 </p></span></dd></dl></div>
     </li><li name="acl.acts.Refuse" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="Refuse[A]extendsCommunicativeActwithProductwithSerializable"></a>
-      <a id="Refuse[A]:Refuse[A]"></a>
+      <a id="RefuseextendsCommunicativeActwithProductwithSerializable"></a>
+      <a id="Refuse:Refuse"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="Refuse.html"><span class="name">Refuse</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="request">request: <a href="Request.html" class="extype" name="acl.acts.Request">Request</a>[<span class="extype" name="acl.acts.Refuse.A">A</span>]</span>, <span name="reason">reason: (<a href="../Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="Refuse.html"><span class="name">Refuse</span></a><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="request">request: <a href="Request.html" class="extype" name="acl.acts.Request">Request</a></span>, <span name="reason">reason: (<a href="../Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#acl.acts.package@Refuse[A]extendsCommunicativeActwithProductwithSerializable" title="Permalink" target="_top">
+      <a href="../../index.html#acl.acts.package@RefuseextendsCommunicativeActwithProductwithSerializable" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
@@ -510,23 +510,23 @@ references to objects matching a given <code>descriptor</code>.
 previously received <a href="Request.html" class="extype" name="acl.acts.Request"><code>Request</code></a> message (i.e., <code>request</code>) from the <code>receiver</code>.</p><div class="fullcomment"><div class="comment cmt"><p>A message sent from some <a href="../CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> (i.e., <code>sender</code>) to another
 <a href="../CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> (i.e., <code>receiver</code>) indicating that the <code>sender</code> has refused a
 previously received <a href="Request.html" class="extype" name="acl.acts.Request"><code>Request</code></a> message (i.e., <code>request</code>) from the <code>receiver</code>.
-</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>is the type of action expression used to construct the content of the <code>request</code>.</p></dd><dt class="param">conversationId</dt><dd class="cmt"><p>is used to identify a sequence of <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct"><code>CommunicativeAct</code></a> messages
+</p></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is used to identify a sequence of <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct"><code>CommunicativeAct</code></a> messages
                       that together form a conversation.</p></dd><dt class="param">request</dt><dd class="cmt"><p>is the previously received [acl.Request <code>Request</code>] message that is being refused.</p></dd><dt class="param">reason</dt><dd class="cmt"><p>is a proposition denoting the reason that the <code>request</code> has been refused.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>Refuse</code> message is sent by a <a href="../CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> using the
-      <a href="../CommunicatingActor.html#refuse[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,request:acl.acts.Request[A],reason:acl.Beliefs=&gt;Boolean):Unit" class="extmbr" name="acl.CommunicatingActor#refuse"><code>refuse</code></a> method.
+      <a href="../CommunicatingActor.html#refuse(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,request:acl.acts.Request,reason:acl.Beliefs=&gt;Boolean):Unit" class="extmbr" name="acl.CommunicatingActor#refuse"><code>refuse</code></a> method.
 </p></span></dd></dl></div>
     </li><li name="acl.acts.RejectProposal" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="RejectProposal[A]extendsCommunicativeActwithProductwithSerializable"></a>
-      <a id="RejectProposal[A]:RejectProposal[A]"></a>
+      <a id="RejectProposalextendsCommunicativeActwithProductwithSerializable"></a>
+      <a id="RejectProposal:RejectProposal"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="RejectProposal.html"><span class="name">RejectProposal</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="proposal">proposal: <a href="Propose.html" class="extype" name="acl.acts.Propose">Propose</a>[<span class="extype" name="acl.acts.RejectProposal.A">A</span>]</span>, <span name="reason">reason: (<a href="../Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="RejectProposal.html"><span class="name">RejectProposal</span></a><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="proposal">proposal: <a href="Propose.html" class="extype" name="acl.acts.Propose">Propose</a></span>, <span name="reason">reason: (<a href="../Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#acl.acts.package@RejectProposal[A]extendsCommunicativeActwithProductwithSerializable" title="Permalink" target="_top">
+      <a href="../../index.html#acl.acts.package@RejectProposalextendsCommunicativeActwithProductwithSerializable" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
@@ -535,23 +535,23 @@ previously received <a href="Request.html" class="extype" name="acl.acts.Request
 previously received <a href="Propose.html" class="extype" name="acl.acts.Propose"><code>Propose</code></a> message (i.e., <code>proposal</code>) from the <code>receiver</code>.</p><div class="fullcomment"><div class="comment cmt"><p>A message sent from some <a href="../CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> (i.e., <code>sender</code>) to another
 <a href="../CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> (i.e., <code>receiver</code>) indicating that the <code>sender</code> has rejected a
 previously received <a href="Propose.html" class="extype" name="acl.acts.Propose"><code>Propose</code></a> message (i.e., <code>proposal</code>) from the <code>receiver</code>.
-</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>is the type of action expression used to construct the content of the <code>proposal</code>.</p></dd><dt class="param">conversationId</dt><dd class="cmt"><p>is used to identify a sequence of <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct"><code>CommunicativeAct</code></a> messages
+</p></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is used to identify a sequence of <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct"><code>CommunicativeAct</code></a> messages
                       that together form a conversation.</p></dd><dt class="param">proposal</dt><dd class="cmt"><p>is the previously received <code>proposal</code> that the <code>sender</code> has decided to reject.</p></dd><dt class="param">reason</dt><dd class="cmt"><p>is a proposition denoting the reason that the <code>proposal</code> has been rejected.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>AcceptProposal</code> message is sent by the <code>sender</code> using the
-      <a href="../CommunicatingActor.html#rejectProposal[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposal:acl.acts.Propose[A],reason:acl.Beliefs=&gt;Boolean):Unit" class="extmbr" name="acl.CommunicatingActor#rejectProposal"><code>rejectProposal</code></a> action.
+      <a href="../CommunicatingActor.html#rejectProposal(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposal:acl.acts.Propose,reason:acl.Beliefs=&gt;Boolean):Unit" class="extmbr" name="acl.CommunicatingActor#rejectProposal"><code>rejectProposal</code></a> action.
 </p></span></dd></dl></div>
     </li><li name="acl.acts.Request" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="Request[A]extendsCommunicativeActwithProductwithSerializable"></a>
-      <a id="Request[A]:Request[A]"></a>
+      <a id="RequestextendsCommunicativeActwithProductwithSerializable"></a>
+      <a id="Request:Request"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="Request.html"><span class="name">Request</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="request">request: <span class="extype" name="acl.acts.Request.A">A</span></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="Request.html"><span class="name">Request</span></a><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="request">request: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#acl.acts.package@Request[A]extendsCommunicativeActwithProductwithSerializable" title="Permalink" target="_top">
+      <a href="../../index.html#acl.acts.package@RequestextendsCommunicativeActwithProductwithSerializable" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
@@ -560,21 +560,21 @@ previously received <a href="Propose.html" class="extype" name="acl.acts.Propose
 <a href="../CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> (i.e., <code>receiver</code>) requesting the <code>receiver</code> to perform some action.
 </p></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify a sequence of communicative acts that together form a
                       conversation.</p></dd><dt class="param">request</dt><dd class="cmt"><p>is an action expression defining the action(s) that the <code>sender</code> is requesting the <code>receiver</code> to
-               perform.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>Request</code> message is sent by the <code>sender</code> using the <a href="../CommunicatingActor.html#request[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:A):Unit" class="extmbr" name="acl.CommunicatingActor#request"><code>request</code></a> action.
+               perform.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>Request</code> message is sent by the <code>sender</code> using the <a href="../CommunicatingActor.html#request(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:Any):Unit" class="extmbr" name="acl.CommunicatingActor#request"><code>request</code></a> action.
 </p></span></dd></dl></div>
     </li><li name="acl.acts.RequestWhen" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="RequestWhen[A]extendsCommunicativeActwithProductwithSerializable"></a>
-      <a id="RequestWhen[A]:RequestWhen[A]"></a>
+      <a id="RequestWhenextendsCommunicativeActwithProductwithSerializable"></a>
+      <a id="RequestWhen:RequestWhen"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="RequestWhen.html"><span class="name">RequestWhen</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="content">content: <span class="extype" name="acl.acts.RequestWhen.A">A</span></span>, <span name="precondition">precondition: (<a href="../Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="RequestWhen.html"><span class="name">RequestWhen</span></a><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="content">content: <span class="extype" name="scala.Any">Any</span></span>, <span name="precondition">precondition: (<a href="../Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#acl.acts.package@RequestWhen[A]extendsCommunicativeActwithProductwithSerializable" title="Permalink" target="_top">
+      <a href="../../index.html#acl.acts.package@RequestWhenextendsCommunicativeActwithProductwithSerializable" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
@@ -583,25 +583,25 @@ previously received <a href="Propose.html" class="extype" name="acl.acts.Propose
 when some given <code>precondition</code> becomes true.</p><div class="fullcomment"><div class="comment cmt"><p>A message sent from some <a href="../CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> (i.e., <code>sender</code>) to another
 <a href="../CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> (i.e., <code>receiver</code>) requesting the <code>receiver</code> to perform some action
 when some given <code>precondition</code> becomes true.
-</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>is the type of action expression used to construct the content of the <code>request</code>.</p></dd><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify a sequence of communicative acts that together form a
+</p></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify a sequence of communicative acts that together form a
                       conversation.</p></dd><dt class="param">content</dt><dd class="cmt"><p>is an action expression defining the action(s) that the <code>sender</code> is requesting the <code>receiver</code> to
                perform.</p></dd><dt class="param">precondition</dt><dd class="cmt"><p>is a proposition defining the precondition that should be satisfied in order for the
                     <code>receiver</code> to perform the action(s) specified in the <code>content</code>.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>RequestWhen</code> message is sent by the <code>sender</code> using the
-      <a href="../CommunicatingActor.html#requestWhen[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:A,precondition:acl.Beliefs=&gt;Boolean):Unit" class="extmbr" name="acl.CommunicatingActor#requestWhen"><code>requestWhen</code></a> action.
+      <a href="../CommunicatingActor.html#requestWhen(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:Any,precondition:acl.Beliefs=&gt;Boolean):Unit" class="extmbr" name="acl.CommunicatingActor#requestWhen"><code>requestWhen</code></a> action.
 </p></span></dd></dl></div>
     </li><li name="acl.acts.RequestWhenever" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="RequestWhenever[A]extendsCommunicativeActwithProductwithSerializable"></a>
-      <a id="RequestWhenever[A]:RequestWhenever[A]"></a>
+      <a id="RequestWheneverextendsCommunicativeActwithProductwithSerializable"></a>
+      <a id="RequestWhenever:RequestWhenever"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="RequestWhenever.html"><span class="name">RequestWhenever</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="content">content: <span class="extype" name="acl.acts.RequestWhenever.A">A</span></span>, <span name="precondition">precondition: (<a href="../Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="RequestWhenever.html"><span class="name">RequestWhenever</span></a><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="content">content: <span class="extype" name="scala.Any">Any</span></span>, <span name="precondition">precondition: (<a href="../Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#acl.acts.package@RequestWhenever[A]extendsCommunicativeActwithProductwithSerializable" title="Permalink" target="_top">
+      <a href="../../index.html#acl.acts.package@RequestWheneverextendsCommunicativeActwithProductwithSerializable" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
@@ -610,25 +610,25 @@ when some given <code>precondition</code> becomes true.
 when some given <code>precondition</code> becomes true and thereafter each time the <code>precondition</code> becomes true again.</p><div class="fullcomment"><div class="comment cmt"><p>A message sent from some <a href="../CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> (i.e., <code>sender</code>) to another
 <a href="../CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> (i.e., <code>receiver</code>) requesting the <code>receiver</code> to perform some action
 when some given <code>precondition</code> becomes true and thereafter each time the <code>precondition</code> becomes true again.
-</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>is the type of action expression used to construct the content of the <code>request</code>.</p></dd><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify a sequence of communicative acts that together form a
+</p></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify a sequence of communicative acts that together form a
                       conversation.</p></dd><dt class="param">content</dt><dd class="cmt"><p>is an action expression defining the action(s) that the <code>sender</code> is requesting the <code>receiver</code> to
                perform.</p></dd><dt class="param">precondition</dt><dd class="cmt"><p>is a proposition defining the precondition that should be satisfied in order for the
                     <code>receiver</code> to perform the action(s) specified in the <code>content</code>.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>RequestWhenever</code> message is sent by the <code>sender</code> using the
-      <a href="../CommunicatingActor.html#requestWhenever[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:A,precondition:acl.Beliefs=&gt;Boolean):Unit" class="extmbr" name="acl.CommunicatingActor#requestWhenever"><code>requestWhenever</code></a> action.
+      <a href="../CommunicatingActor.html#requestWhenever(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:Any,precondition:acl.Beliefs=&gt;Boolean):Unit" class="extmbr" name="acl.CommunicatingActor#requestWhenever"><code>requestWhenever</code></a> action.
 </p></span></dd></dl></div>
     </li><li name="acl.acts.Subscribe" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="Subscribe[D]extendsCommunicativeActwithProductwithSerializable"></a>
-      <a id="Subscribe[D]:Subscribe[D]"></a>
+      <a id="SubscribeextendsCommunicativeActwithProductwithSerializable"></a>
+      <a id="Subscribe:Subscribe"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="Subscribe.html"><span class="name">Subscribe</span></a><span class="tparams">[<span name="D">D</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="descriptor">descriptor: (<span class="extype" name="acl.acts.Subscribe.D">D</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="Subscribe.html"><span class="name">Subscribe</span></a><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="descriptor">descriptor: (<span class="extype" name="scala.Any">Any</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#acl.acts.package@Subscribe[D]extendsCommunicativeActwithProductwithSerializable" title="Permalink" target="_top">
+      <a href="../../index.html#acl.acts.package@SubscribeextendsCommunicativeActwithProductwithSerializable" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
@@ -638,7 +638,7 @@ when some given <code>precondition</code> becomes true and thereafter each time 
 <a href="../CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> (i.e., <code>receiver</code>)requesting that the <code>recevier</code> notify the
 <code>sender</code> of the value of a reference whenever the object identified by the reference changes.
 </p></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify a sequence of communicative acts that together form a
-                      conversation.</p></dd><dt class="param">descriptor</dt><dd class="cmt"><p>is a function describing some required characteristics of the reference object.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>Subscribe</code> message is sent by the <code>sender</code> using the <a href="../CommunicatingActor.html#subscribe[D](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,descriptor:D=&gt;Boolean):Unit" class="extmbr" name="acl.CommunicatingActor#subscribe"><code>subscribe</code></a>
+                      conversation.</p></dd><dt class="param">descriptor</dt><dd class="cmt"><p>is a function describing some required characteristics of the reference object.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>Subscribe</code> message is sent by the <code>sender</code> using the <a href="../CommunicatingActor.html#subscribe(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,descriptor:Any=&gt;Boolean):Unit" class="extmbr" name="acl.CommunicatingActor#subscribe"><code>subscribe</code></a>
       action.
 </p></span></dd></dl></div>
     </li></ol>

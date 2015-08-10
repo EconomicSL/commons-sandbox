@@ -45,7 +45,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">CallForProposal</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="content">content: <span class="extype" name="acl.acts.CallForProposal.A">A</span></span>, <span name="precondition">precondition: (<a href="Propose.html" class="extype" name="acl.acts.Propose">Propose</a>[<span class="extype" name="acl.acts.CallForProposal.A">A</span>]) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <span class="name">CallForProposal</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="content">content: <span class="extype" name="scala.Any">Any</span></span>, <span name="precondition">precondition: (<a href="Propose.html" class="extype" name="acl.acts.Propose">Propose</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4>
       
@@ -53,11 +53,11 @@
 <a href="../CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> (i.e., <code>receivers</code>) requesting that each of the
 <code>receivers</code> submit a <a href="Propose.html" class="extype" name="acl.acts.Propose"><code>Propose</code></a> message (i.e., <code>proposal</code>) that satisfies a certain
 <code>precondition</code>.
-</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>is the type of action expression used to construct the <code>proposal</code>.
-</p></dd><dt class="param">conversationId</dt><dd class="cmt"><p>is used to identify a sequence of <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct"><code>CommunicativeAct</code></a> messages
+</p></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is used to identify a sequence of <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct"><code>CommunicativeAct</code></a> messages
                       that together form a conversation.</p></dd><dt class="param">content</dt><dd class="cmt"><p>is an action expression defining the action(s) that the <code>sender</code> is requesting the <code>receiver</code> to
                submit a <code>proposal</code> to perform.</p></dd><dt class="param">precondition</dt><dd class="cmt"><p>is a condition that any submitted <code>proposal</code> must satisfy in order to be accepted by the
-                    <code>sender</code>.</p></dd></dl><div class="toggleContainer block">
+                    <code>sender</code>.
+</p></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a>, <span class="extype" name="java.io.Serializable">Serializable</span>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Equals" class="extype" target="_top">Equals</a>, <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
@@ -98,25 +98,26 @@
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="acl.acts.CallForProposal#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;init&gt;(conversationId:java.util.UUID,content:A,precondition:acl.acts.Propose[A]=&gt;Boolean):acl.acts.CallForProposal[A]"></a>
-      <a id="&lt;init&gt;:CallForProposal[A]"></a>
+      <a id="&lt;init&gt;(conversationId:java.util.UUID,content:Any,precondition:acl.acts.Propose=&gt;Boolean):acl.acts.CallForProposal"></a>
+      <a id="&lt;init&gt;:CallForProposal"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">CallForProposal</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="content">content: <span class="extype" name="acl.acts.CallForProposal.A">A</span></span>, <span name="precondition">precondition: (<a href="Propose.html" class="extype" name="acl.acts.Propose">Propose</a>[<span class="extype" name="acl.acts.CallForProposal.A">A</span>]) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span>
+        <span class="name">CallForProposal</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="content">content: <span class="extype" name="scala.Any">Any</span></span>, <span name="precondition">precondition: (<a href="Propose.html" class="extype" name="acl.acts.Propose">Propose</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#acl.acts.CallForProposal@&lt;init&gt;(conversationId:java.util.UUID,content:A,precondition:acl.acts.Propose[A]=&gt;Boolean):acl.acts.CallForProposal[A]" title="Permalink" target="_top">
+      <a href="../../index.html#acl.acts.CallForProposal@&lt;init&gt;(conversationId:java.util.UUID,content:Any,precondition:acl.acts.Propose=&gt;Boolean):acl.acts.CallForProposal" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
       <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is used to identify a sequence of <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct"><code>CommunicativeAct</code></a> messages
                       that together form a conversation.</p></dd><dt class="param">content</dt><dd class="cmt"><p>is an action expression defining the action(s) that the <code>sender</code> is requesting the <code>receiver</code> to
                submit a <code>proposal</code> to perform.</p></dd><dt class="param">precondition</dt><dd class="cmt"><p>is a condition that any submitted <code>proposal</code> must satisfy in order to be accepted by the
-                    <code>sender</code>.</p></dd></dl></div>
+                    <code>sender</code>.
+</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -218,18 +219,18 @@
               
         </dd></dl></div>
     </li><li name="acl.acts.CallForProposal#content" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="content:A"></a>
-      <a id="content:A"></a>
+      <a id="content:Any"></a>
+      <a id="content:Any"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">content</span><span class="result">: <span class="extype" name="acl.acts.CallForProposal.A">A</span></span>
+        <span class="name">content</span><span class="result">: <span class="extype" name="scala.Any">Any</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#acl.acts.CallForProposal@content:A" title="Permalink" target="_top">
+      <a href="../../index.html#acl.acts.CallForProposal@content:Any" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
@@ -380,18 +381,18 @@
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="acl.acts.CallForProposal#precondition" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="precondition:acl.acts.Propose[A]=&gt;Boolean"></a>
-      <a id="precondition:(Propose[A])⇒Boolean"></a>
+      <a id="precondition:acl.acts.Propose=&gt;Boolean"></a>
+      <a id="precondition:(Propose)⇒Boolean"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">precondition</span><span class="result">: (<a href="Propose.html" class="extype" name="acl.acts.Propose">Propose</a>[<span class="extype" name="acl.acts.CallForProposal.A">A</span>]) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+        <span class="name">precondition</span><span class="result">: (<a href="Propose.html" class="extype" name="acl.acts.Propose">Propose</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#acl.acts.CallForProposal@precondition:acl.acts.Propose[A]=&gt;Boolean" title="Permalink" target="_top">
+      <a href="../../index.html#acl.acts.CallForProposal@precondition:acl.acts.Propose=&gt;Boolean" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>

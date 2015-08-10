@@ -45,7 +45,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">Subscribe</span><span class="tparams">[<span name="D">D</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="descriptor">descriptor: (<span class="extype" name="acl.acts.Subscribe.D">D</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <span class="name">Subscribe</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="descriptor">descriptor: (<span class="extype" name="scala.Any">Any</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4>
       
@@ -53,7 +53,7 @@
 <a href="../CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> (i.e., <code>receiver</code>)requesting that the <code>recevier</code> notify the
 <code>sender</code> of the value of a reference whenever the object identified by the reference changes.
 </p></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify a sequence of communicative acts that together form a
-                      conversation.</p></dd><dt class="param">descriptor</dt><dd class="cmt"><p>is a function describing some required characteristics of the reference object.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>Subscribe</code> message is sent by the <code>sender</code> using the <a href="../CommunicatingActor.html#subscribe[D](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,descriptor:D=&gt;Boolean):Unit" class="extmbr" name="acl.CommunicatingActor#subscribe"><code>subscribe</code></a>
+                      conversation.</p></dd><dt class="param">descriptor</dt><dd class="cmt"><p>is a function describing some required characteristics of the reference object.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>Subscribe</code> message is sent by the <code>sender</code> using the <a href="../CommunicatingActor.html#subscribe(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,descriptor:Any=&gt;Boolean):Unit" class="extmbr" name="acl.CommunicatingActor#subscribe"><code>subscribe</code></a>
       action.
 </p></span></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
@@ -96,18 +96,18 @@
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="acl.acts.Subscribe#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;init&gt;(conversationId:java.util.UUID,descriptor:D=&gt;Boolean):acl.acts.Subscribe[D]"></a>
-      <a id="&lt;init&gt;:Subscribe[D]"></a>
+      <a id="&lt;init&gt;(conversationId:java.util.UUID,descriptor:Any=&gt;Boolean):acl.acts.Subscribe"></a>
+      <a id="&lt;init&gt;:Subscribe"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">Subscribe</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="descriptor">descriptor: (<span class="extype" name="acl.acts.Subscribe.D">D</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span>
+        <span class="name">Subscribe</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="descriptor">descriptor: (<span class="extype" name="scala.Any">Any</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#acl.acts.Subscribe@&lt;init&gt;(conversationId:java.util.UUID,descriptor:D=&gt;Boolean):acl.acts.Subscribe[D]" title="Permalink" target="_top">
+      <a href="../../index.html#acl.acts.Subscribe@&lt;init&gt;(conversationId:java.util.UUID,descriptor:Any=&gt;Boolean):acl.acts.Subscribe" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
@@ -233,18 +233,18 @@
                       conversation.</p><div class="fullcomment"><div class="comment cmt"><p>is an expression used to identify a sequence of communicative acts that together form a
                       conversation.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="acl.acts.Subscribe">Subscribe</a> → <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a></dd></dl></div>
     </li><li name="acl.acts.Subscribe#descriptor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="descriptor:D=&gt;Boolean"></a>
-      <a id="descriptor:(D)⇒Boolean"></a>
+      <a id="descriptor:Any=&gt;Boolean"></a>
+      <a id="descriptor:(Any)⇒Boolean"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">descriptor</span><span class="result">: (<span class="extype" name="acl.acts.Subscribe.D">D</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+        <span class="name">descriptor</span><span class="result">: (<span class="extype" name="scala.Any">Any</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#acl.acts.Subscribe@descriptor:D=&gt;Boolean" title="Permalink" target="_top">
+      <a href="../../index.html#acl.acts.Subscribe@descriptor:Any=&gt;Boolean" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>

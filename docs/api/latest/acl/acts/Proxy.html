@@ -45,7 +45,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">Proxy</span><span class="tparams">[<span name="D">D</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="message">message: <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a></span>, <span name="descriptor">descriptor: (<span class="extype" name="acl.acts.Proxy.D">D</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="constraint">constraint: (<a href="../Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <span class="name">Proxy</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="message">message: <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a></span>, <span name="descriptor">descriptor: (<span class="extype" name="akka.actor.ActorRef">ActorRef</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="constraint">constraint: (<a href="../Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4>
       
@@ -95,18 +95,18 @@
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="acl.acts.Proxy#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;init&gt;(conversationId:java.util.UUID,message:acl.acts.CommunicativeAct,descriptor:D=&gt;Boolean,constraint:acl.Beliefs=&gt;Boolean):acl.acts.Proxy[D]"></a>
-      <a id="&lt;init&gt;:Proxy[D]"></a>
+      <a id="&lt;init&gt;(conversationId:java.util.UUID,message:acl.acts.CommunicativeAct,descriptor:akka.actor.ActorRef=&gt;Boolean,constraint:acl.Beliefs=&gt;Boolean):acl.acts.Proxy"></a>
+      <a id="&lt;init&gt;:Proxy"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">Proxy</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="message">message: <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a></span>, <span name="descriptor">descriptor: (<span class="extype" name="acl.acts.Proxy.D">D</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="constraint">constraint: (<a href="../Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span>
+        <span class="name">Proxy</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="message">message: <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a></span>, <span name="descriptor">descriptor: (<span class="extype" name="akka.actor.ActorRef">ActorRef</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="constraint">constraint: (<a href="../Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#acl.acts.Proxy@&lt;init&gt;(conversationId:java.util.UUID,message:acl.acts.CommunicativeAct,descriptor:D=&gt;Boolean,constraint:acl.Beliefs=&gt;Boolean):acl.acts.Proxy[D]" title="Permalink" target="_top">
+      <a href="../../index.html#acl.acts.Proxy@&lt;init&gt;(conversationId:java.util.UUID,message:acl.acts.CommunicativeAct,descriptor:akka.actor.ActorRef=&gt;Boolean,constraint:acl.Beliefs=&gt;Boolean):acl.acts.Proxy" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
@@ -250,18 +250,18 @@
                       conversation.</p><div class="fullcomment"><div class="comment cmt"><p>is an expression used to identify a sequence of communicative acts that together form a
                       conversation.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="acl.acts.Proxy">Proxy</a> → <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a></dd></dl></div>
     </li><li name="acl.acts.Proxy#descriptor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="descriptor:D=&gt;Boolean"></a>
-      <a id="descriptor:(D)⇒Boolean"></a>
+      <a id="descriptor:akka.actor.ActorRef=&gt;Boolean"></a>
+      <a id="descriptor:(ActorRef)⇒Boolean"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">descriptor</span><span class="result">: (<span class="extype" name="acl.acts.Proxy.D">D</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+        <span class="name">descriptor</span><span class="result">: (<span class="extype" name="akka.actor.ActorRef">ActorRef</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#acl.acts.Proxy@descriptor:D=&gt;Boolean" title="Permalink" target="_top">
+      <a href="../../index.html#acl.acts.Proxy@descriptor:akka.actor.ActorRef=&gt;Boolean" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>

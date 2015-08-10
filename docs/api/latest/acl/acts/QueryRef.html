@@ -45,16 +45,16 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">QueryRef</span><span class="tparams">[<span name="D">D</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="descriptor">descriptor: (<span class="extype" name="acl.acts.QueryRef.D">D</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="selector">selector: (<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="acl.acts.QueryRef.D">D</span>]) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="acl.acts.QueryRef.D">D</span>]</span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <span class="name">QueryRef</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="descriptor">descriptor: (<span class="extype" name="scala.Any">Any</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="selector">selector: (<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="scala.Any">Any</span>]) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="scala.Any">Any</span>]</span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>A message sent from some <a href="../CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> (i.e., <code>sender</code>) to another
 <a href="../CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> (i.e., <code>receiver</code>) asking whether or not the <code>receiver</code> has
 references to objects matching a given <code>descriptor</code>.
-</p></div><dl class="paramcmts block"><dt class="tparam">D</dt><dd class="cmt"><p>is the type of object characterized by the <code>descriptor</code>.</p></dd><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify a sequence of communicative acts that together form a
+</p></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify a sequence of communicative acts that together form a
                       conversation.</p></dd><dt class="param">descriptor</dt><dd class="cmt"><p>is a function describing some required characteristics of an object.</p></dd><dt class="param">selector</dt><dd class="cmt"><p>is a function describing a rule for choosing some subset of the collection of objects that
-                satisfy the <code>descriptor</code>.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>QueryRef</code> message is sent by the <code>sender</code> using the <a href="../CommunicatingActor.html#queryRef[D](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,descriptor:D=&gt;Boolean,selector:scala.collection.immutable.Set[D]=&gt;scala.collection.immutable.Set[D]):Unit" class="extmbr" name="acl.CommunicatingActor#queryRef"><code>queryRef</code></a>
+                satisfy the <code>descriptor</code>.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>QueryRef</code> message is sent by the <code>sender</code> using the <a href="../CommunicatingActor.html#queryRef(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,descriptor:Any=&gt;Boolean,selector:scala.collection.immutable.Set[Any]=&gt;scala.collection.immutable.Set[Any]):Unit" class="extmbr" name="acl.CommunicatingActor#queryRef"><code>queryRef</code></a>
       method.
 </p></span></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
@@ -97,18 +97,18 @@ references to objects matching a given <code>descriptor</code>.
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="acl.acts.QueryRef#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;init&gt;(conversationId:java.util.UUID,descriptor:D=&gt;Boolean,selector:scala.collection.immutable.Set[D]=&gt;scala.collection.immutable.Set[D]):acl.acts.QueryRef[D]"></a>
-      <a id="&lt;init&gt;:QueryRef[D]"></a>
+      <a id="&lt;init&gt;(conversationId:java.util.UUID,descriptor:Any=&gt;Boolean,selector:scala.collection.immutable.Set[Any]=&gt;scala.collection.immutable.Set[Any]):acl.acts.QueryRef"></a>
+      <a id="&lt;init&gt;:QueryRef"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">QueryRef</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="descriptor">descriptor: (<span class="extype" name="acl.acts.QueryRef.D">D</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="selector">selector: (<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="acl.acts.QueryRef.D">D</span>]) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="acl.acts.QueryRef.D">D</span>]</span>)</span>
+        <span class="name">QueryRef</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="descriptor">descriptor: (<span class="extype" name="scala.Any">Any</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="selector">selector: (<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="scala.Any">Any</span>]) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="scala.Any">Any</span>]</span>)</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#acl.acts.QueryRef@&lt;init&gt;(conversationId:java.util.UUID,descriptor:D=&gt;Boolean,selector:scala.collection.immutable.Set[D]=&gt;scala.collection.immutable.Set[D]):acl.acts.QueryRef[D]" title="Permalink" target="_top">
+      <a href="../../index.html#acl.acts.QueryRef@&lt;init&gt;(conversationId:java.util.UUID,descriptor:Any=&gt;Boolean,selector:scala.collection.immutable.Set[Any]=&gt;scala.collection.immutable.Set[Any]):acl.acts.QueryRef" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
@@ -235,18 +235,18 @@ references to objects matching a given <code>descriptor</code>.
                       conversation.</p><div class="fullcomment"><div class="comment cmt"><p>is an expression used to identify a sequence of communicative acts that together form a
                       conversation.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="acl.acts.QueryRef">QueryRef</a> → <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a></dd></dl></div>
     </li><li name="acl.acts.QueryRef#descriptor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="descriptor:D=&gt;Boolean"></a>
-      <a id="descriptor:(D)⇒Boolean"></a>
+      <a id="descriptor:Any=&gt;Boolean"></a>
+      <a id="descriptor:(Any)⇒Boolean"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">descriptor</span><span class="result">: (<span class="extype" name="acl.acts.QueryRef.D">D</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+        <span class="name">descriptor</span><span class="result">: (<span class="extype" name="scala.Any">Any</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#acl.acts.QueryRef@descriptor:D=&gt;Boolean" title="Permalink" target="_top">
+      <a href="../../index.html#acl.acts.QueryRef@descriptor:Any=&gt;Boolean" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
@@ -377,18 +377,18 @@ references to objects matching a given <code>descriptor</code>.
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="acl.acts.QueryRef#selector" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="selector:scala.collection.immutable.Set[D]=&gt;scala.collection.immutable.Set[D]"></a>
-      <a id="selector:(Set[D])⇒Set[D]"></a>
+      <a id="selector:scala.collection.immutable.Set[Any]=&gt;scala.collection.immutable.Set[Any]"></a>
+      <a id="selector:(Set[Any])⇒Set[Any]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">selector</span><span class="result">: (<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="acl.acts.QueryRef.D">D</span>]) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="acl.acts.QueryRef.D">D</span>]</span>
+        <span class="name">selector</span><span class="result">: (<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="scala.Any">Any</span>]) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="scala.Any">Any</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#acl.acts.QueryRef@selector:scala.collection.immutable.Set[D]=&gt;scala.collection.immutable.Set[D]" title="Permalink" target="_top">
+      <a href="../../index.html#acl.acts.QueryRef@selector:scala.collection.immutable.Set[Any]=&gt;scala.collection.immutable.Set[Any]" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
