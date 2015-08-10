@@ -26,10 +26,9 @@ import scala.collection.immutable
   * @param descriptor is a function describing some required characteristics of an object.
   * @param selector is a function describing a rule for choosing some subset of the collection of objects that
   *                 satisfy the `descriptor`.
-  * @tparam D is the type of object characterized by the `descriptor`.
   * @note The `QueryRef` message is sent by the `sender` using the [[acl.CommunicatingActor.queryRef `queryRef`]]
   *       method.
   */
-case class QueryRef[D](conversationId: UUID,
-                       descriptor: (D) => Boolean,
-                       selector: (immutable.Set[D]) => immutable.Set[D]) extends CommunicativeAct
+case class QueryRef(conversationId: UUID,
+                    descriptor: (Any) => Boolean,
+                    selector: (immutable.Set[Any]) => immutable.Set[Any]) extends CommunicativeAct

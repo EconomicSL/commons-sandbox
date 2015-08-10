@@ -22,7 +22,6 @@ import java.util.UUID
   * @param conversationId is an expression used to identify a sequence of communicative acts that together form a
   *                       conversation.
   * @param request is the previously received `request` to perform some action that should be cancelled.
-  * @tparam A is the type of action expression used to construct the content of the `request`
   * @note The `Cancel` message is sent the `sender` using the [[acl.CommunicatingActor.cancel `cancel`]] action.
   */
-case class Cancel[A](conversationId: UUID, request: Request[A]) extends CommunicativeAct
+case class Cancel(conversationId: UUID, request: Request) extends CommunicativeAct

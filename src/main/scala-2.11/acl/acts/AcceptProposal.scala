@@ -21,8 +21,7 @@ import java.util.UUID
   * @param conversationId is used to identify a sequence of [[acl.acts.CommunicativeAct `CommunicativeAct`]] messages
   *                       that together form a conversation.
   * @param proposal is the previously received `proposal` that the `sender` has decided to accept.
-  * @tparam A is the type of action expression used to construct the content of the `proposal`.
   * @note The `AcceptProposal` message is sent by the `sender` using the
   *       [[acl.CommunicatingActor.acceptProposal `acceptProposal`]] action.
   */
-case class AcceptProposal[A](conversationId: UUID, proposal: Propose[A]) extends CommunicativeAct
+case class AcceptProposal(conversationId: UUID, proposal: Propose) extends CommunicativeAct
