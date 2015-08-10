@@ -17,17 +17,13 @@ import java.util.UUID
 import acl.acts._
 import akka.actor.{ActorRef, Actor, ActorLogging}
 
-import scala.collection.mutable
+import scala.collection.immutable
 
 
 /** Trait defining the behavior of a `CommunicatingActor`. */
-trait CommunicatingActor {
-  this: Actor with ActorLogging =>
+trait CommunicatingActor extends Actor with ActorLogging {
 
   def beliefs: Beliefs
-
-  /** Collection of actors to whom the `CommunicatingActor` can directly send a message. */
-  def neighbors: mutable.Set[ActorRef]
 
   /** Accept a previously received proposal from another `CommunicatingActor`.
     *
@@ -61,8 +57,7 @@ trait CommunicatingActor {
   def agree[A](conversationId: UUID,
                receiver: ActorRef,
                request: Request[A],
-               precondition: (Beliefs) => Boolean):
-  Unit = {
+               precondition: (Beliefs) => Boolean): Unit = {
     receiver ! Agree(conversationId, request, precondition)
   }
 
@@ -123,7 +118,7 @@ trait CommunicatingActor {
     *       the `receiver` concerning the sincerity and reliability of the `CommunicatingActor` sending the
     *       [[acl.acts.Confirm `Confirm`]] message.
     */
-  def confirm(conversationId: UUID, receiver: ActorRef, proposition: (Beliefs) => Boolean): Unit = {
+  def confirm(conversationId: UUID, receiver: ActorRef, proposition: Beliefs): Unit = {
     receiver ! Confirm(conversationId, proposition)
   }
 
@@ -150,7 +145,7 @@ trait CommunicatingActor {
     *       the `receiver` concerning the sincerity and reliability of the `CommunicatingActor` sending the
     *       [[acl.acts.Disconfirm `Disconfirm`]] message.
     */
-  def disconfirm(conversationId: UUID, receiver: ActorRef, proposition: (Beliefs) => Boolean): Unit = {
+  def disconfirm(conversationId: UUID, receiver: ActorRef, proposition: Beliefs): Unit = {
     receiver ! Disconfirm(conversationId, proposition)
   }
 
@@ -188,7 +183,7 @@ trait CommunicatingActor {
     *       the `receiver` concerning the sincerity and reliability of the `CommunicatingActor` sending the
     *       [[acl.acts.Inform `Inform`]] message.
     */
-  def inform(conversationId: UUID, receiver: ActorRef, proposition: (Beliefs) => Boolean): Unit = {
+  def inform(conversationId: UUID, receiver: ActorRef, proposition: Beliefs): Unit = {
     receiver ! Inform(conversationId, proposition)
   }
 
@@ -213,12 +208,8 @@ trait CommunicatingActor {
     *       Finally, while the `informIf` act can be planned or requested by a `CommunicatingActor` the `informIf` act
     *       can not be performed directly, but only upon receipt of an [[acl.acts.InformIf `InformIf`]] message.
     */
-  def informIf(conversationId: UUID, receiver: ActorRef, proposition: (Beliefs) => Boolean): Unit = {
-    if (proposition(beliefs)) {
-      inform(conversationId, receiver, proposition)
-    } else {
-      inform(conversationId, receiver, (b: Beliefs) => ! proposition(b))
-    }
+  def informIf(conversationId: UUID, receiver: ActorRef, proposition: Beliefs): Unit = {
+    ???
   }
 
   /** Inform another `CommunicatingActor` of object(s) satisfying some descriptor.
@@ -247,36 +238,6 @@ trait CommunicatingActor {
     receiver ! NotUnderstood(conversationId, message, reason)
   }
 
-  /** Propagate a message to a collection of `CommunicatingActor` satisfying a descriptor.
-    *
-    * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
-    *                       form a conversation.
-    * @param receiver is the `CommunicatingActor` to whom the [[acl.acts.Propagate `Propagate`]] message should be sent.
-    * @param message is the embedded [[acl.acts.CommunicativeAct `CommunicativeAct`]] which is being propagated.
-    * @param descriptor is a proposition denoting a collection of actors to whom the [[acl.acts.Propagate `Propagate`]]
-    *                   message should be sent by the `receiver`.
-    * @param constraint is a proposition describing a termination condition for the propagation of the `message`.
-    * @note The `propagate` act works as follows:
-    *
-    *       1. The `CommunicatingActor` requests the `receiver` to treat the embedded message in the
-    *       received [[acl.acts.Propagate `Propagate`]] message as if it is was directly sent from the
-    *       `CommunicatingActor`, that is, as if the `CommunicativeActor` performed the embedded communicative act
-    *       directly to the `receiver`.
-    *
-    *       2. The `CommunicatingActor` wants the `receiver` to identify other actors denoted by the given `descriptor`
-    *       and to send the received [[acl.acts.Propagate `Propagate`]] message to them.
-    *
-    *       This communicative act is designed for delivering messages through federated agents by creating a chain
-    *       (or tree) of [[acl.acts.Propagate `Propagate`]] messages.
-    */
-  def propagate(conversationId: UUID,
-                receiver: ActorRef,
-                message: CommunicativeAct,
-                descriptor: (ActorRef) => Boolean,
-                constraint: (Beliefs) => Boolean): Unit = {
-    receiver ! Propagate(conversationId, message, descriptor, constraint)
-  }
-
   /** Submit a proposal to perform certain actions given certain preconditions.
     *
     * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
@@ -294,26 +255,6 @@ trait CommunicatingActor {
     receiver ! Propose(conversationId, content, precondition)
   }
 
-  /** Request another `CommunicatingActor` send a message to a collection of other actors matching a given description.
-    *
-    * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
-    *                       form a conversation.
-    * @param receiver is the `CommunicatingActor` to whom the [[acl.acts.Proxy `Proxy`]] message should be sent.
-    * @param message is the embedded [[acl.acts.CommunicativeAct `CommunicativeAct`]] which is being proxied.
-    * @param descriptor is a proposition denoting a collection of actors to whom the [[acl.acts.Proxy `Proxy`]] message
-    *                   should be sent by the `receiver`.
-    * @param constraint is a proposition constraining the proxying of the `message`.
-    * @note The `CommunicatingActor` informs the `receiver` that it wants the `receiver` to identify actors that
-    *       satisfy the given `descriptor` and forward them the embedded `message`.
-    */
-  def proxy(conversationId: UUID,
-            receiver: ActorRef,
-            message: CommunicativeAct,
-            descriptor: (ActorRef) => Boolean,
-            constraint: (Beliefs) => Boolean): Unit = {
-    receiver ! Proxy(conversationId, message, descriptor, constraint)
-  }
-
   /** Query a collection of actors in order to ascertain the truth value of some proposition.
     *
     * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
@@ -322,7 +263,7 @@ trait CommunicatingActor {
     * @param proposition is a proposition about which the `CommunicatingActor` is ignorant (i.e., has no knowledge of
     *                    its truth value).
     */
-  def queryIf(conversationId: UUID, receiver: ActorRef, proposition: (Beliefs) => Boolean): Unit = {
+  def queryIf(conversationId: UUID, receiver: ActorRef, proposition: Beliefs): Unit = {
     receiver ! QueryIf(conversationId, proposition)
   }
 
@@ -332,17 +273,26 @@ trait CommunicatingActor {
     *                       form a conversation.
     * @param receiver is the collection of [[acl.CommunicatingActor `CommunicatingActor`]] receiving the query.
     * @param descriptor is a function describing some required characteristics of an object.
+    * @param selector is a function describing a rule for choosing some subset of the collection of objects that
+    *                 satisfy the `descriptor`.
     * @tparam D is the type of object characterized by the `descriptor`.
-    * @note `queryRef` is the act of asking some other [[acl.CommunicatingActor `CommunicatingActor`]] to inform the
-    *       `CommunicatingActor` of the object matching the provided `descriptor`. The `CommunicatingActor`
-    *       performing the `queryRef` act is assumed
+    * @note `queryRef` is the act of asking the `receiver` to inform the `CommunicatingActor` of some subset of
+    *       objects matching the provided `descriptor`. The `CommunicatingActor` performing the `queryRef` act is
+    *       assumed
     *
     *       - not to know which object(s) match the descriptor, and,
     *
-    *       - believes that some other [[acl.CommunicatingActor `CommunicatingActor`]] can inform on the object(s).
+    *       - believes that the other [[acl.CommunicatingActor `CommunicatingActor`]] can inform on the object(s).
+    *
+    *       Note that the exact subset of objects matching the provided `descriptor` that are informed by `receiver`
+    *       is determined by the `selector`.  Typically, the `selector` will be a behavioral rule used by the
+    *       `CommunicatingActor` to choose a particular alternative from some set of options.
     */
-  def queryRef[D](conversationId: UUID, receiver: ActorRef, descriptor: (D) => Boolean): Unit = {
-    receiver ! QueryRef(conversationId, descriptor)
+  def queryRef[D](conversationId: UUID,
+                  receiver: ActorRef,
+                  descriptor: (D) => Boolean,
+                  selector: (immutable.Set[D]) => immutable.Set[D]): Unit = {
+    receiver ! QueryRef(conversationId, descriptor, selector)
   }
 
   /** The action of one `CommunicatingActor` refusing to perform a request and explaining the reason for the

@@ -14,6 +14,8 @@ package acl.acts
 
 import java.util.UUID
 
+import scala.collection.immutable
+
 
 /** A message sent from some [[acl.CommunicatingActor `CommunicatingActor`]] (i.e., `sender`) to another
   * [[acl.CommunicatingActor `CommunicatingActor`]] (i.e., `receiver`) asking whether or not the `receiver` has
@@ -22,8 +24,12 @@ import java.util.UUID
   * @param conversationId is an expression used to identify a sequence of communicative acts that together form a
   *                       conversation.
   * @param descriptor is a function describing some required characteristics of an object.
+  * @param selector is a function describing a rule for choosing some subset of the collection of objects that
+  *                 satisfy the `descriptor`.
   * @tparam D is the type of object characterized by the `descriptor`.
   * @note The `QueryRef` message is sent by the `sender` using the [[acl.CommunicatingActor.queryRef `queryRef`]]
   *       method.
   */
-case class QueryRef[D](conversationId: UUID, descriptor: (D) => Boolean) extends CommunicativeAct
+case class QueryRef[D](conversationId: UUID,
+                       descriptor: (D) => Boolean,
+                       selector: (immutable.Set[D]) => immutable.Set[D]) extends CommunicativeAct

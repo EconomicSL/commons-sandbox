@@ -28,4 +28,4 @@ import acl.Beliefs
   * @note The `InformIf` message is sent by the `sender` using the [[acl.CommunicatingActor.informIf `informIf`]]
   *       action.
   */
-case class InformIf(conversationId: UUID, proposition: (Beliefs) => Boolean) extends CommunicativeAct
+case class InformIf(conversationId: UUID, proposition: Beliefs) extends CommunicativeAct
