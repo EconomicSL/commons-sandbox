@@ -45,13 +45,13 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <span class="name">CommunicatingActor</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <span class="name">CommunicatingActor</span><span class="result"> extends <span class="extype" name="akka.actor.Actor">Actor</span> with <span class="extype" name="akka.actor.ActorLogging">ActorLogging</span></span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Trait defining the behavior of a <code>CommunicatingActor</code>.</p></div><dl class="attributes block"> <dt>Self Type</dt><dd><a href="" class="extype" name="acl.CommunicatingActor">CommunicatingActor</a> with <span class="extype" name="akka.actor.Actor">Actor</span> with <span class="extype" name="akka.actor.ActorLogging">ActorLogging</span></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Trait defining the behavior of a <code>CommunicatingActor</code>.</p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="akka.actor.ActorLogging">ActorLogging</span>, <span class="extype" name="akka.actor.Actor">Actor</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -69,7 +69,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="acl.CommunicatingActor"><span>CommunicatingActor</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="acl.CommunicatingActor"><span>CommunicatingActor</span></li><li class="in" name="akka.actor.ActorLogging"><span>ActorLogging</span></li><li class="in" name="akka.actor.Actor"><span>Actor</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -89,7 +89,27 @@
         <div id="allMembers">
         
 
-        
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="akka.actor.Actor.Receive" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Receive=akka.actor.Actor.Receive"></a>
+      <a id="Receive:Receive"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Receive</span><span class="result"> = <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.PartialFunction" class="extype" target="_top">PartialFunction</a>[<span class="extype" name="scala.Any">Any</span>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#acl.CommunicatingActor@Receive=akka.actor.Actor.Receive" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Actor</dd></dl></div>
+    </li></ol>
+            </div>
 
         <div id="values" class="values members">
               <h3>Abstract Value Members</h3>
@@ -110,23 +130,6 @@
       </a>
     </span>
       
-    </li><li name="acl.CommunicatingActor#neighbors" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="neighbors:scala.collection.mutable.Set[akka.actor.ActorRef]"></a>
-      <a id="neighbors:Set[ActorRef]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">abstract </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">neighbors</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.mutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="akka.actor.ActorRef">ActorRef</span>]</span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../index.html#acl.CommunicatingActor@neighbors:scala.collection.mutable.Set[akka.actor.ActorRef]" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Collection of actors to whom the <code>CommunicatingActor</code> can directly send a message.</p>
     </li></ol>
             </div>
 
@@ -229,6 +232,91 @@
       <a href="acts/Agree.html" class="extype" name="acl.acts.Agree"><code>Agree</code></a> message informs the <code>receiver</code> that it intends to act in accordance with the
       terms of the  <code>request</code>.
 </p></span></dd></dl></div>
+    </li><li name="akka.actor.Actor#aroundPostRestart" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="aroundPostRestart(reason:&lt;?&gt;):Unit"></a>
+      <a id="aroundPostRestart(Throwable):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">aroundPostRestart</span><span class="params">(<span name="reason">reason: <span class="extype" name="scala.Throwable">Throwable</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#acl.CommunicatingActor@aroundPostRestart(reason:Throwable):Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../akka.html" class="extype" name="akka">akka</a>] </dd><dt>Definition Classes</dt><dd>Actor</dd></dl></div>
+    </li><li name="akka.actor.Actor#aroundPostStop" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="aroundPostStop():Unit"></a>
+      <a id="aroundPostStop():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">aroundPostStop</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#acl.CommunicatingActor@aroundPostStop():Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../akka.html" class="extype" name="akka">akka</a>] </dd><dt>Definition Classes</dt><dd>Actor</dd></dl></div>
+    </li><li name="akka.actor.Actor#aroundPreRestart" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="aroundPreRestart(reason:&lt;?&gt;,message:&lt;?&gt;):Unit"></a>
+      <a id="aroundPreRestart(Throwable,Option[Any]):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">aroundPreRestart</span><span class="params">(<span name="reason">reason: <span class="extype" name="scala.Throwable">Throwable</span></span>, <span name="message">message: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Any">Any</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#acl.CommunicatingActor@aroundPreRestart(reason:Throwable,message:Option[Any]):Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../akka.html" class="extype" name="akka">akka</a>] </dd><dt>Definition Classes</dt><dd>Actor</dd></dl></div>
+    </li><li name="akka.actor.Actor#aroundPreStart" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="aroundPreStart():Unit"></a>
+      <a id="aroundPreStart():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">aroundPreStart</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#acl.CommunicatingActor@aroundPreStart():Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../akka.html" class="extype" name="akka">akka</a>] </dd><dt>Definition Classes</dt><dd>Actor</dd></dl></div>
+    </li><li name="akka.actor.Actor#aroundReceive" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="aroundReceive(receive:&lt;?&gt;,msg:&lt;?&gt;):Unit"></a>
+      <a id="aroundReceive(akka.actor.Actor.Receive,Any):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">aroundReceive</span><span class="params">(<span name="receive">receive: <span class="extype" name="akka.actor.Actor.Receive">akka.actor.Actor.Receive</span></span>, <span name="msg">msg: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#acl.CommunicatingActor@aroundReceive(receive:akka.actor.Actor.Receive,msg:Any):Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../akka.html" class="extype" name="akka">akka</a>] </dd><dt>Definition Classes</dt><dd>Actor</dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -316,18 +404,18 @@
               
         </dd></dl></div>
     </li><li name="acl.CommunicatingActor#confirm" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="confirm(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposition:acl.Beliefs=&gt;Boolean):Unit"></a>
-      <a id="confirm(UUID,ActorRef,(Beliefs)⇒Boolean):Unit"></a>
+      <a id="confirm(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposition:acl.Beliefs):Unit"></a>
+      <a id="confirm(UUID,ActorRef,Beliefs):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">confirm</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="proposition">proposition: (<a href="Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">confirm</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="proposition">proposition: <a href="Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.CommunicatingActor@confirm(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposition:acl.Beliefs=&gt;Boolean):Unit" title="Permalink" target="_top">
+      <a href="../index.html#acl.CommunicatingActor@confirm(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposition:acl.Beliefs):Unit" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
@@ -341,19 +429,36 @@
       the <code>receiver</code> concerning the sincerity and reliability of the <code>CommunicatingActor</code> sending the
       <a href="acts/Confirm.html" class="extype" name="acl.acts.Confirm"><code>Confirm</code></a> message.
 </p></span></dd></dl></div>
+    </li><li name="akka.actor.Actor#context" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="context:akka.actor.ActorContext"></a>
+      <a id="context:ActorContext"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">context</span><span class="result">: <span class="extype" name="akka.actor.ActorContext">ActorContext</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#acl.CommunicatingActor@context:akka.actor.ActorContext" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Actor</dd></dl></div>
     </li><li name="acl.CommunicatingActor#disconfirm" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="disconfirm(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposition:acl.Beliefs=&gt;Boolean):Unit"></a>
-      <a id="disconfirm(UUID,ActorRef,(Beliefs)⇒Boolean):Unit"></a>
+      <a id="disconfirm(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposition:acl.Beliefs):Unit"></a>
+      <a id="disconfirm(UUID,ActorRef,Beliefs):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">disconfirm</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="proposition">proposition: (<a href="Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">disconfirm</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="proposition">proposition: <a href="Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.CommunicatingActor@disconfirm(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposition:acl.Beliefs=&gt;Boolean):Unit" title="Permalink" target="_top">
+      <a href="../index.html#acl.CommunicatingActor@disconfirm(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposition:acl.Beliefs):Unit" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
@@ -480,18 +585,18 @@
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="acl.CommunicatingActor#inform" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="inform(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposition:acl.Beliefs=&gt;Boolean):Unit"></a>
-      <a id="inform(UUID,ActorRef,(Beliefs)⇒Boolean):Unit"></a>
+      <a id="inform(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposition:acl.Beliefs):Unit"></a>
+      <a id="inform(UUID,ActorRef,Beliefs):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">inform</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="proposition">proposition: (<a href="Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">inform</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="proposition">proposition: <a href="Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.CommunicatingActor@inform(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposition:acl.Beliefs=&gt;Boolean):Unit" title="Permalink" target="_top">
+      <a href="../index.html#acl.CommunicatingActor@inform(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposition:acl.Beliefs):Unit" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
@@ -505,18 +610,18 @@
       <a href="acts/Inform.html" class="extype" name="acl.acts.Inform"><code>Inform</code></a> message.
 </p></span></dd></dl></div>
     </li><li name="acl.CommunicatingActor#informIf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="informIf(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposition:acl.Beliefs=&gt;Boolean):Unit"></a>
-      <a id="informIf(UUID,ActorRef,(Beliefs)⇒Boolean):Unit"></a>
+      <a id="informIf(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposition:acl.Beliefs):Unit"></a>
+      <a id="informIf(UUID,ActorRef,Beliefs):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">informIf</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="proposition">proposition: (<a href="Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">informIf</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="proposition">proposition: <a href="Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.CommunicatingActor@informIf(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposition:acl.Beliefs=&gt;Boolean):Unit" title="Permalink" target="_top">
+      <a href="../index.html#acl.CommunicatingActor@informIf(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposition:acl.Beliefs):Unit" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
@@ -570,6 +675,23 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="akka.actor.ActorLogging#log" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="log:akka.event.LoggingAdapter"></a>
+      <a id="log:LoggingAdapter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">log</span><span class="result">: <span class="extype" name="akka.event.LoggingAdapter">LoggingAdapter</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#acl.CommunicatingActor@log:akka.event.LoggingAdapter" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>ActorLogging</dd></dl></div>
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>
@@ -641,32 +763,98 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="acl.CommunicatingActor#propagate" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="propagate(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,message:acl.acts.CommunicativeAct,descriptor:akka.actor.ActorRef=&gt;Boolean,constraint:acl.Beliefs=&gt;Boolean):Unit"></a>
-      <a id="propagate(UUID,ActorRef,CommunicativeAct,(ActorRef)⇒Boolean,(Beliefs)⇒Boolean):Unit"></a>
+    </li><li name="akka.actor.Actor#postRestart" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="postRestart(reason:&lt;?&gt;):Unit"></a>
+      <a id="postRestart(Throwable):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">propagate</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="message">message: <a href="acts/CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a></span>, <span name="descriptor">descriptor: (<span class="extype" name="akka.actor.ActorRef">ActorRef</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="constraint">constraint: (<a href="Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">postRestart</span><span class="params">(<span name="reason">reason: <span class="extype" name="scala.Throwable">Throwable</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.CommunicatingActor@propagate(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,message:acl.acts.CommunicativeAct,descriptor:akka.actor.ActorRef=&gt;Boolean,constraint:acl.Beliefs=&gt;Boolean):Unit" title="Permalink" target="_top">
+      <a href="../index.html#acl.CommunicatingActor@postRestart(reason:Throwable):Unit" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Propagate a message to a collection of <code>CommunicatingActor</code> satisfying a descriptor.</p><div class="fullcomment"><div class="comment cmt"><p>Propagate a message to a collection of <code>CommunicatingActor</code> satisfying a descriptor.
-</p></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify an ongoing sequence of communicative acts that together
-                      form a conversation.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>is the <code>CommunicatingActor</code> to whom the <a href="acts/Propagate.html" class="extype" name="acl.acts.Propagate"><code>Propagate</code></a> message should be sent.</p></dd><dt class="param">message</dt><dd class="cmt"><p>is the embedded <a href="acts/CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct"><code>CommunicativeAct</code></a> which is being propagated.</p></dd><dt class="param">descriptor</dt><dd class="cmt"><p>is a proposition denoting a collection of actors to whom the <a href="acts/Propagate.html" class="extype" name="acl.acts.Propagate"><code>Propagate</code></a>
-                  message should be sent by the <code>receiver</code>.</p></dd><dt class="param">constraint</dt><dd class="cmt"><p>is a proposition describing a termination condition for the propagation of the <code>message</code>.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>propagate</code> act works as follows:</p><ol class="decimal"><li>The <code>CommunicatingActor</code> requests the <code>receiver</code> to treat the embedded message in the
-      received <a href="acts/Propagate.html" class="extype" name="acl.acts.Propagate"><code>Propagate</code></a> message as if it is was directly sent from the
-      <code>CommunicatingActor</code>, that is, as if the <code>CommunicativeActor</code> performed the embedded communicative act
-      directly to the <code>receiver</code>.</li></ol><p>      2. The <code>CommunicatingActor</code> wants the <code>receiver</code> to identify other actors denoted by the given <code>descriptor</code>
-      and to send the received <a href="acts/Propagate.html" class="extype" name="acl.acts.Propagate"><code>Propagate</code></a> message to them.</p><p>      This communicative act is designed for delivering messages through federated agents by creating a chain
-      (or tree) of <a href="acts/Propagate.html" class="extype" name="acl.acts.Propagate"><code>Propagate</code></a> messages.
-</p></span></dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Actor</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Exception]</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="akka.actor.Actor#postStop" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="postStop():Unit"></a>
+      <a id="postStop():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">postStop</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#acl.CommunicatingActor@postStop():Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Actor</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Exception]</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="akka.actor.Actor#preRestart" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="preRestart(reason:&lt;?&gt;,message:&lt;?&gt;):Unit"></a>
+      <a id="preRestart(Throwable,Option[Any]):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">preRestart</span><span class="params">(<span name="reason">reason: <span class="extype" name="scala.Throwable">Throwable</span></span>, <span name="message">message: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Any">Any</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#acl.CommunicatingActor@preRestart(reason:Throwable,message:Option[Any]):Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Actor</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Exception]</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="akka.actor.Actor#preStart" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="preStart():Unit"></a>
+      <a id="preStart():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">preStart</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#acl.CommunicatingActor@preStart():Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Actor</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Exception]</span>
+    </span>)</span>
+              
+        </dd></dl></div>
     </li><li name="acl.CommunicatingActor#propose" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="propose[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,content:A,precondition:acl.Beliefs=&gt;Boolean):Unit"></a>
       <a id="propose[A](UUID,ActorRef,A,(Beliefs)⇒Boolean):Unit"></a>
@@ -688,41 +876,19 @@
 </p></dd><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify an ongoing sequence of communicative acts that together
                       form a conversation.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>is a collection of actors receiving the <a href="acts/Propose.html" class="extype" name="acl.acts.Propose"><code>Propose</code></a> message.</p></dd><dt class="param">content</dt><dd class="cmt"><p>is an action expression representing the action that the <code>CommunicatingActor</code> is proposing to
                perform.</p></dd><dt class="param">precondition</dt><dd class="cmt"><p>is a proposition indicating the conditions for the action to be performed.</p></dd></dl></div>
-    </li><li name="acl.CommunicatingActor#proxy" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="proxy(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,message:acl.acts.CommunicativeAct,descriptor:akka.actor.ActorRef=&gt;Boolean,constraint:acl.Beliefs=&gt;Boolean):Unit"></a>
-      <a id="proxy(UUID,ActorRef,CommunicativeAct,(ActorRef)⇒Boolean,(Beliefs)⇒Boolean):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">proxy</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="message">message: <a href="acts/CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a></span>, <span name="descriptor">descriptor: (<span class="extype" name="akka.actor.ActorRef">ActorRef</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="constraint">constraint: (<a href="Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../index.html#acl.CommunicatingActor@proxy(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,message:acl.acts.CommunicativeAct,descriptor:akka.actor.ActorRef=&gt;Boolean,constraint:acl.Beliefs=&gt;Boolean):Unit" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Request another <code>CommunicatingActor</code> send a message to a collection of other actors matching a given description.</p><div class="fullcomment"><div class="comment cmt"><p>Request another <code>CommunicatingActor</code> send a message to a collection of other actors matching a given description.
-</p></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify an ongoing sequence of communicative acts that together
-                      form a conversation.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>is the <code>CommunicatingActor</code> to whom the <a href="acts/Proxy.html" class="extype" name="acl.acts.Proxy"><code>Proxy</code></a> message should be sent.</p></dd><dt class="param">message</dt><dd class="cmt"><p>is the embedded <a href="acts/CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct"><code>CommunicativeAct</code></a> which is being proxied.</p></dd><dt class="param">descriptor</dt><dd class="cmt"><p>is a proposition denoting a collection of actors to whom the <a href="acts/Proxy.html" class="extype" name="acl.acts.Proxy"><code>Proxy</code></a> message
-                  should be sent by the <code>receiver</code>.</p></dd><dt class="param">constraint</dt><dd class="cmt"><p>is a proposition constraining the proxying of the <code>message</code>.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>CommunicatingActor</code> informs the <code>receiver</code> that it wants the <code>receiver</code> to identify actors that
-      satisfy the given <code>descriptor</code> and forward them the embedded <code>message</code>.
-</p></span></dd></dl></div>
     </li><li name="acl.CommunicatingActor#queryIf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="queryIf(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposition:acl.Beliefs=&gt;Boolean):Unit"></a>
-      <a id="queryIf(UUID,ActorRef,(Beliefs)⇒Boolean):Unit"></a>
+      <a id="queryIf(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposition:acl.Beliefs):Unit"></a>
+      <a id="queryIf(UUID,ActorRef,Beliefs):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">queryIf</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="proposition">proposition: (<a href="Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">queryIf</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="proposition">proposition: <a href="Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.CommunicatingActor@queryIf(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposition:acl.Beliefs=&gt;Boolean):Unit" title="Permalink" target="_top">
+      <a href="../index.html#acl.CommunicatingActor@queryIf(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposition:acl.Beliefs):Unit" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
@@ -732,44 +898,47 @@
                    its truth value).
 </p></dd></dl></div>
     </li><li name="acl.CommunicatingActor#queryRef" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="queryRef[D](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,descriptor:D=&gt;Boolean):Unit"></a>
-      <a id="queryRef[D](UUID,ActorRef,(D)⇒Boolean):Unit"></a>
+      <a id="queryRef[D](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,descriptor:D=&gt;Boolean,selector:scala.collection.immutable.Set[D]=&gt;scala.collection.immutable.Set[D]):Unit"></a>
+      <a id="queryRef[D](UUID,ActorRef,(D)⇒Boolean,(Set[D])⇒Set[D]):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">queryRef</span><span class="tparams">[<span name="D">D</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="descriptor">descriptor: (<span class="extype" name="acl.CommunicatingActor.queryRef.D">D</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">queryRef</span><span class="tparams">[<span name="D">D</span>]</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="receiver">receiver: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="descriptor">descriptor: (<span class="extype" name="acl.CommunicatingActor.queryRef.D">D</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="selector">selector: (<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="acl.CommunicatingActor.queryRef.D">D</span>]) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.collection.immutable.Set" class="extype" target="_top">Set</a>[<span class="extype" name="acl.CommunicatingActor.queryRef.D">D</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.CommunicatingActor@queryRef[D](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,descriptor:D=&gt;Boolean):Unit" title="Permalink" target="_top">
+      <a href="../index.html#acl.CommunicatingActor@queryRef[D](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,descriptor:D=&gt;Boolean,selector:scala.collection.immutable.Set[D]=&gt;scala.collection.immutable.Set[D]):Unit" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
       <p class="shortcomment cmt">Query a collection of actors regarding object(s) that matching a given descriptor.</p><div class="fullcomment"><div class="comment cmt"><p>Query a collection of actors regarding object(s) that matching a given descriptor.
 </p></div><dl class="paramcmts block"><dt class="tparam">D</dt><dd class="cmt"><p>is the type of object characterized by the <code>descriptor</code>.</p></dd><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify an ongoing sequence of communicative acts that together
-                      form a conversation.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>is the collection of <a href="" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> receiving the query.</p></dd><dt class="param">descriptor</dt><dd class="cmt"><p>is a function describing some required characteristics of an object.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p><code>queryRef</code> is the act of asking some other <a href="" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> to inform the
-      <code>CommunicatingActor</code> of the object matching the provided <code>descriptor</code>. The <code>CommunicatingActor</code>
-      performing the <code>queryRef</code> act is assumed</p><ul><li>not to know which object(s) match the descriptor, and,</li><li>believes that some other <a href="" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> can inform on the object(s).
-</li></ul></span></dd></dl></div>
-    </li><li name="acl.CommunicatingActor#receive" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+                      form a conversation.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>is the collection of <a href="" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> receiving the query.</p></dd><dt class="param">descriptor</dt><dd class="cmt"><p>is a function describing some required characteristics of an object.</p></dd><dt class="param">selector</dt><dd class="cmt"><p>is a function describing a rule for choosing some subset of the collection of objects that
+                satisfy the <code>descriptor</code>.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p><code>queryRef</code> is the act of asking the <code>receiver</code> to inform the <code>CommunicatingActor</code> of some subset of
+      objects matching the provided <code>descriptor</code>. The <code>CommunicatingActor</code> performing the <code>queryRef</code> act is
+      assumed</p><ul><li>not to know which object(s) match the descriptor, and,</li><li>believes that the other <a href="" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> can inform on the object(s).</li></ul><p>      Note that the exact subset of objects matching the provided <code>descriptor</code> that are informed by <code>receiver</code>
+      is determined by the <code>selector</code>.  Typically, the <code>selector</code> will be a behavioral rule used by the
+      <code>CommunicatingActor</code> to choose a particular alternative from some set of options.
+</p></span></dd></dl></div>
+    </li><li name="acl.CommunicatingActor#receive" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="receive:CommunicatingActor.this.Receive"></a>
-      <a id="receive:(CommunicatingActor.this)#Receive"></a>
+      <a id="receive:Receive"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">receive</span><span class="result">: (<a href="" class="extype" name="acl.CommunicatingActor">CommunicatingActor</a>.this)#<span class="extype" name="akka.actor.Actor.Receive">Receive</span></span>
+        <span class="name">receive</span><span class="result">: <a href="#Receive=akka.actor.Actor.Receive" class="extmbr" name="acl.CommunicatingActor.Receive">Receive</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../index.html#acl.CommunicatingActor@receive:CommunicatingActor.this.Receive" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
-      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="acl.CommunicatingActor">CommunicatingActor</a> → Actor</dd></dl></div>
     </li><li name="acl.CommunicatingActor#refuse" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="refuse[A](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,request:acl.acts.Request[A],reason:acl.Beliefs=&gt;Boolean):Unit"></a>
       <a id="refuse[A](UUID,ActorRef,Request[A],(Beliefs)⇒Boolean):Unit"></a>
@@ -897,6 +1066,40 @@ and thereafter each time the proposition becomes true again.
       <a href="acts/RequestWhenever.html" class="extype" name="acl.acts.RequestWhenever"><code>RequestWhenever</code></a> message can cancel the commitment by sending a
       <a href="acts/Cancel.html" class="extype" name="acl.acts.Cancel"><code>Cancel</code></a> message.
 </p></span></dd></dl></div>
+    </li><li name="akka.actor.Actor#self" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="self:akka.actor.ActorRef"></a>
+      <a id="self:ActorRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">self</span><span class="result">: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#acl.CommunicatingActor@self:akka.actor.ActorRef" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Actor</dd></dl></div>
+    </li><li name="akka.actor.Actor#sender" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="sender():akka.actor.ActorRef"></a>
+      <a id="sender():ActorRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">sender</span><span class="params">()</span><span class="result">: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#acl.CommunicatingActor@sender():akka.actor.ActorRef" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Actor</dd></dl></div>
     </li><li name="acl.CommunicatingActor#subscribe" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="subscribe[D](conversationId:java.util.UUID,receiver:akka.actor.ActorRef,descriptor:D=&gt;Boolean):Unit"></a>
       <a id="subscribe[D](UUID,ActorRef,(D)⇒Boolean):Unit"></a>
@@ -919,6 +1122,23 @@ reference changes.
 </p></div><dl class="paramcmts block"><dt class="tparam">D</dt><dd class="cmt"><p>is the type of object characterized by the <code>descriptor</code>.
 </p></dd><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify an ongoing sequence of communicative acts that together
                       form a conversation.</p></dd><dt class="param">receiver</dt><dd class="cmt"><p>is <a href="" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> that is to receive the subscription request.</p></dd><dt class="param">descriptor</dt><dd class="cmt"><p>is a function describing some required characteristics of the reference object.</p></dd></dl></div>
+    </li><li name="akka.actor.Actor#supervisorStrategy" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="supervisorStrategy:akka.actor.SupervisorStrategy"></a>
+      <a id="supervisorStrategy:SupervisorStrategy"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">supervisorStrategy</span><span class="result">: <span class="extype" name="akka.actor.SupervisorStrategy">SupervisorStrategy</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#acl.CommunicatingActor@supervisorStrategy:akka.actor.SupervisorStrategy" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Actor</dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
@@ -953,6 +1173,23 @@ reference changes.
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="akka.actor.Actor#unhandled" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="unhandled(message:&lt;?&gt;):Unit"></a>
+      <a id="unhandled(Any):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">unhandled</span><span class="params">(<span name="message">message: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#acl.CommunicatingActor@unhandled(message:Any):Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Actor</dd></dl></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <a id="wait():Unit"></a>
@@ -1031,7 +1268,11 @@ reference changes.
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="scala.AnyRef">
+        <div class="parent" name="akka.actor.ActorLogging">
+              <h3>Inherited from <span class="extype" name="akka.actor.ActorLogging">ActorLogging</span></h3>
+            </div><div class="parent" name="akka.actor.Actor">
+              <h3>Inherited from <span class="extype" name="akka.actor.Actor">Actor</span></h3>
+            </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">
               <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>

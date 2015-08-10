@@ -45,7 +45,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">Confirm</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="proposition">proposition: (<a href="../Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <span class="name">Confirm</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="proposition">proposition: <a href="../Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a></span>)</span><span class="result"> extends <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4>
       
@@ -54,7 +54,7 @@
 the <code>receiver</code> is known to, at a minimum, be uncertain about the truth value of the <code>proposition</code>.
 </p></div><dl class="paramcmts block"><dt class="param">conversationId</dt><dd class="cmt"><p>is an expression used to identify a sequence of communicative acts that together form a
                       conversation.</p></dd><dt class="param">proposition</dt><dd class="cmt"><p>is a proposition that the <code>sender</code> believes to be true, and intends that the <code>receiver</code> also
-                   comes to believe to be true.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>Confirm</code> message is sent by the <code>sender</code> using the <a href="../CommunicatingActor.html#confirm(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposition:acl.Beliefs=&gt;Boolean):Unit" class="extmbr" name="acl.CommunicatingActor#confirm"><code>confirm</code></a> action.
+                   comes to believe to be true.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The <code>Confirm</code> message is sent by the <code>sender</code> using the <a href="../CommunicatingActor.html#confirm(conversationId:java.util.UUID,receiver:akka.actor.ActorRef,proposition:acl.Beliefs):Unit" class="extmbr" name="acl.CommunicatingActor#confirm"><code>confirm</code></a> action.
 </p></span></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a>, <span class="extype" name="java.io.Serializable">Serializable</span>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Equals" class="extype" target="_top">Equals</a>, <a href="CommunicativeAct.html" class="extype" name="acl.acts.CommunicativeAct">CommunicativeAct</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
@@ -96,7 +96,7 @@ the <code>receiver</code> is known to, at a minimum, be uncertain about the trut
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="acl.acts.Confirm#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;init&gt;(conversationId:java.util.UUID,proposition:acl.Beliefs=&gt;Boolean):acl.acts.Confirm"></a>
+      <a id="&lt;init&gt;(conversationId:java.util.UUID,proposition:acl.Beliefs):acl.acts.Confirm"></a>
       <a id="&lt;init&gt;:Confirm"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -104,10 +104,10 @@ the <code>receiver</code> is known to, at a minimum, be uncertain about the trut
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">Confirm</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="proposition">proposition: (<a href="../Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span>
+        <span class="name">Confirm</span><span class="params">(<span name="conversationId">conversationId: <span class="extype" name="java.util.UUID">UUID</span></span>, <span name="proposition">proposition: <a href="../Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a></span>)</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#acl.acts.Confirm@&lt;init&gt;(conversationId:java.util.UUID,proposition:acl.Beliefs=&gt;Boolean):acl.acts.Confirm" title="Permalink" target="_top">
+      <a href="../../index.html#acl.acts.Confirm@&lt;init&gt;(conversationId:java.util.UUID,proposition:acl.Beliefs):acl.acts.Confirm" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
@@ -359,18 +359,18 @@ the <code>receiver</code> is known to, at a minimum, be uncertain about the trut
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="acl.acts.Confirm#proposition" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="proposition:acl.Beliefs=&gt;Boolean"></a>
-      <a id="proposition:(Beliefs)⇒Boolean"></a>
+      <a id="proposition:acl.Beliefs"></a>
+      <a id="proposition:Beliefs"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">proposition</span><span class="result">: (<a href="../Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+        <span class="name">proposition</span><span class="result">: <a href="../Beliefs.html" class="extype" name="acl.Beliefs">Beliefs</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#acl.acts.Confirm@proposition:acl.Beliefs=&gt;Boolean" title="Permalink" target="_top">
+      <a href="../../index.html#acl.acts.Confirm@proposition:acl.Beliefs" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>

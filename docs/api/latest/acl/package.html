@@ -116,7 +116,7 @@ together to create an economic actor.</p></div><div class="toggleContainer block
     </span>
       <p class="shortcomment cmt">Trait representing <a href="CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> beliefs.</p>
     </li><li name="acl.CommunicatingActor" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="CommunicatingActorextendsAnyRef"></a>
+      <a id="CommunicatingActorextendsActorwithActorLogging"></a>
       <a id="CommunicatingActor:CommunicatingActor"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -124,14 +124,31 @@ together to create an economic actor.</p></div><div class="toggleContainer block
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="CommunicatingActor.html"><span class="name">CommunicatingActor</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <a href="CommunicatingActor.html"><span class="name">CommunicatingActor</span></a><span class="result"> extends <span class="extype" name="akka.actor.Actor">Actor</span> with <span class="extype" name="akka.actor.ActorLogging">ActorLogging</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#acl.package@CommunicatingActorextendsAnyRef" title="Permalink" target="_top">
+      <a href="../index.html#acl.package@CommunicatingActorextendsActorwithActorLogging" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
       <p class="shortcomment cmt">Trait defining the behavior of a <code>CommunicatingActor</code>.</p>
+    </li><li name="acl.NodeActor" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="NodeActorextendsAnyRef"></a>
+      <a id="NodeActor:NodeActor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="NodeActor.html"><span class="name">NodeActor</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#acl.package@NodeActorextendsAnyRef" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Trait defining behavior of a <a href="CommunicatingActor.html" class="extype" name="acl.CommunicatingActor"><code>CommunicatingActor</code></a> that is also a node in some graph.</p>
     </li></ol>
             </div>
 
