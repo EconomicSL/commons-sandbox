@@ -17,6 +17,8 @@ import java.util.UUID
 import acl.acts._
 import akka.actor.{ActorRef, Actor, ActorLogging}
 
+import scala.collection.immutable
+
 
 /** Trait defining the behavior of a `CommunicatingActor`. */
 trait CommunicatingActor extends Actor with ActorLogging {
@@ -271,17 +273,26 @@ trait CommunicatingActor extends Actor with ActorLogging {
     *                       form a conversation.
     * @param receiver is the collection of [[acl.CommunicatingActor `CommunicatingActor`]] receiving the query.
     * @param descriptor is a function describing some required characteristics of an object.
+    * @param selector is a function describing a rule for choosing some subset of the collection of objects that
+    *                 satisfy the `descriptor`.
     * @tparam D is the type of object characterized by the `descriptor`.
-    * @note `queryRef` is the act of asking some other [[acl.CommunicatingActor `CommunicatingActor`]] to inform the
-    *       `CommunicatingActor` of the object matching the provided `descriptor`. The `CommunicatingActor`
-    *       performing the `queryRef` act is assumed
+    * @note `queryRef` is the act of asking the `receiver` to inform the `CommunicatingActor` of some subset of
+    *       objects matching the provided `descriptor`. The `CommunicatingActor` performing the `queryRef` act is
+    *       assumed
     *
     *       - not to know which object(s) match the descriptor, and,
     *
-    *       - believes that some other [[acl.CommunicatingActor `CommunicatingActor`]] can inform on the object(s).
+    *       - believes that the other [[acl.CommunicatingActor `CommunicatingActor`]] can inform on the object(s).
+    *
+    *       Note that the exact subset of objects matching the provided `descriptor` that are informed by `receiver`
+    *       is determined by the `selector`.  Typically, the `selector` will be a behavioral rule used by the
+    *       `CommunicatingActor` to choose a particular alternative from some set of options.
     */
-  def queryRef[D](conversationId: UUID, receiver: ActorRef, descriptor: (D) => Boolean): Unit = {
-    receiver ! QueryRef(conversationId, descriptor)
+  def queryRef[D](conversationId: UUID,
+                  receiver: ActorRef,
+                  descriptor: (D) => Boolean,
+                  selector: (immutable.Set[D]) => immutable.Set[D]): Unit = {
+    receiver ! QueryRef(conversationId, descriptor, selector)
   }
 
   /** The action of one `CommunicatingActor` refusing to perform a request and explaining the reason for the
