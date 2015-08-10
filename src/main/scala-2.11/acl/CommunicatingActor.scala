@@ -152,9 +152,8 @@ trait CommunicatingActor extends Actor with ActorLogging {
     * @param receiver is the `CommunicatingActor` to notify of the failure.
     * @param content is an action expression defining the action(s) that were attempted.
     * @param reason is a proposition indicating the reason for the failure.
-    * @tparam A is the type of action expression used to construct the `content`.
     */
-  def failure[A](conversationId: UUID, receiver: ActorRef, content: A, reason: (Beliefs) => Boolean): Unit = {
+  def failure(conversationId: UUID, receiver: ActorRef, content: Any, reason: (Beliefs) => Boolean): Unit = {
     receiver ! Failure(conversationId, content, reason)
   }
 
@@ -242,12 +241,11 @@ trait CommunicatingActor extends Actor with ActorLogging {
     * @param content is an action expression representing the action that the `CommunicatingActor` is proposing to
     *                perform.
     * @param precondition is a proposition indicating the conditions for the action to be performed.
-    * @tparam A is the type of action expression used to construct `content` of the proposal.
     */
-  def propose[A](conversationId: UUID,
-                 receiver: ActorRef,
-                 content: A,
-                 precondition: (Beliefs) => Boolean): Unit = {
+  def propose(conversationId: UUID,
+              receiver: ActorRef,
+              content: Any,
+              precondition: (Beliefs) => Boolean): Unit = {
     receiver ! Propose(conversationId, content, precondition)
   }
 
