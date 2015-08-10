@@ -25,8 +25,7 @@ import acl.Beliefs
   *                       that together form a conversation.
   * @param request is the previously received [acl.Request `Request`] message that is being refused.
   * @param reason is a proposition denoting the reason that the `request` has been refused.
-  * @tparam A is the type of action expression used to construct the content of the `request`.
   * @note The `Refuse` message is sent by a [[acl.CommunicatingActor `CommunicatingActor`]] using the
   *       [[acl.CommunicatingActor.refuse `refuse`]] method.
   */
-case class Refuse[A](conversationId: UUID, request: Request[A], reason: (Beliefs) => Boolean) extends CommunicativeAct
+case class Refuse(conversationId: UUID, request: Request, reason: (Beliefs) => Boolean) extends CommunicativeAct

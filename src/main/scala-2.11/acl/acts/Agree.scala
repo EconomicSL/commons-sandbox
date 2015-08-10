@@ -27,9 +27,8 @@ import acl.Beliefs
   * @param request is the previously received `request` that has been agreed.
   * @param precondition defines a condition that should be satisfied in order for the `sender` to perform the action(s)
   *                     specified in the agreed `request`.
-  * @tparam A is the type of action expression used to construct the content of the `request`.
   * @note The `Agree` message is sent by `sender` using the [[acl.CommunicatingActor.agree `agree`]] action.
   */
-case class Agree[A](conversationId: UUID,
-                    request: Request[A],
-                    precondition: (Beliefs) => Boolean) extends CommunicativeAct
+case class Agree(conversationId: UUID,
+                 request: Request,
+                 precondition: (Beliefs) => Boolean) extends CommunicativeAct

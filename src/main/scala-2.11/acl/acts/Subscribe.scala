@@ -25,4 +25,4 @@ import java.util.UUID
   * @note The `Subscribe` message is sent by the `sender` using the [[acl.CommunicatingActor.subscribe `subscribe`]]
   *       action.
   */
-case class Subscribe[D](conversationId: UUID, descriptor: (D) => Boolean) extends CommunicativeAct
+case class Subscribe(conversationId: UUID, descriptor: (Any) => Boolean) extends CommunicativeAct
