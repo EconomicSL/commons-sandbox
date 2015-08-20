@@ -14,15 +14,37 @@ package acl.acts
 
 import java.util.UUID
 
+import scala.collection.immutable
+
 
 /** A message sent from some [[acl.CommunicatingActor `CommunicatingActor`]] (i.e., `sender`) to another
   * [[acl.CommunicatingActor `CommunicatingActor`]] (i.e., `receiver`) informing the `receiver` of object(s) which
   * satisfy some `descriptor`.
   *
-  * @param conversationId is an expression used to identify a sequence of communicative acts that together form a
-  *                       conversation.
-  * @param descriptor is a function describing some required characteristics of the object.
+  * @param conversationId is an expression used to identify a sequence of
+  *                       [[acl.acts.CommunicativeAct `CommunicativeAct`]] messages that together form a conversation.
+  * @param content is a collection of objects matching some `descriptor`.
+  * @tparam A is the type of desired objects.
   * @note The `InformRef` message is sent by the `sender` using the [[acl.CommunicatingActor.informRef `informRef`]]
-  *       action.
+  *       action. The `InformRef` message is only sent in reply to a [[acl.acts.QueryRef `QueryRef`]] message.
   */
-case class InformRef(conversationId: UUID, descriptor: (Any) => Boolean) extends CommunicativeAct
+case class InformRef[A](conversationId: UUID, content: immutable.Iterable[A]) extends CommunicativeAct
+
+
+/** Companion object for `InformRef`. */
+object InformRef {
+
+  /** Secondary constructor for `InformRef`.
+    *
+    * @param conversationId is an expression used to identify a sequence of
+    *                       [[acl.acts.CommunicativeAct `CommunicativeAct`]] messages that together form a conversation.
+    * @param content is the desired object.
+    * @tparam A the type of the desired object.
+    * @return an `InformRef` message.
+    */
+  def apply[A](conversationId: UUID, content: A): InformRef[A] = {
+    InformRef[A](conversationId, immutable.Iterable(content))
+  }
+
+}
+

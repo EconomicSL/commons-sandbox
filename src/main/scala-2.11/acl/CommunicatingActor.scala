@@ -212,10 +212,23 @@ trait CommunicatingActor extends Actor with ActorLogging {
     * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
     *                       form a conversation.
     * @param receiver is the `CommunicatingActor` to notify whether or not the `proposition` is true.
-    * @param descriptor is a function describing some required characteristics of the object.
+    * @param content is a collection of objects matching some `descriptor`.
+    * @tparam A is the type of an element in the `content` collection.
     */
-  def informRef[D](conversationId: UUID, receiver: ActorRef, descriptor: (D) => Boolean): Unit = {
-    ???
+  def informRef[A](conversationId: UUID, receiver: ActorRef, content: immutable.Iterable[A]): Unit = {
+    receiver ! InformRef(conversationId, content)
+  }
+
+  /** Inform another `CommunicatingActor` of an object satisfying some descriptor.
+    *
+    * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
+    *                       form a conversation.
+    * @param receiver is the `CommunicatingActor` to notify whether or not the `proposition` is true.
+    * @param content is an object matching some `descriptor`.
+    * @tparam A is the type of desired object.
+    */
+  def informRef[A](conversationId: UUID, receiver: ActorRef, content: A): Unit = {
+    receiver ! InformRef(conversationId, content)
   }
 
   /** Inform another `CommunicatingActor` that a message it sent was not understood.
