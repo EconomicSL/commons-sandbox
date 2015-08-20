@@ -18,6 +18,7 @@ import acl.acts._
 import akka.actor.{ActorRef, Actor, ActorLogging}
 
 import scala.collection.immutable
+import scala.reflect.runtime.universe._
 
 
 /** Trait defining the behavior of a `CommunicatingActor`. */
@@ -294,10 +295,10 @@ trait CommunicatingActor extends Actor with ActorLogging {
     *       is determined by the `selector`.  Typically, the `selector` will be a behavioral rule used by the
     *       `CommunicatingActor` to choose a particular alternative from some set of options.
     */
-  def queryRef[A](conversationId: UUID,
-                  receiver: ActorRef,
-                  descriptor: (A) => Boolean,
-                  selector: Option[(immutable.Iterable[A]) => A]): Unit = {
+  def queryRef[A : TypeTag](conversationId: UUID,
+                            receiver: ActorRef,
+                            descriptor: (A) => Boolean,
+                            selector: Option[(immutable.Iterable[A]) => A]): Unit = {
     receiver ! QueryRef(conversationId, descriptor, selector)
   }
 

@@ -15,7 +15,7 @@ package acl.acts
 import java.util.UUID
 
 import scala.collection.immutable
-
+import scala.reflect.runtime.universe._
 
 /** A message sent from some [[acl.CommunicatingActor `CommunicatingActor`]] (i.e., `sender`) to another
   * [[acl.CommunicatingActor `CommunicatingActor`]] (i.e., `receiver`) asking whether or not the `receiver` has
@@ -29,6 +29,6 @@ import scala.collection.immutable
   * @note The `QueryRef` message is sent by the `sender` using the [[acl.CommunicatingActor.queryRef `queryRef`]]
   *       method.
   */
-case class QueryRef[A](conversationId: UUID,
-                       descriptor: (A) => Boolean,
-                       selector: Option[(immutable.Iterable[A]) => A]) extends CommunicativeAct
+case class QueryRef[A : TypeTag](conversationId: UUID,
+                                 descriptor: (A) => Boolean,
+                                 selector: Option[(immutable.Iterable[A]) => A]) extends CommunicativeAct
