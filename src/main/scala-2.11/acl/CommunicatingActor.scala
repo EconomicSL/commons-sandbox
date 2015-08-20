@@ -265,15 +265,15 @@ trait CommunicatingActor extends Actor with ActorLogging {
     *
     * @param conversationId is an expression used to identify an ongoing sequence of communicative acts that together
     *                       form a conversation.
-    * @param receiver is the collection of [[acl.CommunicatingActor `CommunicatingActor`]] receiving the query.
+    * @param receiver is the [[acl.CommunicatingActor `CommunicatingActor`]] receiving the query.
     * @param descriptor is a function describing some required characteristics of an object.
-    * @param selector is a function describing a rule for choosing some subset of the collection of objects that
-    *                 satisfy the `descriptor`.
+    * @param selector is a rule for choosing an object from the collection of objects satisfying the `descriptor`.
+    * @tparam A is the type of desired object.
     * @note `queryRef` is the act of asking the `receiver` to inform the `CommunicatingActor` of some subset of
     *       objects matching the provided `descriptor`. The `CommunicatingActor` performing the `queryRef` act is
     *       assumed
     *
-    *       - not to know which object(s) match the descriptor, and,
+    *       - not to know which object(s) match the `descriptor`, and,
     *
     *       - believes that the other [[acl.CommunicatingActor `CommunicatingActor`]] can inform on the object(s).
     *
@@ -281,10 +281,10 @@ trait CommunicatingActor extends Actor with ActorLogging {
     *       is determined by the `selector`.  Typically, the `selector` will be a behavioral rule used by the
     *       `CommunicatingActor` to choose a particular alternative from some set of options.
     */
-  def queryRef(conversationId: UUID,
-               receiver: ActorRef,
-               descriptor: (Any) => Boolean,
-               selector: (immutable.Set[Any]) => immutable.Set[Any]): Unit = {
+  def queryRef[A](conversationId: UUID,
+                  receiver: ActorRef,
+                  descriptor: (A) => Boolean,
+                  selector: Option[(immutable.Iterable[A]) => A]): Unit = {
     receiver ! QueryRef(conversationId, descriptor, selector)
   }
 

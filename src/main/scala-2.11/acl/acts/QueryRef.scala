@@ -24,11 +24,11 @@ import scala.collection.immutable
   * @param conversationId is an expression used to identify a sequence of communicative acts that together form a
   *                       conversation.
   * @param descriptor is a function describing some required characteristics of an object.
-  * @param selector is a function describing a rule for choosing some subset of the collection of objects that
-  *                 satisfy the `descriptor`.
+  * @param selector is a rule for choosing an object from the collection of objects satisfying the `descriptor`.
+  * @tparam A is the type of desired object.
   * @note The `QueryRef` message is sent by the `sender` using the [[acl.CommunicatingActor.queryRef `queryRef`]]
   *       method.
   */
-case class QueryRef(conversationId: UUID,
-                    descriptor: (Any) => Boolean,
-                    selector: (immutable.Set[Any]) => immutable.Set[Any]) extends CommunicativeAct
+case class QueryRef[A](conversationId: UUID,
+                       descriptor: (A) => Boolean,
+                       selector: Option[(immutable.Iterable[A]) => A]) extends CommunicativeAct
