@@ -1,6 +1,6 @@
-package acl.acts
+package acl
 
-import acl.CommunicatingActor
+import acl.acts.QueryRef
 
 import scala.collection.immutable
 
