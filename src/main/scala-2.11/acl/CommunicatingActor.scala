@@ -15,16 +15,14 @@ package acl
 import java.util.UUID
 
 import acl.acts._
-import akka.actor.{ActorRef, Actor, ActorLogging}
+import akka.actor.{ActorRef, Actor}
 
 import scala.collection.immutable
 import scala.reflect.runtime.universe._
 
 
 /** Trait defining the behavior of a `CommunicatingActor`. */
-trait CommunicatingActor extends Actor with ActorLogging {
-
-  def beliefs: Beliefs
+trait CommunicatingActor extends Actor {
 
   /** Accept a previously received proposal from another `CommunicatingActor`.
     *
@@ -426,10 +424,6 @@ trait CommunicatingActor extends Actor with ActorLogging {
   def subscribe(conversationId: UUID, receiver: ActorRef, descriptor: (Any) => Boolean): Unit = {
     receiver ! Subscribe(conversationId, descriptor)
   }
-
-  def receive: Receive = {
-    ???
-  }
-
+  
 }
 
